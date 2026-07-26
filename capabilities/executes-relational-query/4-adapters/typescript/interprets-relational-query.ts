@@ -64,15 +64,17 @@ export function observesExecutesRelationalQueryFacts(payload: JsonObject): JsonO
     const missingSources = requiredSources.filter((sourceId) => sources[sourceId] === undefined && plan.ctes[sourceId] === undefined);
     return Object.freeze({
       queryParsed: true,
+      plan,
       missingSources,
       missingSourceCount: missingSources.length,
       hasJoin: plan.joins.length > 0,
       hasGrouping: plan.groupBy.length > 0,
       hasCte: Object.keys(plan.ctes).length > 0,
-    }) as JsonObject;
+    }) as unknown as JsonObject;
   } catch {
     return Object.freeze({
       queryParsed: false,
+      plan: null,
       missingSources: [],
       missingSourceCount: 0,
       hasJoin: false,
@@ -82,13 +84,36 @@ export function observesExecutesRelationalQueryFacts(payload: JsonObject): JsonO
   }
 }
 
-export function executesRelationalQueryMechanics(
+export function projectsAuthorizedRelationalQueryExecution(
+  payload: JsonObject,
+  observation: JsonObject,
+): JsonObject {
+  return Object.freeze({
+    plan: readsAuthorizedPlan(observation.plan),
+    sources: readsSources(payload.sources),
+  }) as unknown as JsonObject;
+}
+
+export function executesRelationalQueryPlanPort(input: JsonValue): JsonValue {
+  const execution = requiresJsonObject(input, "Relational execution port input must be an object.");
+  return executesRelationalQueryPlan(
+    readsAuthorizedPlan(execution.plan),
+    readsSources(execution.sources),
+  ) as unknown as JsonValue;
+}
+
+export function projectsExecutedRelationalQuery(
   payload: JsonObject,
   decision: JsonValue,
+  observation: JsonObject,
+  portOutput: JsonValue,
 ): JsonObject {
-  const plan = parsesRelationalQuery(requiresString(payload.commandText, "Command text is required."));
-  const queryResult = executesRelationalQueryPlan(plan, readsSources(payload.sources));
-  return Object.freeze({ payload, decision, plan, queryResult }) as unknown as JsonObject;
+  return Object.freeze({
+    payload,
+    decision,
+    plan: readsAuthorizedPlan(observation.plan),
+    queryResult: requiresJsonObject(portOutput, "Relational execution port output must be an object."),
+  }) as unknown as JsonObject;
 }
 
 export function parsesRelationalQuery(commandText: string): RelationalQueryPlan {
@@ -103,6 +128,14 @@ function readsSources(value: unknown): RelationalSources {
     }
     return [sourceId, Object.freeze(rows.map((row) => requiresJsonObject(row, `Rows in source ${sourceId} must be objects.`)))];
   })));
+}
+
+function readsAuthorizedPlan(value: unknown): RelationalQueryPlan {
+  const plan = requiresRecord(value, "Resolved relational query plan is required.");
+  if (plan.planType !== "relational-query-plan.v1") {
+    throw new SemanticKernelError("RELATIONAL_QUERY_PLAN_REQUIRED", "Resolved authority does not contain a relational query plan.");
+  }
+  return plan as unknown as RelationalQueryPlan;
 }
 
 function tokenizes(text: string): readonly Token[] {

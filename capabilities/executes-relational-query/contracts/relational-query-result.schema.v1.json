@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:relational-query-result:v1",
+  "title": "Relational query result",
+  "type": "object",
+  "required": ["columns", "rows", "rowCount"],
+  "properties": {
+    "columns": { "type": "array", "items": { "type": "string" } },
+    "rows": { "type": "array", "items": { "type": "object" } },
+    "rowCount": { "type": "integer", "minimum": 0 }
+  },
+  "additionalProperties": false
+}

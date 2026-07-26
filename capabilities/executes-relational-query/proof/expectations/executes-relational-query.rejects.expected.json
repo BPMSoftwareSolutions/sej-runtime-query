@@ -4,7 +4,7 @@
   "capabilityId": "executes-relational-query",
   "authorityHash": "sha256:3a3ae1df0a2c5982493b6c983d255e52c9bbe21cb25f6af9c30fc750fe0eedaf",
   "inputHash": "sha256:03a5b9958c5380b651d4a4b388a7872502744c6ba962f81b593f7077baa717ba",
-  "resultHash": "sha256:388f5513e2eec3252d3bfc3aa4ff5f683f089f37c121f8b1b22d77f95c1db773",
+  "resultHash": "sha256:aa7bda1a1fdcdcbf053410901808bbac5cf3936bc3e0cdee5e6447e3fb5fb879",
   "decisionId": "resolves-relational-query-execution-authority",
   "resolvedRule": "reject-unavailable-relational-source",
   "disposition": "RELATIONAL_QUERY_REJECTED",
@@ -13,6 +13,19 @@
       "findingId": "relational-query-source-unavailable",
       "detail": {
         "queryParsed": true,
+        "plan": {
+          "planType": "relational-query-plan.v1",
+          "ctes": {},
+          "from": { "sourceId": "unavailable", "alias": "unavailable" },
+          "joins": [],
+          "groupBy": [],
+          "selections": [
+            { "expression": { "kind": "wildcard" } }
+          ],
+          "distinct": false,
+          "orderBy": [],
+          "offset": 0
+        },
         "missingSources": ["unavailable"],
         "missingSourceCount": 1,
         "hasJoin": false,

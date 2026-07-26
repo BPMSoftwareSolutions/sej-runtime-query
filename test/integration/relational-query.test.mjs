@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { invokesCapability } from "../../dist/composition-root/creates-capability-registry.js";
+import { createsExecutesRelationalQueryRuntime } from "../../dist/capabilities/executes-relational-query/runtime/typescript/registration/registers-executes-relational-query-authority.js";
 
 const query = (commandText, sources, requestId) => invokesCapability("executes-relational-query", {
   requestType: "executes-relational-query-request.v1",
@@ -66,4 +67,51 @@ test("fails closed for unparseable text and unresolved source authority", async 
   assert.equal(unparseable.resolvedRule, "reject-unparseable-relational-query");
   assert.equal(missing.disposition, "RELATIONAL_QUERY_REJECTED");
   assert.equal(missing.resolvedRule, "reject-unavailable-relational-source");
+});
+
+test("executes the exact plan resolved before caller-owned input can change", async () => {
+  const request = {
+    requestType: "executes-relational-query-request.v1",
+    requestId: "immutable-resolved-plan",
+    payload: {
+      commandText: "SELECT value FROM first",
+      sources: {
+        first: [{ value: "authorized" }],
+        second: [{ value: "mutated" }],
+      },
+    },
+  };
+
+  const pending = invokesCapability("executes-relational-query", request);
+  request.payload.commandText = "SELECT value FROM second";
+  request.payload.sources.first[0].value = "also-mutated";
+  const receipt = await pending;
+
+  assert.equal(receipt.resolvedRule, "execute-authorized-relational-query");
+  assert.equal(receipt.result.value.commandText, "SELECT value FROM first");
+  assert.deepEqual(receipt.result.value.rows, [{ value: "authorized" }]);
+});
+
+test("binds the declared relational execution port to its query-owned adapter", async () => {
+  const runtime = createsExecutesRelationalQueryRuntime();
+  const result = await runtime.kernel.ports.invoke("executes-query-owned-relational-plan", {
+    plan: {
+      planType: "relational-query-plan.v1",
+      ctes: {},
+      from: { sourceId: "rows", alias: "rows" },
+      joins: [],
+      groupBy: [],
+      selections: [{ expression: { kind: "reference", path: ["value"] } }],
+      distinct: false,
+      orderBy: [],
+      offset: 0,
+    },
+    sources: { rows: [{ value: "bound" }] },
+  });
+
+  assert.deepEqual(result, {
+    columns: ["value"],
+    rows: [{ value: "bound" }],
+    rowCount: 1,
+  });
 });

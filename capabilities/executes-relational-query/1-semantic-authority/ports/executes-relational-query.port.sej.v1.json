@@ -11,7 +11,7 @@
     {
       "portId": "executes-query-owned-relational-plan",
       "effect": "execute",
-      "inputContract": "relational-query-plan.v1",
+      "inputContract": "authorized-relational-query-execution.v1",
       "outputContract": "relational-query-result.v1"
     }
   ]

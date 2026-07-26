@@ -74,6 +74,11 @@ The canonical scaffold and implementation handoff are documented in:
 Their TypeScript bodies are projected from semantic execution models and carry a
 generated marker. Hand-authored body changes are forbidden.
 
+The relational query capability also projects its TypeScript plan, expression,
+source, execution-input, and result types from its query-owned JSON Schemas.
+`relational-query.contract.ts` is generated code; schema changes must be
+re-projected, and conformance rejects stale output.
+
 Every implemented capability body is an eight-line linear delegation:
 
 ```typescript
@@ -145,7 +150,11 @@ npm run typecheck
 npm run prove
 npm run scaffold:workspace-registry
 npm run project:bodies
+npm run project:types
+npm run project:code
 npm run check:projected-bodies
+npm run check:projected-types
+npm run check:projected-code
 ```
 
 When the package is installed or linked, run SQL-style queries with the `q` wrapper:

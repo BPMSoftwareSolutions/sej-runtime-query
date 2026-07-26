@@ -5,20 +5,25 @@ import process from "node:process";
 const root = process.cwd();
 const kernelRoot = path.resolve(root, "..", "semantic-kernel");
 const failures = [];
-const forbiddenKernelFiles = [
-  "src/contracts/relational.contract.ts",
-  "src/kernel/relational-query-engine.ts",
-];
 
-for (const relative of forbiddenKernelFiles) {
-  if (fs.existsSync(path.join(kernelRoot, relative))) {
-    failures.push(`semantic kernel contains query-domain file: ${relative}`);
-  }
+function walk(directory) {
+  if (!fs.existsSync(directory)) return [];
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const candidate = path.join(directory, entry.name);
+    return entry.isDirectory() ? walk(candidate) : [candidate];
+  });
 }
 
-const kernelIndex = fs.readFileSync(path.join(kernelRoot, "src", "index.ts"), "utf8");
-if (/relational|sql/i.test(kernelIndex)) {
-  failures.push("semantic kernel public index exports query-domain vocabulary");
+for (const surface of ["src", "dist"]) {
+  const surfaceRoot = path.join(kernelRoot, surface);
+  if (surface === "src" && !fs.existsSync(surfaceRoot)) {
+    failures.push("semantic kernel source surface is unavailable");
+  }
+  for (const file of walk(surfaceRoot)) {
+    if (/\b(?:relational|sql)\b/i.test(fs.readFileSync(file, "utf8"))) {
+      failures.push(`semantic kernel ${surface} surface contains query-domain vocabulary: ${path.relative(kernelRoot, file)}`);
+    }
+  }
 }
 
 const capabilityRoot = path.join(root, "capabilities", "executes-relational-query");
@@ -48,9 +53,30 @@ if (/type Relational.*from "@deterministic-solutions\/semantic-kernel"|executeRe
   failures.push("query adapter imports relational vocabulary from the semantic kernel");
 }
 
+const portCatalog = JSON.parse(fs.readFileSync(
+  path.join(capabilityRoot, "1-semantic-authority", "ports", "executes-relational-query.port.sej.v1.json"),
+  "utf8",
+));
+const executionPort = portCatalog.ports.find((port) => port.portId === "executes-query-owned-relational-plan");
+if (
+  executionPort?.effect !== "execute"
+  || executionPort?.inputContract !== "authorized-relational-query-execution.v1"
+  || executionPort?.outputContract !== "relational-query-result.v1"
+) {
+  failures.push("query-owned relational execution port does not declare its operational contracts");
+}
+
+const registration = fs.readFileSync(
+  path.join(capabilityRoot, "runtime", "typescript", "registration", "registers-executes-relational-query-authority.ts"),
+  "utf8",
+);
+if (!/executionPort\s*:\s*\{[\s\S]*portId:\s*"executes-query-owned-relational-plan"/.test(registration)) {
+  failures.push("query-owned relational execution port is declared but not bound by capability registration");
+}
+
 if (failures.length > 0) {
   console.error(failures.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log("PASS kernel-domain-neutrality (relational authority and mechanics are query-owned)");
+  console.log("PASS kernel-domain-neutrality (kernel source/distribution clean; query port ownership bound)");
 }

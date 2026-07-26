@@ -19,6 +19,17 @@ remain under `capabilities/executes-relational-query`; the semantic kernel must
 not export SQL tokens, relational contracts, joins, grouping, aggregation, or
 query-plan evaluation.
 
+The query capability snapshots input before resolution, carries the parsed plan
+as resolved authority, and invokes its mechanical adapter through the declared
+`executes-query-owned-relational-plan` port. The generic runtime verifies the
+port catalog binding and validates both port contracts; the kernel supplies only
+the universal registry and dispatch mechanics.
+
+The capability's TypeScript relational vocabulary is projected from the
+query-owned plan, authorized-execution, and result schemas. The generated
+contract is a replaceable language projection; it is not an independent source
+of relational meaning.
+
 ```text
 Capability body
       |

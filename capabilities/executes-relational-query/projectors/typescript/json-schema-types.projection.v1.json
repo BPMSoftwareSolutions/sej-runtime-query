@@ -1,0 +1,30 @@
+{
+  "projectionType": "typescript-json-schema-types.v1",
+  "target": "../../4-adapters/typescript/relational-query.contract.ts",
+  "sources": [
+    {
+      "schema": "../../contracts/relational-query-plan.schema.v1.json",
+      "declarations": [
+        { "typeName": "RelationalSource", "pointer": "#/$defs/source" },
+        { "typeName": "RelationalJoin", "pointer": "#/$defs/join" },
+        { "typeName": "RelationalSelection", "pointer": "#/$defs/selection" },
+        { "typeName": "RelationalOrder", "pointer": "#/$defs/order" },
+        { "typeName": "RelationalExpression", "pointer": "#/$defs/expression" },
+        { "typeName": "RelationalQueryPlan", "pointer": "#" }
+      ]
+    },
+    {
+      "schema": "../../contracts/authorized-relational-query-execution.schema.v1.json",
+      "declarations": [
+        { "typeName": "RelationalSources", "pointer": "#/properties/sources" },
+        { "typeName": "AuthorizedRelationalQueryExecution", "pointer": "#" }
+      ]
+    },
+    {
+      "schema": "../../contracts/relational-query-result.schema.v1.json",
+      "declarations": [
+        { "typeName": "RelationalQueryResult", "pointer": "#" }
+      ]
+    }
+  ]
+}

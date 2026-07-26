@@ -10,6 +10,7 @@ import {
 } from "@deterministic-solutions/semantic-kernel";
 import { computesCanonicalJsonHash } from "../../capabilities/applies-semantic-projection/4-adapters/typescript/computes-canonical-json-hash.js";
 import { createsJsonSchemaValidator } from "../../capabilities/applies-semantic-projection/4-adapters/typescript/validates-json-schema.js";
+import type { JsonSchemaValidator } from "../../capabilities/applies-semantic-projection/4-adapters/typescript/validates-json-schema.js";
 
 /**
  * Observation computed below the decision boundary. An observer may only read
@@ -28,6 +29,23 @@ export type CapabilityExecutor = (
   observation: JsonObject,
 ) => JsonObject | Promise<JsonObject>;
 
+export type CapabilityExecutionPort = Readonly<{
+  portCatalog: unknown;
+  portId: string;
+  inputContract: string;
+  outputContract: string;
+  inputSchema: unknown;
+  outputSchema: unknown;
+  projectsInput(payload: JsonObject, decision: JsonValue, observation: JsonObject): JsonObject;
+  adapter(input: JsonValue): JsonValue | Promise<JsonValue>;
+  projectsOutput(
+    payload: JsonObject,
+    decision: JsonValue,
+    observation: JsonObject,
+    portOutput: JsonValue,
+  ): JsonObject;
+}>;
+
 export type CapabilityAuthorityDeclarations = Readonly<{
   capabilityId: string;
   capabilityAuthority: unknown;
@@ -41,7 +59,8 @@ export type CapabilityAuthorityDeclarations = Readonly<{
   failureDisposition: string;
   rejectionRules: readonly string[];
   observes: CapabilityObserver;
-  executes: CapabilityExecutor;
+  executes?: CapabilityExecutor;
+  executionPort?: CapabilityExecutionPort;
 }>;
 
 export type CapabilityRuntime = Readonly<{
@@ -62,6 +81,11 @@ export function createsCapabilityRuntime(
   const decision = requiresDecisionDeclaration(declarations.decision);
   const resultProjection = requiresProjectionDeclaration(declarations.resultProjection);
   kernel.registerCapabilityPacks([{ decisions: [decision], projections: [resultProjection] }]);
+  requiresExactlyOneExecutionMechanism(declarations);
+  if (declarations.executionPort !== undefined) {
+    requiresDeclaredExecutionPort(declarations.executionPort);
+    kernel.seatPortAdapters({ [declarations.executionPort.portId]: declarations.executionPort.adapter });
+  }
 
   const validator = createsJsonSchemaValidator(declarations.contractSchemas);
   const authorityHash = computesCanonicalJsonHash(declarations.capabilityAuthority);
@@ -92,7 +116,9 @@ export function createsCapabilityRuntime(
 
   function resolvesAuthority(context: unknown): JsonObject {
     const bodyContext = requiresRecord(context, "Capability body context must be an object.");
-    const request = requiresJsonObject(bodyContext.request, "Capability request must be a JSON object.");
+    const request = snapshotsJsonObject(
+      requiresJsonObject(bodyContext.request, "Capability request must be a JSON object."),
+    );
     const inputValidation = validator.validate(declarations.inputSchema, request);
     requiresValid(inputValidation, "INPUT_CONTRACT_INVALID", "Capability request failed contract validation.");
 
@@ -142,7 +168,11 @@ export function createsCapabilityRuntime(
      */
     const attempted = unmatched || ruleRejected
       ? Object.freeze({ executed: Object.freeze({ payload, decision: resolved }), failure: null })
-      : await attemptsDeclaredExecution(() => declarations.executes(payload, resolved, observation), payload, resolved);
+      : await attemptsDeclaredExecution(
+        () => invokesExecutionMechanism(declarations, kernel, validator, payload, resolved, observation),
+        payload,
+        resolved,
+      );
 
     const executionFailed = attempted.failure !== null;
     const rejected = unmatched || ruleRejected || executionFailed;
@@ -223,6 +253,82 @@ export function createsCapabilityRuntime(
       return validatesReceipt(projectsReceipt(executed));
     },
   });
+}
+
+async function invokesExecutionMechanism(
+  declarations: CapabilityAuthorityDeclarations,
+  kernel: SemanticKernel,
+  validator: JsonSchemaValidator,
+  payload: JsonObject,
+  decision: JsonValue,
+  observation: JsonObject,
+): Promise<JsonObject> {
+  if (declarations.executionPort !== undefined) {
+    const portInput = declarations.executionPort.projectsInput(payload, decision, observation);
+    requiresValid(
+      validator.validate(declarations.executionPort.inputSchema, portInput),
+      "EXECUTION_PORT_INPUT_INVALID",
+      `Execution port input violates ${declarations.executionPort.inputContract}.`,
+    );
+    const portOutput = await kernel.ports.invoke(declarations.executionPort.portId, portInput);
+    requiresValid(
+      validator.validate(declarations.executionPort.outputSchema, portOutput),
+      "EXECUTION_PORT_OUTPUT_INVALID",
+      `Execution port output violates ${declarations.executionPort.outputContract}.`,
+    );
+    return declarations.executionPort.projectsOutput(payload, decision, observation, portOutput);
+  }
+  return await declarations.executes!(payload, decision, observation);
+}
+
+function requiresExactlyOneExecutionMechanism(declarations: CapabilityAuthorityDeclarations): void {
+  const count = Number(declarations.executes !== undefined) + Number(declarations.executionPort !== undefined);
+  requiresPresent(
+    count === 1 ? true : undefined,
+    "CAPABILITY_EXECUTION_MECHANISM_INVALID",
+    "Capability must declare exactly one direct executor or execution port.",
+  );
+}
+
+function requiresDeclaredExecutionPort(executionPort: CapabilityExecutionPort): void {
+  const catalog = requiresRecord(executionPort.portCatalog, "Execution port catalog must be an object.");
+  const ports = catalog.ports;
+  requiresPresent(Array.isArray(ports) ? ports : undefined, "PORT_CATALOG_INVALID", "Execution port catalog must declare ports.");
+  const declared = (ports as readonly unknown[])
+    .map((port) => requiresRecord(port, "Port declaration must be an object."))
+    .find((port) => port.portId === executionPort.portId);
+  requiresPresent(declared, "EXECUTION_PORT_UNDECLARED", `Execution port is not declared: ${executionPort.portId}`);
+  requiresPresent(
+    declared.effect === "execute" ? declared : undefined,
+    "EXECUTION_PORT_EFFECT_INVALID",
+    `Execution port must declare the execute effect: ${executionPort.portId}`,
+  );
+  requiresPresent(
+    declared.inputContract === executionPort.inputContract ? declared : undefined,
+    "EXECUTION_PORT_INPUT_CONTRACT_MISMATCH",
+    `Execution port input contract does not match its binding: ${executionPort.portId}`,
+  );
+  requiresPresent(
+    declared.outputContract === executionPort.outputContract ? declared : undefined,
+    "EXECUTION_PORT_OUTPUT_CONTRACT_MISMATCH",
+    `Execution port output contract does not match its binding: ${executionPort.portId}`,
+  );
+}
+
+function snapshotsJsonObject(value: JsonObject): JsonObject {
+  return freezesJsonValue(structuredClone(value)) as JsonObject;
+}
+
+function freezesJsonValue(value: JsonValue): JsonValue {
+  if (Array.isArray(value)) {
+    value.forEach(freezesJsonValue);
+    return Object.freeze(value) as unknown as JsonValue;
+  }
+  if (isRecord(value)) {
+    Object.values(value).forEach((member) => freezesJsonValue(member as JsonValue));
+    return Object.freeze(value) as JsonObject;
+  }
+  return value;
 }
 
 /**

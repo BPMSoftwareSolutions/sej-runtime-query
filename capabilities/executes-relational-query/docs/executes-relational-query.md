@@ -6,6 +6,18 @@ semantic authority, executes the immutable relational plan through a query-owned
 mechanical adapter, and projects a receipt through the external domain-neutral
 semantic kernel.
 
+Authority resolution snapshots the caller's JSON request and retains the parsed
+plan in the resolved observation. Execution consumes that exact plan; it never
+reparses caller-owned command text after the decision boundary. The adapter is
+seated and invoked as `executes-query-owned-relational-plan`, and its declared
+input and output contracts are validated at the port boundary.
+
+The TypeScript contract used by the parser and adapter is generated from the
+three query-owned JSON Schemas through
+`projectors/typescript/json-schema-types.projection.v1.json`. Run
+`npm run project:types` after changing those schemas; repository conformance
+fails if the generated contract is stale.
+
 Declared surface:
 
 - inner, left, right, full, and cross joins;
