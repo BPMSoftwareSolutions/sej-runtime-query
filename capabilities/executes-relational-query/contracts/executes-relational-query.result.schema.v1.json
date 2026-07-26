@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:executes-relational-query:result:v1",
+  "title": "Executes relational query result",
+  "type": "object",
+  "required": ["resultType", "capabilityId", "value"],
+  "properties": {
+    "resultType": { "const": "executes-relational-query-result.v1" },
+    "capabilityId": { "const": "executes-relational-query" },
+    "value": {
+      "type": "object",
+      "required": ["commandText", "plan", "columns", "rows", "rowCount"],
+      "properties": {
+        "commandText": { "type": "string" },
+        "plan": { "type": "object" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "object" } },
+        "rowCount": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

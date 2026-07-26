@@ -30,6 +30,8 @@
 
 The numbered 01–15 entries are the dynamic semantic query capabilities. Foundational lifecycle and projection-support capabilities use the same micro-capability body and remain separately governable.
 
+For a human-readable, command-by-command proofbook with live projection outputs, see [operator-proofbook.md](operator-proofbook.md).
+
 Integrating the semantic kernel into your SEJ Query Engine changes it from a system that can **inspect, verify, resolve, and project specifications** into a system that can also **dynamically interpret and compose semantic authority at query time**.
 
 Right now, the engine already has three strong modes:

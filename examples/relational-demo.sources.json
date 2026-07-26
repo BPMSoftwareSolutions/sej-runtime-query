@@ -1,0 +1,11 @@
+{
+  "customers": [
+    { "id": 1, "name": "Ada" },
+    { "id": 2, "name": "Lin" }
+  ],
+  "orders": [
+    { "customerId": 1, "amount": 10, "status": "paid" },
+    { "customerId": 1, "amount": 5, "status": "paid" },
+    { "customerId": 2, "amount": 2, "status": "paid" }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-executes-relational-query-result",
+  "accepts": { "contractId": "executed-relational-query.v1" },
+  "produces": { "contractId": "executes-relational-query-result.v1" },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": { "kind": "constant", "value": "executes-relational-query-result.v1" },
+      "capabilityId": { "kind": "constant", "value": "executes-relational-query" },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "commandText": { "kind": "read", "path": "$.payload.commandText", "required": true },
+          "plan": { "kind": "read", "path": "$.plan", "required": true },
+          "columns": { "kind": "read", "path": "$.queryResult.columns", "required": true },
+          "rows": { "kind": "read", "path": "$.queryResult.rows", "required": true },
+          "rowCount": { "kind": "read", "path": "$.queryResult.rowCount", "required": true }
+        }
+      }
+    }
+  }
+}

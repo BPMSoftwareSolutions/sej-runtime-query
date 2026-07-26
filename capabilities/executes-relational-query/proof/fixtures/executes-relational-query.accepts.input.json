@@ -1,0 +1,18 @@
+{
+  "requestType": "executes-relational-query-request.v1",
+  "requestId": "executes-relational-query-accepts-001",
+  "payload": {
+    "commandText": "WITH paid AS (SELECT customerId, SUM(amount) AS total FROM orders WHERE status = 'paid' GROUP BY customerId) SELECT c.name AS customer, p.total, p.total * 1.1 AS gross FROM customers c LEFT JOIN paid p ON c.id = p.customerId WHERE p.total >= 10 ORDER BY gross DESC",
+    "sources": {
+      "customers": [
+        { "id": 1, "name": "Ada" },
+        { "id": 2, "name": "Lin" }
+      ],
+      "orders": [
+        { "customerId": 1, "amount": 10, "status": "paid" },
+        { "customerId": 1, "amount": 5, "status": "paid" },
+        { "customerId": 2, "amount": 2, "status": "paid" }
+      ]
+    }
+  }
+}

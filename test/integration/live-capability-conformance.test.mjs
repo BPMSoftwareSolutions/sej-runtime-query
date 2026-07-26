@@ -20,9 +20,9 @@ test("every drafted capability has been promoted to a live implementation", () =
   const drafted = contract.capabilities.filter((entry) => entry.status === "drafted");
 
   assert.equal(drafted.length, 0, `capabilities still drafted: ${drafted.map((entry) => entry.capabilityId).join(", ")}`);
-  assert.equal(implemented.length, 25);
-  // 24 seat their own authority; applies-semantic-projection resolves external authority.
-  assert.equal(capabilityIds.length, 24);
+  assert.equal(implemented.length, 26);
+  // 25 seat their own authority; applies-semantic-projection resolves external authority.
+  assert.equal(capabilityIds.length, 25);
 });
 
 for (const capabilityId of capabilityIds) {

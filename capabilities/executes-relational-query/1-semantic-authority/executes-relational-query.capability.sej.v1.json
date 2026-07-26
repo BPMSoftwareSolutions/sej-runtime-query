@@ -1,0 +1,30 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "executes-relational-query",
+  "status": "implemented",
+  "purpose": "Execute declared SQL-style relational authority over caller-supplied rows.",
+  "owns": [
+    "relational-query-command",
+    "relational-query-plan",
+    "ad-hoc-relational-projection-authority"
+  ],
+  "mustNotOwn": [
+    "source-invention",
+    "implicit-query-repair",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "domain-specific-kernel-logic"
+  ],
+  "publicOperation": "executes-relational-query",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1",
+    "relational-query.execute.v1",
+    "contract.validate.v1",
+    "testimony.record.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-relational-query-execution-authority",
+  "declaredResultProjection": "projects-executes-relational-query-result",
+  "declaredDispositions": ["RELATIONAL_QUERY_EXECUTED", "RELATIONAL_QUERY_REJECTED"]
+}

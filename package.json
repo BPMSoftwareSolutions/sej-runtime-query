@@ -5,6 +5,9 @@
   "type": "module",
   "private": false,
   "license": "MIT",
+  "bin": {
+    "q": "./dist/doorways/cli/q.js"
+  },
   "engines": {
     "node": ">=20.0.0"
   },
@@ -21,6 +24,7 @@
   "files": [
     "dist",
     "capabilities",
+    "examples",
     "kernel-compatibility",
     "README.md",
     "LICENSE"
@@ -28,6 +32,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
+    "q": "node dist/doorways/cli/q.js",
     "check": "node conformance/run-all.mjs",
     "test": "npm run build && node test/run-tests.mjs",
     "verify": "npm run check && npm test && npm run typecheck",

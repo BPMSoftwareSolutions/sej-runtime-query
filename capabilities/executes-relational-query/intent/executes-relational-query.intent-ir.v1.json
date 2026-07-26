@@ -1,0 +1,21 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "executes-relational-query",
+  "title": "Execute a relational query",
+  "purpose": "Resolve and execute an authorized relational query over caller-supplied semantic rows.",
+  "actor": "authorized-query-caller",
+  "trigger": "an executes-relational-query request is submitted",
+  "desiredOutcome": "Return a deterministic relational result for declared SQL-style query authority.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "ad hoc projection is authorized only inside the declared relational query boundary",
+    "query parsing remains irreducible adapter mechanics",
+    "joins grouping CTE ordering and aggregation execute through the domain-neutral semantic kernel",
+    "the runtime body contains linear semantic delegation only",
+    "missing source authority and unparseable text fail closed",
+    "proof testimony is projected into a canonical receipt"
+  ],
+  "featureIds": ["executes-relational-query"],
+  "ownedDecision": "resolves-relational-query-execution-authority",
+  "declaredDispositions": ["RELATIONAL_QUERY_EXECUTED", "RELATIONAL_QUERY_REJECTED"]
+}

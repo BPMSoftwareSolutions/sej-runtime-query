@@ -1,0 +1,8 @@
+{
+  "requestType": "executes-relational-query-request.v1",
+  "requestId": "executes-relational-query-rejects-001",
+  "payload": {
+    "commandText": "SELECT * FROM unavailable",
+    "sources": {}
+  }
+}

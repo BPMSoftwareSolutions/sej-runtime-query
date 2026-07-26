@@ -1,0 +1,23 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-executes-relational-query",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-executes-relational-query-authority",
+      "records": "resolved-relational-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-executes-relational-query",
+      "records": "relational-execution-testimony"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-executes-relational-query-result",
+      "records": "projected-relational-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": ["blocking-finding-observed"]
+}

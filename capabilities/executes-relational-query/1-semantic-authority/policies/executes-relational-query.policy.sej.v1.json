@@ -1,0 +1,15 @@
+{
+  "declarationType": "semantic-policy.v1",
+  "policyId": "executes-relational-query-policy",
+  "successDisposition": "RELATIONAL_QUERY_EXECUTED",
+  "failureDisposition": "RELATIONAL_QUERY_REJECTED",
+  "projectionAuthority": "query-declared-ad-hoc-projection",
+  "sourceAuthority": "caller-supplied-named-row-sources",
+  "supportedStatements": ["SELECT", "WITH"],
+  "supportedJoins": ["INNER", "LEFT", "RIGHT", "FULL", "CROSS"],
+  "supportedClauses": ["WHERE", "GROUP BY", "HAVING", "ORDER BY", "LIMIT", "OFFSET", "DISTINCT"],
+  "supportedAggregates": ["COUNT", "SUM", "AVG", "MIN", "MAX"],
+  "supportedScalarFunctions": ["LOWER", "UPPER", "LENGTH", "COALESCE"],
+  "implicitFallback": "forbidden",
+  "queryRepair": "forbidden"
+}

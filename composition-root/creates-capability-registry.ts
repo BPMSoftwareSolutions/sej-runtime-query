@@ -23,6 +23,7 @@ import { createsDerivesConformanceVectorCandidatesRuntime } from "../capabilitie
 import { createsVerifiesConformanceVectorRuntime } from "../capabilities/verifies-conformance-vector/runtime/typescript/registration/registers-verifies-conformance-vector-authority.js";
 import { createsResolvesKernelCompatibilityRuntime } from "../capabilities/resolves-kernel-compatibility/runtime/typescript/registration/registers-resolves-kernel-compatibility-authority.js";
 import { createsProjectsLanguageDelegationShellRuntime } from "../capabilities/projects-language-delegation-shell/runtime/typescript/registration/registers-projects-language-delegation-shell-authority.js";
+import { createsExecutesRelationalQueryRuntime } from "../capabilities/executes-relational-query/runtime/typescript/registration/registers-executes-relational-query-authority.js";
 import { parsesQueryCommand } from "../capabilities/parses-query-command/runtime/typescript/bodies/parses-query-command.js";
 import { resolvesQuerySource } from "../capabilities/resolves-query-source/runtime/typescript/bodies/resolves-query-source.js";
 import { selectsQueryFacts } from "../capabilities/selects-query-facts/runtime/typescript/bodies/selects-query-facts.js";
@@ -47,6 +48,7 @@ import { derivesConformanceVectorCandidates } from "../capabilities/derives-conf
 import { verifiesConformanceVector } from "../capabilities/verifies-conformance-vector/runtime/typescript/bodies/verifies-conformance-vector.js";
 import { resolvesKernelCompatibility } from "../capabilities/resolves-kernel-compatibility/runtime/typescript/bodies/resolves-kernel-compatibility.js";
 import { projectsLanguageDelegationShell } from "../capabilities/projects-language-delegation-shell/runtime/typescript/bodies/projects-language-delegation-shell.js";
+import { executesRelationalQuery } from "../capabilities/executes-relational-query/runtime/typescript/bodies/executes-relational-query.js";
 import { appliesSemanticProjection } from "../capabilities/applies-semantic-projection/runtime/typescript/bodies/applies-semantic-projection.js";
 import type { CapabilityRuntime } from "./shared/creates-capability-runtime.js";
 
@@ -82,6 +84,7 @@ const runtimeFactories = new Map<string, () => CapabilityRuntime>([
   ["verifies-conformance-vector", createsVerifiesConformanceVectorRuntime],
   ["resolves-kernel-compatibility", createsResolvesKernelCompatibilityRuntime],
   ["projects-language-delegation-shell", createsProjectsLanguageDelegationShellRuntime],
+  ["executes-relational-query", createsExecutesRelationalQueryRuntime],
 ]);
 
 /**
@@ -113,6 +116,7 @@ const capabilityBodies = new Map<string, CapabilityBody>([
   ["verifies-conformance-vector", verifiesConformanceVector as CapabilityBody],
   ["resolves-kernel-compatibility", resolvesKernelCompatibility as CapabilityBody],
   ["projects-language-delegation-shell", projectsLanguageDelegationShell as CapabilityBody],
+  ["executes-relational-query", executesRelationalQuery as CapabilityBody],
   ["applies-semantic-projection", appliesSemanticProjection as CapabilityBody],
 ]);
 

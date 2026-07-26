@@ -166,6 +166,11 @@
       "capabilityId": "projects-language-delegation-shell",
       "path": "capabilities/projects-language-delegation-shell",
       "status": "implemented"
+    },
+    {
+      "capabilityId": "executes-relational-query",
+      "path": "capabilities/executes-relational-query",
+      "status": "implemented"
     }
   ],
   "generatedNotAuthority": [

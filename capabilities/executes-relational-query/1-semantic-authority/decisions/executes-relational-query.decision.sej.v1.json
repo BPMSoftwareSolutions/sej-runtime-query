@@ -1,0 +1,44 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-relational-query-execution-authority",
+  "inputs": ["$.queryParsed", "$.missingSourceCount"],
+  "rules": [
+    {
+      "ruleId": "reject-unparseable-relational-query",
+      "when": {
+        "operator": "falsy",
+        "operand": { "kind": "path", "path": "$.queryParsed" }
+      },
+      "then": "relational-query-unparseable"
+    },
+    {
+      "ruleId": "reject-unavailable-relational-source",
+      "when": {
+        "operator": "greater-than",
+        "left": { "kind": "path", "path": "$.missingSourceCount" },
+        "right": { "kind": "value", "value": 0 }
+      },
+      "then": "relational-query-source-unavailable"
+    },
+    {
+      "ruleId": "execute-authorized-relational-query",
+      "when": {
+        "operator": "all",
+        "predicates": [
+          {
+            "operator": "truthy",
+            "operand": { "kind": "path", "path": "$.queryParsed" }
+          },
+          {
+            "operator": "equals",
+            "left": { "kind": "path", "path": "$.missingSourceCount" },
+            "right": { "kind": "value", "value": 0 }
+          }
+        ]
+      },
+      "then": "execute-relational-query-plan"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

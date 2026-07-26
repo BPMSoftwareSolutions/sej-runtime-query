@@ -1,0 +1,95 @@
+{
+  "receiptType": "executes-relational-query-receipt.v1",
+  "runId": "run-executes-relational-query-accepts-001",
+  "capabilityId": "executes-relational-query",
+  "authorityHash": "sha256:e428b328c499c6d9af218316b2e6eb880534feaf3e3e27a1d58649f4a388d571",
+  "inputHash": "sha256:2f2d2cd744f480826412e97cd415f69a0ad6ac8f728ecfc04f1e16670c679258",
+  "resultHash": "sha256:9b05abe4c0a3f90e8a5962841b8c6f283f5751c79ce827aa8373119cd4baba6d",
+  "decisionId": "resolves-relational-query-execution-authority",
+  "resolvedRule": "execute-authorized-relational-query",
+  "disposition": "RELATIONAL_QUERY_EXECUTED",
+  "findings": [],
+  "result": {
+    "resultType": "executes-relational-query-result.v1",
+    "capabilityId": "executes-relational-query",
+    "value": {
+      "commandText": "WITH paid AS (SELECT customerId, SUM(amount) AS total FROM orders WHERE status = 'paid' GROUP BY customerId) SELECT c.name AS customer, p.total, p.total * 1.1 AS gross FROM customers c LEFT JOIN paid p ON c.id = p.customerId WHERE p.total >= 10 ORDER BY gross DESC",
+      "plan": {
+        "planType": "relational-query-plan.v1",
+        "ctes": {
+          "paid": {
+            "planType": "relational-query-plan.v1",
+            "ctes": {},
+            "from": { "sourceId": "orders", "alias": "orders" },
+            "joins": [],
+            "where": {
+              "kind": "binary",
+              "operator": "equals",
+              "left": { "kind": "reference", "path": ["status"] },
+              "right": { "kind": "literal", "value": "paid" }
+            },
+            "groupBy": [{ "kind": "reference", "path": ["customerId"] }],
+            "selections": [
+              { "expression": { "kind": "reference", "path": ["customerId"] } },
+              {
+                "expression": {
+                  "kind": "call",
+                  "function": "sum",
+                  "arguments": [{ "kind": "reference", "path": ["amount"] }]
+                },
+                "alias": "total"
+              }
+            ],
+            "distinct": false,
+            "orderBy": [],
+            "offset": 0
+          }
+        },
+        "from": { "sourceId": "customers", "alias": "c" },
+        "joins": [
+          {
+            "kind": "left",
+            "source": { "sourceId": "paid", "alias": "p" },
+            "on": {
+              "kind": "binary",
+              "operator": "equals",
+              "left": { "kind": "reference", "path": ["c", "id"] },
+              "right": { "kind": "reference", "path": ["p", "customerId"] }
+            }
+          }
+        ],
+        "where": {
+          "kind": "binary",
+          "operator": "greater-than-or-equal",
+          "left": { "kind": "reference", "path": ["p", "total"] },
+          "right": { "kind": "literal", "value": 10 }
+        },
+        "groupBy": [],
+        "selections": [
+          { "expression": { "kind": "reference", "path": ["c", "name"] }, "alias": "customer" },
+          { "expression": { "kind": "reference", "path": ["p", "total"] } },
+          {
+            "expression": {
+              "kind": "binary",
+              "operator": "multiply",
+              "left": { "kind": "reference", "path": ["p", "total"] },
+              "right": { "kind": "literal", "value": 1.1 }
+            },
+            "alias": "gross"
+          }
+        ],
+        "distinct": false,
+        "orderBy": [
+          {
+            "expression": { "kind": "reference", "path": ["gross"] },
+            "direction": "descending"
+          }
+        ],
+        "offset": 0
+      },
+      "columns": ["customer", "total", "gross"],
+      "rows": [{ "customer": "Ada", "total": 15, "gross": 16.5 }],
+      "rowCount": 1
+    }
+  }
+}

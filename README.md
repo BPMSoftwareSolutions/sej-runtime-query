@@ -29,7 +29,7 @@ Canonical projection receipt
 
 ## Implemented surface
 
-All 25 capabilities are implemented and proven. Each one declares its own
+All 26 capabilities are implemented and proven. Each one declares its own
 kernel-native decision, result projection, concrete contracts, and two accepted
 conformance vectors — one proving the declared success path, one proving
 declared rejection.
@@ -44,7 +44,7 @@ projection-authority resolution; it declares:
 5. A collapsed TypeScript body.
 6. Canonical proof-receipt requirements.
 
-The other 24 seat their own declared authority on a kernel through
+The other 25 seat their own declared authority on a kernel through
 `composition-root/shared/creates-capability-runtime.ts`. Their declared meaning
 is recorded in [architecture/capability-semantics.md](architecture/capability-semantics.md).
 
@@ -117,6 +117,19 @@ npm run check
 npm test
 npm run typecheck
 npm run prove
+```
+
+When the package is installed or linked, run SQL-style queries with the `q` wrapper:
+
+```bash
+npm run build
+q --data examples/relational-demo.sources.json "SELECT c.name, SUM(o.amount) AS total FROM customers c JOIN orders o ON c.id = o.customerId GROUP BY c.name"
+```
+
+Without a global package link, use the equivalent repository-local command:
+
+```bash
+npm run q -- --data examples/relational-demo.sources.json "SELECT * FROM customers"
 ```
 
 `npm run prove` is the full local evidence pass: conformance checks, live integration tests,

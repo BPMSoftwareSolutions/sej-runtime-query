@@ -140,10 +140,13 @@ test("fails closed for invalid inputs, authority mismatch, and workspace escape"
   );
 });
 
-test("an engine with no seated authority rejects rather than inventing behavior", async () => {
+test("the engine invokes declared relational authority without caller-seated packs", async () => {
   const { engine } = startsQueryEngine({ capabilityPacks: [], portAdapters: {} });
-  await assert.rejects(
-    () => engine.invoke({ requestType: "query-command-text.v1", commandText: "SELECT *" }),
-    (error) => error instanceof SemanticKernelError && error.code === "DECLARATION_NOT_FOUND",
-  );
+  const receipt = await engine.invoke({
+    requestType: "executes-relational-query-request.v1",
+    requestId: "engine-relational-query",
+    payload: { commandText: "SELECT 1 AS answer", sources: {} },
+  });
+  assert.equal(receipt.disposition, "RELATIONAL_QUERY_EXECUTED");
+  assert.deepEqual(receipt.result.value.rows, [{ answer: 1 }]);
 });

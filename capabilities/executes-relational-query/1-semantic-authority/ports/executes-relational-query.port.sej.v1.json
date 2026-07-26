@@ -1,0 +1,18 @@
+{
+  "declarationType": "semantic-port-catalog.v1",
+  "portCatalogId": "executes-relational-query-ports",
+  "ports": [
+    {
+      "portId": "observes-relational-query-plan-facts",
+      "effect": "observe",
+      "inputContract": "executes-relational-query.input.v1",
+      "outputContract": "observed-relational-query-plan-facts.v1"
+    },
+    {
+      "portId": "executes-domain-neutral-relational-plan",
+      "effect": "execute",
+      "inputContract": "relational-query-plan.v1",
+      "outputContract": "relational-query-result.v1"
+    }
+  ]
+}

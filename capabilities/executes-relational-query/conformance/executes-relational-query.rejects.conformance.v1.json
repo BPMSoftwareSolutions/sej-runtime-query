@@ -1,0 +1,10 @@
+{
+  "conformanceType": "capability-conformance-vector.v1",
+  "capabilityId": "executes-relational-query",
+  "vectorId": "executes-relational-query-rejects",
+  "status": "accepted",
+  "kernelExecution": "passed",
+  "expectedDisposition": "RELATIONAL_QUERY_REJECTED",
+  "inputFixture": "../proof/fixtures/executes-relational-query.rejects.input.json",
+  "expectedFixture": "../proof/expectations/executes-relational-query.rejects.expected.json"
+}

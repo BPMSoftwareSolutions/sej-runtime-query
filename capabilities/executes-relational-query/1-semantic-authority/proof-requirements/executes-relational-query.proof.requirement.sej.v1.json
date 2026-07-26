@@ -1,0 +1,14 @@
+{
+  "declarationType": "semantic-proof-requirement.v1",
+  "proofRequirementId": "executes-relational-query-proof",
+  "requiredAssertions": [
+    "capability-identity-recorded",
+    "resolved-rule-recorded",
+    "authority-hash-recorded",
+    "input-hash-recorded",
+    "result-hash-recorded",
+    "row-count-recorded",
+    "final-disposition-recorded"
+  ],
+  "declaredDispositions": ["RELATIONAL_QUERY_EXECUTED", "RELATIONAL_QUERY_REJECTED"]
+}
