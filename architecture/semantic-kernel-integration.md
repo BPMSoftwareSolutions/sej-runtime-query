@@ -14,6 +14,11 @@ consumer, imports the query package's public API, and executes the implemented p
 slice. Equivalence to a separately published kernel artifact remains an external promotion
 gate.
 
+Query grammar and relational-plan execution are capability-domain concerns. They
+remain under `capabilities/executes-relational-query`; the semantic kernel must
+not export SQL tokens, relational contracts, joins, grouping, aggregation, or
+query-plan evaluation.
+
 ```text
 Capability body
       |

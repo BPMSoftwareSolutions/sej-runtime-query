@@ -1,15 +1,17 @@
 import {
-  executeRelationalQuery,
   SemanticKernelError,
   type JsonObject,
   type JsonValue,
-  type RelationalExpression,
-  type RelationalJoin,
-  type RelationalOrder,
-  type RelationalQueryPlan,
-  type RelationalSelection,
-  type RelationalSources,
 } from "@deterministic-solutions/semantic-kernel";
+import { executesRelationalQueryPlan } from "./executes-relational-query-plan.js";
+import type {
+  RelationalExpression,
+  RelationalJoin,
+  RelationalOrder,
+  RelationalQueryPlan,
+  RelationalSelection,
+  RelationalSources,
+} from "./relational-query.contract.js";
 import {
   requiresJsonObject,
   requiresRecord,
@@ -85,7 +87,7 @@ export function executesRelationalQueryMechanics(
   decision: JsonValue,
 ): JsonObject {
   const plan = parsesRelationalQuery(requiresString(payload.commandText, "Command text is required."));
-  const queryResult = executeRelationalQuery(plan, readsSources(payload.sources));
+  const queryResult = executesRelationalQueryPlan(plan, readsSources(payload.sources));
   return Object.freeze({ payload, decision, plan, queryResult }) as unknown as JsonObject;
 }
 

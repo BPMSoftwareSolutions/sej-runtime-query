@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:relational-query-plan:v1",
+  "title": "Query-owned relational query plan",
+  "type": "object",
+  "required": [
+    "planType",
+    "ctes",
+    "joins",
+    "groupBy",
+    "selections",
+    "distinct",
+    "orderBy",
+    "offset"
+  ],
+  "properties": {
+    "planType": { "const": "relational-query-plan.v1" },
+    "ctes": {
+      "type": "object",
+      "additionalProperties": { "$ref": "urn:deterministic-solutions:relational-query-plan:v1" }
+    },
+    "from": { "$ref": "#/$defs/source" },
+    "joins": { "type": "array", "items": { "$ref": "#/$defs/join" } },
+    "where": { "$ref": "#/$defs/expression" },
+    "groupBy": { "type": "array", "items": { "$ref": "#/$defs/expression" } },
+    "having": { "$ref": "#/$defs/expression" },
+    "selections": { "type": "array", "items": { "$ref": "#/$defs/selection" } },
+    "distinct": { "type": "boolean" },
+    "orderBy": { "type": "array", "items": { "$ref": "#/$defs/order" } },
+    "offset": { "type": "integer", "minimum": 0 },
+    "limit": { "type": "integer", "minimum": 0 }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["sourceId", "alias"],
+      "properties": {
+        "sourceId": { "type": "string", "minLength": 1 },
+        "alias": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "join": {
+      "type": "object",
+      "required": ["kind", "source"],
+      "properties": {
+        "kind": { "enum": ["inner", "left", "right", "full", "cross"] },
+        "source": { "$ref": "#/$defs/source" },
+        "on": { "$ref": "#/$defs/expression" }
+      },
+      "additionalProperties": false
+    },
+    "selection": {
+      "type": "object",
+      "required": ["expression"],
+      "properties": {
+        "expression": { "$ref": "#/$defs/expression" },
+        "alias": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "order": {
+      "type": "object",
+      "required": ["expression", "direction"],
+      "properties": {
+        "expression": { "$ref": "#/$defs/expression" },
+        "direction": { "enum": ["ascending", "descending"] }
+      },
+      "additionalProperties": false
+    },
+    "expression": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["kind", "value"],
+          "properties": {
+            "kind": { "const": "literal" },
+            "value": {}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["kind", "path"],
+          "properties": {
+            "kind": { "const": "reference" },
+            "path": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "minLength": 1 }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["kind"],
+          "properties": {
+            "kind": { "const": "wildcard" },
+            "qualifier": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["kind", "operator", "operand"],
+          "properties": {
+            "kind": { "const": "unary" },
+            "operator": { "enum": ["not", "negate", "is-null", "is-not-null"] },
+            "operand": { "$ref": "#/$defs/expression" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["kind", "operator", "left", "right"],
+          "properties": {
+            "kind": { "const": "binary" },
+            "operator": {
+              "enum": [
+                "or",
+                "and",
+                "equals",
+                "not-equals",
+                "greater-than",
+                "greater-than-or-equal",
+                "less-than",
+                "less-than-or-equal",
+                "add",
+                "subtract",
+                "multiply",
+                "divide",
+                "modulo",
+                "like",
+                "in"
+              ]
+            },
+            "left": { "$ref": "#/$defs/expression" },
+            "right": { "$ref": "#/$defs/expression" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["kind", "function", "arguments"],
+          "properties": {
+            "kind": { "const": "call" },
+            "function": {
+              "enum": [
+                "count",
+                "sum",
+                "average",
+                "minimum",
+                "maximum",
+                "lower",
+                "upper",
+                "length",
+                "coalesce"
+              ]
+            },
+            "arguments": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/expression" }
+            },
+            "distinct": { "type": "boolean" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["kind", "items"],
+          "properties": {
+            "kind": { "const": "list" },
+            "items": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/expression" }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

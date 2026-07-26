@@ -2,7 +2,7 @@
   "receiptType": "executes-relational-query-receipt.v1",
   "runId": "run-executes-relational-query-rejects-001",
   "capabilityId": "executes-relational-query",
-  "authorityHash": "sha256:e428b328c499c6d9af218316b2e6eb880534feaf3e3e27a1d58649f4a388d571",
+  "authorityHash": "sha256:3a3ae1df0a2c5982493b6c983d255e52c9bbe21cb25f6af9c30fc750fe0eedaf",
   "inputHash": "sha256:03a5b9958c5380b651d4a4b388a7872502744c6ba962f81b593f7077baa717ba",
   "resultHash": "sha256:388f5513e2eec3252d3bfc3aa4ff5f683f089f37c121f8b1b22d77f95c1db773",
   "decisionId": "resolves-relational-query-execution-authority",

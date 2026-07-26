@@ -19,7 +19,6 @@
   "requiredKernelPrimitives": [
     "decision.resolve.v1",
     "projection.apply.v1",
-    "relational-query.execute.v1",
     "contract.validate.v1",
     "testimony.record.v1"
   ],

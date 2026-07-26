@@ -4,6 +4,7 @@ import decision from "../../../1-semantic-authority/decisions/executes-relationa
 import policy from "../../../1-semantic-authority/policies/executes-relational-query.policy.sej.v1.json" with { type: "json" };
 import resultProjection from "../../../2-semantic-projections/projects-executes-relational-query-result.sej.v1.json" with { type: "json" };
 import inputSchema from "../../../contracts/executes-relational-query.input.schema.v1.json" with { type: "json" };
+import relationalQueryPlanSchema from "../../../contracts/relational-query-plan.schema.v1.json" with { type: "json" };
 import receiptSchema from "../../../contracts/executes-relational-query.receipt.schema.v1.json" with { type: "json" };
 import resultSchema from "../../../contracts/executes-relational-query.result.schema.v1.json" with { type: "json" };
 import {
@@ -34,6 +35,7 @@ export function createsExecutesRelationalQueryRuntime(): CapabilityRuntime {
     inputSchema,
     resultSchema,
     receiptSchema,
+    contractSchemas: [relationalQueryPlanSchema],
     successDisposition: policy.successDisposition,
     failureDisposition: policy.failureDisposition,
     rejectionRules,

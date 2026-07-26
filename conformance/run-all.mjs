@@ -10,6 +10,7 @@ const checks = [
   "scripts/check-json-artifacts.mjs",
   "scripts/check-capability-promotion.mjs",
   "scripts/check-workspace-registry-scaffold.mjs",
+  "scripts/check-kernel-domain-neutrality.mjs",
 ];
 
 let failed = false;

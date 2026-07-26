@@ -36,6 +36,7 @@ export type CapabilityAuthorityDeclarations = Readonly<{
   inputSchema: unknown;
   resultSchema: unknown;
   receiptSchema: unknown;
+  contractSchemas?: readonly unknown[];
   successDisposition: string;
   failureDisposition: string;
   rejectionRules: readonly string[];
@@ -62,7 +63,7 @@ export function createsCapabilityRuntime(
   const resultProjection = requiresProjectionDeclaration(declarations.resultProjection);
   kernel.registerCapabilityPacks([{ decisions: [decision], projections: [resultProjection] }]);
 
-  const validator = createsJsonSchemaValidator();
+  const validator = createsJsonSchemaValidator(declarations.contractSchemas);
   const authorityHash = computesCanonicalJsonHash(declarations.capabilityAuthority);
   const rejectionRules = new Set(declarations.rejectionRules);
 

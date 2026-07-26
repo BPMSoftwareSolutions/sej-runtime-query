@@ -9,7 +9,7 @@
       "outputContract": "observed-relational-query-plan-facts.v1"
     },
     {
-      "portId": "executes-domain-neutral-relational-plan",
+      "portId": "executes-query-owned-relational-plan",
       "effect": "execute",
       "inputContract": "relational-query-plan.v1",
       "outputContract": "relational-query-result.v1"
