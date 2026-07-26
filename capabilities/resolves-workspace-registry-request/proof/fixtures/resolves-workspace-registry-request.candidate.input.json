@@ -1,0 +1,10 @@
+{
+  "requestType": "resolves-workspace-registry-request-request.v1",
+  "requestId": "resolves-workspace-registry-request-candidate-001",
+  "payload": {
+    "workspaceRoot": ".",
+    "workspaceName": "candidate-workspace",
+    "outputPath": ".sej-query/registry.v1.json",
+    "persistenceMode": "persist"
+  }
+}

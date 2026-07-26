@@ -1,5 +1,12 @@
 # Capability Catalog
 
+> This document preserves the original product and capability baseline. Its
+> posture column records the initial scaffold posture, not current promotion
+> state. The authoritative current state is
+> `architecture/query-engine.body.contract.v1.json`. The drafted
+> workspace-registry implementation family is documented in
+> `architecture/workspace-registry-capability-family.ascii.md`.
+
 | # | Capability | Owned outcome | Posture |
 |---:|---|---|---|
 | — | `parses-query-command` | Produce one canonical query command from submitted query text. | drafted |

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:classifies-workspace-json-document:receipt:v1",
+  "title": "Classify workspace JSON document receipt",
+  "type": "object",
+  "required": [
+    "receiptType",
+    "runId",
+    "capabilityId",
+    "authorityHash",
+    "inputHash",
+    "resultHash",
+    "decisionId",
+    "disposition",
+    "findings"
+  ],
+  "properties": {
+    "receiptType": {
+      "const": "classifies-workspace-json-document-receipt.v1"
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capabilityId": {
+      "const": "classifies-workspace-json-document"
+    },
+    "authorityHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "inputHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "resultHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "decisionId": {
+      "const": "resolves-workspace-document-classification"
+    },
+    "resolvedRule": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "WORKSPACE_JSON_DOCUMENT_CLASSIFIED",
+        "WORKSPACE_JSON_DOCUMENT_INDETERMINATE"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "result": {
+      "$ref": "urn:deterministic-solutions:classifies-workspace-json-document:result:v1"
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

@@ -1,0 +1,18 @@
+{
+  "scaffoldType": "semantic-effect-catalog-scaffold.v1",
+  "declarationType": "semantic-effect-catalog.v1",
+  "status": "drafted",
+  "effectCatalogId": "persists-workspace-registry-snapshot-effects",
+  "effects": [
+    {
+      "effect": "write-file-system",
+      "authorization": "must-be-resolved-before-invocation",
+      "testimony": "required"
+    },
+    {
+      "effect": "read-file-system",
+      "authorization": "must-be-resolved-before-invocation",
+      "testimony": "required"
+    }
+  ]
+}

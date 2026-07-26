@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:records-workspace-registry-provenance:receipt:v1",
+  "title": "Record workspace registry provenance receipt",
+  "type": "object",
+  "required": [
+    "receiptType",
+    "runId",
+    "capabilityId",
+    "authorityHash",
+    "inputHash",
+    "resultHash",
+    "decisionId",
+    "disposition",
+    "findings"
+  ],
+  "properties": {
+    "receiptType": {
+      "const": "records-workspace-registry-provenance-receipt.v1"
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capabilityId": {
+      "const": "records-workspace-registry-provenance"
+    },
+    "authorityHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "inputHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "resultHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "decisionId": {
+      "const": "resolves-workspace-provenance-disposition"
+    },
+    "resolvedRule": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "WORKSPACE_REGISTRY_PROVENANCE_RECORDED",
+        "WORKSPACE_REGISTRY_PROVENANCE_INCOMPLETE"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "result": {
+      "$ref": "urn:deterministic-solutions:records-workspace-registry-provenance:result:v1"
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

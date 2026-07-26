@@ -1,0 +1,36 @@
+{
+  "scaffoldType": "semantic-execution-model-scaffold.v1",
+  "declarationType": "semantic-execution-model.v1",
+  "status": "drafted",
+  "executionModelId": "executes-resolves-workspace-registry-request",
+  "steps": [
+    {
+      "sequence": 1,
+      "operation": "invoke",
+      "semanticIdentity": "resolves-resolves-workspace-registry-request-authority",
+      "input": "context",
+      "binds": "authority"
+    },
+    {
+      "sequence": 2,
+      "operation": "invoke",
+      "semanticIdentity": "executes-resolved-resolves-workspace-registry-request",
+      "input": "authority",
+      "binds": "execution"
+    },
+    {
+      "sequence": 3,
+      "operation": "project",
+      "semanticIdentity": "projects-resolves-workspace-registry-request-receipt",
+      "input": "execution",
+      "returns": true
+    }
+  ],
+  "controlFlowAuthority": [],
+  "completionRequirements": [
+    "bind-resolved-authority-contract",
+    "bind-declared-ports",
+    "bind-failure-policy",
+    "bind-proof-evaluation"
+  ]
+}

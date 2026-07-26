@@ -1,0 +1,13 @@
+{
+  "scaffoldType": "semantic-effect-catalog-scaffold.v1",
+  "declarationType": "semantic-effect-catalog.v1",
+  "status": "drafted",
+  "effectCatalogId": "discovers-workspace-json-documents-effects",
+  "effects": [
+    {
+      "effect": "read-file-system",
+      "authorization": "must-be-resolved-before-invocation",
+      "testimony": "required"
+    }
+  ]
+}

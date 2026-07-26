@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:discovers-workspace-json-documents:input:v1",
+  "title": "Discover workspace JSON documents input",
+  "type": "object",
+  "required": [
+    "requestType",
+    "requestId",
+    "payload"
+  ],
+  "properties": {
+    "requestType": {
+      "const": "discovers-workspace-json-documents-request.v1"
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "workspaceRoot",
+        "excludedRelativePaths"
+      ],
+      "properties": {
+        "workspaceRoot": {
+          "type": "string",
+          "minLength": 1
+        },
+        "excludedRelativePaths": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

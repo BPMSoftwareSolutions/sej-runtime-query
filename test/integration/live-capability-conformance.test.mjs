@@ -14,13 +14,15 @@ const capabilityIds = listsImplementedCapabilities();
 const reads = (capabilityId, relative) =>
   JSON.parse(fs.readFileSync(path.join("capabilities", capabilityId, relative), "utf8"));
 
-test("every drafted capability has been promoted to a live implementation", () => {
+test("live capabilities remain implemented while workspace-registry scaffolds remain explicitly drafted", () => {
   const contract = JSON.parse(fs.readFileSync(path.join("architecture", "query-engine.body.contract.v1.json"), "utf8"));
   const implemented = contract.capabilities.filter((entry) => entry.status === "implemented").map((entry) => entry.capabilityId);
-  const drafted = contract.capabilities.filter((entry) => entry.status === "drafted");
+  const drafted = contract.capabilities.filter((entry) => entry.status === "drafted").map((entry) => entry.capabilityId).sort();
+  const scaffold = JSON.parse(fs.readFileSync(path.join("architecture", "workspace-registry-capability-family.scaffold.v1.json"), "utf8"));
+  const scaffoldIds = scaffold.capabilities.map((entry) => entry.capabilityId).sort();
 
-  assert.equal(drafted.length, 0, `capabilities still drafted: ${drafted.map((entry) => entry.capabilityId).join(", ")}`);
   assert.equal(implemented.length, 26);
+  assert.deepEqual(drafted, scaffoldIds);
   // 25 seat their own authority; applies-semantic-projection resolves external authority.
   assert.equal(capabilityIds.length, 25);
 });

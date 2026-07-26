@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:classifies-workspace-json-document:input:v1",
+  "title": "Classify workspace JSON document input",
+  "type": "object",
+  "required": [
+    "requestType",
+    "requestId",
+    "payload"
+  ],
+  "properties": {
+    "requestType": {
+      "const": "classifies-workspace-json-document-request.v1"
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "documentObservation",
+        "supportedSchemaFamilies"
+      ],
+      "properties": {
+        "documentObservation": {
+          "type": "object"
+        },
+        "supportedSchemaFamilies": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

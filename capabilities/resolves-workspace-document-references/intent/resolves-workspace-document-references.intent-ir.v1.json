@@ -1,0 +1,20 @@
+{
+  "scaffoldType": "capability-intent-scaffold.v1",
+  "capabilityId": "resolves-workspace-document-references",
+  "status": "drafted",
+  "title": "Resolve workspace document references",
+  "purpose": "Resolve declared local schema references and dependency evidence across classified workspace documents.",
+  "actor": "workspace-registry-builder",
+  "trigger": "the classified workspace document collection is available",
+  "desiredOutcome": "stable reference evidence and dependency candidate roles are projected",
+  "constraints": [
+    "semantic-authority-is-the-source-of-truth",
+    "capability-body-is-projected-and-linear",
+    "mechanical-effects-occur-only-through-declared-ports",
+    "no-promotion-before-live-kernel-proof"
+  ],
+  "featureIds": [
+    "resolves-workspace-document-references"
+  ],
+  "sourceEvidence": "legacy-workspace-registry-behavior"
+}

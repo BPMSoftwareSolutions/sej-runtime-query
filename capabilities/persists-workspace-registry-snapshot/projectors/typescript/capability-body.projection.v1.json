@@ -1,0 +1,12 @@
+{
+  "projectionType": "typescript-linear-capability-body-projection.v1",
+  "status": "drafted",
+  "capabilityId": "persists-workspace-registry-snapshot",
+  "sourceExecutionModel": "../../3-semantic-execution-models/persists-workspace-registry-snapshot.execution.sej.v1.json",
+  "targetBody": "../../runtime/typescript/bodies/persists-workspace-registry-snapshot.ts",
+  "targetContextType": "../../runtime/typescript/types/persists-workspace-registry-snapshot-context.type.ts",
+  "targetRegistration": "../../runtime/typescript/registration/registers-persists-workspace-registry-snapshot-authority.ts",
+  "functionName": "persistsWorkspaceRegistrySnapshot",
+  "contextTypeName": "PersistsWorkspaceRegistrySnapshotContext",
+  "generatedBodyPolicy": "resolve-execute-project-return-only"
+}

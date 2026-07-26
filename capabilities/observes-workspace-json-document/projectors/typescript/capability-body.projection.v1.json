@@ -1,0 +1,12 @@
+{
+  "projectionType": "typescript-linear-capability-body-projection.v1",
+  "status": "drafted",
+  "capabilityId": "observes-workspace-json-document",
+  "sourceExecutionModel": "../../3-semantic-execution-models/observes-workspace-json-document.execution.sej.v1.json",
+  "targetBody": "../../runtime/typescript/bodies/observes-workspace-json-document.ts",
+  "targetContextType": "../../runtime/typescript/types/observes-workspace-json-document-context.type.ts",
+  "targetRegistration": "../../runtime/typescript/registration/registers-observes-workspace-json-document-authority.ts",
+  "functionName": "observesWorkspaceJsonDocument",
+  "contextTypeName": "ObservesWorkspaceJsonDocumentContext",
+  "generatedBodyPolicy": "resolve-execute-project-return-only"
+}

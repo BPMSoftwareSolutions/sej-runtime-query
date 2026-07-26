@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:persists-workspace-registry-snapshot:result:v1",
+  "title": "Persist workspace registry snapshot result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "persists-workspace-registry-snapshot-result.v1"
+    },
+    "capabilityId": {
+      "const": "persists-workspace-registry-snapshot"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "writtenPath",
+        "observedRecordHash"
+      ],
+      "properties": {
+        "writtenPath": {},
+        "observedRecordHash": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

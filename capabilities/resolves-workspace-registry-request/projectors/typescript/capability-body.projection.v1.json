@@ -1,0 +1,12 @@
+{
+  "projectionType": "typescript-linear-capability-body-projection.v1",
+  "status": "drafted",
+  "capabilityId": "resolves-workspace-registry-request",
+  "sourceExecutionModel": "../../3-semantic-execution-models/resolves-workspace-registry-request.execution.sej.v1.json",
+  "targetBody": "../../runtime/typescript/bodies/resolves-workspace-registry-request.ts",
+  "targetContextType": "../../runtime/typescript/types/resolves-workspace-registry-request-context.type.ts",
+  "targetRegistration": "../../runtime/typescript/registration/registers-resolves-workspace-registry-request-authority.ts",
+  "functionName": "resolvesWorkspaceRegistryRequest",
+  "contextTypeName": "ResolvesWorkspaceRegistryRequestContext",
+  "generatedBodyPolicy": "resolve-execute-project-return-only"
+}

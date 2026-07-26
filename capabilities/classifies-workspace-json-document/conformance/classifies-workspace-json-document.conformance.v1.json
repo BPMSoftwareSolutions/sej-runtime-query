@@ -1,0 +1,16 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "classifies-workspace-json-document-scaffolded-flow",
+  "capabilityId": "classifies-workspace-json-document",
+  "status": "candidate",
+  "inputFixture": "../proof/fixtures/classifies-workspace-json-document.candidate.input.json",
+  "expectedFixture": "../proof/expectations/classifies-workspace-json-document.candidate.expected.json",
+  "expectedDisposition": "WORKSPACE_JSON_DOCUMENT_CLASSIFIED",
+  "kernelExecution": "not-evaluated",
+  "promotionBlockers": [
+    "semantic-decision-not-authored",
+    "semantic-projections-not-authored",
+    "mechanical-adapters-not-seated",
+    "live-kernel-proof-not-recorded"
+  ]
+}

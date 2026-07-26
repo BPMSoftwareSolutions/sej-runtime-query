@@ -1,0 +1,37 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "records-workspace-registry-provenance",
+  "status": "drafted",
+  "promotionDisposition": "not-evaluated",
+  "purpose": "Record reproducible workspace snapshot identity and available source-control testimony for one registry build.",
+  "owns": [
+    "workspace-snapshot-hash",
+    "source-control-observation",
+    "producer-identity",
+    "provenance-projection"
+  ],
+  "mustNotOwn": [
+    "document-classification",
+    "registry-summary",
+    "persistence-authorization"
+  ],
+  "publicOperation": "records-workspace-registry-provenance",
+  "requiredKernelPrimitives": [
+    "contract.validate.v1",
+    "decision.resolve.v1",
+    "projection.apply.v1",
+    "execution.sequence.v1",
+    "testimony.record.v1",
+    "port.invoke.v1"
+  ],
+  "declaredDecision": "resolves-workspace-provenance-disposition",
+  "declaredResultProjection": "projects-records-workspace-registry-provenance-result",
+  "declaredReceiptProjection": "projects-records-workspace-registry-provenance-receipt",
+  "declaredDispositions": [
+    "WORKSPACE_REGISTRY_PROVENANCE_RECORDED",
+    "WORKSPACE_REGISTRY_PROVENANCE_INCOMPLETE"
+  ],
+  "dependencies": [
+    "resolves-workspace-document-references"
+  ]
+}

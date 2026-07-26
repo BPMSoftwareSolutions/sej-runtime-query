@@ -1,0 +1,9 @@
+{
+  "requestType": "observes-workspace-json-document-request.v1",
+  "requestId": "observes-workspace-json-document-candidate-001",
+  "payload": {
+    "workspaceRoot": ".",
+    "relativePath": "contracts/candidate.json",
+    "maximumReadBytes": 1048576
+  }
+}

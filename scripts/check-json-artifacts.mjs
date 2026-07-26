@@ -32,6 +32,7 @@ const schemas = [...documents].filter(([file, document]) =>
   file.endsWith(".schema.v1.json") || document?.$schema !== undefined || document?.$ref !== undefined);
 const ajv = new Ajv2020({ allErrors: true, strict: true });
 ajv.addKeyword({ keyword: "x-canonicalReceiptSchema", schemaType: "string" });
+ajv.addKeyword({ keyword: "x-scaffold-status", schemaType: "string" });
 
 for (const [file, schema] of schemas.filter(([, candidate]) => typeof candidate?.$id === "string")) {
   try {

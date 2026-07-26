@@ -1,0 +1,7 @@
+{
+  "scaffoldType": "semantic-port-catalog-scaffold.v1",
+  "declarationType": "semantic-port-catalog.v1",
+  "status": "drafted",
+  "portCatalogId": "summarizes-workspace-registry-ports",
+  "ports": []
+}

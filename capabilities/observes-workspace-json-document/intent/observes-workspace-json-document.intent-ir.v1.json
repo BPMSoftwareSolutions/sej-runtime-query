@@ -1,0 +1,20 @@
+{
+  "scaffoldType": "capability-intent-scaffold.v1",
+  "capabilityId": "observes-workspace-json-document",
+  "status": "drafted",
+  "title": "Observe workspace JSON document",
+  "purpose": "Read one authorized workspace JSON document and report content, parse, and hash observations without classification.",
+  "actor": "workspace-registry-builder",
+  "trigger": "one discovered workspace JSON path is submitted",
+  "desiredOutcome": "one immutable document observation is produced",
+  "constraints": [
+    "semantic-authority-is-the-source-of-truth",
+    "capability-body-is-projected-and-linear",
+    "mechanical-effects-occur-only-through-declared-ports",
+    "no-promotion-before-live-kernel-proof"
+  ],
+  "featureIds": [
+    "observes-workspace-json-document"
+  ],
+  "sourceEvidence": "legacy-workspace-registry-behavior"
+}

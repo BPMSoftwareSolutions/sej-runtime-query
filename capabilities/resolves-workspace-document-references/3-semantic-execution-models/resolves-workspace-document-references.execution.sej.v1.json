@@ -1,0 +1,38 @@
+{
+  "scaffoldType": "semantic-execution-model-scaffold.v1",
+  "declarationType": "semantic-execution-model.v1",
+  "status": "drafted",
+  "executionModelId": "executes-resolves-workspace-document-references",
+  "steps": [
+    {
+      "sequence": 1,
+      "operation": "invoke",
+      "semanticIdentity": "resolves-resolves-workspace-document-references-authority",
+      "input": "context",
+      "binds": "authority"
+    },
+    {
+      "sequence": 2,
+      "operation": "invoke",
+      "semanticIdentity": "executes-resolved-resolves-workspace-document-references",
+      "input": "authority",
+      "binds": "execution"
+    },
+    {
+      "sequence": 3,
+      "operation": "project",
+      "semanticIdentity": "projects-resolves-workspace-document-references-receipt",
+      "input": "execution",
+      "returns": true
+    }
+  ],
+  "controlFlowAuthority": [
+    "resolves-workspace-document-references.iteration.sej.v1.json"
+  ],
+  "completionRequirements": [
+    "bind-resolved-authority-contract",
+    "bind-declared-ports",
+    "bind-failure-policy",
+    "bind-proof-evaluation"
+  ]
+}

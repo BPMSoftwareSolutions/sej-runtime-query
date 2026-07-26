@@ -1,0 +1,19 @@
+{
+  "scaffoldType": "semantic-projection-scaffold.v1",
+  "declarationType": "projection.v1",
+  "status": "drafted",
+  "projectionId": "projects-records-workspace-registry-provenance-receipt",
+  "accepts": {
+    "contractId": "executed-records-workspace-registry-provenance.v1"
+  },
+  "produces": {
+    "contractId": "records-workspace-registry-provenance-receipt.v1"
+  },
+  "expression": null,
+  "completionRequirements": [
+    "declare-receipt-field-mappings",
+    "include-required-proof-hashes",
+    "include-observed-findings",
+    "execute-through-kernel-projection"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:records-workspace-registry-provenance:resolved-authority:v1",
+  "title": "Record workspace registry provenance resolved authority",
+  "type": "object",
+  "required": [
+    "authorityType",
+    "capabilityId",
+    "decisionId",
+    "resolvedDisposition",
+    "operations"
+  ],
+  "properties": {
+    "authorityType": {
+      "const": "resolved-records-workspace-registry-provenance-authority.v1"
+    },
+    "capabilityId": {
+      "const": "records-workspace-registry-provenance"
+    },
+    "decisionId": {
+      "const": "resolves-workspace-provenance-disposition"
+    },
+    "resolvedDisposition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sequence",
+          "semanticIdentity"
+        ],
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "semanticIdentity": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

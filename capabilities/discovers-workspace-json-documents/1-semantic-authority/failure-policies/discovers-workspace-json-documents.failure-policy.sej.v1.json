@@ -1,0 +1,13 @@
+{
+  "scaffoldType": "semantic-failure-policy-scaffold.v1",
+  "declarationType": "semantic-failure-policy.v1",
+  "status": "drafted",
+  "failurePolicyId": "discovers-workspace-json-documents-failure-policy",
+  "classifications": [],
+  "unclassifiedFailureDisposition": "WORKSPACE_JSON_DISCOVERY_FAILED",
+  "completionRequirements": [
+    "declare-mechanical-failure-observations",
+    "declare-semantic-failure-classifications",
+    "declare-every-terminal-disposition"
+  ]
+}

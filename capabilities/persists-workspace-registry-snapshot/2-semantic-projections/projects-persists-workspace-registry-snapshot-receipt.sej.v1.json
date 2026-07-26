@@ -1,0 +1,19 @@
+{
+  "scaffoldType": "semantic-projection-scaffold.v1",
+  "declarationType": "projection.v1",
+  "status": "drafted",
+  "projectionId": "projects-persists-workspace-registry-snapshot-receipt",
+  "accepts": {
+    "contractId": "executed-persists-workspace-registry-snapshot.v1"
+  },
+  "produces": {
+    "contractId": "persists-workspace-registry-snapshot-receipt.v1"
+  },
+  "expression": null,
+  "completionRequirements": [
+    "declare-receipt-field-mappings",
+    "include-required-proof-hashes",
+    "include-observed-findings",
+    "execute-through-kernel-projection"
+  ]
+}

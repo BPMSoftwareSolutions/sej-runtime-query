@@ -1,0 +1,14 @@
+{
+  "scaffoldType": "canonicalization-authority-scaffold.v1",
+  "canonicalizationId": "summarizes-workspace-registry-canonicalization",
+  "status": "drafted",
+  "objectKeyOrder": "ordinal",
+  "collectionOrder": "must-be-declared-by-semantic-authority",
+  "hashAlgorithm": "sha256",
+  "excludedFields": [],
+  "completionRequirements": [
+    "declare-all-order-sensitive-collections",
+    "prove-root-independent-relative-paths",
+    "prove-replay-equivalence"
+  ]
+}

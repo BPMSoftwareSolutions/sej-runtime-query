@@ -1,0 +1,20 @@
+{
+  "scaffoldType": "capability-intent-scaffold.v1",
+  "capabilityId": "classifies-workspace-json-document",
+  "status": "drafted",
+  "title": "Classify workspace JSON document",
+  "purpose": "Resolve document kind, SEJ classification, schema evidence, candidate roles, and semantic diagnostics from one document observation.",
+  "actor": "workspace-registry-builder",
+  "trigger": "one observed workspace JSON document is submitted",
+  "desiredOutcome": "one semantically classified registry document is projected",
+  "constraints": [
+    "semantic-authority-is-the-source-of-truth",
+    "capability-body-is-projected-and-linear",
+    "mechanical-effects-occur-only-through-declared-ports",
+    "no-promotion-before-live-kernel-proof"
+  ],
+  "featureIds": [
+    "classifies-workspace-json-document"
+  ],
+  "sourceEvidence": "legacy-workspace-registry-behavior"
+}

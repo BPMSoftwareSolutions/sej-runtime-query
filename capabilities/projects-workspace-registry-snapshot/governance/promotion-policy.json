@@ -1,0 +1,22 @@
+{
+  "policyType": "capability-promotion-policy.v1",
+  "capabilityId": "projects-workspace-registry-snapshot",
+  "currentStatus": "drafted",
+  "requiredGates": [
+    "intent",
+    "scenario",
+    "boundary",
+    "semantic",
+    "kernel",
+    "body",
+    "adapter",
+    "contract",
+    "proof",
+    "replay",
+    "portability",
+    "composition",
+    "mutation"
+  ],
+  "promotionRequiresObservedKernelReceipt": true,
+  "scaffoldMayClaimConformancePassed": false
+}

@@ -1,0 +1,37 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "persists-workspace-registry-snapshot",
+  "status": "drafted",
+  "promotionDisposition": "not-evaluated",
+  "purpose": "Persist one authorized workspace registry snapshot atomically without exposing a partial replacement.",
+  "owns": [
+    "atomic-registry-persistence",
+    "temporary-artifact-authority",
+    "replacement-verification",
+    "write-receipt"
+  ],
+  "mustNotOwn": [
+    "registry-dto-construction",
+    "classification-policy",
+    "output-path-selection"
+  ],
+  "publicOperation": "persists-workspace-registry-snapshot",
+  "requiredKernelPrimitives": [
+    "contract.validate.v1",
+    "decision.resolve.v1",
+    "projection.apply.v1",
+    "execution.sequence.v1",
+    "testimony.record.v1",
+    "port.invoke.v1"
+  ],
+  "declaredDecision": "resolves-workspace-registry-persistence-disposition",
+  "declaredResultProjection": "projects-persists-workspace-registry-snapshot-result",
+  "declaredReceiptProjection": "projects-persists-workspace-registry-snapshot-receipt",
+  "declaredDispositions": [
+    "WORKSPACE_REGISTRY_SNAPSHOT_PERSISTED",
+    "WORKSPACE_REGISTRY_SNAPSHOT_NOT_PERSISTED"
+  ],
+  "dependencies": [
+    "projects-workspace-registry-snapshot"
+  ]
+}

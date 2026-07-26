@@ -1,0 +1,12 @@
+{
+  "projectionType": "typescript-linear-capability-body-projection.v1",
+  "status": "drafted",
+  "capabilityId": "classifies-workspace-json-document",
+  "sourceExecutionModel": "../../3-semantic-execution-models/classifies-workspace-json-document.execution.sej.v1.json",
+  "targetBody": "../../runtime/typescript/bodies/classifies-workspace-json-document.ts",
+  "targetContextType": "../../runtime/typescript/types/classifies-workspace-json-document-context.type.ts",
+  "targetRegistration": "../../runtime/typescript/registration/registers-classifies-workspace-json-document-authority.ts",
+  "functionName": "classifiesWorkspaceJsonDocument",
+  "contextTypeName": "ClassifiesWorkspaceJsonDocumentContext",
+  "generatedBodyPolicy": "resolve-execute-project-return-only"
+}

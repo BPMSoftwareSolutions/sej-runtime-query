@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:observes-workspace-json-document:port:reads-workspace-document-content:input:v1",
+  "title": "reads-workspace-document-content input",
+  "type": "object",
+  "required": [
+    "portRequestType",
+    "operationId",
+    "authority"
+  ],
+  "properties": {
+    "portRequestType": {
+      "const": "reads-workspace-document-content-request.v1"
+    },
+    "operationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

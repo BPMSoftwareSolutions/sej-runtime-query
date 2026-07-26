@@ -1,0 +1,16 @@
+{
+  "scaffoldType": "semantic-decision-scaffold.v1",
+  "declarationType": "decision.v1",
+  "status": "drafted",
+  "decisionId": "resolves-workspace-snapshot-projection-disposition",
+  "inputs": [],
+  "rules": [],
+  "noMatchDisposition": "reject-unresolved-scaffold",
+  "implicitFallback": "forbidden",
+  "completionRequirements": [
+    "declare-observation-inputs",
+    "declare-every-authorized-and-rejected-rule",
+    "declare-no-match-disposition",
+    "prove-rule-order-and-ambiguity-posture"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "projects-workspace-registry-snapshot",
+  "status": "drafted",
+  "promotionDisposition": "not-evaluated",
+  "purpose": "Project the complete canonical workspace registry DTO and its record hash from resolved registry evidence.",
+  "owns": [
+    "workspace-registry-dto",
+    "registry-record-hash",
+    "registry-schema-version",
+    "canonical-document-order"
+  ],
+  "mustNotOwn": [
+    "filesystem-discovery",
+    "document-classification",
+    "registry-write-mechanics"
+  ],
+  "publicOperation": "projects-workspace-registry-snapshot",
+  "requiredKernelPrimitives": [
+    "contract.validate.v1",
+    "decision.resolve.v1",
+    "projection.apply.v1",
+    "execution.sequence.v1",
+    "testimony.record.v1",
+    "port.invoke.v1"
+  ],
+  "declaredDecision": "resolves-workspace-snapshot-projection-disposition",
+  "declaredResultProjection": "projects-projects-workspace-registry-snapshot-result",
+  "declaredReceiptProjection": "projects-projects-workspace-registry-snapshot-receipt",
+  "declaredDispositions": [
+    "WORKSPACE_REGISTRY_SNAPSHOT_PROJECTED",
+    "WORKSPACE_REGISTRY_SNAPSHOT_INVALID"
+  ],
+  "dependencies": [
+    "records-workspace-registry-provenance",
+    "summarizes-workspace-registry"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:projects-workspace-registry-snapshot:port:computes-workspace-registry-record-hash:input:v1",
+  "title": "computes-workspace-registry-record-hash input",
+  "type": "object",
+  "required": [
+    "portRequestType",
+    "operationId",
+    "authority"
+  ],
+  "properties": {
+    "portRequestType": {
+      "const": "computes-workspace-registry-record-hash-request.v1"
+    },
+    "operationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

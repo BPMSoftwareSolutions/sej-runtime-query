@@ -1,0 +1,469 @@
+{
+  "scaffoldType": "workspace-registry-capability-family-scaffold.v1",
+  "familyId": "workspace-registry",
+  "status": "drafted",
+  "sourceEvidence": {
+    "system": "legacy-sej-query-engine",
+    "feature": "workspace-registry",
+    "admissionPosture": "behavioral-evidence-not-canonical-authority"
+  },
+  "governingStandards": [
+    "semantic-kernel-software-delivery-standard",
+    "deterministic-micro-capability-engineering-standard",
+    "four-layer-discipline"
+  ],
+  "projectionPolicy": {
+    "bodyShape": "resolve-execute-project-return",
+    "bodySource": "semantic-execution-model",
+    "handAuthoredBodies": "forbidden",
+    "domainDecisionsBelowProjectionBoundary": "forbidden",
+    "authoredDtoStitchingBelowProjectionBoundary": "forbidden"
+  },
+  "capabilities": [
+    {
+      "capabilityId": "resolves-workspace-registry-request",
+      "title": "Resolve workspace registry request",
+      "purpose": "Resolve the canonical workspace root, workspace identity, output authority, and output exclusion for one registry build.",
+      "actor": "authorized-registry-caller",
+      "trigger": "a workspace registry request is submitted",
+      "desiredOutcome": "one immutable workspace registry request authority is resolved",
+      "owns": [
+        "workspace-root-authority",
+        "workspace-name-authority",
+        "registry-output-authority",
+        "registry-output-exclusion"
+      ],
+      "mustNotOwn": [
+        "directory-enumeration",
+        "document-classification",
+        "registry-persistence-mechanics"
+      ],
+      "decisionId": "resolves-workspace-registry-request-disposition",
+      "successDisposition": "WORKSPACE_REGISTRY_REQUEST_RESOLVED",
+      "failureDisposition": "WORKSPACE_REGISTRY_REQUEST_REJECTED",
+      "requestFields": [
+        { "name": "workspaceRoot", "type": "string", "required": true },
+        { "name": "workspaceName", "type": "string", "required": false },
+        { "name": "outputPath", "type": "string", "required": false },
+        { "name": "persistenceMode", "type": "string", "required": true }
+      ],
+      "resultFields": [
+        "resolvedWorkspaceRoot",
+        "resolvedWorkspaceName",
+        "resolvedOutputPath",
+        "excludedRelativePaths"
+      ],
+      "ports": [
+        {
+          "portId": "observes-workspace-root",
+          "effect": "read-file-system",
+          "purpose": "Observe canonical path and directory accessibility without assigning a disposition."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "capabilityId": "discovers-workspace-json-documents",
+      "title": "Discover workspace JSON documents",
+      "purpose": "Discover JSON document candidates recursively beneath one authorized workspace root without escaping through symbolic links.",
+      "actor": "workspace-registry-builder",
+      "trigger": "resolved workspace discovery authority is available",
+      "desiredOutcome": "one deterministic ordered collection of JSON document paths is observed",
+      "owns": [
+        "recursive-json-discovery",
+        "symbolic-link-boundary-observation",
+        "output-artifact-exclusion",
+        "ordinal-path-order"
+      ],
+      "mustNotOwn": [
+        "json-parsing",
+        "sej-classification",
+        "registry-dto-construction"
+      ],
+      "decisionId": "resolves-workspace-discovery-disposition",
+      "successDisposition": "WORKSPACE_JSON_DOCUMENTS_DISCOVERED",
+      "failureDisposition": "WORKSPACE_JSON_DISCOVERY_FAILED",
+      "requestFields": [
+        { "name": "workspaceRoot", "type": "string", "required": true },
+        { "name": "excludedRelativePaths", "type": "array", "required": true }
+      ],
+      "resultFields": [
+        "documentPaths",
+        "discoveryDiagnostics"
+      ],
+      "ports": [
+        {
+          "portId": "lists-workspace-directory-entries",
+          "effect": "read-file-system",
+          "purpose": "List one authorized directory without choosing traversal policy."
+        },
+        {
+          "portId": "observes-workspace-path-identity",
+          "effect": "read-file-system",
+          "purpose": "Observe path kind, canonical identity, and symbolic-link facts."
+        }
+      ],
+      "dependencies": [
+        "resolves-workspace-registry-request"
+      ],
+      "iterationRequired": true
+    },
+    {
+      "capabilityId": "observes-workspace-json-document",
+      "title": "Observe workspace JSON document",
+      "purpose": "Read one authorized workspace JSON document and report content, parse, and hash observations without classification.",
+      "actor": "workspace-registry-builder",
+      "trigger": "one discovered workspace JSON path is submitted",
+      "desiredOutcome": "one immutable document observation is produced",
+      "owns": [
+        "authorized-document-read",
+        "json-parse-observation",
+        "content-hash-observation"
+      ],
+      "mustNotOwn": [
+        "sej-classification",
+        "candidate-role-assignment",
+        "read-failure-disposition"
+      ],
+      "decisionId": "resolves-workspace-document-observation-disposition",
+      "successDisposition": "WORKSPACE_JSON_DOCUMENT_OBSERVED",
+      "failureDisposition": "WORKSPACE_JSON_DOCUMENT_UNREADABLE",
+      "requestFields": [
+        { "name": "workspaceRoot", "type": "string", "required": true },
+        { "name": "relativePath", "type": "string", "required": true },
+        { "name": "maximumReadBytes", "type": "integer", "required": true }
+      ],
+      "resultFields": [
+        "relativePath",
+        "contentHash",
+        "parseObservation",
+        "mechanicalDiagnostics"
+      ],
+      "ports": [
+        {
+          "portId": "reads-workspace-document-content",
+          "effect": "read-file-system",
+          "purpose": "Read bytes from one authorized path."
+        },
+        {
+          "portId": "parses-json-text",
+          "effect": "parse",
+          "purpose": "Attempt JSON parsing and report mechanical success or failure."
+        },
+        {
+          "portId": "computes-document-content-hash",
+          "effect": "calculate",
+          "purpose": "Calculate a declared hash over observed content."
+        }
+      ],
+      "dependencies": [
+        "discovers-workspace-json-documents"
+      ]
+    },
+    {
+      "capabilityId": "classifies-workspace-json-document",
+      "title": "Classify workspace JSON document",
+      "purpose": "Resolve document kind, SEJ classification, schema evidence, candidate roles, and semantic diagnostics from one document observation.",
+      "actor": "workspace-registry-builder",
+      "trigger": "one observed workspace JSON document is submitted",
+      "desiredOutcome": "one semantically classified registry document is projected",
+      "owns": [
+        "document-kind-classification",
+        "sej-classification",
+        "schema-evidence",
+        "candidate-role-assignment",
+        "classification-diagnostics"
+      ],
+      "mustNotOwn": [
+        "file-system-reading",
+        "reference-target-resolution",
+        "registry-persistence"
+      ],
+      "decisionId": "resolves-workspace-document-classification",
+      "successDisposition": "WORKSPACE_JSON_DOCUMENT_CLASSIFIED",
+      "failureDisposition": "WORKSPACE_JSON_DOCUMENT_INDETERMINATE",
+      "requestFields": [
+        { "name": "documentObservation", "type": "object", "required": true },
+        { "name": "supportedSchemaFamilies", "type": "array", "required": true }
+      ],
+      "resultFields": [
+        "registryDocument"
+      ],
+      "ports": [
+        {
+          "portId": "validates-json-document-contract",
+          "effect": "validate",
+          "purpose": "Mechanically validate a parsed document against an authorized contract."
+        }
+      ],
+      "dependencies": [
+        "observes-workspace-json-document"
+      ]
+    },
+    {
+      "capabilityId": "resolves-workspace-document-references",
+      "title": "Resolve workspace document references",
+      "purpose": "Resolve declared local schema references and dependency evidence across classified workspace documents.",
+      "actor": "workspace-registry-builder",
+      "trigger": "the classified workspace document collection is available",
+      "desiredOutcome": "stable reference evidence and dependency candidate roles are projected",
+      "owns": [
+        "reference-extraction-authority",
+        "local-reference-target-resolution",
+        "dependency-candidate-evidence",
+        "reference-ordering"
+      ],
+      "mustNotOwn": [
+        "network-reference-fetching",
+        "document-classification",
+        "filesystem-discovery"
+      ],
+      "decisionId": "resolves-workspace-reference-disposition",
+      "successDisposition": "WORKSPACE_DOCUMENT_REFERENCES_RESOLVED",
+      "failureDisposition": "WORKSPACE_DOCUMENT_REFERENCE_UNRESOLVED",
+      "requestFields": [
+        { "name": "workspaceRoot", "type": "string", "required": true },
+        { "name": "documents", "type": "array", "required": true }
+      ],
+      "resultFields": [
+        "documents",
+        "referenceDiagnostics"
+      ],
+      "ports": [
+        {
+          "portId": "normalizes-workspace-relative-reference",
+          "effect": "calculate",
+          "purpose": "Resolve a relative path mechanically beneath an authorized workspace root."
+        }
+      ],
+      "dependencies": [
+        "classifies-workspace-json-document"
+      ],
+      "iterationRequired": true
+    },
+    {
+      "capabilityId": "records-workspace-registry-provenance",
+      "title": "Record workspace registry provenance",
+      "purpose": "Record reproducible workspace snapshot identity and available source-control testimony for one registry build.",
+      "actor": "workspace-registry-builder",
+      "trigger": "the final ordered document observations are available",
+      "desiredOutcome": "one registry provenance record is projected",
+      "owns": [
+        "workspace-snapshot-hash",
+        "source-control-observation",
+        "producer-identity",
+        "provenance-projection"
+      ],
+      "mustNotOwn": [
+        "document-classification",
+        "registry-summary",
+        "persistence-authorization"
+      ],
+      "decisionId": "resolves-workspace-provenance-disposition",
+      "successDisposition": "WORKSPACE_REGISTRY_PROVENANCE_RECORDED",
+      "failureDisposition": "WORKSPACE_REGISTRY_PROVENANCE_INCOMPLETE",
+      "requestFields": [
+        { "name": "workspaceName", "type": "string", "required": true },
+        { "name": "workspaceRoot", "type": "string", "required": true },
+        { "name": "documents", "type": "array", "required": true }
+      ],
+      "resultFields": [
+        "provenance",
+        "snapshotHash"
+      ],
+      "ports": [
+        {
+          "portId": "computes-workspace-snapshot-hash",
+          "effect": "calculate",
+          "purpose": "Calculate a declared hash from ordered document identity and content hashes."
+        },
+        {
+          "portId": "observes-workspace-source-control",
+          "effect": "read-source-control",
+          "purpose": "Observe source-control identity without deciding whether absence is acceptable."
+        }
+      ],
+      "dependencies": [
+        "resolves-workspace-document-references"
+      ]
+    },
+    {
+      "capabilityId": "summarizes-workspace-registry",
+      "title": "Summarize workspace registry",
+      "purpose": "Project declared counts for discovered, parsed, classified, invalid, and candidate-role workspace documents.",
+      "actor": "workspace-registry-builder",
+      "trigger": "the final classified document collection is available",
+      "desiredOutcome": "one deterministic workspace registry summary is projected",
+      "owns": [
+        "registry-summary-counts",
+        "summary-field-identity"
+      ],
+      "mustNotOwn": [
+        "document-classification",
+        "candidate-role-resolution",
+        "filesystem-observation"
+      ],
+      "decisionId": "resolves-workspace-summary-disposition",
+      "successDisposition": "WORKSPACE_REGISTRY_SUMMARIZED",
+      "failureDisposition": "WORKSPACE_REGISTRY_SUMMARY_REJECTED",
+      "requestFields": [
+        { "name": "documents", "type": "array", "required": true }
+      ],
+      "resultFields": [
+        "summary"
+      ],
+      "ports": [],
+      "dependencies": [
+        "resolves-workspace-document-references"
+      ],
+      "iterationRequired": true
+    },
+    {
+      "capabilityId": "projects-workspace-registry-snapshot",
+      "title": "Project workspace registry snapshot",
+      "purpose": "Project the complete canonical workspace registry DTO and its record hash from resolved registry evidence.",
+      "actor": "workspace-registry-builder",
+      "trigger": "documents, diagnostics, summary, provenance, and exclusions are resolved",
+      "desiredOutcome": "one contract-valid workspace registry snapshot is projected",
+      "owns": [
+        "workspace-registry-dto",
+        "registry-record-hash",
+        "registry-schema-version",
+        "canonical-document-order"
+      ],
+      "mustNotOwn": [
+        "filesystem-discovery",
+        "document-classification",
+        "registry-write-mechanics"
+      ],
+      "decisionId": "resolves-workspace-snapshot-projection-disposition",
+      "successDisposition": "WORKSPACE_REGISTRY_SNAPSHOT_PROJECTED",
+      "failureDisposition": "WORKSPACE_REGISTRY_SNAPSHOT_INVALID",
+      "requestFields": [
+        { "name": "workspace", "type": "object", "required": true },
+        { "name": "provenance", "type": "object", "required": true },
+        { "name": "excludedRelativePaths", "type": "array", "required": true },
+        { "name": "documents", "type": "array", "required": true },
+        { "name": "diagnostics", "type": "array", "required": true },
+        { "name": "summary", "type": "object", "required": true }
+      ],
+      "resultFields": [
+        "registry"
+      ],
+      "ports": [
+        {
+          "portId": "computes-workspace-registry-record-hash",
+          "effect": "calculate",
+          "purpose": "Calculate the declared canonical registry record hash."
+        }
+      ],
+      "dependencies": [
+        "records-workspace-registry-provenance",
+        "summarizes-workspace-registry"
+      ]
+    },
+    {
+      "capabilityId": "persists-workspace-registry-snapshot",
+      "title": "Persist workspace registry snapshot",
+      "purpose": "Persist one authorized workspace registry snapshot atomically without exposing a partial replacement.",
+      "actor": "workspace-registry-builder",
+      "trigger": "a contract-valid registry snapshot and resolved output authority are available",
+      "desiredOutcome": "the complete registry snapshot is durably replaced and verified",
+      "owns": [
+        "atomic-registry-persistence",
+        "temporary-artifact-authority",
+        "replacement-verification",
+        "write-receipt"
+      ],
+      "mustNotOwn": [
+        "registry-dto-construction",
+        "classification-policy",
+        "output-path-selection"
+      ],
+      "decisionId": "resolves-workspace-registry-persistence-disposition",
+      "successDisposition": "WORKSPACE_REGISTRY_SNAPSHOT_PERSISTED",
+      "failureDisposition": "WORKSPACE_REGISTRY_SNAPSHOT_NOT_PERSISTED",
+      "requestFields": [
+        { "name": "registry", "type": "object", "required": true },
+        { "name": "outputPath", "type": "string", "required": true },
+        { "name": "expectedRecordHash", "type": "string", "required": true }
+      ],
+      "resultFields": [
+        "writtenPath",
+        "observedRecordHash"
+      ],
+      "ports": [
+        {
+          "portId": "creates-registry-output-directory",
+          "effect": "write-file-system",
+          "purpose": "Create the authorized output directory."
+        },
+        {
+          "portId": "writes-temporary-registry-snapshot",
+          "effect": "write-file-system",
+          "purpose": "Write one complete temporary registry artifact."
+        },
+        {
+          "portId": "replaces-registry-snapshot-atomically",
+          "effect": "write-file-system",
+          "purpose": "Atomically replace the target with the completed temporary artifact."
+        },
+        {
+          "portId": "observes-persisted-registry-hash",
+          "effect": "read-file-system",
+          "purpose": "Observe the persisted artifact hash for proof."
+        }
+      ],
+      "dependencies": [
+        "projects-workspace-registry-snapshot"
+      ]
+    },
+    {
+      "capabilityId": "builds-workspace-registry",
+      "title": "Build workspace registry",
+      "purpose": "Compose the published workspace registry capabilities into one resolved, executable, and provable registry build.",
+      "actor": "authorized-registry-caller",
+      "trigger": "a build-workspace-registry request is submitted",
+      "desiredOutcome": "one current workspace registry snapshot is returned or atomically persisted",
+      "owns": [
+        "workspace-registry-capability-composition",
+        "build-sequence-authority",
+        "build-proof-aggregation",
+        "public-scan-workspace-outcome"
+      ],
+      "mustNotOwn": [
+        "filesystem-api-mechanics",
+        "document-classification-rules",
+        "registry-dto-stitching"
+      ],
+      "decisionId": "resolves-workspace-registry-build-disposition",
+      "successDisposition": "WORKSPACE_REGISTRY_BUILT",
+      "failureDisposition": "WORKSPACE_REGISTRY_BUILD_FAILED",
+      "requestFields": [
+        { "name": "workspaceRoot", "type": "string", "required": true },
+        { "name": "workspaceName", "type": "string", "required": false },
+        { "name": "outputPath", "type": "string", "required": false },
+        { "name": "persistenceMode", "type": "string", "required": true }
+      ],
+      "resultFields": [
+        "registry",
+        "registryPath",
+        "summary",
+        "capabilityReceipts"
+      ],
+      "ports": [],
+      "dependencies": [
+        "resolves-workspace-registry-request",
+        "discovers-workspace-json-documents",
+        "observes-workspace-json-document",
+        "classifies-workspace-json-document",
+        "resolves-workspace-document-references",
+        "records-workspace-registry-provenance",
+        "summarizes-workspace-registry",
+        "projects-workspace-registry-snapshot",
+        "persists-workspace-registry-snapshot"
+      ],
+      "iterationRequired": true
+    }
+  ]
+}

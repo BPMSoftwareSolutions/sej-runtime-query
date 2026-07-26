@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:projects-workspace-registry-snapshot:receipt:v1",
+  "title": "Project workspace registry snapshot receipt",
+  "type": "object",
+  "required": [
+    "receiptType",
+    "runId",
+    "capabilityId",
+    "authorityHash",
+    "inputHash",
+    "resultHash",
+    "decisionId",
+    "disposition",
+    "findings"
+  ],
+  "properties": {
+    "receiptType": {
+      "const": "projects-workspace-registry-snapshot-receipt.v1"
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capabilityId": {
+      "const": "projects-workspace-registry-snapshot"
+    },
+    "authorityHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "inputHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "resultHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "decisionId": {
+      "const": "resolves-workspace-snapshot-projection-disposition"
+    },
+    "resolvedRule": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "WORKSPACE_REGISTRY_SNAPSHOT_PROJECTED",
+        "WORKSPACE_REGISTRY_SNAPSHOT_INVALID"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "result": {
+      "$ref": "urn:deterministic-solutions:projects-workspace-registry-snapshot:result:v1"
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

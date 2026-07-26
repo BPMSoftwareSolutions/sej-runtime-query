@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:resolves-workspace-registry-request:result:v1",
+  "title": "Resolve workspace registry request result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "resolves-workspace-registry-request-result.v1"
+    },
+    "capabilityId": {
+      "const": "resolves-workspace-registry-request"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "resolvedWorkspaceRoot",
+        "resolvedWorkspaceName",
+        "resolvedOutputPath",
+        "excludedRelativePaths"
+      ],
+      "properties": {
+        "resolvedWorkspaceRoot": {},
+        "resolvedWorkspaceName": {},
+        "resolvedOutputPath": {},
+        "excludedRelativePaths": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

@@ -1,0 +1,7 @@
+{
+  "requestType": "summarizes-workspace-registry-request.v1",
+  "requestId": "summarizes-workspace-registry-candidate-001",
+  "payload": {
+    "documents": []
+  }
+}

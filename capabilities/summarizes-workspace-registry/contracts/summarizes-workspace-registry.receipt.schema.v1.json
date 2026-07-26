@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:summarizes-workspace-registry:receipt:v1",
+  "title": "Summarize workspace registry receipt",
+  "type": "object",
+  "required": [
+    "receiptType",
+    "runId",
+    "capabilityId",
+    "authorityHash",
+    "inputHash",
+    "resultHash",
+    "decisionId",
+    "disposition",
+    "findings"
+  ],
+  "properties": {
+    "receiptType": {
+      "const": "summarizes-workspace-registry-receipt.v1"
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capabilityId": {
+      "const": "summarizes-workspace-registry"
+    },
+    "authorityHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "inputHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "resultHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "decisionId": {
+      "const": "resolves-workspace-summary-disposition"
+    },
+    "resolvedRule": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "WORKSPACE_REGISTRY_SUMMARIZED",
+        "WORKSPACE_REGISTRY_SUMMARY_REJECTED"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "result": {
+      "$ref": "urn:deterministic-solutions:summarizes-workspace-registry:result:v1"
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

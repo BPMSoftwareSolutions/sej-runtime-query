@@ -1,0 +1,13 @@
+{
+  "scaffoldType": "semantic-effect-catalog-scaffold.v1",
+  "declarationType": "semantic-effect-catalog.v1",
+  "status": "drafted",
+  "effectCatalogId": "classifies-workspace-json-document-effects",
+  "effects": [
+    {
+      "effect": "validate",
+      "authorization": "must-be-resolved-before-invocation",
+      "testimony": "required"
+    }
+  ]
+}

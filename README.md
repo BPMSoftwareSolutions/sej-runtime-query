@@ -20,6 +20,12 @@ Canonical projection receipt
 
 ## Architectural commitments
 
+This project follows the Deterministic Micro-Capability Engineering Standard.
+Canonical intent and semantic authority are the source of truth.
+Language-specific code bodies contain execution mechanics only. Decisions, DTO
+shaping, control flow, ports, effects, and proof requirements are governed
+through language-neutral semantic contracts.
+
 - Canonical intent, features, contracts, authority, projections, and execution models remain language-neutral.
 - `@deterministic-solutions/semantic-kernel` supplies predicate, decision, projection, iteration, execution, port-dispatch, and testimony machinery.
 - TypeScript exists only below the projection boundary.
@@ -48,7 +54,27 @@ The other 25 seat their own declared authority on a kernel through
 `composition-root/shared/creates-capability-runtime.ts`. Their declared meaning
 is recorded in [architecture/capability-semantics.md](architecture/capability-semantics.md).
 
-Every capability body is an eight-line linear delegation:
+## Drafted workspace-registry family
+
+Ten additional micro-capabilities now scaffold the legacy-equivalent
+`scan:workspace` outcome. They cover request authority, recursive JSON discovery,
+document observation, semantic classification, reference resolution, provenance,
+summary, registry DTO projection, atomic persistence, and public composition.
+
+These capabilities are deliberately `drafted`: their semantic decision rules and
+projection expressions are empty, their port adapters are not seated, and their
+candidate vectors are not evaluated. The current CLI does not yet claim
+`scan:workspace` support.
+
+The canonical scaffold and implementation handoff are documented in:
+
+- [workspace-registry-capability-family.ascii.md](architecture/workspace-registry-capability-family.ascii.md)
+- [workspace-registry-implementation-handoff.md](docs/workspace-registry-implementation-handoff.md)
+
+Their TypeScript bodies are projected from semantic execution models and carry a
+generated marker. Hand-authored body changes are forbidden.
+
+Every implemented capability body is an eight-line linear delegation:
 
 ```typescript
 const authority = await context.edges.invokes("resolves-<capability>-authority", context);
@@ -105,10 +131,10 @@ Not claimed:
 
 - equivalence against a separately published semantic-kernel package,
 - cross-language kernel equivalence,
+- executable workspace-registry scanning or persistence,
 - or legacy resolver behavioral parity.
 
-Those remain promotion gates rather than inferred success. The query directory
-also has no Git metadata, so commit and diff provenance cannot be shown.
+Those remain promotion gates rather than inferred success.
 
 ## Commands
 
@@ -117,6 +143,9 @@ npm run check
 npm test
 npm run typecheck
 npm run prove
+npm run scaffold:workspace-registry
+npm run project:bodies
+npm run check:projected-bodies
 ```
 
 When the package is installed or linked, run SQL-style queries with the `q` wrapper:

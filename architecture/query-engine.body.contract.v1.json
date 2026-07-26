@@ -171,6 +171,56 @@
       "capabilityId": "executes-relational-query",
       "path": "capabilities/executes-relational-query",
       "status": "implemented"
+    },
+    {
+      "capabilityId": "resolves-workspace-registry-request",
+      "path": "capabilities/resolves-workspace-registry-request",
+      "status": "drafted"
+    },
+    {
+      "capabilityId": "discovers-workspace-json-documents",
+      "path": "capabilities/discovers-workspace-json-documents",
+      "status": "drafted"
+    },
+    {
+      "capabilityId": "observes-workspace-json-document",
+      "path": "capabilities/observes-workspace-json-document",
+      "status": "drafted"
+    },
+    {
+      "capabilityId": "classifies-workspace-json-document",
+      "path": "capabilities/classifies-workspace-json-document",
+      "status": "drafted"
+    },
+    {
+      "capabilityId": "resolves-workspace-document-references",
+      "path": "capabilities/resolves-workspace-document-references",
+      "status": "drafted"
+    },
+    {
+      "capabilityId": "records-workspace-registry-provenance",
+      "path": "capabilities/records-workspace-registry-provenance",
+      "status": "drafted"
+    },
+    {
+      "capabilityId": "summarizes-workspace-registry",
+      "path": "capabilities/summarizes-workspace-registry",
+      "status": "drafted"
+    },
+    {
+      "capabilityId": "projects-workspace-registry-snapshot",
+      "path": "capabilities/projects-workspace-registry-snapshot",
+      "status": "drafted"
+    },
+    {
+      "capabilityId": "persists-workspace-registry-snapshot",
+      "path": "capabilities/persists-workspace-registry-snapshot",
+      "status": "drafted"
+    },
+    {
+      "capabilityId": "builds-workspace-registry",
+      "path": "capabilities/builds-workspace-registry",
+      "status": "drafted"
     }
   ],
   "generatedNotAuthority": [

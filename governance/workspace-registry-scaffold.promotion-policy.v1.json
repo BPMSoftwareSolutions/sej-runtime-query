@@ -1,0 +1,32 @@
+{
+  "policyType": "workspace-registry-scaffold-promotion-policy.v1",
+  "familyId": "workspace-registry",
+  "currentStatus": "drafted",
+  "legacyEvidencePosture": "candidate-requirements-evidence",
+  "requiredPromotionSequence": [
+    "admit-canonical-intent",
+    "complete-observation-contracts",
+    "complete-decisions-and-failure-policies",
+    "complete-result-and-receipt-projections",
+    "complete-iteration-and-execution-models",
+    "seat-mechanical-port-adapters",
+    "project-language-bodies",
+    "execute-positive-and-negative-controls",
+    "record-kernel-receipts",
+    "prove-legacy-compatibility-explicitly",
+    "promote-capabilities-individually"
+  ],
+  "forbiddenClaimsBeforePromotion": [
+    "scan-workspace-is-implemented",
+    "legacy-registry-parity",
+    "semantic-kernel-conformance-passed",
+    "atomic-persistence-proved",
+    "cross-platform-equivalence"
+  ],
+  "bodyGeneration": {
+    "source": "semantic-execution-model",
+    "projector": "scripts/project-linear-capability-bodies.mjs",
+    "handAuthoredChanges": "forbidden",
+    "requiredShape": "resolve-execute-project-return"
+  }
+}

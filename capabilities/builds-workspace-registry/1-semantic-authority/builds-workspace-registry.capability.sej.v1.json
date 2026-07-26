@@ -1,0 +1,45 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "builds-workspace-registry",
+  "status": "drafted",
+  "promotionDisposition": "not-evaluated",
+  "purpose": "Compose the published workspace registry capabilities into one resolved, executable, and provable registry build.",
+  "owns": [
+    "workspace-registry-capability-composition",
+    "build-sequence-authority",
+    "build-proof-aggregation",
+    "public-scan-workspace-outcome"
+  ],
+  "mustNotOwn": [
+    "filesystem-api-mechanics",
+    "document-classification-rules",
+    "registry-dto-stitching"
+  ],
+  "publicOperation": "builds-workspace-registry",
+  "requiredKernelPrimitives": [
+    "contract.validate.v1",
+    "decision.resolve.v1",
+    "projection.apply.v1",
+    "execution.sequence.v1",
+    "testimony.record.v1",
+    "iteration.execute.v1"
+  ],
+  "declaredDecision": "resolves-workspace-registry-build-disposition",
+  "declaredResultProjection": "projects-builds-workspace-registry-result",
+  "declaredReceiptProjection": "projects-builds-workspace-registry-receipt",
+  "declaredDispositions": [
+    "WORKSPACE_REGISTRY_BUILT",
+    "WORKSPACE_REGISTRY_BUILD_FAILED"
+  ],
+  "dependencies": [
+    "resolves-workspace-registry-request",
+    "discovers-workspace-json-documents",
+    "observes-workspace-json-document",
+    "classifies-workspace-json-document",
+    "resolves-workspace-document-references",
+    "records-workspace-registry-provenance",
+    "summarizes-workspace-registry",
+    "projects-workspace-registry-snapshot",
+    "persists-workspace-registry-snapshot"
+  ]
+}

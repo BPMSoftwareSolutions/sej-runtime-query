@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:resolves-workspace-registry-request:port:observes-workspace-root:output:v1",
+  "title": "observes-workspace-root output",
+  "type": "object",
+  "required": [
+    "portResultType",
+    "operationId",
+    "observation"
+  ],
+  "properties": {
+    "portResultType": {
+      "const": "observes-workspace-root-result.v1"
+    },
+    "operationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observation": {
+      "type": "object"
+    },
+    "mechanicalFailure": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

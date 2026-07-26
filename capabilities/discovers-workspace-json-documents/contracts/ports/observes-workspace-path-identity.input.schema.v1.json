@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:discovers-workspace-json-documents:port:observes-workspace-path-identity:input:v1",
+  "title": "observes-workspace-path-identity input",
+  "type": "object",
+  "required": [
+    "portRequestType",
+    "operationId",
+    "authority"
+  ],
+  "properties": {
+    "portRequestType": {
+      "const": "observes-workspace-path-identity-request.v1"
+    },
+    "operationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

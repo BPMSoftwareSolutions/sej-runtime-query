@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:observes-workspace-json-document:port:computes-document-content-hash:input:v1",
+  "title": "computes-document-content-hash input",
+  "type": "object",
+  "required": [
+    "portRequestType",
+    "operationId",
+    "authority"
+  ],
+  "properties": {
+    "portRequestType": {
+      "const": "computes-document-content-hash-request.v1"
+    },
+    "operationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

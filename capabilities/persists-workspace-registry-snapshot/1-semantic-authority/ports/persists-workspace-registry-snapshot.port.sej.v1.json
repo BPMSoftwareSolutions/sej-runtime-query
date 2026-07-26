@@ -1,0 +1,40 @@
+{
+  "scaffoldType": "semantic-port-catalog-scaffold.v1",
+  "declarationType": "semantic-port-catalog.v1",
+  "status": "drafted",
+  "portCatalogId": "persists-workspace-registry-snapshot-ports",
+  "ports": [
+    {
+      "portId": "creates-registry-output-directory",
+      "effect": "write-file-system",
+      "purpose": "Create the authorized output directory.",
+      "inputContract": "creates-registry-output-directory.input.v1",
+      "outputContract": "creates-registry-output-directory.output.v1",
+      "adapterStatus": "not-seated"
+    },
+    {
+      "portId": "writes-temporary-registry-snapshot",
+      "effect": "write-file-system",
+      "purpose": "Write one complete temporary registry artifact.",
+      "inputContract": "writes-temporary-registry-snapshot.input.v1",
+      "outputContract": "writes-temporary-registry-snapshot.output.v1",
+      "adapterStatus": "not-seated"
+    },
+    {
+      "portId": "replaces-registry-snapshot-atomically",
+      "effect": "write-file-system",
+      "purpose": "Atomically replace the target with the completed temporary artifact.",
+      "inputContract": "replaces-registry-snapshot-atomically.input.v1",
+      "outputContract": "replaces-registry-snapshot-atomically.output.v1",
+      "adapterStatus": "not-seated"
+    },
+    {
+      "portId": "observes-persisted-registry-hash",
+      "effect": "read-file-system",
+      "purpose": "Observe the persisted artifact hash for proof.",
+      "inputContract": "observes-persisted-registry-hash.input.v1",
+      "outputContract": "observes-persisted-registry-hash.output.v1",
+      "adapterStatus": "not-seated"
+    }
+  ]
+}

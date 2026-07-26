@@ -1,0 +1,20 @@
+{
+  "scaffoldType": "semantic-state-model-scaffold.v1",
+  "declarationType": "semantic-state-model.v1",
+  "status": "drafted",
+  "stateModelId": "discovers-workspace-json-documents-state",
+  "states": [
+    "requested",
+    "authority-resolved",
+    "executing",
+    "proved",
+    "rejected",
+    "failed"
+  ],
+  "transitions": [],
+  "completionRequirements": [
+    "declare-authorized-transitions",
+    "declare-terminal-state-proof",
+    "declare-replay-transition-posture"
+  ]
+}

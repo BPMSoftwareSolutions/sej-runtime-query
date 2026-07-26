@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:persists-workspace-registry-snapshot:port:writes-temporary-registry-snapshot:output:v1",
+  "title": "writes-temporary-registry-snapshot output",
+  "type": "object",
+  "required": [
+    "portResultType",
+    "operationId",
+    "observation"
+  ],
+  "properties": {
+    "portResultType": {
+      "const": "writes-temporary-registry-snapshot-result.v1"
+    },
+    "operationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observation": {
+      "type": "object"
+    },
+    "mechanicalFailure": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

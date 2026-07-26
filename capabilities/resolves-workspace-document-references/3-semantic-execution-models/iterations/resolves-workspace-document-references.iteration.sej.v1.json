@@ -1,0 +1,16 @@
+{
+  "scaffoldType": "semantic-iteration-scaffold.v1",
+  "declarationType": "iteration.v1",
+  "status": "drafted",
+  "iterationId": "iterates-resolves-workspace-document-references-items",
+  "collectionPath": "to-be-declared",
+  "itemContextPath": "$.item",
+  "projectionId": "to-be-declared",
+  "order": "source",
+  "completionRequirements": [
+    "declare-collection-path",
+    "declare-ordering-authority",
+    "declare-item-operation",
+    "declare-stop-and-collection-policy"
+  ]
+}

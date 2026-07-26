@@ -1,0 +1,12 @@
+{
+  "projectionType": "typescript-linear-capability-body-projection.v1",
+  "status": "drafted",
+  "capabilityId": "resolves-workspace-document-references",
+  "sourceExecutionModel": "../../3-semantic-execution-models/resolves-workspace-document-references.execution.sej.v1.json",
+  "targetBody": "../../runtime/typescript/bodies/resolves-workspace-document-references.ts",
+  "targetContextType": "../../runtime/typescript/types/resolves-workspace-document-references-context.type.ts",
+  "targetRegistration": "../../runtime/typescript/registration/registers-resolves-workspace-document-references-authority.ts",
+  "functionName": "resolvesWorkspaceDocumentReferences",
+  "contextTypeName": "ResolvesWorkspaceDocumentReferencesContext",
+  "generatedBodyPolicy": "resolve-execute-project-return-only"
+}

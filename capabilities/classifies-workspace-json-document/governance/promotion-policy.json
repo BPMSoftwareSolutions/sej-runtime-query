@@ -1,0 +1,22 @@
+{
+  "policyType": "capability-promotion-policy.v1",
+  "capabilityId": "classifies-workspace-json-document",
+  "currentStatus": "drafted",
+  "requiredGates": [
+    "intent",
+    "scenario",
+    "boundary",
+    "semantic",
+    "kernel",
+    "body",
+    "adapter",
+    "contract",
+    "proof",
+    "replay",
+    "portability",
+    "composition",
+    "mutation"
+  ],
+  "promotionRequiresObservedKernelReceipt": true,
+  "scaffoldMayClaimConformancePassed": false
+}

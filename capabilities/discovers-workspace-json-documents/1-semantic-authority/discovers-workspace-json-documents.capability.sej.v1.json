@@ -1,0 +1,38 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "discovers-workspace-json-documents",
+  "status": "drafted",
+  "promotionDisposition": "not-evaluated",
+  "purpose": "Discover JSON document candidates recursively beneath one authorized workspace root without escaping through symbolic links.",
+  "owns": [
+    "recursive-json-discovery",
+    "symbolic-link-boundary-observation",
+    "output-artifact-exclusion",
+    "ordinal-path-order"
+  ],
+  "mustNotOwn": [
+    "json-parsing",
+    "sej-classification",
+    "registry-dto-construction"
+  ],
+  "publicOperation": "discovers-workspace-json-documents",
+  "requiredKernelPrimitives": [
+    "contract.validate.v1",
+    "decision.resolve.v1",
+    "projection.apply.v1",
+    "execution.sequence.v1",
+    "testimony.record.v1",
+    "port.invoke.v1",
+    "iteration.execute.v1"
+  ],
+  "declaredDecision": "resolves-workspace-discovery-disposition",
+  "declaredResultProjection": "projects-discovers-workspace-json-documents-result",
+  "declaredReceiptProjection": "projects-discovers-workspace-json-documents-receipt",
+  "declaredDispositions": [
+    "WORKSPACE_JSON_DOCUMENTS_DISCOVERED",
+    "WORKSPACE_JSON_DISCOVERY_FAILED"
+  ],
+  "dependencies": [
+    "resolves-workspace-registry-request"
+  ]
+}

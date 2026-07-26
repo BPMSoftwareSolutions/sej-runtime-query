@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:observes-workspace-json-document:port:parses-json-text:output:v1",
+  "title": "parses-json-text output",
+  "type": "object",
+  "required": [
+    "portResultType",
+    "operationId",
+    "observation"
+  ],
+  "properties": {
+    "portResultType": {
+      "const": "parses-json-text-result.v1"
+    },
+    "operationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observation": {
+      "type": "object"
+    },
+    "mechanicalFailure": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

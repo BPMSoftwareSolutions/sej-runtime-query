@@ -1,0 +1,14 @@
+{
+  "scaffoldType": "semantic-observation-scaffold.v1",
+  "declarationType": "semantic-observation.v1",
+  "status": "drafted",
+  "observationId": "observes-persists-workspace-registry-snapshot-facts",
+  "inputs": [],
+  "outputs": [],
+  "prohibition": "observations-report-facts-and-never-assign-dispositions",
+  "completionRequirements": [
+    "declare-port-supplied-facts",
+    "declare-canonical-observation-contract",
+    "prove-observer-contains-no-domain-decision"
+  ]
+}

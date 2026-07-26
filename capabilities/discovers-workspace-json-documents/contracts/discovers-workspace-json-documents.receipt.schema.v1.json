@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:discovers-workspace-json-documents:receipt:v1",
+  "title": "Discover workspace JSON documents receipt",
+  "type": "object",
+  "required": [
+    "receiptType",
+    "runId",
+    "capabilityId",
+    "authorityHash",
+    "inputHash",
+    "resultHash",
+    "decisionId",
+    "disposition",
+    "findings"
+  ],
+  "properties": {
+    "receiptType": {
+      "const": "discovers-workspace-json-documents-receipt.v1"
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capabilityId": {
+      "const": "discovers-workspace-json-documents"
+    },
+    "authorityHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "inputHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "resultHash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "decisionId": {
+      "const": "resolves-workspace-discovery-disposition"
+    },
+    "resolvedRule": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "WORKSPACE_JSON_DOCUMENTS_DISCOVERED",
+        "WORKSPACE_JSON_DISCOVERY_FAILED"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "result": {
+      "$ref": "urn:deterministic-solutions:discovers-workspace-json-documents:result:v1"
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

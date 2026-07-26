@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:records-workspace-registry-provenance:execution-context:v1",
+  "title": "Record workspace registry provenance execution context",
+  "type": "object",
+  "required": [
+    "request",
+    "observedFacts",
+    "resolvedAuthority",
+    "proofContext"
+  ],
+  "properties": {
+    "request": {
+      "$ref": "urn:deterministic-solutions:records-workspace-registry-provenance:input:v1"
+    },
+    "observedFacts": {
+      "type": "object"
+    },
+    "resolvedAuthority": {
+      "$ref": "urn:deterministic-solutions:records-workspace-registry-provenance:resolved-authority:v1"
+    },
+    "proofContext": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

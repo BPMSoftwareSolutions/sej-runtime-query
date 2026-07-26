@@ -1,0 +1,20 @@
+{
+  "scaffoldType": "capability-intent-scaffold.v1",
+  "capabilityId": "summarizes-workspace-registry",
+  "status": "drafted",
+  "title": "Summarize workspace registry",
+  "purpose": "Project declared counts for discovered, parsed, classified, invalid, and candidate-role workspace documents.",
+  "actor": "workspace-registry-builder",
+  "trigger": "the final classified document collection is available",
+  "desiredOutcome": "one deterministic workspace registry summary is projected",
+  "constraints": [
+    "semantic-authority-is-the-source-of-truth",
+    "capability-body-is-projected-and-linear",
+    "mechanical-effects-occur-only-through-declared-ports",
+    "no-promotion-before-live-kernel-proof"
+  ],
+  "featureIds": [
+    "summarizes-workspace-registry"
+  ],
+  "sourceEvidence": "legacy-workspace-registry-behavior"
+}

@@ -1,0 +1,20 @@
+{
+  "scaffoldType": "capability-intent-scaffold.v1",
+  "capabilityId": "projects-workspace-registry-snapshot",
+  "status": "drafted",
+  "title": "Project workspace registry snapshot",
+  "purpose": "Project the complete canonical workspace registry DTO and its record hash from resolved registry evidence.",
+  "actor": "workspace-registry-builder",
+  "trigger": "documents, diagnostics, summary, provenance, and exclusions are resolved",
+  "desiredOutcome": "one contract-valid workspace registry snapshot is projected",
+  "constraints": [
+    "semantic-authority-is-the-source-of-truth",
+    "capability-body-is-projected-and-linear",
+    "mechanical-effects-occur-only-through-declared-ports",
+    "no-promotion-before-live-kernel-proof"
+  ],
+  "featureIds": [
+    "projects-workspace-registry-snapshot"
+  ],
+  "sourceEvidence": "legacy-workspace-registry-behavior"
+}

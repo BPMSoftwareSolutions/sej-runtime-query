@@ -1,0 +1,38 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "classifies-workspace-json-document",
+  "status": "drafted",
+  "promotionDisposition": "not-evaluated",
+  "purpose": "Resolve document kind, SEJ classification, schema evidence, candidate roles, and semantic diagnostics from one document observation.",
+  "owns": [
+    "document-kind-classification",
+    "sej-classification",
+    "schema-evidence",
+    "candidate-role-assignment",
+    "classification-diagnostics"
+  ],
+  "mustNotOwn": [
+    "file-system-reading",
+    "reference-target-resolution",
+    "registry-persistence"
+  ],
+  "publicOperation": "classifies-workspace-json-document",
+  "requiredKernelPrimitives": [
+    "contract.validate.v1",
+    "decision.resolve.v1",
+    "projection.apply.v1",
+    "execution.sequence.v1",
+    "testimony.record.v1",
+    "port.invoke.v1"
+  ],
+  "declaredDecision": "resolves-workspace-document-classification",
+  "declaredResultProjection": "projects-classifies-workspace-json-document-result",
+  "declaredReceiptProjection": "projects-classifies-workspace-json-document-receipt",
+  "declaredDispositions": [
+    "WORKSPACE_JSON_DOCUMENT_CLASSIFIED",
+    "WORKSPACE_JSON_DOCUMENT_INDETERMINATE"
+  ],
+  "dependencies": [
+    "observes-workspace-json-document"
+  ]
+}

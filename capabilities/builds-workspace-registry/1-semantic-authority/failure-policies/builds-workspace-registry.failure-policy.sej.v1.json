@@ -1,0 +1,13 @@
+{
+  "scaffoldType": "semantic-failure-policy-scaffold.v1",
+  "declarationType": "semantic-failure-policy.v1",
+  "status": "drafted",
+  "failurePolicyId": "builds-workspace-registry-failure-policy",
+  "classifications": [],
+  "unclassifiedFailureDisposition": "WORKSPACE_REGISTRY_BUILD_FAILED",
+  "completionRequirements": [
+    "declare-mechanical-failure-observations",
+    "declare-semantic-failure-classifications",
+    "declare-every-terminal-disposition"
+  ]
+}

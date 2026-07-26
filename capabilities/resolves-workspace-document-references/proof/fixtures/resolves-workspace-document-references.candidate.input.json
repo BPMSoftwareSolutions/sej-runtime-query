@@ -1,0 +1,8 @@
+{
+  "requestType": "resolves-workspace-document-references-request.v1",
+  "requestId": "resolves-workspace-document-references-candidate-001",
+  "payload": {
+    "workspaceRoot": ".",
+    "documents": []
+  }
+}

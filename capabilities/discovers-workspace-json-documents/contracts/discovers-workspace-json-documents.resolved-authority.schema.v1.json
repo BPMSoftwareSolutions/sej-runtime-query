@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:discovers-workspace-json-documents:resolved-authority:v1",
+  "title": "Discover workspace JSON documents resolved authority",
+  "type": "object",
+  "required": [
+    "authorityType",
+    "capabilityId",
+    "decisionId",
+    "resolvedDisposition",
+    "operations"
+  ],
+  "properties": {
+    "authorityType": {
+      "const": "resolved-discovers-workspace-json-documents-authority.v1"
+    },
+    "capabilityId": {
+      "const": "discovers-workspace-json-documents"
+    },
+    "decisionId": {
+      "const": "resolves-workspace-discovery-disposition"
+    },
+    "resolvedDisposition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sequence",
+          "semanticIdentity"
+        ],
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "semanticIdentity": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

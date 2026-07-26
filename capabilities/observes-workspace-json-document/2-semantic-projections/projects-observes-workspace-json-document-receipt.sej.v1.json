@@ -1,0 +1,19 @@
+{
+  "scaffoldType": "semantic-projection-scaffold.v1",
+  "declarationType": "projection.v1",
+  "status": "drafted",
+  "projectionId": "projects-observes-workspace-json-document-receipt",
+  "accepts": {
+    "contractId": "executed-observes-workspace-json-document.v1"
+  },
+  "produces": {
+    "contractId": "observes-workspace-json-document-receipt.v1"
+  },
+  "expression": null,
+  "completionRequirements": [
+    "declare-receipt-field-mappings",
+    "include-required-proof-hashes",
+    "include-observed-findings",
+    "execute-through-kernel-projection"
+  ]
+}

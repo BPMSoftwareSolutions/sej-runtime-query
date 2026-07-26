@@ -1,0 +1,17 @@
+{
+  "scaffoldType": "semantic-policy-scaffold.v1",
+  "declarationType": "semantic-policy.v1",
+  "status": "drafted",
+  "policyId": "discovers-workspace-json-documents-policy",
+  "implicitFallback": "forbidden",
+  "unclassifiedFailure": "fail-closed",
+  "successDisposition": "WORKSPACE_JSON_DOCUMENTS_DISCOVERED",
+  "failureDisposition": "WORKSPACE_JSON_DISCOVERY_FAILED",
+  "idempotencyDisposition": "not-yet-declared",
+  "replayDisposition": "not-yet-declared",
+  "completionRequirements": [
+    "declare-failure-classifications",
+    "declare-idempotency-and-replay",
+    "declare-boundary-and-ordering-policy"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:projects-workspace-registry-snapshot:input:v1",
+  "title": "Project workspace registry snapshot input",
+  "type": "object",
+  "required": [
+    "requestType",
+    "requestId",
+    "payload"
+  ],
+  "properties": {
+    "requestType": {
+      "const": "projects-workspace-registry-snapshot-request.v1"
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "workspace",
+        "provenance",
+        "excludedRelativePaths",
+        "documents",
+        "diagnostics",
+        "summary"
+      ],
+      "properties": {
+        "workspace": {
+          "type": "object"
+        },
+        "provenance": {
+          "type": "object"
+        },
+        "excludedRelativePaths": {
+          "type": "array",
+          "items": {}
+        },
+        "documents": {
+          "type": "array",
+          "items": {}
+        },
+        "diagnostics": {
+          "type": "array",
+          "items": {}
+        },
+        "summary": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

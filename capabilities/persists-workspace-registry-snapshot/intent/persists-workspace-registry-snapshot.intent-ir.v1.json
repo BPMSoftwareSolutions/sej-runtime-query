@@ -1,0 +1,20 @@
+{
+  "scaffoldType": "capability-intent-scaffold.v1",
+  "capabilityId": "persists-workspace-registry-snapshot",
+  "status": "drafted",
+  "title": "Persist workspace registry snapshot",
+  "purpose": "Persist one authorized workspace registry snapshot atomically without exposing a partial replacement.",
+  "actor": "workspace-registry-builder",
+  "trigger": "a contract-valid registry snapshot and resolved output authority are available",
+  "desiredOutcome": "the complete registry snapshot is durably replaced and verified",
+  "constraints": [
+    "semantic-authority-is-the-source-of-truth",
+    "capability-body-is-projected-and-linear",
+    "mechanical-effects-occur-only-through-declared-ports",
+    "no-promotion-before-live-kernel-proof"
+  ],
+  "featureIds": [
+    "persists-workspace-registry-snapshot"
+  ],
+  "sourceEvidence": "legacy-workspace-registry-behavior"
+}

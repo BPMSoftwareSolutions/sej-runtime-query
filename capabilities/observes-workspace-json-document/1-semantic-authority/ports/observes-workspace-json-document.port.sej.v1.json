@@ -1,0 +1,32 @@
+{
+  "scaffoldType": "semantic-port-catalog-scaffold.v1",
+  "declarationType": "semantic-port-catalog.v1",
+  "status": "drafted",
+  "portCatalogId": "observes-workspace-json-document-ports",
+  "ports": [
+    {
+      "portId": "reads-workspace-document-content",
+      "effect": "read-file-system",
+      "purpose": "Read bytes from one authorized path.",
+      "inputContract": "reads-workspace-document-content.input.v1",
+      "outputContract": "reads-workspace-document-content.output.v1",
+      "adapterStatus": "not-seated"
+    },
+    {
+      "portId": "parses-json-text",
+      "effect": "parse",
+      "purpose": "Attempt JSON parsing and report mechanical success or failure.",
+      "inputContract": "parses-json-text.input.v1",
+      "outputContract": "parses-json-text.output.v1",
+      "adapterStatus": "not-seated"
+    },
+    {
+      "portId": "computes-document-content-hash",
+      "effect": "calculate",
+      "purpose": "Calculate a declared hash over observed content.",
+      "inputContract": "computes-document-content-hash.input.v1",
+      "outputContract": "computes-document-content-hash.output.v1",
+      "adapterStatus": "not-seated"
+    }
+  ]
+}

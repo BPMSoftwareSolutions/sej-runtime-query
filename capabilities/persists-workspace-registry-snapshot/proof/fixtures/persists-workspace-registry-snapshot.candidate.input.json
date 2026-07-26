@@ -1,0 +1,9 @@
+{
+  "requestType": "persists-workspace-registry-snapshot-request.v1",
+  "requestId": "persists-workspace-registry-snapshot-candidate-001",
+  "payload": {
+    "registry": {},
+    "outputPath": ".sej-query/registry.v1.json",
+    "expectedRecordHash": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+  }
+}

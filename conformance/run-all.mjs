@@ -9,6 +9,7 @@ const checks = [
   "scripts/check-receipt-completeness.mjs",
   "scripts/check-json-artifacts.mjs",
   "scripts/check-capability-promotion.mjs",
+  "scripts/check-workspace-registry-scaffold.mjs",
 ];
 
 let failed = false;

@@ -1,0 +1,16 @@
+{
+  "scaffoldType": "semantic-port-catalog-scaffold.v1",
+  "declarationType": "semantic-port-catalog.v1",
+  "status": "drafted",
+  "portCatalogId": "projects-workspace-registry-snapshot-ports",
+  "ports": [
+    {
+      "portId": "computes-workspace-registry-record-hash",
+      "effect": "calculate",
+      "purpose": "Calculate the declared canonical registry record hash.",
+      "inputContract": "computes-workspace-registry-record-hash.input.v1",
+      "outputContract": "computes-workspace-registry-record-hash.output.v1",
+      "adapterStatus": "not-seated"
+    }
+  ]
+}

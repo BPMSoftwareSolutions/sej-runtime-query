@@ -1,0 +1,36 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "observes-workspace-json-document",
+  "status": "drafted",
+  "promotionDisposition": "not-evaluated",
+  "purpose": "Read one authorized workspace JSON document and report content, parse, and hash observations without classification.",
+  "owns": [
+    "authorized-document-read",
+    "json-parse-observation",
+    "content-hash-observation"
+  ],
+  "mustNotOwn": [
+    "sej-classification",
+    "candidate-role-assignment",
+    "read-failure-disposition"
+  ],
+  "publicOperation": "observes-workspace-json-document",
+  "requiredKernelPrimitives": [
+    "contract.validate.v1",
+    "decision.resolve.v1",
+    "projection.apply.v1",
+    "execution.sequence.v1",
+    "testimony.record.v1",
+    "port.invoke.v1"
+  ],
+  "declaredDecision": "resolves-workspace-document-observation-disposition",
+  "declaredResultProjection": "projects-observes-workspace-json-document-result",
+  "declaredReceiptProjection": "projects-observes-workspace-json-document-receipt",
+  "declaredDispositions": [
+    "WORKSPACE_JSON_DOCUMENT_OBSERVED",
+    "WORKSPACE_JSON_DOCUMENT_UNREADABLE"
+  ],
+  "dependencies": [
+    "discovers-workspace-json-documents"
+  ]
+}

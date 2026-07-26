@@ -1,0 +1,8 @@
+{
+  "scaffoldType": "capability-proof-expectation-scaffold.v1",
+  "capabilityId": "resolves-workspace-registry-request",
+  "status": "not-evaluated",
+  "expectedDisposition": "WORKSPACE_REGISTRY_REQUEST_RESOLVED",
+  "requiredProofRequirement": "resolves-workspace-registry-request-proof",
+  "note": "Replace with kernel-observed canonical receipt before promotion."
+}

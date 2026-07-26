@@ -1,0 +1,14 @@
+{
+  "requestType": "projects-workspace-registry-snapshot-request.v1",
+  "requestId": "projects-workspace-registry-snapshot-candidate-001",
+  "payload": {
+    "workspace": {},
+    "provenance": {},
+    "excludedRelativePaths": [
+      ".sej-query/registry.v1.json"
+    ],
+    "documents": [],
+    "diagnostics": [],
+    "summary": {}
+  }
+}

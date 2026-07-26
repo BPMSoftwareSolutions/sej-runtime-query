@@ -1,0 +1,20 @@
+{
+  "scaffoldType": "capability-intent-scaffold.v1",
+  "capabilityId": "records-workspace-registry-provenance",
+  "status": "drafted",
+  "title": "Record workspace registry provenance",
+  "purpose": "Record reproducible workspace snapshot identity and available source-control testimony for one registry build.",
+  "actor": "workspace-registry-builder",
+  "trigger": "the final ordered document observations are available",
+  "desiredOutcome": "one registry provenance record is projected",
+  "constraints": [
+    "semantic-authority-is-the-source-of-truth",
+    "capability-body-is-projected-and-linear",
+    "mechanical-effects-occur-only-through-declared-ports",
+    "no-promotion-before-live-kernel-proof"
+  ],
+  "featureIds": [
+    "records-workspace-registry-provenance"
+  ],
+  "sourceEvidence": "legacy-workspace-registry-behavior"
+}

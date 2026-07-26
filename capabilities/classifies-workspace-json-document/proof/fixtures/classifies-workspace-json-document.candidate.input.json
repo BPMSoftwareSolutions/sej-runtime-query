@@ -1,0 +1,8 @@
+{
+  "requestType": "classifies-workspace-json-document-request.v1",
+  "requestId": "classifies-workspace-json-document-candidate-001",
+  "payload": {
+    "documentObservation": {},
+    "supportedSchemaFamilies": []
+  }
+}

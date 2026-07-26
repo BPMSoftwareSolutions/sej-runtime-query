@@ -1,0 +1,20 @@
+{
+  "scaffoldType": "capability-intent-scaffold.v1",
+  "capabilityId": "discovers-workspace-json-documents",
+  "status": "drafted",
+  "title": "Discover workspace JSON documents",
+  "purpose": "Discover JSON document candidates recursively beneath one authorized workspace root without escaping through symbolic links.",
+  "actor": "workspace-registry-builder",
+  "trigger": "resolved workspace discovery authority is available",
+  "desiredOutcome": "one deterministic ordered collection of JSON document paths is observed",
+  "constraints": [
+    "semantic-authority-is-the-source-of-truth",
+    "capability-body-is-projected-and-linear",
+    "mechanical-effects-occur-only-through-declared-ports",
+    "no-promotion-before-live-kernel-proof"
+  ],
+  "featureIds": [
+    "discovers-workspace-json-documents"
+  ],
+  "sourceEvidence": "legacy-workspace-registry-behavior"
+}

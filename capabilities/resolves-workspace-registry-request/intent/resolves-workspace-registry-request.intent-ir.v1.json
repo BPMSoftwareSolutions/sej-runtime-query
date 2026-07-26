@@ -1,0 +1,20 @@
+{
+  "scaffoldType": "capability-intent-scaffold.v1",
+  "capabilityId": "resolves-workspace-registry-request",
+  "status": "drafted",
+  "title": "Resolve workspace registry request",
+  "purpose": "Resolve the canonical workspace root, workspace identity, output authority, and output exclusion for one registry build.",
+  "actor": "authorized-registry-caller",
+  "trigger": "a workspace registry request is submitted",
+  "desiredOutcome": "one immutable workspace registry request authority is resolved",
+  "constraints": [
+    "semantic-authority-is-the-source-of-truth",
+    "capability-body-is-projected-and-linear",
+    "mechanical-effects-occur-only-through-declared-ports",
+    "no-promotion-before-live-kernel-proof"
+  ],
+  "featureIds": [
+    "resolves-workspace-registry-request"
+  ],
+  "sourceEvidence": "legacy-workspace-registry-behavior"
+}

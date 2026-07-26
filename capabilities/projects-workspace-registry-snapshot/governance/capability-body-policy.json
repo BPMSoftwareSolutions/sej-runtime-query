@@ -1,0 +1,25 @@
+{
+  "policyType": "linear-capability-body-policy.v1",
+  "capabilityId": "projects-workspace-registry-snapshot",
+  "status": "drafted",
+  "sourceOfBody": "3-semantic-execution-models/projects-workspace-registry-snapshot.execution.sej.v1.json",
+  "projectionDescriptor": "projectors/typescript/capability-body.projection.v1.json",
+  "requiredShape": [
+    "resolve-authority",
+    "execute-resolved-authority",
+    "project-receipt",
+    "return"
+  ],
+  "forbiddenSyntax": [
+    "IfStatement",
+    "SwitchStatement",
+    "ForStatement",
+    "ForOfStatement",
+    "ForInStatement",
+    "WhileStatement",
+    "DoWhileStatement",
+    "ConditionalExpression",
+    "TryStatement"
+  ],
+  "handAuthoredBodyChanges": "forbidden"
+}

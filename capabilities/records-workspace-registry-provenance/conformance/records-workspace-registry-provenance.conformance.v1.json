@@ -1,0 +1,16 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "records-workspace-registry-provenance-scaffolded-flow",
+  "capabilityId": "records-workspace-registry-provenance",
+  "status": "candidate",
+  "inputFixture": "../proof/fixtures/records-workspace-registry-provenance.candidate.input.json",
+  "expectedFixture": "../proof/expectations/records-workspace-registry-provenance.candidate.expected.json",
+  "expectedDisposition": "WORKSPACE_REGISTRY_PROVENANCE_RECORDED",
+  "kernelExecution": "not-evaluated",
+  "promotionBlockers": [
+    "semantic-decision-not-authored",
+    "semantic-projections-not-authored",
+    "mechanical-adapters-not-seated",
+    "live-kernel-proof-not-recorded"
+  ]
+}

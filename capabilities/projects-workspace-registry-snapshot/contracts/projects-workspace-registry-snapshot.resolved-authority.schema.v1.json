@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:projects-workspace-registry-snapshot:resolved-authority:v1",
+  "title": "Project workspace registry snapshot resolved authority",
+  "type": "object",
+  "required": [
+    "authorityType",
+    "capabilityId",
+    "decisionId",
+    "resolvedDisposition",
+    "operations"
+  ],
+  "properties": {
+    "authorityType": {
+      "const": "resolved-projects-workspace-registry-snapshot-authority.v1"
+    },
+    "capabilityId": {
+      "const": "projects-workspace-registry-snapshot"
+    },
+    "decisionId": {
+      "const": "resolves-workspace-snapshot-projection-disposition"
+    },
+    "resolvedDisposition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sequence",
+          "semanticIdentity"
+        ],
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "semanticIdentity": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

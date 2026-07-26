@@ -1,0 +1,16 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "resolves-workspace-document-references-scaffolded-flow",
+  "capabilityId": "resolves-workspace-document-references",
+  "status": "candidate",
+  "inputFixture": "../proof/fixtures/resolves-workspace-document-references.candidate.input.json",
+  "expectedFixture": "../proof/expectations/resolves-workspace-document-references.candidate.expected.json",
+  "expectedDisposition": "WORKSPACE_DOCUMENT_REFERENCES_RESOLVED",
+  "kernelExecution": "not-evaluated",
+  "promotionBlockers": [
+    "semantic-decision-not-authored",
+    "semantic-projections-not-authored",
+    "mechanical-adapters-not-seated",
+    "live-kernel-proof-not-recorded"
+  ]
+}

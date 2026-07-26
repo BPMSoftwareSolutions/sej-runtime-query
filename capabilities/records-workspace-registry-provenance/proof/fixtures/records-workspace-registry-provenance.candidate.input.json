@@ -1,0 +1,9 @@
+{
+  "requestType": "records-workspace-registry-provenance-request.v1",
+  "requestId": "records-workspace-registry-provenance-candidate-001",
+  "payload": {
+    "workspaceName": "candidate-workspace",
+    "workspaceRoot": ".",
+    "documents": []
+  }
+}

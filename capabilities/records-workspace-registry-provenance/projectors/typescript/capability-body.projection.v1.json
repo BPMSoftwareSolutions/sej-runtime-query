@@ -1,0 +1,12 @@
+{
+  "projectionType": "typescript-linear-capability-body-projection.v1",
+  "status": "drafted",
+  "capabilityId": "records-workspace-registry-provenance",
+  "sourceExecutionModel": "../../3-semantic-execution-models/records-workspace-registry-provenance.execution.sej.v1.json",
+  "targetBody": "../../runtime/typescript/bodies/records-workspace-registry-provenance.ts",
+  "targetContextType": "../../runtime/typescript/types/records-workspace-registry-provenance-context.type.ts",
+  "targetRegistration": "../../runtime/typescript/registration/registers-records-workspace-registry-provenance-authority.ts",
+  "functionName": "recordsWorkspaceRegistryProvenance",
+  "contextTypeName": "RecordsWorkspaceRegistryProvenanceContext",
+  "generatedBodyPolicy": "resolve-execute-project-return-only"
+}

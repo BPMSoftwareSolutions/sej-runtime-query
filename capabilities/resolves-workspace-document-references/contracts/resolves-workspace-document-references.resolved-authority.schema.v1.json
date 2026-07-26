@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:resolves-workspace-document-references:resolved-authority:v1",
+  "title": "Resolve workspace document references resolved authority",
+  "type": "object",
+  "required": [
+    "authorityType",
+    "capabilityId",
+    "decisionId",
+    "resolvedDisposition",
+    "operations"
+  ],
+  "properties": {
+    "authorityType": {
+      "const": "resolved-resolves-workspace-document-references-authority.v1"
+    },
+    "capabilityId": {
+      "const": "resolves-workspace-document-references"
+    },
+    "decisionId": {
+      "const": "resolves-workspace-reference-disposition"
+    },
+    "resolvedDisposition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sequence",
+          "semanticIdentity"
+        ],
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "semanticIdentity": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

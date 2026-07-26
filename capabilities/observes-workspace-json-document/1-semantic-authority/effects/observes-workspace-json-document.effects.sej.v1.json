@@ -1,0 +1,23 @@
+{
+  "scaffoldType": "semantic-effect-catalog-scaffold.v1",
+  "declarationType": "semantic-effect-catalog.v1",
+  "status": "drafted",
+  "effectCatalogId": "observes-workspace-json-document-effects",
+  "effects": [
+    {
+      "effect": "read-file-system",
+      "authorization": "must-be-resolved-before-invocation",
+      "testimony": "required"
+    },
+    {
+      "effect": "parse",
+      "authorization": "must-be-resolved-before-invocation",
+      "testimony": "required"
+    },
+    {
+      "effect": "calculate",
+      "authorization": "must-be-resolved-before-invocation",
+      "testimony": "required"
+    }
+  ]
+}

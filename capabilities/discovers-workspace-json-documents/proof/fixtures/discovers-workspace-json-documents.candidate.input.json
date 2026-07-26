@@ -1,0 +1,10 @@
+{
+  "requestType": "discovers-workspace-json-documents-request.v1",
+  "requestId": "discovers-workspace-json-documents-candidate-001",
+  "payload": {
+    "workspaceRoot": ".",
+    "excludedRelativePaths": [
+      ".sej-query/registry.v1.json"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "policyType": "projection-boundary-policy.v1",
+  "capabilityId": "summarizes-workspace-registry",
+  "canonicalRoots": [
+    "intent",
+    "features",
+    "contracts",
+    "1-semantic-authority",
+    "2-semantic-projections",
+    "3-semantic-execution-models",
+    "proof"
+  ],
+  "projectedRoots": [
+    "projectors",
+    "runtime",
+    "4-adapters"
+  ],
+  "directEffectsFromCapabilityBody": "forbidden",
+  "domainMeaningInAdapters": "forbidden"
+}

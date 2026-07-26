@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:observes-workspace-json-document:execution-context:v1",
+  "title": "Observe workspace JSON document execution context",
+  "type": "object",
+  "required": [
+    "request",
+    "observedFacts",
+    "resolvedAuthority",
+    "proofContext"
+  ],
+  "properties": {
+    "request": {
+      "$ref": "urn:deterministic-solutions:observes-workspace-json-document:input:v1"
+    },
+    "observedFacts": {
+      "type": "object"
+    },
+    "resolvedAuthority": {
+      "$ref": "urn:deterministic-solutions:observes-workspace-json-document:resolved-authority:v1"
+    },
+    "proofContext": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

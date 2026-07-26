@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:summarizes-workspace-registry:input:v1",
+  "title": "Summarize workspace registry input",
+  "type": "object",
+  "required": [
+    "requestType",
+    "requestId",
+    "payload"
+  ],
+  "properties": {
+    "requestType": {
+      "const": "summarizes-workspace-registry-request.v1"
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "documents"
+      ],
+      "properties": {
+        "documents": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

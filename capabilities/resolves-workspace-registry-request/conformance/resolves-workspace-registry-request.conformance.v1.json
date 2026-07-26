@@ -1,0 +1,16 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "resolves-workspace-registry-request-scaffolded-flow",
+  "capabilityId": "resolves-workspace-registry-request",
+  "status": "candidate",
+  "inputFixture": "../proof/fixtures/resolves-workspace-registry-request.candidate.input.json",
+  "expectedFixture": "../proof/expectations/resolves-workspace-registry-request.candidate.expected.json",
+  "expectedDisposition": "WORKSPACE_REGISTRY_REQUEST_RESOLVED",
+  "kernelExecution": "not-evaluated",
+  "promotionBlockers": [
+    "semantic-decision-not-authored",
+    "semantic-projections-not-authored",
+    "mechanical-adapters-not-seated",
+    "live-kernel-proof-not-recorded"
+  ]
+}

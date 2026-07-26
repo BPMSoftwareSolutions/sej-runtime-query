@@ -1,0 +1,20 @@
+{
+  "scaffoldType": "capability-intent-scaffold.v1",
+  "capabilityId": "builds-workspace-registry",
+  "status": "drafted",
+  "title": "Build workspace registry",
+  "purpose": "Compose the published workspace registry capabilities into one resolved, executable, and provable registry build.",
+  "actor": "authorized-registry-caller",
+  "trigger": "a build-workspace-registry request is submitted",
+  "desiredOutcome": "one current workspace registry snapshot is returned or atomically persisted",
+  "constraints": [
+    "semantic-authority-is-the-source-of-truth",
+    "capability-body-is-projected-and-linear",
+    "mechanical-effects-occur-only-through-declared-ports",
+    "no-promotion-before-live-kernel-proof"
+  ],
+  "featureIds": [
+    "builds-workspace-registry"
+  ],
+  "sourceEvidence": "legacy-workspace-registry-behavior"
+}

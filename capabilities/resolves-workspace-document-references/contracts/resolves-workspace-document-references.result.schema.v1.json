@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:resolves-workspace-document-references:result:v1",
+  "title": "Resolve workspace document references result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "resolves-workspace-document-references-result.v1"
+    },
+    "capabilityId": {
+      "const": "resolves-workspace-document-references"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "documents",
+        "referenceDiagnostics"
+      ],
+      "properties": {
+        "documents": {},
+        "referenceDiagnostics": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

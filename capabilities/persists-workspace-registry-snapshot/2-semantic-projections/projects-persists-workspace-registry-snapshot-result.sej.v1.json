@@ -1,0 +1,19 @@
+{
+  "scaffoldType": "semantic-projection-scaffold.v1",
+  "declarationType": "projection.v1",
+  "status": "drafted",
+  "projectionId": "projects-persists-workspace-registry-snapshot-result",
+  "accepts": {
+    "contractId": "executed-persists-workspace-registry-snapshot.v1"
+  },
+  "produces": {
+    "contractId": "persists-workspace-registry-snapshot-result.v1"
+  },
+  "expression": null,
+  "completionRequirements": [
+    "declare-every-result-field-mapping",
+    "declare-missing-value-policy",
+    "declare-canonical-ordering",
+    "execute-through-kernel-projection"
+  ]
+}

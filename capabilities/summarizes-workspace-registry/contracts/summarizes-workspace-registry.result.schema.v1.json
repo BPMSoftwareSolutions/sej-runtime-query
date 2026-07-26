@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:summarizes-workspace-registry:result:v1",
+  "title": "Summarize workspace registry result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "summarizes-workspace-registry-result.v1"
+    },
+    "capabilityId": {
+      "const": "summarizes-workspace-registry"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "summary"
+      ],
+      "properties": {
+        "summary": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}

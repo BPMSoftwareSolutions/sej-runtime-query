@@ -1,0 +1,19 @@
+{
+  "scaffoldType": "semantic-proof-requirement-scaffold.v1",
+  "declarationType": "semantic-proof-requirement.v1",
+  "status": "drafted",
+  "proofRequirementId": "resolves-workspace-registry-request-proof",
+  "requiredAssertions": [
+    "request-contract-hash-recorded",
+    "semantic-authority-hash-recorded",
+    "resolved-decision-and-rule-recorded",
+    "authorized-operation-testimony-recorded",
+    "result-contract-validation-recorded",
+    "final-disposition-recorded"
+  ],
+  "negativeControls": [
+    "undeclared-edge-is-rejected",
+    "invalid-input-contract-is-rejected",
+    "mechanical-failure-is-not-silently-reclassified"
+  ]
+}

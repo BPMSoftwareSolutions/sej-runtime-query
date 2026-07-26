@@ -1,0 +1,8 @@
+{
+  "scaffoldType": "capability-proof-expectation-scaffold.v1",
+  "capabilityId": "classifies-workspace-json-document",
+  "status": "not-evaluated",
+  "expectedDisposition": "WORKSPACE_JSON_DOCUMENT_CLASSIFIED",
+  "requiredProofRequirement": "classifies-workspace-json-document-proof",
+  "note": "Replace with kernel-observed canonical receipt before promotion."
+}

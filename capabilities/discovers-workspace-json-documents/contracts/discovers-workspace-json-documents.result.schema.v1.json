@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:discovers-workspace-json-documents:result:v1",
+  "title": "Discover workspace JSON documents result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "discovers-workspace-json-documents-result.v1"
+    },
+    "capabilityId": {
+      "const": "discovers-workspace-json-documents"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "documentPaths",
+        "discoveryDiagnostics"
+      ],
+      "properties": {
+        "documentPaths": {},
+        "discoveryDiagnostics": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "x-scaffold-status": "drafted"
+}
