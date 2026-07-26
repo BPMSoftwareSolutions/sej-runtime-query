@@ -149,7 +149,10 @@ function readsPointer(document, pointer) {
 
 function projectsFile(target, content) {
   if (checkOnly) {
-    if (!fs.existsSync(target) || fs.readFileSync(target, "utf8") !== content) {
+    if (
+      !fs.existsSync(target)
+      || normalizesLineEndings(fs.readFileSync(target, "utf8")) !== normalizesLineEndings(content)
+    ) {
       throw new Error(`Projected artifact drift: ${path.relative(root, target)}`);
     }
     return;
@@ -159,6 +162,10 @@ function projectsFile(target, content) {
     throw new Error(`Refusing to overwrite a non-generated artifact: ${path.relative(root, target)}`);
   }
   fs.writeFileSync(target, content, "utf8");
+}
+
+function normalizesLineEndings(value) {
+  return value.replaceAll("\r\n", "\n");
 }
 
 function walks(directory) {
