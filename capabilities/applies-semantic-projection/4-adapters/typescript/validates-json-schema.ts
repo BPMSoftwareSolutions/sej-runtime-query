@@ -21,6 +21,7 @@ export function validatesJsonSchema(
 
 export function createsJsonSchemaValidator(schemas: readonly unknown[] = []): JsonSchemaValidator {
   const ajv = new Ajv2020({ allErrors: true, strict: true });
+  ajv.addKeyword({ keyword: "x-sej-presentation", schemaType: "object" });
   for (const schema of schemas) ajv.addSchema(requiresSchema(schema));
   return Object.freeze({
     validate: (schema: unknown, value: unknown) => {

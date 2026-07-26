@@ -1,0 +1,21 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "presents-projected-query-result",
+  "status": "implemented",
+  "promotionDisposition": "conformance-passed",
+  "purpose": "Resolve promoted layout authority, bind a projected query result, and render a deterministic terminal presentation or canonical JSON fallback.",
+  "owns": [
+    "result-contract-to-layout-resolution",
+    "result-to-layout-slot-binding",
+    "semantic-presentation-model-projection",
+    "terminal-presentation-receipts"
+  ],
+  "mustNotOwn": [
+    "query-selection",
+    "layout-candidate-generation",
+    "layout-promotion",
+    "semantic-query-projection"
+  ],
+  "publicOperation": "presents-projected-query-result",
+  "requiredKernelPrimitives": ["decision.resolve.v1", "projection.apply.v1"]
+}

@@ -1,0 +1,79 @@
+{
+  "layoutTemplateType": "semantic-layout-template.v1",
+  "layoutTemplateId": "workspace-capability-report-terminal",
+  "title": "Workspace capability report terminal layout",
+  "layoutFamily": "report",
+  "intendedSurfaces": ["terminal"],
+  "sourceCandidateId": "candidate-01",
+  "sourceIntentHash": "sha256:dd21351f32098a314951f3c1a7485d669fe8824a710827f559afe6f535a31fd5",
+  "rootRegionId": "report-root",
+  "regions": [
+    {
+      "regionId": "report-root",
+      "role": "layout-root",
+      "composition": "vertical",
+      "children": ["report-summary", "report-metrics", "primary-content"]
+    },
+    {
+      "regionId": "report-summary",
+      "role": "identity",
+      "importance": "primary"
+    },
+    {
+      "regionId": "report-metrics",
+      "role": "supporting-content"
+    },
+    {
+      "regionId": "primary-content",
+      "role": "primary-content",
+      "importance": "primary",
+      "composition": "vertical",
+      "children": ["capability-list"]
+    },
+    {
+      "regionId": "capability-list",
+      "role": "collection"
+    }
+  ],
+  "relationships": [
+    {
+      "relationship": "precedes",
+      "subject": "report-summary",
+      "object": "report-metrics",
+      "disposition": "required"
+    },
+    {
+      "relationship": "precedes",
+      "subject": "report-metrics",
+      "object": "primary-content",
+      "disposition": "required"
+    }
+  ],
+  "slots": [
+    {
+      "slotId": "summary",
+      "regionId": "report-summary",
+      "accepts": ["title"]
+    },
+    {
+      "slotId": "metrics",
+      "regionId": "report-metrics",
+      "accepts": ["metric"]
+    },
+    {
+      "slotId": "capabilities",
+      "regionId": "capability-list",
+      "accepts": ["capability-summary"]
+    }
+  ],
+  "constraints": [
+    {
+      "constraintId": "require-primary-content",
+      "kind": "required-region",
+      "subject": "primary-content",
+      "disposition": "required"
+    }
+  ],
+  "status": "promoted",
+  "templateHash": "sha256:eb033682a726f7703ad957e8e3b4e31997b26ef67b5519c1902170126915004f"
+}

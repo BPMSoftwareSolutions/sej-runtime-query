@@ -1,0 +1,10 @@
+{
+  "proofRequirementType": "capability-proof-requirement.v1",
+  "proofRequirementId": "presents-projected-query-result",
+  "capabilityId": "presents-projected-query-result",
+  "requirements": [
+    "one promoted schema-declared terminal layout renders",
+    "no applicable layout returns canonical JSON",
+    "runtime layout synthesis is absent"
+  ]
+}

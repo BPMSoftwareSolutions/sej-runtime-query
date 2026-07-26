@@ -7,6 +7,10 @@ export {
 } from "./creates-semantic-projection-capability.js";
 export { startsQueryEngine } from "./starts-query-engine.js";
 export {
+  createsQueryResultPresentationRuntime,
+  type QueryResultPresentationCapability,
+} from "../capabilities/presents-projected-query-result/runtime/typescript/registration/creates-query-result-presentation-runtime.js";
+export {
   createsCapabilityRuntimeById,
   invokesCapability,
   listsImplementedCapabilities,

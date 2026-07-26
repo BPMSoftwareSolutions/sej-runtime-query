@@ -1,0 +1,7 @@
+{
+  "projectionType": "semantic-result-projection.v1",
+  "projectionId": "projects-presents-projected-query-result-result",
+  "sourceContract": "resolved-query-result-presentation.v1",
+  "targetContract": "query-result-presentation-receipt.v1",
+  "mapping": "canonical-presentation-receipt"
+}

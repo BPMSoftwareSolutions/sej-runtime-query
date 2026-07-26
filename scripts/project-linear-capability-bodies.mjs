@@ -87,7 +87,9 @@ for (const descriptorPath of descriptors) {
 
   projectsFile(path.resolve(descriptorRoot, descriptor.targetBody), body);
   projectsFile(path.resolve(descriptorRoot, descriptor.targetContextType), contextType);
-  projectsFile(path.resolve(descriptorRoot, descriptor.targetRegistration), registration);
+  if (descriptor.registrationProjection !== "external") {
+    projectsFile(path.resolve(descriptorRoot, descriptor.targetRegistration), registration);
+  }
   projectsFile(path.join(descriptorRoot, "projects-capability-body.ts"), projectorMetadata);
   projectsFile(path.join(descriptorRoot, "projects-capability-types.ts"), projectorTypes);
   projected.push(descriptor.capabilityId);

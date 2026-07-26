@@ -1,0 +1,9 @@
+{
+  "requestType": "presents-projected-query-result-request.v1",
+  "requestId": "presentation-proof-1",
+  "surface": "terminal",
+  "projectionReceipt": {
+    "disposition": "QUERY_RESULT_PROJECTED",
+    "outputContractId": "workspace-capability-report.v1"
+  }
+}

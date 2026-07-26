@@ -1,0 +1,16 @@
+{
+  "pipelineType": "query-execution-pipeline.v1",
+  "pipelineId": "execute-project-and-present-query",
+  "steps": [
+    "parse-declared-result-projection-clause",
+    "execute-relational-query",
+    "project-relational-result-to-canonical-query-result",
+    "apply-declared-semantic-projection",
+    "resolve-schema-declared-layout",
+    "bind-result-content-to-layout-regions",
+    "render-terminal-or-return-canonical-json",
+    "record-presentation-receipt"
+  ],
+  "implicitLayoutSynthesis": "forbidden",
+  "fallback": "canonical-json-when-no-applicable-promoted-layout"
+}

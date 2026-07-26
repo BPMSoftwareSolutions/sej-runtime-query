@@ -1,0 +1,4 @@
+{
+  "$ref": "query-result-presentation-receipt.v1",
+  "x-canonicalReceiptSchema": "query-result-presentation-receipt.schema.v1.json"
+}

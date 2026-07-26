@@ -1,0 +1,6 @@
+{
+  "receiptType": "query-result-presentation-receipt.v1",
+  "capabilityId": "presents-projected-query-result",
+  "disposition": "QUERY_RESULT_PRESENTED",
+  "fallbackDisposition": "not-required"
+}

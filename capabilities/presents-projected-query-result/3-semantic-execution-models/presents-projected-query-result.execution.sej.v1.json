@@ -1,0 +1,27 @@
+{
+  "executionModelType": "semantic-execution-model.v1",
+  "executionModelId": "presents-projected-query-result",
+  "steps": [
+    {
+      "sequence": 1,
+      "operation": "invoke",
+      "semanticIdentity": "resolves-query-result-presentation-authority",
+      "input": "context",
+      "binds": "authority"
+    },
+    {
+      "sequence": 2,
+      "operation": "invoke",
+      "semanticIdentity": "executes-resolved-query-result-presentation",
+      "input": "authority",
+      "binds": "execution"
+    },
+    {
+      "sequence": 3,
+      "operation": "project",
+      "semanticIdentity": "projects-query-result-presentation-receipt",
+      "input": "execution",
+      "returns": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "bindingType": "layout-content-binding.v1",
+  "bindingId": "bind-workspace-capability-report.v1",
+  "acceptsContractId": "workspace-capability-report.v1",
+  "layoutShapeId": "workspace-capability-report.v1::workspace-capability-report-terminal",
+  "regionBindings": [
+    {
+      "regionId": "report-summary",
+      "content": [
+        { "kind": "constant", "label": "title", "value": "Workspace Capability Report" }
+      ]
+    },
+    {
+      "regionId": "report-metrics",
+      "content": [
+        { "kind": "field", "label": "Capabilities", "path": "$.capabilityCount" },
+        { "kind": "field", "label": "Other documents", "path": "$.otherDocumentCount" }
+      ]
+    },
+    {
+      "regionId": "capability-list",
+      "content": [
+        {
+          "kind": "collection",
+          "label": "Capabilities",
+          "path": "$.capabilities",
+          "itemPath": "$.path"
+        }
+      ]
+    }
+  ]
+}

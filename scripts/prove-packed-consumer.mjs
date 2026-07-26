@@ -7,11 +7,14 @@ import { spawnSync } from "node:child_process";
 
 const queryRoot = process.cwd();
 const kernelRoot = path.resolve(queryRoot, "..", "semantic-kernel");
+const layoutShaperRoot = path.resolve(queryRoot, "..", "layout-shaper");
 const temporaryRoot = fs.mkdtempSync(path.join(os.tmpdir(), "sej-runtime-query-consumer-"));
 
 try {
   runs("npm", ["run", "build"], kernelRoot);
+  runs("npm", ["run", "build"], layoutShaperRoot);
   const kernelArchive = packs(kernelRoot, temporaryRoot);
+  const layoutShaperArchive = packs(layoutShaperRoot, temporaryRoot);
   const queryArchive = packs(queryRoot, temporaryRoot);
 
   fs.writeFileSync(path.join(temporaryRoot, "package.json"), JSON.stringify({
@@ -19,7 +22,7 @@ try {
     private: true,
     type: "module",
   }, null, 2));
-  runs("npm", ["install", "--ignore-scripts", kernelArchive, queryArchive], temporaryRoot);
+  runs("npm", ["install", "--ignore-scripts", kernelArchive, layoutShaperArchive, queryArchive], temporaryRoot);
 
   fs.copyFileSync(
     path.join(queryRoot, "examples", "workspaces", "projection-demo", ".sej-query", "projections", "project-capability-summary.sej.v1.json"),
@@ -27,7 +30,7 @@ try {
   );
   fs.writeFileSync(path.join(temporaryRoot, "consumer.mjs"), consumerProgram());
   runs(process.execPath, ["consumer.mjs"], temporaryRoot);
-  console.log("PASS packed-consumer (kernel tarball + query tarball + public API execution)");
+  console.log("PASS packed-consumer (kernel + layout-shaper + query tarballs + public API execution)");
 } finally {
   fs.rmSync(temporaryRoot, { recursive: true, force: true });
 }
@@ -61,7 +64,10 @@ function throwsCommandFailure(command, result) {
 function consumerProgram() {
   return `
 import assert from "node:assert/strict";
-import { createsSemanticProjectionCapability } from "@deterministic-solutions/sej-runtime-query";
+import {
+  createsSemanticProjectionCapability,
+  startsQueryEngine,
+} from "@deterministic-solutions/sej-runtime-query";
 
 const capability = createsSemanticProjectionCapability({ workspaceRoot: process.cwd() });
 const receipt = await capability.apply({
@@ -89,5 +95,26 @@ const receipt = await capability.apply({
 
 assert.equal(receipt.disposition, "QUERY_RESULT_PROJECTED");
 assert.equal(receipt.projectedResult.value[0].classification, "SEJ");
+
+const { engine } = startsQueryEngine({ capabilityPacks: [], portAdapters: {} });
+const presented = await engine.invoke({
+  requestType: "executes-relational-query-request.v1",
+  requestId: "packed-presentation",
+  payload: {
+    commandText:
+      "SELECT relativePath, sejClassification FROM registry APPLY RESULT PROJECTION project-workspace-capability-report",
+    sources: {
+      registry: [{
+        relativePath: "capabilities/example.json",
+        sejClassification: "sej"
+      }]
+    }
+  }
+});
+
+assert.equal(presented.disposition, "QUERY_RESULT_PRESENTED");
+assert.equal(presented.presentationReceipt.layoutShapeId,
+  "workspace-capability-report.v1::workspace-capability-report-terminal");
+assert.match(presented.rendered, /Capabilities: 1/);
 `;
 }

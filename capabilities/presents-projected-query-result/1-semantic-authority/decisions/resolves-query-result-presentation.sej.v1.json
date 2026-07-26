@@ -1,0 +1,40 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-query-result-presentation",
+  "rules": [
+    {
+      "ruleId": "render-declared-terminal-layout",
+      "when": {
+        "operator": "all",
+        "predicates": [
+          {
+            "operator": "equals",
+            "left": { "kind": "path", "path": "$.layoutMatchCount" },
+            "right": { "kind": "value", "value": 1 }
+          },
+          {
+            "operator": "equals",
+            "left": { "kind": "path", "path": "$.bindingMatchCount" },
+            "right": { "kind": "value", "value": 1 }
+          }
+        ]
+      },
+      "then": "render-declared-terminal-layout"
+    },
+    {
+      "ruleId": "return-canonical-json-without-layout",
+      "when": {
+        "operator": "equals",
+        "left": { "kind": "path", "path": "$.layoutMatchCount" },
+        "right": { "kind": "value", "value": 0 }
+      },
+      "then": "return-canonical-json-without-layout"
+    },
+    {
+      "ruleId": "reject-ambiguous-presentation-authority",
+      "when": { "operator": "always" },
+      "then": "reject-ambiguous-presentation-authority"
+    }
+  ],
+  "noMatchDisposition": "reject"
+}

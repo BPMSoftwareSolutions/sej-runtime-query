@@ -1,0 +1,12 @@
+{
+  "projectionType": "typescript-linear-capability-body.v1",
+  "capabilityId": "presents-projected-query-result",
+  "functionName": "presentsProjectedQueryResult",
+  "contextTypeName": "PresentsProjectedQueryResultContext",
+  "sourceExecutionModel": "../../3-semantic-execution-models/presents-projected-query-result.execution.sej.v1.json",
+  "targetBody": "../../runtime/typescript/bodies/presents-projected-query-result.ts",
+  "targetContextType": "../../runtime/typescript/types/presents-projected-query-result-context.type.ts",
+  "targetRegistration": "../../runtime/typescript/registration/registers-presents-projected-query-result-authority.ts",
+  "registrationProjection": "external",
+  "generatedBodyPolicy": "resolve-execute-project-return-only"
+}

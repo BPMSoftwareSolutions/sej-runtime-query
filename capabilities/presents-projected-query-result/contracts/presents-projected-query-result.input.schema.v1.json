@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:presents-projected-query-result:input:v1",
+  "title": "Presents projected query result input",
+  "type": "object",
+  "required": ["requestType", "requestId", "surface", "projectionReceipt"],
+  "properties": {
+    "requestType": { "const": "presents-projected-query-result-request.v1" },
+    "requestId": { "type": "string", "minLength": 1 },
+    "surface": { "const": "terminal" },
+    "projectionReceipt": { "type": "object" }
+  },
+  "additionalProperties": false
+}

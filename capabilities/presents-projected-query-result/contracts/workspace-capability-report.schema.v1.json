@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "workspace-capability-report.v1",
+  "type": "object",
+  "required": ["reportType", "capabilityCount", "otherDocumentCount", "capabilities"],
+  "additionalProperties": false,
+  "properties": {
+    "reportType": { "const": "workspace-capability-report.v1" },
+    "capabilityCount": { "type": "integer", "minimum": 0 },
+    "otherDocumentCount": { "type": "integer", "minimum": 0 },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path"],
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  },
+  "x-sej-presentation": {
+    "layoutShapeId": "workspace-capability-report.v1::workspace-capability-report-terminal",
+    "bindingId": "bind-workspace-capability-report.v1",
+    "defaultSurface": "terminal"
+  }
+}

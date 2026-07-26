@@ -173,6 +173,11 @@
       "status": "implemented"
     },
     {
+      "capabilityId": "presents-projected-query-result",
+      "path": "capabilities/presents-projected-query-result",
+      "status": "implemented"
+    },
+    {
       "capabilityId": "resolves-workspace-registry-request",
       "path": "capabilities/resolves-workspace-registry-request",
       "status": "drafted"

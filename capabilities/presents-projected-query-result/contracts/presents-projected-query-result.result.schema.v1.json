@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:presents-projected-query-result:result:v1",
+  "title": "Presents projected query result result",
+  "type": "object",
+  "required": ["resultType", "capabilityId", "value"],
+  "properties": {
+    "resultType": { "const": "presents-projected-query-result-result.v1" },
+    "capabilityId": { "const": "presents-projected-query-result" },
+    "value": { "type": "object" }
+  },
+  "additionalProperties": false
+}

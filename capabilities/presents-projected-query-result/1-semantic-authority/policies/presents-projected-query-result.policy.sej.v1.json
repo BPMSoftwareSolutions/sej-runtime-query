@@ -1,0 +1,8 @@
+{
+  "policyType": "semantic-presentation-policy.v1",
+  "policyId": "presents-projected-query-result",
+  "layoutResolution": "schema-metadata-and-promoted-registry-only",
+  "missingLayoutDisposition": "canonical-json",
+  "ambiguousAuthorityDisposition": "reject",
+  "runtimeLayoutSynthesis": "forbidden"
+}

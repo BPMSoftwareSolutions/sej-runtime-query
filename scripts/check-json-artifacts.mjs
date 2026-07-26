@@ -33,6 +33,7 @@ const schemas = [...documents].filter(([file, document]) =>
 const ajv = new Ajv2020({ allErrors: true, strict: true });
 ajv.addKeyword({ keyword: "x-canonicalReceiptSchema", schemaType: "string" });
 ajv.addKeyword({ keyword: "x-scaffold-status", schemaType: "string" });
+ajv.addKeyword({ keyword: "x-sej-presentation", schemaType: "object" });
 
 for (const [file, schema] of schemas.filter(([, candidate]) => typeof candidate?.$id === "string")) {
   try {

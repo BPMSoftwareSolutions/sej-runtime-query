@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "projected-presented-query-result.v1",
+  "type": "object",
+  "required": [
+    "resultType",
+    "disposition",
+    "relationalReceipt",
+    "projectionReceipt",
+    "presentationReceipt",
+    "rendered"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "resultType": { "const": "projected-presented-query-result.v1" },
+    "disposition": {
+      "enum": ["QUERY_RESULT_PRESENTED", "CANONICAL_JSON_RETURNED"]
+    },
+    "relationalReceipt": { "type": "object" },
+    "projectionReceipt": { "type": "object" },
+    "presentationReceipt": {
+      "$ref": "query-result-presentation-receipt.v1"
+    },
+    "rendered": { "type": "string" }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "disposition": { "const": "QUERY_RESULT_PRESENTED" },
+        "presentationReceipt": {
+          "properties": {
+            "disposition": { "const": "QUERY_RESULT_PRESENTED" }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "disposition": { "const": "CANONICAL_JSON_RETURNED" },
+        "presentationReceipt": {
+          "properties": {
+            "disposition": { "const": "CANONICAL_JSON_RETURNED" }
+          }
+        }
+      }
+    }
+  ]
+}

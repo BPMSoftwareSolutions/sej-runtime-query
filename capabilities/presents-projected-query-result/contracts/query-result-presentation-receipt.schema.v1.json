@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "query-result-presentation-receipt.v1",
+  "type": "object",
+  "required": [
+    "receiptType",
+    "runId",
+    "capabilityId",
+    "authorityHash",
+    "inputHash",
+    "resultHash",
+    "disposition",
+    "resultContractId",
+    "surface",
+    "layoutShapeId",
+    "bindingId",
+    "presentationModel",
+    "rendered",
+    "fallbackDisposition",
+    "findings"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "receiptType": { "const": "query-result-presentation-receipt.v1" },
+    "runId": { "type": "string", "minLength": 1 },
+    "capabilityId": { "const": "presents-projected-query-result" },
+    "authorityHash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "inputHash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "resultHash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "disposition": {
+      "enum": ["QUERY_RESULT_PRESENTED", "CANONICAL_JSON_RETURNED"]
+    },
+    "resultContractId": { "type": "string", "minLength": 1 },
+    "surface": { "const": "terminal" },
+    "layoutShapeId": { "type": ["string", "null"] },
+    "bindingId": { "type": ["string", "null"] },
+    "presentationModel": {
+      "oneOf": [
+        { "$ref": "semantic-presentation-model.v1" },
+        { "type": "null" }
+      ]
+    },
+    "rendered": { "type": "string" },
+    "fallbackDisposition": {
+      "enum": ["not-required", "no-applicable-promoted-layout"]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["findingId"],
+        "properties": {
+          "findingId": { "type": "string", "minLength": 1 },
+          "detail": {}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "disposition": { "const": "QUERY_RESULT_PRESENTED" },
+        "layoutShapeId": { "type": "string", "minLength": 1 },
+        "bindingId": { "type": "string", "minLength": 1 },
+        "presentationModel": { "$ref": "semantic-presentation-model.v1" },
+        "fallbackDisposition": { "const": "not-required" }
+      }
+    },
+    {
+      "properties": {
+        "disposition": { "const": "CANONICAL_JSON_RETURNED" },
+        "layoutShapeId": { "type": "null" },
+        "bindingId": { "type": "null" },
+        "presentationModel": { "type": "null" },
+        "fallbackDisposition": { "const": "no-applicable-promoted-layout" }
+      }
+    }
+  ]
+}

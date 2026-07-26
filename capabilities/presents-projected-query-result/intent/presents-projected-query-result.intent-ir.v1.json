@@ -1,0 +1,14 @@
+{
+  "capabilityId": "presents-projected-query-result",
+  "purpose": "Bind a projected semantic query result to applicable promoted layout authority and render it for a declared surface.",
+  "actor": "query-result-consumer",
+  "trigger": "a successful semantic projection receipt is submitted for presentation",
+  "desiredOutcome": "a terminal presentation or declared canonical JSON fallback with a presentation receipt",
+  "constraints": [
+    "query selection is not modified",
+    "candidate generation and selection are never invoked",
+    "layout resolution uses output contract and schema metadata",
+    "content binding is owned by query presentation authority",
+    "missing layout authority returns canonical JSON without synthesizing a layout"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "presents-projected-query-result-declared-flow",
+  "capabilityId": "presents-projected-query-result",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/presents-projected-query-result.accepts.input.json",
+  "expectedFixture": "../proof/expectations/presents-projected-query-result.accepts.expected.json",
+  "expectedDisposition": "QUERY_RESULT_PRESENTED",
+  "kernelExecution": "passed"
+}

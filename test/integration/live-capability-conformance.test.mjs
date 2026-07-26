@@ -21,9 +21,9 @@ test("live capabilities remain implemented while workspace-registry scaffolds re
   const scaffold = JSON.parse(fs.readFileSync(path.join("architecture", "workspace-registry-capability-family.scaffold.v1.json"), "utf8"));
   const scaffoldIds = scaffold.capabilities.map((entry) => entry.capabilityId).sort();
 
-  assert.equal(implemented.length, 26);
+  assert.equal(implemented.length, 27);
   assert.deepEqual(drafted, scaffoldIds);
-  // 25 seat their own authority; applies-semantic-projection resolves external authority.
+  // 25 seat generic authority; projection and presentation have specialized composition runtimes.
   assert.equal(capabilityIds.length, 25);
 });
 

@@ -47,12 +47,14 @@
     "prove": "npm run verify && npm run prove:package"
   },
   "peerDependencies": {
+    "@deterministic-solutions/layout-shaper": ">=0.1.0 <2.0.0",
     "@deterministic-solutions/semantic-kernel": ">=0.1.0 <2.0.0"
   },
   "dependencies": {
     "ajv": "^8.17.1"
   },
   "devDependencies": {
+    "@deterministic-solutions/layout-shaper": "file:../layout-shaper",
     "@deterministic-solutions/semantic-kernel": "file:../semantic-kernel",
     "@types/node": "^20.19.0",
     "typescript": "^5.8.3"

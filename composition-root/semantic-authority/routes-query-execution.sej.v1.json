@@ -1,0 +1,22 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "routes-query-execution",
+  "rules": [
+    {
+      "ruleId": "execute-projected-presented-query",
+      "when": {
+        "operator": "matches-pattern",
+        "operand": { "kind": "path", "path": "$.payload.commandText" },
+        "pattern": "\\s+APPLY\\s+RESULT\\s+PROJECTION\\s+[A-Za-z0-9_-]+\\s*$",
+        "flags": "i"
+      },
+      "then": "execute-projected-presented-query"
+    },
+    {
+      "ruleId": "execute-relational-query",
+      "when": { "operator": "always" },
+      "then": "execute-relational-query"
+    }
+  ],
+  "noMatchDisposition": "reject"
+}
