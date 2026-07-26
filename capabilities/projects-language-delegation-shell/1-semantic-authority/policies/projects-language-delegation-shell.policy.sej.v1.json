@@ -1,0 +1,14 @@
+{
+  "declarationType": "semantic-policy.v1",
+  "policyId": "projects-language-delegation-shell-policy",
+  "implicitFallback": "forbidden",
+  "unclassifiedFailure": "fail-closed",
+  "additionalAuthority": "reject",
+  "successDisposition": "DELEGATION_SHELL_PROJECTED",
+  "failureDisposition": "DELEGATION_SHELL_TARGET_UNSUPPORTED",
+  "validationPolicy": {
+    "validateInput": true,
+    "validateResult": true,
+    "validateReceipt": true
+  }
+}

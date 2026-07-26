@@ -1,0 +1,23 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-row-projection",
+  "steps": [
+    {
+      "sequence": 1,
+      "iterate": "projects-query-rows"
+    },
+    {
+      "sequence": 2,
+      "project": "projects-projected-result"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-projection-receipt"
+    }
+  ],
+  "stopWhen": [
+    "reject-query",
+    "stop-query",
+    "blocking-finding-observed"
+  ]
+}

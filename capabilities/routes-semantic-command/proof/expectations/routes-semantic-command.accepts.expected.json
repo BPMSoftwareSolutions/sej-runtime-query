@@ -1,0 +1,20 @@
+{
+  "receiptType": "routes-semantic-command-receipt.v1",
+  "runId": "run-routes-semantic-command-accepts-001",
+  "capabilityId": "routes-semantic-command",
+  "authorityHash": "sha256:3370ff8cf8444301afa4bc6083f4232b65c52f10691e903720a5a59b69dbc7ff",
+  "inputHash": "sha256:e5ace28188aeef117720041d779f44573eab9e7ef31176828ff07d04eb0ed9c5",
+  "resultHash": "sha256:1f88f6638d2921c5e71d17426c3939cbccca3a7456f2059e571bfaec44091d2b",
+  "decisionId": "resolves-command-route",
+  "resolvedRule": "route-select-command",
+  "disposition": "SEMANTIC_COMMAND_ROUTED",
+  "findings": [],
+  "result": {
+    "resultType": "routes-semantic-command-result.v1",
+    "capabilityId": "routes-semantic-command",
+    "value": {
+      "commandFamily": "select-command",
+      "targetCapabilityId": "selects-query-facts"
+    }
+  }
+}

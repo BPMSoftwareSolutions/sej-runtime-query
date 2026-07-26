@@ -1,0 +1,10 @@
+{
+  "compatibilityCatalogType": "supported-semantic-kernel-specifications.v1",
+  "supported": [
+    {
+      "specification": "deterministic-semantic-kernel.v1",
+      "versionRange": "^1.0.0",
+      "status": "candidate"
+    }
+  ]
+}

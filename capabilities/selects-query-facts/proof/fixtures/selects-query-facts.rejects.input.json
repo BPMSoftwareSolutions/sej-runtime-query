@@ -1,0 +1,11 @@
+{
+  "requestType": "selects-query-facts-request.v1",
+  "requestId": "selects-query-facts-rejects-001",
+  "payload": {
+    "rows": [
+      {
+        "relativePath": "a.json"
+      }
+    ]
+  }
+}

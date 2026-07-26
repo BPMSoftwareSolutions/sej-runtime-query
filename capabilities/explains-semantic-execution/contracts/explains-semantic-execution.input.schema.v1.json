@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:explains-semantic-execution:input:v1",
+  "title": "Explains semantic execution input",
+  "type": "object",
+  "required": [
+    "requestType",
+    "requestId",
+    "payload"
+  ],
+  "properties": {
+    "requestType": {
+      "const": "explains-semantic-execution-request.v1"
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "receipt",
+        "depth"
+      ],
+      "properties": {
+        "receipt": {
+          "type": "object"
+        },
+        "depth": {
+          "enum": [
+            "decisions",
+            "full"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

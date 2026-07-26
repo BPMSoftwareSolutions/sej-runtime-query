@@ -1,0 +1,34 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-chain-compatibility",
+  "inputs": [
+    "$.payload.producedContractId",
+    "$.payload.acceptedContractId"
+  ],
+  "rules": [
+    {
+      "ruleId": "chain-compatible-contracts",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.producedContractId"
+        },
+        "right": {
+          "kind": "path",
+          "path": "$.payload.acceptedContractId"
+        }
+      },
+      "then": "chain-compatible-contracts"
+    },
+    {
+      "ruleId": "reject-incompatible-chain",
+      "when": {
+        "operator": "always"
+      },
+      "then": "reject-incompatible-chain"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

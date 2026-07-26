@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:apply-semantic-projection:input:v1",
+  "title": "Apply semantic projection input",
+  "type": "object",
+  "required": [
+    "requestType",
+    "requestId",
+    "queryResult",
+    "selector"
+  ],
+  "properties": {
+    "requestType": {
+      "const": "apply-semantic-projection-request.v1"
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "queryResult": {
+      "$ref": "urn:deterministic-solutions:sej-query-result:v1"
+    },
+    "selector": {
+      "type": "object",
+      "required": [
+        "projectionId"
+      ],
+      "properties": {
+        "projectionId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "explicitAuthorityPath": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "projectionContext": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+  "receiptType": "constructs-semantic-execution-context-receipt.v1",
+  "runId": "run-constructs-semantic-execution-context-accepts-001",
+  "capabilityId": "constructs-semantic-execution-context",
+  "authorityHash": "sha256:4b2d1e049927cfcdf152cb3ee73b77231dc5e9676977f1c42d22a2131f428f32",
+  "inputHash": "sha256:0e37acc928829d77d87861feca0d4034c87d0ccbdb30e9a9c7a7529986d29fc9",
+  "resultHash": "sha256:a4ffe8fe5e7beb6dce3948d416444a93938453f3d922f22f91f2318d2af5aa46",
+  "decisionId": "resolves-execution-context-completeness",
+  "resolvedRule": "context-complete",
+  "disposition": "EXECUTION_CONTEXT_CONSTRUCTED",
+  "findings": [],
+  "result": {
+    "resultType": "constructs-semantic-execution-context-result.v1",
+    "capabilityId": "constructs-semantic-execution-context",
+    "value": {
+      "completeness": "context-complete",
+      "context": {
+        "executionContextType": "semantic-execution-context.v1",
+        "bindings": {
+          "authority": "resolved-authority",
+          "source": "workspace-registry"
+        },
+        "limits": {
+          "maxRows": 100
+        },
+        "contextHash": "sha256:d3f72bdbd3fe400c6a73f73fdc8652c28c0cc4348e6dff0b209cbefd3b5c905a"
+      },
+      "missingBindings": []
+    }
+  }
+}

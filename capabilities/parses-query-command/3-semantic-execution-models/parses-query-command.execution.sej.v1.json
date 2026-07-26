@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-parses-query-command",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-parses-query-command-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-parses-query-command",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-parses-query-command-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

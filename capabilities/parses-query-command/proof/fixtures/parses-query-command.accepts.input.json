@@ -1,0 +1,11 @@
+{
+  "requestType": "parses-query-command-request.v1",
+  "requestId": "parses-query-command-accepts-001",
+  "payload": {
+    "normalizedText": "SELECT * FROM registry APPLY PROJECTION project-capability-summary",
+    "sourceRef": "registry",
+    "projectionRef": "project-capability-summary",
+    "hasWhere": false,
+    "hasLimit": false
+  }
+}

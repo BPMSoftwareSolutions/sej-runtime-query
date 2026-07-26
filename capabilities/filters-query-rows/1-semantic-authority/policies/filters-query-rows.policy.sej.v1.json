@@ -1,0 +1,14 @@
+{
+  "declarationType": "semantic-policy.v1",
+  "policyId": "filters-query-rows-policy",
+  "implicitFallback": "forbidden",
+  "unclassifiedFailure": "fail-closed",
+  "additionalAuthority": "reject",
+  "successDisposition": "QUERY_ROWS_FILTERED",
+  "failureDisposition": "QUERY_FILTER_PREDICATE_INVALID",
+  "validationPolicy": {
+    "validateInput": true,
+    "validateResult": true,
+    "validateReceipt": true
+  }
+}

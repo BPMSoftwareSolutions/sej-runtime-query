@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:parses-query-command:result:v1",
+  "title": "Parses query command result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "parses-query-command-result.v1"
+    },
+    "capabilityId": {
+      "const": "parses-query-command"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "commandFamily",
+        "normalizedText"
+      ],
+      "properties": {
+        "commandFamily": {},
+        "normalizedText": {},
+        "sourceRef": {},
+        "projectionRef": {},
+        "hasWhere": {},
+        "hasLimit": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "selects-query-facts-declared-flow",
+  "capabilityId": "selects-query-facts",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/selects-query-facts.accepts.input.json",
+  "expectedFixture": "../proof/expectations/selects-query-facts.accepts.expected.json",
+  "expectedDisposition": "QUERY_FACTS_SELECTED",
+  "kernelExecution": "passed"
+}

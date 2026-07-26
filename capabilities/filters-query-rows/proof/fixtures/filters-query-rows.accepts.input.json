@@ -1,0 +1,27 @@
+{
+  "requestType": "filters-query-rows-request.v1",
+  "requestId": "filters-query-rows-accepts-001",
+  "payload": {
+    "rows": [
+      {
+        "relativePath": "a.json",
+        "sejClassification": "sej"
+      },
+      {
+        "relativePath": "README.md",
+        "sejClassification": "non-sej"
+      }
+    ],
+    "predicate": {
+      "operator": "equals",
+      "left": {
+        "kind": "path",
+        "path": "$.row.sejClassification"
+      },
+      "right": {
+        "kind": "value",
+        "value": "sej"
+      }
+    }
+  }
+}

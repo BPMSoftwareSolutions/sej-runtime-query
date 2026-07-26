@@ -1,0 +1,29 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "resolves-projection-authority-execution",
+  "steps": [
+    {
+      "sequence": 1,
+      "validate": "apply-semantic-projection-request.v1"
+    },
+    {
+      "sequence": 2,
+      "invoke": "resolves-projection-authority"
+    },
+    {
+      "sequence": 3,
+      "invokePort": "reads-projection-authority"
+    },
+    {
+      "sequence": 4,
+      "validate": "resolved-query-projection.v1"
+    },
+    {
+      "sequence": 5,
+      "invoke": "resolves-cardinality-disposition"
+    }
+  ],
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

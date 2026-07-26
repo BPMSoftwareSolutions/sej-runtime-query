@@ -1,0 +1,45 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-projects-each-query-row-result",
+  "accepts": {
+    "contractId": "executed-projects-each-query-row.v1"
+  },
+  "produces": {
+    "contractId": "projects-each-query-row-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "projects-each-query-row-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "projects-each-query-row"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "order": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "rows": {
+            "kind": "read",
+            "path": "$.projectedRows",
+            "required": true
+          },
+          "projectedRowCount": {
+            "kind": "count",
+            "expression": {
+              "kind": "read",
+              "path": "$.projectedRows"
+            }
+          }
+        }
+      }
+    }
+  }
+}

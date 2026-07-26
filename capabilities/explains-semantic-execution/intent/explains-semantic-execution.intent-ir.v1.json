@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "explains-semantic-execution",
+  "title": "Explain semantic execution",
+  "purpose": "Project an explainable plan for selected semantic execution.",
+  "actor": "authorized-query-caller",
+  "trigger": "a explains-semantic-execution request is submitted",
+  "desiredOutcome": "Project an explainable plan for selected semantic execution.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "explains-semantic-execution"
+  ],
+  "ownedDecision": "resolves-explanation-depth",
+  "declaredDispositions": [
+    "SEMANTIC_EXECUTION_EXPLAINED",
+    "SEMANTIC_EXECUTION_UNEXPLAINABLE"
+  ]
+}

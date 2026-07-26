@@ -1,0 +1,14 @@
+{
+  "declarationType": "semantic-policy.v1",
+  "policyId": "routes-semantic-command-policy",
+  "implicitFallback": "forbidden",
+  "unclassifiedFailure": "fail-closed",
+  "additionalAuthority": "reject",
+  "successDisposition": "SEMANTIC_COMMAND_ROUTED",
+  "failureDisposition": "SEMANTIC_COMMAND_UNROUTABLE",
+  "validationPolicy": {
+    "validateInput": true,
+    "validateResult": true,
+    "validateReceipt": true
+  }
+}

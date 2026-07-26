@@ -1,0 +1,42 @@
+{
+  "requestType": "apply-semantic-projection-request.v1",
+  "requestId": "request-missing-001",
+  "queryResult": {
+    "queryResultType": "sej-query-result.v1",
+    "query": {
+      "normalizedText": "SELECT * FROM registry APPLY PROJECTION project-capability-summary",
+      "queryHash": "sha256:query-missing"
+    },
+    "source": {
+      "sourceId": "workspace-registry",
+      "sourceHash": "sha256:registry"
+    },
+    "selection": {
+      "columns": [
+        {
+          "name": "relativePath",
+          "sourcePath": "$.relativePath"
+        },
+        {
+          "name": "sejClassification",
+          "sourcePath": "$.sejClassification"
+        }
+      ]
+    },
+    "rows": [
+      {
+        "sejClassification": "sej"
+      }
+    ],
+    "rowCount": 1,
+    "execution": {
+      "whereApplied": false,
+      "limitApplied": null
+    }
+  },
+  "selector": {
+    "projectionId": "project-capability-summary",
+    "explicitAuthorityPath": "examples/workspaces/projection-demo/.sej-query/projections/project-capability-summary.sej.v1.json"
+  },
+  "projectionContext": {}
+}

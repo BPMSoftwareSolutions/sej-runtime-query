@@ -1,0 +1,13 @@
+{
+  "requestType": "derives-conformance-vector-candidates-request.v1",
+  "requestId": "derives-conformance-vector-candidates-rejects-001",
+  "payload": {
+    "derivationScope": "decision-rule",
+    "declaration": {
+      "declarationType": "decision.v1",
+      "decisionId": "empty",
+      "rules": [],
+      "noMatchDisposition": "reject"
+    }
+  }
+}

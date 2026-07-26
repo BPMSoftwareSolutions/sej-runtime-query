@@ -1,0 +1,15 @@
+{
+  "declarationType": "semantic-proof-requirement.v1",
+  "proofRequirementId": "projects-language-delegation-shell-proof",
+  "requiredAssertions": [
+    "capability-identity-recorded",
+    "authority-hash-recorded",
+    "input-hash-recorded",
+    "result-hash-recorded",
+    "final-disposition-recorded"
+  ],
+  "declaredDispositions": [
+    "DELEGATION_SHELL_PROJECTED",
+    "DELEGATION_SHELL_TARGET_UNSUPPORTED"
+  ]
+}

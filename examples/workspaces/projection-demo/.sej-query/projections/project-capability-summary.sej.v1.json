@@ -1,0 +1,58 @@
+{
+  "declarationType": "projection.v1",
+  "projectionAuthorityType": "query-result-projection.v1",
+  "projectionId": "project-capability-summary",
+  "scope": "each-row",
+  "accepts": {
+    "contractId": "workspace-registry-document-entry.v1"
+  },
+  "produces": {
+    "contractId": "capability-summary.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "capabilityPath": {
+        "kind": "read",
+        "path": "$.row.relativePath",
+        "required": true
+      },
+      "classification": {
+        "kind": "conditional",
+        "when": {
+          "operator": "equals",
+          "left": {
+            "kind": "path",
+            "path": "$.row.sejClassification"
+          },
+          "right": {
+            "kind": "value",
+            "value": "sej"
+          }
+        },
+        "then": {
+          "kind": "constant",
+          "value": "SEJ"
+        },
+        "otherwise": {
+          "kind": "constant",
+          "value": "OTHER"
+        }
+      },
+      "specificationVersion": {
+        "kind": "read",
+        "path": "$.row.semanticExecutableJsonVersion",
+        "required": true
+      }
+    }
+  },
+  "missingValuePolicy": "reject-row",
+  "invalidRowPolicy": "stop-on-first-invalid-row",
+  "cardinalityPolicy": "one-input-to-one-output",
+  "additionalFieldPolicy": "discard",
+  "orderingPolicy": "preserve-query-order",
+  "validationPolicy": {
+    "validateInput": true,
+    "validateOutput": true
+  }
+}

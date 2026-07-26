@@ -1,0 +1,28 @@
+{
+  "receiptType": "projects-each-query-row-receipt.v1",
+  "runId": "run-projects-each-query-row-accepts-001",
+  "capabilityId": "projects-each-query-row",
+  "authorityHash": "sha256:efefbbf05e0dd372e347aa0bf58ea1b65b9a40e7781b1b9965801e2c10e39abf",
+  "inputHash": "sha256:2586a61adc40d87170e092db91ab3203d64abcf3561192b3b4ee8037d333f8a5",
+  "resultHash": "sha256:51a6ea764474a0568d0913be957842a069014f39ef1170b2c993c818304d0b91",
+  "decisionId": "resolves-row-projection-order",
+  "resolvedRule": "reverse-order",
+  "disposition": "QUERY_ROWS_PROJECTED",
+  "findings": [],
+  "result": {
+    "resultType": "projects-each-query-row-result.v1",
+    "capabilityId": "projects-each-query-row",
+    "value": {
+      "order": "reverse",
+      "rows": [
+        {
+          "path": "b.json"
+        },
+        {
+          "path": "a.json"
+        }
+      ],
+      "projectedRowCount": 2
+    }
+  }
+}

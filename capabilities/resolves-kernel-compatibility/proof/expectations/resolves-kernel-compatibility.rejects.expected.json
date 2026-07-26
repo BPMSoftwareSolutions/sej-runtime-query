@@ -1,0 +1,23 @@
+{
+  "receiptType": "resolves-kernel-compatibility-receipt.v1",
+  "runId": "run-resolves-kernel-compatibility-rejects-001",
+  "capabilityId": "resolves-kernel-compatibility",
+  "authorityHash": "sha256:e9b6876b20e7c0ca788a8f79119e52fe788feded3483af63dc330da8cfeeffb5",
+  "inputHash": "sha256:85192928839ea5ff3c53bf5e6071b8b9d934af01deac26c50f590af5ff3f2487",
+  "resultHash": "sha256:3f92668a8277ab25c901e0d26d1b8397cfa593e570a1756ace2c53bb3a1f9175",
+  "decisionId": "resolves-kernel-compatibility-disposition",
+  "resolvedRule": "kernel-incompatible-primitives",
+  "disposition": "KERNEL_INCOMPATIBLE",
+  "findings": [
+    {
+      "findingId": "kernel-incompatible-primitives",
+      "detail": {
+        "missingPrimitiveCount": 1,
+        "missingPrimitives": [
+          "effect.dispatch.v1"
+        ],
+        "specificationSupported": true
+      }
+    }
+  ]
+}

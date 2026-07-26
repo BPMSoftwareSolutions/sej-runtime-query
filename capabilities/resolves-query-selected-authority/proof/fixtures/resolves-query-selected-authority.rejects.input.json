@@ -1,0 +1,19 @@
+{
+  "requestType": "resolves-query-selected-authority-request.v1",
+  "requestId": "resolves-query-selected-authority-rejects-001",
+  "payload": {
+    "entries": [
+      {
+        "identity": "a",
+        "classification": "sej"
+      },
+      {
+        "identity": "b",
+        "classification": "sej"
+      }
+    ],
+    "selector": {
+      "classification": "sej"
+    }
+  }
+}

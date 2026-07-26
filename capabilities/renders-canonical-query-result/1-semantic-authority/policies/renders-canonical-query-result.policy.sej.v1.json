@@ -1,0 +1,14 @@
+{
+  "declarationType": "semantic-policy.v1",
+  "policyId": "renders-canonical-query-result-policy",
+  "implicitFallback": "forbidden",
+  "unclassifiedFailure": "fail-closed",
+  "additionalAuthority": "reject",
+  "successDisposition": "QUERY_RESULT_RENDERED",
+  "failureDisposition": "QUERY_RENDER_FORM_UNSUPPORTED",
+  "validationPolicy": {
+    "validateInput": true,
+    "validateResult": true,
+    "validateReceipt": true
+  }
+}

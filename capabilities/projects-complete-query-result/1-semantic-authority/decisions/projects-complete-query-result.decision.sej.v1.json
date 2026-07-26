@@ -1,0 +1,46 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-complete-result-disposition",
+  "inputs": [
+    "$.payload.rows",
+    "$.payload.requireNonEmpty"
+  ],
+  "rules": [
+    {
+      "ruleId": "reject-empty-required-result",
+      "when": {
+        "operator": "all",
+        "predicates": [
+          {
+            "operator": "truthy",
+            "operand": {
+              "kind": "path",
+              "path": "$.payload.requireNonEmpty"
+            }
+          },
+          {
+            "operator": "equals",
+            "left": {
+              "kind": "path",
+              "path": "$.rowCount"
+            },
+            "right": {
+              "kind": "value",
+              "value": 0
+            }
+          }
+        ]
+      },
+      "then": "reject-empty-required-result"
+    },
+    {
+      "ruleId": "project-complete-result",
+      "when": {
+        "operator": "always"
+      },
+      "then": "project-complete-result"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "filters-query-rows-declared-flow",
+  "capabilityId": "filters-query-rows",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/filters-query-rows.accepts.input.json",
+  "expectedFixture": "../proof/expectations/filters-query-rows.accepts.expected.json",
+  "expectedDisposition": "QUERY_ROWS_FILTERED",
+  "kernelExecution": "passed"
+}

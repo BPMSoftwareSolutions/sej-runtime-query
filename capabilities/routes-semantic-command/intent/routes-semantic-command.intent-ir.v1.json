@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "routes-semantic-command",
+  "title": "Route semantic command",
+  "purpose": "Route a canonical command to one declared command-family capability.",
+  "actor": "authorized-query-caller",
+  "trigger": "a routes-semantic-command request is submitted",
+  "desiredOutcome": "Route a canonical command to one declared command-family capability.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "routes-semantic-command"
+  ],
+  "ownedDecision": "resolves-command-route",
+  "declaredDispositions": [
+    "SEMANTIC_COMMAND_ROUTED",
+    "SEMANTIC_COMMAND_UNROUTABLE"
+  ]
+}

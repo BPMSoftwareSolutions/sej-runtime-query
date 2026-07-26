@@ -1,0 +1,17 @@
+{
+  "registryType": "workspace-semantic-registry.v1",
+  "entries": [
+    {
+      "relativePath": "capabilities/file-system-shaper.json",
+      "sejClassification": "sej",
+      "semanticExecutableJsonVersion": "1.0.0",
+      "candidateRoles": []
+    },
+    {
+      "relativePath": "README.md",
+      "sejClassification": "non-sej",
+      "semanticExecutableJsonVersion": null,
+      "candidateRoles": []
+    }
+  ]
+}

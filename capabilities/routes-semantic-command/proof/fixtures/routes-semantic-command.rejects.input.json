@@ -1,0 +1,7 @@
+{
+  "requestType": "routes-semantic-command-request.v1",
+  "requestId": "routes-semantic-command-rejects-001",
+  "payload": {
+    "commandFamily": "mutate-command"
+  }
+}

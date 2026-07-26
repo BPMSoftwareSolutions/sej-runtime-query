@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "derives-conformance-vector-candidates",
+  "status": "implemented",
+  "purpose": "Derive candidate conformance vectors from selected semantic authority.",
+  "owns": [
+    "semantic-authority",
+    "conformance-vector-candidate"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "derives-conformance-vector-candidates",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-candidate-derivation-scope",
+  "declaredResultProjection": "projects-derives-conformance-vector-candidates-result",
+  "declaredDispositions": [
+    "CONFORMANCE_CANDIDATES_DERIVED",
+    "CONFORMANCE_CANDIDATES_UNDERIVABLE"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "declarationType": "semantic-policy.v1",
+  "policyId": "additional-field-policy",
+  "allowedDispositions": [
+    "reject",
+    "discard",
+    "preserve"
+  ],
+  "defaultDisposition": "reject"
+}

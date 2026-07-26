@@ -1,0 +1,21 @@
+{
+  "receiptType": "verifies-conformance-vector-receipt.v1",
+  "runId": "run-verifies-conformance-vector-rejects-001",
+  "capabilityId": "verifies-conformance-vector",
+  "authorityHash": "sha256:43e2b2b3cc80b1ff507e748c303496aeb0383e0cc54b0a47030e3ba9283a7f89",
+  "inputHash": "sha256:240a63a3b3b4dc2c918c44bc063a826a25b374b41d315f88085c3e8cc01b7522",
+  "resultHash": "sha256:065c5bdad89f00bc9073a50c64dfd8d49b9e97ad0b91a022a51e783b565091de",
+  "decisionId": "resolves-vector-verification-outcome",
+  "resolvedRule": "vector-failed",
+  "disposition": "CONFORMANCE_VECTOR_FAILED",
+  "findings": [
+    {
+      "findingId": "vector-failed",
+      "detail": {
+        "executable": true,
+        "observedHash": "sha256:9f827af5202050f264dfa05aeec4603d0fcec968de43ed7b039ce6a2d6231b08",
+        "expectedHash": "sha256:3aefbf1f1cb03be980b8fd05c393f4cbab7b372bd54d88fdfce9f7ec32655fd9"
+      }
+    }
+  ]
+}

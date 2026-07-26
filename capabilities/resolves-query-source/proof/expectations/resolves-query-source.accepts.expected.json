@@ -1,0 +1,22 @@
+{
+  "receiptType": "resolves-query-source-receipt.v1",
+  "runId": "run-resolves-query-source-accepts-001",
+  "capabilityId": "resolves-query-source",
+  "authorityHash": "sha256:f550c37f688ce255ae2d7dfc475d6984bc85ed991780116e0a9ed1bc7254aec5",
+  "inputHash": "sha256:cc7611d812cb769f0ce6ad493c8d48dba7e0c1ae187a68d752e649917d004076",
+  "resultHash": "sha256:6cb30269b7ba516512b85ede88aa6a925f4a3ae9729d5bc034e6c49b700f6fec",
+  "decisionId": "resolves-query-source-selection",
+  "resolvedRule": "use-explicit-source",
+  "disposition": "QUERY_SOURCE_RESOLVED",
+  "findings": [],
+  "result": {
+    "resultType": "resolves-query-source-result.v1",
+    "capabilityId": "resolves-query-source",
+    "value": {
+      "resolutionRule": "use-explicit-source",
+      "sourceId": "workspace-registry",
+      "sourceKind": "workspace-semantic-registry.v1",
+      "sourceHash": "sha256:registry"
+    }
+  }
+}

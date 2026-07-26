@@ -1,0 +1,15 @@
+{
+  "declarationType": "semantic-proof-requirement.v1",
+  "proofRequirementId": "resolves-kernel-compatibility-proof",
+  "requiredAssertions": [
+    "capability-identity-recorded",
+    "authority-hash-recorded",
+    "input-hash-recorded",
+    "result-hash-recorded",
+    "final-disposition-recorded"
+  ],
+  "declaredDispositions": [
+    "KERNEL_COMPATIBILITY_RESOLVED",
+    "KERNEL_INCOMPATIBLE"
+  ]
+}

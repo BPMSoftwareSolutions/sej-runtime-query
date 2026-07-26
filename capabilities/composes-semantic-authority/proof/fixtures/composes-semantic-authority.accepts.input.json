@@ -1,0 +1,17 @@
+{
+  "requestType": "composes-semantic-authority-request.v1",
+  "requestId": "composes-semantic-authority-accepts-001",
+  "payload": {
+    "declarations": [
+      {
+        "a": 1,
+        "shared": "first"
+      },
+      {
+        "b": 2,
+        "shared": "second"
+      }
+    ],
+    "precedence": "later-wins"
+  }
+}

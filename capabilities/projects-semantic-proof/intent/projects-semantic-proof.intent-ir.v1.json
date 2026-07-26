@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "projects-semantic-proof",
+  "title": "Project semantic proof",
+  "purpose": "Project canonical proof from declared and observed semantic execution facts.",
+  "actor": "authorized-query-caller",
+  "trigger": "a projects-semantic-proof request is submitted",
+  "desiredOutcome": "Project canonical proof from declared and observed semantic execution facts.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "projects-semantic-proof"
+  ],
+  "ownedDecision": "resolves-proof-completeness",
+  "declaredDispositions": [
+    "SEMANTIC_PROOF_PROJECTED",
+    "SEMANTIC_PROOF_INCOMPLETE"
+  ]
+}

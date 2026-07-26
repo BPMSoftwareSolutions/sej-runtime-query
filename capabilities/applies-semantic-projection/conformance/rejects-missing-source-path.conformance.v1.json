@@ -1,0 +1,11 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "rejects-missing-source-path",
+  "capabilityId": "applies-semantic-projection",
+  "status": "accepted",
+  "projectionScope": "each-row",
+  "inputFixture": "../proof/fixtures/rejects-missing-source-path.input.json",
+  "expectedFixture": "../proof/expectations/rejects-missing-source-path.expected.json",
+  "expectedDisposition": "QUERY_PROJECTION_REJECTED",
+  "kernelExecution": "passed"
+}

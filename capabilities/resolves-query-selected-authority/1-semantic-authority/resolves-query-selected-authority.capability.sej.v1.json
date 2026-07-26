@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "resolves-query-selected-authority",
+  "status": "implemented",
+  "purpose": "Resolve executable semantic authority selected by a query.",
+  "owns": [
+    "authority-selector",
+    "selected-authority"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "resolves-query-selected-authority",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-selected-authority-source",
+  "declaredResultProjection": "projects-resolves-query-selected-authority-result",
+  "declaredDispositions": [
+    "SELECTED_AUTHORITY_RESOLVED",
+    "SELECTED_AUTHORITY_AMBIGUOUS"
+  ]
+}

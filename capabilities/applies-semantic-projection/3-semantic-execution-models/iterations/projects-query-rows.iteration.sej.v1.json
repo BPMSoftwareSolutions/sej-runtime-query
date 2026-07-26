@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-iteration.v1",
+  "iterationId": "projects-query-rows",
+  "collection": "$.request.queryResult.rows",
+  "order": "preserve-query-order",
+  "forEach": [
+    {
+      "project": "projects-row-context"
+    },
+    {
+      "applyProjection": "$.resolvedProjection.projectionDeclaration"
+    },
+    {
+      "invokePort": "validates-contract"
+    },
+    {
+      "invoke": "resolves-invalid-row-disposition"
+    }
+  ],
+  "collect": "projected-rows",
+  "stopWhen": [
+    "reject-query",
+    "stop-query"
+  ]
+}

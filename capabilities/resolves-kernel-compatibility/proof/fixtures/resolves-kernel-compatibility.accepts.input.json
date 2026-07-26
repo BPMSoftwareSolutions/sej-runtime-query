@@ -1,0 +1,19 @@
+{
+  "requestType": "resolves-kernel-compatibility-request.v1",
+  "requestId": "resolves-kernel-compatibility-accepts-001",
+  "payload": {
+    "requiredPrimitives": [
+      "decision.resolve.v1",
+      "projection.apply.v1"
+    ],
+    "seatedPrimitives": [
+      "decision.resolve.v1",
+      "projection.apply.v1",
+      "iteration.execute.v1"
+    ],
+    "specificationVersion": "1.0.0",
+    "supportedSpecifications": [
+      "1.0.0"
+    ]
+  }
+}

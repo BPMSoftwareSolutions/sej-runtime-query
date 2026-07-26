@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:routes-semantic-command:result:v1",
+  "title": "Routes semantic command result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "routes-semantic-command-result.v1"
+    },
+    "capabilityId": {
+      "const": "routes-semantic-command"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "commandFamily",
+        "targetCapabilityId"
+      ],
+      "properties": {
+        "commandFamily": {},
+        "targetCapabilityId": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

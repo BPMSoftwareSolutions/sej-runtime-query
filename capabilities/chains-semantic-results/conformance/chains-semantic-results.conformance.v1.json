@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "chains-semantic-results-declared-flow",
+  "capabilityId": "chains-semantic-results",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/chains-semantic-results.accepts.input.json",
+  "expectedFixture": "../proof/expectations/chains-semantic-results.accepts.expected.json",
+  "expectedDisposition": "SEMANTIC_RESULTS_CHAINED",
+  "kernelExecution": "passed"
+}

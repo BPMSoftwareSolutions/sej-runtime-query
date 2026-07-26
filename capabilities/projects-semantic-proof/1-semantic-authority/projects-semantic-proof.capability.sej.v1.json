@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "projects-semantic-proof",
+  "status": "implemented",
+  "purpose": "Project canonical proof from declared and observed semantic execution facts.",
+  "owns": [
+    "execution-testimony",
+    "semantic-proof"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "projects-semantic-proof",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-proof-completeness",
+  "declaredResultProjection": "projects-projects-semantic-proof-result",
+  "declaredDispositions": [
+    "SEMANTIC_PROOF_PROJECTED",
+    "SEMANTIC_PROOF_INCOMPLETE"
+  ]
+}

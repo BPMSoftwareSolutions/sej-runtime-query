@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "routes-semantic-command-declared-rejection",
+  "capabilityId": "routes-semantic-command",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/routes-semantic-command.rejects.input.json",
+  "expectedFixture": "../proof/expectations/routes-semantic-command.rejects.expected.json",
+  "expectedDisposition": "SEMANTIC_COMMAND_UNROUTABLE",
+  "kernelExecution": "passed"
+}

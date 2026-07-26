@@ -1,0 +1,29 @@
+{
+  "receiptType": "projects-semantic-proof-receipt.v1",
+  "runId": "run-projects-semantic-proof-accepts-001",
+  "capabilityId": "projects-semantic-proof",
+  "authorityHash": "sha256:65232f52cc8c5025215837a80954258e1195bf0d53f5160ce3dcbd00e3c70f6c",
+  "inputHash": "sha256:cf671d6e71bad551371c407a0f5ef046624d685d04d260ef3b446d012c0ddbc2",
+  "resultHash": "sha256:e8efb72989665c9acb9c013df47d12f38249b2849e0a27090b4436554e519ba6",
+  "decisionId": "resolves-proof-completeness",
+  "resolvedRule": "proof-complete",
+  "disposition": "SEMANTIC_PROOF_PROJECTED",
+  "findings": [],
+  "result": {
+    "resultType": "projects-semantic-proof-result.v1",
+    "capabilityId": "projects-semantic-proof",
+    "value": {
+      "completeness": "proof-complete",
+      "proof": {
+        "proofType": "semantic-proof.v1",
+        "assertions": {
+          "capability-identity-recorded": "filters-query-rows",
+          "authority-hash-recorded": "sha256:authority",
+          "result-hash-recorded": "sha256:result"
+        },
+        "proofHash": "sha256:d2d4780d1eca666b496cae7fc74d5a2a0976d2c73f5ece69d7327c3a7b52b6e5"
+      },
+      "missingAssertions": []
+    }
+  }
+}

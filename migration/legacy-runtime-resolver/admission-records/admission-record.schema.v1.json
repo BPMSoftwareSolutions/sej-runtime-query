@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:legacy-admission-record:v1",
+  "type": "object",
+  "required": [
+    "recordType",
+    "candidatePath",
+    "candidateHash",
+    "reviewedMeaning",
+    "destinationAuthorityPath",
+    "reviewer",
+    "disposition"
+  ],
+  "properties": {
+    "recordType": {
+      "const": "legacy-authority-admission-record.v1"
+    },
+    "candidatePath": {
+      "type": "string"
+    },
+    "candidateHash": {
+      "type": "string",
+      "pattern": "^sha256:"
+    },
+    "reviewedMeaning": {
+      "type": "string",
+      "minLength": 1
+    },
+    "destinationAuthorityPath": {
+      "type": "string"
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "disposition": {
+      "enum": [
+        "accepted",
+        "rejected",
+        "quarantined"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

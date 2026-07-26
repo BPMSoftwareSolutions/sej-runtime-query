@@ -1,0 +1,21 @@
+{
+  "receiptType": "lints-semantic-authority-receipt.v1",
+  "runId": "run-lints-semantic-authority-accepts-001",
+  "capabilityId": "lints-semantic-authority",
+  "authorityHash": "sha256:c0d660cad7c5b6ae9ac88f6ab9e256f6ec3daead77e18d4b43611476d35eb5f0",
+  "inputHash": "sha256:c68e477d443c3f669d65a2ce6823948efe0920c5c40c21f30c206172675ded7e",
+  "resultHash": "sha256:875783c863a06da365defc06dd3661a0b89057b1c29cb11fa91c20b2d4348e47",
+  "decisionId": "resolves-lint-severity",
+  "resolvedRule": "no-defect",
+  "disposition": "SEMANTIC_AUTHORITY_LINTED",
+  "findings": [],
+  "result": {
+    "resultType": "lints-semantic-authority-result.v1",
+    "capabilityId": "lints-semantic-authority",
+    "value": {
+      "severity": "no-defect",
+      "defects": [],
+      "defectCount": 0
+    }
+  }
+}

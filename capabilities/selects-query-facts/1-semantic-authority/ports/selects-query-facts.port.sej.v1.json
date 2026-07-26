@@ -1,0 +1,12 @@
+{
+  "declarationType": "semantic-port-catalog.v1",
+  "portCatalogId": "selects-query-facts-ports",
+  "ports": [
+    {
+      "portId": "observes-selects-query-facts-facts",
+      "effect": "observe",
+      "inputContract": "selects-query-facts.input.v1",
+      "outputContract": "observed-selects-query-facts-facts.v1"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "requestType": "projects-semantic-proof-request.v1",
+  "requestId": "projects-semantic-proof-accepts-001",
+  "payload": {
+    "requiredAssertions": [
+      "capability-identity-recorded",
+      "authority-hash-recorded",
+      "result-hash-recorded"
+    ],
+    "testimony": {
+      "capability-identity-recorded": "filters-query-rows",
+      "authority-hash-recorded": "sha256:authority",
+      "result-hash-recorded": "sha256:result"
+    }
+  }
+}

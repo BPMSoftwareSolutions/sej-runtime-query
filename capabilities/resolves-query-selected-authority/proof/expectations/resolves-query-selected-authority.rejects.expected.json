@@ -1,0 +1,20 @@
+{
+  "receiptType": "resolves-query-selected-authority-receipt.v1",
+  "runId": "run-resolves-query-selected-authority-rejects-001",
+  "capabilityId": "resolves-query-selected-authority",
+  "authorityHash": "sha256:b12ba0459b61de76f933e8973d28f4314f3fc0ad37f74d89a42f89ee71f18a56",
+  "inputHash": "sha256:7997f819c707e6c51a658da6d04eb57e43c9bbd7a0dbb8ff0add349c8878c42e",
+  "resultHash": "sha256:bf52c3c5242c273c77affea3607258eb53ff52d35928434c55343915e56878ee",
+  "decisionId": "resolves-selected-authority-source",
+  "resolvedRule": "reject-ambiguous-selection",
+  "disposition": "SELECTED_AUTHORITY_AMBIGUOUS",
+  "findings": [
+    {
+      "findingId": "reject-ambiguous-selection",
+      "detail": {
+        "entryCount": 2,
+        "matchCount": 2
+      }
+    }
+  ]
+}

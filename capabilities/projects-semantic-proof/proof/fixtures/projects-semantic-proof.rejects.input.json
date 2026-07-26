@@ -1,0 +1,13 @@
+{
+  "requestType": "projects-semantic-proof-request.v1",
+  "requestId": "projects-semantic-proof-rejects-001",
+  "payload": {
+    "requiredAssertions": [
+      "capability-identity-recorded",
+      "authority-hash-recorded"
+    ],
+    "testimony": {
+      "capability-identity-recorded": "x"
+    }
+  }
+}

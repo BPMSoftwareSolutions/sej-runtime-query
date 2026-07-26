@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "resolves-kernel-compatibility",
+  "status": "implemented",
+  "purpose": "Determine whether selected authority is executable by the seated semantic kernel.",
+  "owns": [
+    "kernel-requirements",
+    "compatibility-receipt"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "resolves-kernel-compatibility",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-kernel-compatibility-disposition",
+  "declaredResultProjection": "projects-resolves-kernel-compatibility-result",
+  "declaredDispositions": [
+    "KERNEL_COMPATIBILITY_RESOLVED",
+    "KERNEL_INCOMPATIBLE"
+  ]
+}

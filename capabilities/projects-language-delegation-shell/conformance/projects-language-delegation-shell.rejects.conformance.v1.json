@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "projects-language-delegation-shell-declared-rejection",
+  "capabilityId": "projects-language-delegation-shell",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/projects-language-delegation-shell.rejects.input.json",
+  "expectedFixture": "../proof/expectations/projects-language-delegation-shell.rejects.expected.json",
+  "expectedDisposition": "DELEGATION_SHELL_TARGET_UNSUPPORTED",
+  "kernelExecution": "passed"
+}

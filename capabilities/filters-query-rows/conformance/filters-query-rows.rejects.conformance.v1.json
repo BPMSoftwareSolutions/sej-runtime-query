@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "filters-query-rows-declared-rejection",
+  "capabilityId": "filters-query-rows",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/filters-query-rows.rejects.input.json",
+  "expectedFixture": "../proof/expectations/filters-query-rows.rejects.expected.json",
+  "expectedDisposition": "QUERY_FILTER_PREDICATE_INVALID",
+  "kernelExecution": "passed"
+}

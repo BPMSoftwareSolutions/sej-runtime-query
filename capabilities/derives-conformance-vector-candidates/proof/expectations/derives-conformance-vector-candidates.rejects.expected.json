@@ -1,0 +1,19 @@
+{
+  "receiptType": "derives-conformance-vector-candidates-receipt.v1",
+  "runId": "run-derives-conformance-vector-candidates-rejects-001",
+  "capabilityId": "derives-conformance-vector-candidates",
+  "authorityHash": "sha256:722ee507f33cdde67a273a8c85c38f70081196fccfcbbc4f7cc0eb0ba81157e7",
+  "inputHash": "sha256:767a96f6e7d6fb5d616292d10a40c917460345b8f87fb3a25fe7a4632929850a",
+  "resultHash": "sha256:3e3f0a780ac79e6a550d9f6ecdcee78d6f35e5dd9a66cb49a6f5e992ce8714fb",
+  "decisionId": "resolves-candidate-derivation-scope",
+  "resolvedRule": "reject-underivable-declaration",
+  "disposition": "CONFORMANCE_CANDIDATES_UNDERIVABLE",
+  "findings": [
+    {
+      "findingId": "reject-underivable-declaration",
+      "detail": {
+        "candidateCount": 0
+      }
+    }
+  ]
+}

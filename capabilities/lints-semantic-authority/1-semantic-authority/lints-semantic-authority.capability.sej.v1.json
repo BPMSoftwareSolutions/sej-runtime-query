@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "lints-semantic-authority",
+  "status": "implemented",
+  "purpose": "Produce executable lint findings for selected semantic authority.",
+  "owns": [
+    "semantic-authority",
+    "lint-finding"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "lints-semantic-authority",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-lint-severity",
+  "declaredResultProjection": "projects-lints-semantic-authority-result",
+  "declaredDispositions": [
+    "SEMANTIC_AUTHORITY_LINTED",
+    "SEMANTIC_AUTHORITY_DEFECTIVE"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "declarationType": "semantic-port-catalog.v1",
+  "portCatalogId": "resolves-query-selected-authority-ports",
+  "ports": [
+    {
+      "portId": "observes-resolves-query-selected-authority-facts",
+      "effect": "observe",
+      "inputContract": "resolves-query-selected-authority.input.v1",
+      "outputContract": "observed-resolves-query-selected-authority-facts.v1"
+    }
+  ]
+}

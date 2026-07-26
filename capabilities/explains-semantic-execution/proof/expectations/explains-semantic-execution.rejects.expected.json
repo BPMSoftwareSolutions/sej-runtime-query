@@ -1,0 +1,19 @@
+{
+  "receiptType": "explains-semantic-execution-receipt.v1",
+  "runId": "run-explains-semantic-execution-rejects-001",
+  "capabilityId": "explains-semantic-execution",
+  "authorityHash": "sha256:b344abc79d17fad9eba0ea48ecd4f55486b66050595bf1d43754ba298283799c",
+  "inputHash": "sha256:281bdd79c3f7e73ca5cb5564372b3bdbb5251cdcc486443661d709ef80071b8a",
+  "resultHash": "sha256:8eca3d516d93e3cc95fc58e3072793e052511d69c1db12267e5902f6b2812798",
+  "decisionId": "resolves-explanation-depth",
+  "resolvedRule": "reject-absent-testimony",
+  "disposition": "SEMANTIC_EXECUTION_UNEXPLAINABLE",
+  "findings": [
+    {
+      "findingId": "reject-absent-testimony",
+      "detail": {
+        "stepCount": 0
+      }
+    }
+  ]
+}

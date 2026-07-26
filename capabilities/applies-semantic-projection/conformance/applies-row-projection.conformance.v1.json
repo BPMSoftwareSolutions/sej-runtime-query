@@ -1,0 +1,11 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "applies-row-projection",
+  "capabilityId": "applies-semantic-projection",
+  "status": "accepted",
+  "projectionScope": "each-row",
+  "inputFixture": "../proof/fixtures/applies-row-projection.input.json",
+  "expectedFixture": "../proof/expectations/applies-row-projection.expected.json",
+  "expectedDisposition": "QUERY_RESULT_PROJECTED",
+  "kernelExecution": "passed"
+}

@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-applies-semantic-policy-overlay",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-applies-semantic-policy-overlay-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-applies-semantic-policy-overlay",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-applies-semantic-policy-overlay-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "receiptType": "projects-language-delegation-shell-receipt.v1",
+  "runId": "run-projects-language-delegation-shell-accepts-001",
+  "capabilityId": "projects-language-delegation-shell",
+  "authorityHash": "sha256:c1fd8dccad03a0784b2c44a4336243add60e83ed7cedd8cccb288a63f6de4c5f",
+  "inputHash": "sha256:5d03940872a2fa2ab938077c6ab0c3c4f4da33f48663a142a3f0a00be25e52cd",
+  "resultHash": "sha256:050a0a80b1c78d0f7953cd1d10f45b140760eebf5fcded945f89d075d5233463",
+  "decisionId": "resolves-delegation-shell-target",
+  "resolvedRule": "project-declared-target-shell",
+  "disposition": "DELEGATION_SHELL_PROJECTED",
+  "findings": [],
+  "result": {
+    "resultType": "projects-language-delegation-shell-result.v1",
+    "capabilityId": "projects-language-delegation-shell",
+    "value": {
+      "target": "typescript",
+      "shellDisposition": "project-declared-target-shell",
+      "delegationSteps": [
+        {
+          "sequence": 1,
+          "edge": "invokes",
+          "semanticIdentity": "resolves-filters-query-rows-authority"
+        },
+        {
+          "sequence": 2,
+          "edge": "invokes",
+          "semanticIdentity": "executes-resolved-filters-query-rows"
+        },
+        {
+          "sequence": 3,
+          "edge": "projects",
+          "semanticIdentity": "projects-filters-query-rows-result"
+        }
+      ],
+      "shellLineCount": 6
+    }
+  }
+}

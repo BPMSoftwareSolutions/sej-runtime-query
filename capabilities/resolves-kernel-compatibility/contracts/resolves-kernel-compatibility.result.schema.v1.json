@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:resolves-kernel-compatibility:result:v1",
+  "title": "Resolves kernel compatibility result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "resolves-kernel-compatibility-result.v1"
+    },
+    "capabilityId": {
+      "const": "resolves-kernel-compatibility"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "compatibility",
+        "missingPrimitives",
+        "specificationVersion"
+      ],
+      "properties": {
+        "compatibility": {},
+        "missingPrimitives": {},
+        "specificationVersion": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

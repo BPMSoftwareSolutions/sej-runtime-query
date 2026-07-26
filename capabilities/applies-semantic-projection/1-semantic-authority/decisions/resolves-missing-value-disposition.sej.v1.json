@@ -1,0 +1,97 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-missing-value-disposition",
+  "rules": [
+    {
+      "ruleId": "required-source-path-present",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.observed.requiredSourcePathPresent"
+        },
+        "right": {
+          "kind": "value",
+          "value": true
+        }
+      },
+      "then": "continue-projection"
+    },
+    {
+      "ruleId": "reject-query",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.policy.missingValue"
+        },
+        "right": {
+          "kind": "value",
+          "value": "reject-query"
+        }
+      },
+      "then": "reject-query"
+    },
+    {
+      "ruleId": "reject-row",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.policy.missingValue"
+        },
+        "right": {
+          "kind": "value",
+          "value": "reject-row"
+        }
+      },
+      "then": "reject-row"
+    },
+    {
+      "ruleId": "omit-field",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.policy.missingValue"
+        },
+        "right": {
+          "kind": "value",
+          "value": "omit-field"
+        }
+      },
+      "then": "omit-field"
+    },
+    {
+      "ruleId": "write-null",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.policy.missingValue"
+        },
+        "right": {
+          "kind": "value",
+          "value": "write-null"
+        }
+      },
+      "then": "write-null"
+    },
+    {
+      "ruleId": "use-declared-default",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.policy.missingValue"
+        },
+        "right": {
+          "kind": "value",
+          "value": "use-declared-default"
+        }
+      },
+      "then": "write-declared-default"
+    }
+  ],
+  "noMatchDisposition": "reject"
+}

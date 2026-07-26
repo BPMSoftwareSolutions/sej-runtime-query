@@ -1,0 +1,47 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-projected-result",
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "projectedResultType": {
+        "kind": "constant",
+        "value": "projected-query-result.v1"
+      },
+      "projectionId": {
+        "kind": "read",
+        "path": "$.resolvedProjection.projectionId",
+        "required": true
+      },
+      "scope": {
+        "kind": "read",
+        "path": "$.resolvedProjection.scope",
+        "required": true
+      },
+      "value": {
+        "kind": "read",
+        "path": "$.value"
+      },
+      "inputRowCount": {
+        "kind": "read",
+        "path": "$.counts.input",
+        "required": true
+      },
+      "projectedRowCount": {
+        "kind": "read",
+        "path": "$.counts.projected",
+        "required": true
+      },
+      "rejectedRowCount": {
+        "kind": "read",
+        "path": "$.counts.rejected",
+        "required": true
+      },
+      "diagnostics": {
+        "kind": "read",
+        "path": "$.diagnostics",
+        "required": true
+      }
+    }
+  }
+}

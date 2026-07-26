@@ -1,0 +1,43 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-applies-semantic-policy-overlay-result",
+  "accepts": {
+    "contractId": "executed-applies-semantic-policy-overlay.v1"
+  },
+  "produces": {
+    "contractId": "applies-semantic-policy-overlay-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "applies-semantic-policy-overlay-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "applies-semantic-policy-overlay"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "overlayDisposition": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "effectivePolicy": {
+            "kind": "read",
+            "path": "$.effectivePolicy",
+            "required": true
+          },
+          "tighteningCount": {
+            "kind": "read",
+            "path": "$.tighteningCount",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

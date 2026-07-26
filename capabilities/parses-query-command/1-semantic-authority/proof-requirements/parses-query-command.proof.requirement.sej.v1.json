@@ -1,0 +1,15 @@
+{
+  "declarationType": "semantic-proof-requirement.v1",
+  "proofRequirementId": "parses-query-command-proof",
+  "requiredAssertions": [
+    "capability-identity-recorded",
+    "authority-hash-recorded",
+    "input-hash-recorded",
+    "result-hash-recorded",
+    "final-disposition-recorded"
+  ],
+  "declaredDispositions": [
+    "QUERY_COMMAND_PARSED",
+    "QUERY_COMMAND_UNPARSABLE"
+  ]
+}

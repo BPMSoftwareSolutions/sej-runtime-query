@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "parses-query-command",
+  "status": "implemented",
+  "purpose": "Produce one canonical query command from submitted query text.",
+  "owns": [
+    "query-text",
+    "canonical-query-command"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "parses-query-command",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-query-command-family",
+  "declaredResultProjection": "projects-parses-query-command-result",
+  "declaredDispositions": [
+    "QUERY_COMMAND_PARSED",
+    "QUERY_COMMAND_UNPARSABLE"
+  ]
+}

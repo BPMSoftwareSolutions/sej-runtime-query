@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "selects-query-facts",
+  "status": "implemented",
+  "purpose": "Select only the declared facts from resolved source rows.",
+  "owns": [
+    "selection",
+    "selected-query-facts"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "selects-query-facts",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-fact-selection-mode",
+  "declaredResultProjection": "projects-selects-query-facts-result",
+  "declaredDispositions": [
+    "QUERY_FACTS_SELECTED",
+    "QUERY_FACT_UNKNOWN_COLUMN"
+  ]
+}

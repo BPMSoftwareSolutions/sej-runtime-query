@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "projects-semantic-proof-declared-rejection",
+  "capabilityId": "projects-semantic-proof",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/projects-semantic-proof.rejects.input.json",
+  "expectedFixture": "../proof/expectations/projects-semantic-proof.rejects.expected.json",
+  "expectedDisposition": "SEMANTIC_PROOF_INCOMPLETE",
+  "kernelExecution": "passed"
+}

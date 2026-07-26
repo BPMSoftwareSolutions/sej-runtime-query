@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "indexes-workspace-authority",
+  "status": "implemented",
+  "purpose": "Produce an inspectable index of semantic authority in a workspace.",
+  "owns": [
+    "workspace-authority",
+    "authority-index"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "indexes-workspace-authority",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-authority-index-scope",
+  "declaredResultProjection": "projects-indexes-workspace-authority-result",
+  "declaredDispositions": [
+    "WORKSPACE_AUTHORITY_INDEXED",
+    "WORKSPACE_AUTHORITY_UNREADABLE"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "declarationType": "semantic-port-catalog.v1",
+  "portCatalogId": "projects-semantic-proof-ports",
+  "ports": [
+    {
+      "portId": "observes-projects-semantic-proof-facts",
+      "effect": "observe",
+      "inputContract": "projects-semantic-proof.input.v1",
+      "outputContract": "observed-projects-semantic-proof-facts.v1"
+    }
+  ]
+}

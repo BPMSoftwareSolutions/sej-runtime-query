@@ -1,0 +1,14 @@
+{
+  "requestType": "executes-selected-semantic-subgraph-request.v1",
+  "requestId": "executes-selected-semantic-subgraph-rejects-001",
+  "payload": {
+    "executionModelId": "unregistered-model",
+    "executionModel": {
+      "declarationType": "execution-model.v1",
+      "executionModelId": "a-different-id",
+      "steps": [],
+      "resultPath": "$"
+    },
+    "input": {}
+  }
+}

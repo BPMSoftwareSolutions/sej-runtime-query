@@ -1,0 +1,21 @@
+{
+  "registryType": "query-result-projection-registry.v1",
+  "projections": [
+    {
+      "projectionId": "project-capability-summary",
+      "authorityPath": "projections/project-capability-summary.sej.v1.json",
+      "scope": "each-row",
+      "inputContractId": "workspace-registry-document-entry.v1",
+      "outputContractId": "capability-summary.v1",
+      "status": "accepted"
+    },
+    {
+      "projectionId": "project-workspace-capability-report",
+      "authorityPath": "projections/project-workspace-capability-report.sej.v1.json",
+      "scope": "complete-result",
+      "inputContractId": "sej-query-result.v1",
+      "outputContractId": "workspace-capability-report.v1",
+      "status": "accepted"
+    }
+  ]
+}

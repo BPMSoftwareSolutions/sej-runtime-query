@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:resolves-query-source:result:v1",
+  "title": "Resolves query source result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "resolves-query-source-result.v1"
+    },
+    "capabilityId": {
+      "const": "resolves-query-source"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "resolutionRule",
+        "sourceKind",
+        "sourceHash"
+      ],
+      "properties": {
+        "resolutionRule": {},
+        "sourceId": {},
+        "sourceKind": {},
+        "sourceHash": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

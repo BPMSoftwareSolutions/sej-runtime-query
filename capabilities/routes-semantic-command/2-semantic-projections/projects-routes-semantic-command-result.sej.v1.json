@@ -1,0 +1,38 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-routes-semantic-command-result",
+  "accepts": {
+    "contractId": "executed-routes-semantic-command.v1"
+  },
+  "produces": {
+    "contractId": "routes-semantic-command-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "routes-semantic-command-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "routes-semantic-command"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "commandFamily": {
+            "kind": "read",
+            "path": "$.payload.commandFamily",
+            "required": true
+          },
+          "targetCapabilityId": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

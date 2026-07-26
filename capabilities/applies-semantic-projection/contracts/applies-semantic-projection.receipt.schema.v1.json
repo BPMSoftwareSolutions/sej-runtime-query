@@ -1,0 +1,4 @@
+{
+  "$ref": "urn:deterministic-solutions:query-result-projection-receipt:v1",
+  "x-canonicalReceiptSchema": "projection-receipt.schema.v1.json"
+}

@@ -1,0 +1,69 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-declaration-defect-severity",
+  "inputs": [
+    "$.observed.hasIdentity",
+    "$.observed.ruleCount",
+    "$.observed.hasNoMatchDisposition",
+    "$.observed.hasUnreachableRule"
+  ],
+  "rules": [
+    {
+      "ruleId": "missing-declaration-identity",
+      "when": {
+        "operator": "falsy",
+        "operand": {
+          "kind": "path",
+          "path": "$.observed.hasIdentity"
+        }
+      },
+      "then": "blocking"
+    },
+    {
+      "ruleId": "empty-rule-set",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.observed.ruleCount"
+        },
+        "right": {
+          "kind": "value",
+          "value": 0
+        }
+      },
+      "then": "blocking"
+    },
+    {
+      "ruleId": "implicit-fallback-permitted",
+      "when": {
+        "operator": "falsy",
+        "operand": {
+          "kind": "path",
+          "path": "$.observed.hasNoMatchDisposition"
+        }
+      },
+      "then": "blocking"
+    },
+    {
+      "ruleId": "unreachable-rule-after-always",
+      "when": {
+        "operator": "truthy",
+        "operand": {
+          "kind": "path",
+          "path": "$.observed.hasUnreachableRule"
+        }
+      },
+      "then": "advisory"
+    },
+    {
+      "ruleId": "no-defect-observed",
+      "when": {
+        "operator": "always"
+      },
+      "then": "none"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

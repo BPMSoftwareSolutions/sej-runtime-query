@@ -1,0 +1,8 @@
+{
+  "requestType": "resolves-query-source-request.v1",
+  "requestId": "resolves-query-source-rejects-001",
+  "payload": {
+    "sourceKind": "workspace-semantic-registry.v1",
+    "sourceHash": "sha256:registry"
+  }
+}

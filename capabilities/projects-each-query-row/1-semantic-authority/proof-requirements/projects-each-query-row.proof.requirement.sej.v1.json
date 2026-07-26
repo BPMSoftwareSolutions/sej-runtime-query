@@ -1,0 +1,15 @@
+{
+  "declarationType": "semantic-proof-requirement.v1",
+  "proofRequirementId": "projects-each-query-row-proof",
+  "requiredAssertions": [
+    "capability-identity-recorded",
+    "authority-hash-recorded",
+    "input-hash-recorded",
+    "result-hash-recorded",
+    "final-disposition-recorded"
+  ],
+  "declaredDispositions": [
+    "QUERY_ROWS_PROJECTED",
+    "QUERY_ROW_PROJECTION_REJECTED"
+  ]
+}

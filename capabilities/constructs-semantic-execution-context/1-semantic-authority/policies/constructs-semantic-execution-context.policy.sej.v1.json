@@ -1,0 +1,14 @@
+{
+  "declarationType": "semantic-policy.v1",
+  "policyId": "constructs-semantic-execution-context-policy",
+  "implicitFallback": "forbidden",
+  "unclassifiedFailure": "fail-closed",
+  "additionalAuthority": "reject",
+  "successDisposition": "EXECUTION_CONTEXT_CONSTRUCTED",
+  "failureDisposition": "EXECUTION_CONTEXT_INCOMPLETE",
+  "validationPolicy": {
+    "validateInput": true,
+    "validateResult": true,
+    "validateReceipt": true
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-parses-query-command-result",
+  "accepts": {
+    "contractId": "executed-parses-query-command.v1"
+  },
+  "produces": {
+    "contractId": "parses-query-command-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "parses-query-command-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "parses-query-command"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "commandFamily": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "normalizedText": {
+            "kind": "read",
+            "path": "$.payload.normalizedText",
+            "required": true
+          },
+          "sourceRef": {
+            "kind": "read",
+            "path": "$.payload.sourceRef"
+          },
+          "projectionRef": {
+            "kind": "read",
+            "path": "$.payload.projectionRef"
+          },
+          "hasWhere": {
+            "kind": "read",
+            "path": "$.payload.hasWhere"
+          },
+          "hasLimit": {
+            "kind": "read",
+            "path": "$.payload.hasLimit"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "requestType": "projects-each-query-row-request.v1",
+  "requestId": "projects-each-query-row-rejects-001",
+  "payload": {
+    "rows": [
+      {}
+    ],
+    "rowProjection": {
+      "kind": "read",
+      "path": "$.row.missing",
+      "required": true
+    }
+  }
+}

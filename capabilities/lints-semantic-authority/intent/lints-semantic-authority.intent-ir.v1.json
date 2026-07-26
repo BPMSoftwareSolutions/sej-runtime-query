@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "lints-semantic-authority",
+  "title": "Lint semantic authority",
+  "purpose": "Produce executable lint findings for selected semantic authority.",
+  "actor": "authorized-query-caller",
+  "trigger": "a lints-semantic-authority request is submitted",
+  "desiredOutcome": "Produce executable lint findings for selected semantic authority.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "lints-semantic-authority"
+  ],
+  "ownedDecision": "resolves-lint-severity",
+  "declaredDispositions": [
+    "SEMANTIC_AUTHORITY_LINTED",
+    "SEMANTIC_AUTHORITY_DEFECTIVE"
+  ]
+}

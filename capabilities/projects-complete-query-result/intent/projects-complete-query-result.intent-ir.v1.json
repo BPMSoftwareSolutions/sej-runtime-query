@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "projects-complete-query-result",
+  "title": "Project complete query result",
+  "purpose": "Project a complete canonical query result as one semantic object.",
+  "actor": "authorized-query-caller",
+  "trigger": "a projects-complete-query-result request is submitted",
+  "desiredOutcome": "Project a complete canonical query result as one semantic object.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "projects-complete-query-result"
+  ],
+  "ownedDecision": "resolves-complete-result-disposition",
+  "declaredDispositions": [
+    "QUERY_RESULT_PROJECTED",
+    "QUERY_RESULT_PROJECTION_REJECTED"
+  ]
+}

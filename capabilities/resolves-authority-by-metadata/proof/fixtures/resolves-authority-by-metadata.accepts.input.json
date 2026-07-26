@@ -1,0 +1,23 @@
+{
+  "requestType": "resolves-authority-by-metadata-request.v1",
+  "requestId": "resolves-authority-by-metadata-accepts-001",
+  "payload": {
+    "entries": [
+      {
+        "identity": "a",
+        "classification": "sej",
+        "specificationVersion": "1.0.0"
+      },
+      {
+        "identity": "b",
+        "classification": "non-sej",
+        "specificationVersion": "1.0.0"
+      }
+    ],
+    "matchMode": "all",
+    "metadata": {
+      "classification": "sej",
+      "specificationVersion": "1.0.0"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:derives-conformance-vector-candidates:input:v1",
+  "title": "Derives conformance vector candidates input",
+  "type": "object",
+  "required": [
+    "requestType",
+    "requestId",
+    "payload"
+  ],
+  "properties": {
+    "requestType": {
+      "const": "derives-conformance-vector-candidates-request.v1"
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "declaration",
+        "derivationScope"
+      ],
+      "properties": {
+        "declaration": {
+          "type": "object"
+        },
+        "derivationScope": {
+          "enum": [
+            "decision-rule",
+            "projection-field"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

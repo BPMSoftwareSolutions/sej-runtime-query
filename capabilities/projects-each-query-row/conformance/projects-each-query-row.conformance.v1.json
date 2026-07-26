@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "projects-each-query-row-declared-flow",
+  "capabilityId": "projects-each-query-row",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/projects-each-query-row.accepts.input.json",
+  "expectedFixture": "../proof/expectations/projects-each-query-row.accepts.expected.json",
+  "expectedDisposition": "QUERY_ROWS_PROJECTED",
+  "kernelExecution": "passed"
+}

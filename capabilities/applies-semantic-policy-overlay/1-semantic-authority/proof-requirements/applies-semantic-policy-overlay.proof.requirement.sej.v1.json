@@ -1,0 +1,15 @@
+{
+  "declarationType": "semantic-proof-requirement.v1",
+  "proofRequirementId": "applies-semantic-policy-overlay-proof",
+  "requiredAssertions": [
+    "capability-identity-recorded",
+    "authority-hash-recorded",
+    "input-hash-recorded",
+    "result-hash-recorded",
+    "final-disposition-recorded"
+  ],
+  "declaredDispositions": [
+    "SEMANTIC_POLICY_OVERLAY_APPLIED",
+    "SEMANTIC_POLICY_OVERLAY_REJECTED"
+  ]
+}

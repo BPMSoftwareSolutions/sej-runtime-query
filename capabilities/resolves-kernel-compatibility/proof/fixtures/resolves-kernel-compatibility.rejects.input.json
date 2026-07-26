@@ -1,0 +1,17 @@
+{
+  "requestType": "resolves-kernel-compatibility-request.v1",
+  "requestId": "resolves-kernel-compatibility-rejects-001",
+  "payload": {
+    "requiredPrimitives": [
+      "decision.resolve.v1",
+      "effect.dispatch.v1"
+    ],
+    "seatedPrimitives": [
+      "decision.resolve.v1"
+    ],
+    "specificationVersion": "1.0.0",
+    "supportedSpecifications": [
+      "1.0.0"
+    ]
+  }
+}

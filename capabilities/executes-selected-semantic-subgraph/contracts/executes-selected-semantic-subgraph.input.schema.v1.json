@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:executes-selected-semantic-subgraph:input:v1",
+  "title": "Executes selected semantic subgraph input",
+  "type": "object",
+  "required": [
+    "requestType",
+    "requestId",
+    "payload"
+  ],
+  "properties": {
+    "requestType": {
+      "const": "executes-selected-semantic-subgraph-request.v1"
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "executionModelId",
+        "executionModel",
+        "input"
+      ],
+      "properties": {
+        "executionModelId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "executionModel": {
+          "type": "object"
+        },
+        "input": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

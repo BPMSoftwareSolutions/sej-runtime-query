@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "parses-query-command-declared-flow",
+  "capabilityId": "parses-query-command",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/parses-query-command.accepts.input.json",
+  "expectedFixture": "../proof/expectations/parses-query-command.accepts.expected.json",
+  "expectedDisposition": "QUERY_COMMAND_PARSED",
+  "kernelExecution": "passed"
+}

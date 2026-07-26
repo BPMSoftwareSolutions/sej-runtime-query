@@ -1,0 +1,101 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-projection-receipt",
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "receiptType": {
+        "kind": "constant",
+        "value": "query-result-projection-receipt.v1"
+      },
+      "runId": {
+        "kind": "read",
+        "path": "$.runId",
+        "required": true
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "applies-semantic-projection"
+      },
+      "authorityHash": {
+        "kind": "read",
+        "path": "$.capabilityAuthorityHash",
+        "required": true
+      },
+      "inputHash": {
+        "kind": "read",
+        "path": "$.requestHash",
+        "required": true
+      },
+      "resultHash": {
+        "kind": "read",
+        "path": "$.resultHash",
+        "required": true
+      },
+      "disposition": {
+        "kind": "read",
+        "path": "$.disposition",
+        "required": true
+      },
+      "findings": {
+        "kind": "read",
+        "path": "$.findings",
+        "required": true
+      },
+      "queryHash": {
+        "kind": "read",
+        "path": "$.queryHash",
+        "required": true
+      },
+      "sourceHashes": {
+        "kind": "read",
+        "path": "$.sourceHashes",
+        "required": true
+      },
+      "projectionId": {
+        "kind": "read",
+        "path": "$.resolvedProjection.projectionId",
+        "required": true
+      },
+      "projectionAuthorityHash": {
+        "kind": "read",
+        "path": "$.resolvedProjection.authorityHash",
+        "required": true
+      },
+      "projectionScope": {
+        "kind": "read",
+        "path": "$.resolvedProjection.scope",
+        "required": true
+      },
+      "inputRowCount": {
+        "kind": "read",
+        "path": "$.counts.input",
+        "required": true
+      },
+      "projectedRowCount": {
+        "kind": "read",
+        "path": "$.counts.projected",
+        "required": true
+      },
+      "rejectedRowCount": {
+        "kind": "read",
+        "path": "$.counts.rejected",
+        "required": true
+      },
+      "inputContractId": {
+        "kind": "read",
+        "path": "$.resolvedProjection.inputContractId",
+        "required": true
+      },
+      "outputContractId": {
+        "kind": "read",
+        "path": "$.resolvedProjection.outputContractId",
+        "required": true
+      },
+      "projectedResult": {
+        "kind": "read",
+        "path": "$.projectedResult"
+      }
+    }
+  }
+}

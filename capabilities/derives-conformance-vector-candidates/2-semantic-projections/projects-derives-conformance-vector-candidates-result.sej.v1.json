@@ -1,0 +1,45 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-derives-conformance-vector-candidates-result",
+  "accepts": {
+    "contractId": "executed-derives-conformance-vector-candidates.v1"
+  },
+  "produces": {
+    "contractId": "derives-conformance-vector-candidates-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "derives-conformance-vector-candidates-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "derives-conformance-vector-candidates"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "derivationScope": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "candidates": {
+            "kind": "read",
+            "path": "$.candidates",
+            "required": true
+          },
+          "candidateCount": {
+            "kind": "count",
+            "expression": {
+              "kind": "read",
+              "path": "$.candidates"
+            }
+          }
+        }
+      }
+    }
+  }
+}

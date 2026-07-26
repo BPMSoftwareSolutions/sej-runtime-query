@@ -1,0 +1,31 @@
+{
+  "requestType": "executes-selected-semantic-subgraph-request.v1",
+  "requestId": "executes-selected-semantic-subgraph-accepts-001",
+  "payload": {
+    "executionModelId": "executes-demo-subgraph",
+    "executionModel": {
+      "declarationType": "execution-model.v1",
+      "executionModelId": "executes-demo-subgraph",
+      "steps": [
+        {
+          "stepId": "counts-rows",
+          "operation": "apply-projection",
+          "projectionId": "projects-demo-row-count",
+          "inputPath": "$",
+          "outputPath": "$.counted"
+        }
+      ],
+      "resultPath": "$.counted"
+    },
+    "input": {
+      "rows": [
+        {
+          "a": 1
+        },
+        {
+          "a": 2
+        }
+      ]
+    }
+  }
+}

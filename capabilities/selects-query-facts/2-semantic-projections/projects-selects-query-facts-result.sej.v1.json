@@ -1,0 +1,49 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-selects-query-facts-result",
+  "accepts": {
+    "contractId": "executed-selects-query-facts.v1"
+  },
+  "produces": {
+    "contractId": "selects-query-facts-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "selects-query-facts-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "selects-query-facts"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "selectionMode": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "columns": {
+            "kind": "read",
+            "path": "$.payload.columns"
+          },
+          "rows": {
+            "kind": "read",
+            "path": "$.payload.rows",
+            "required": true
+          },
+          "selectedRowCount": {
+            "kind": "count",
+            "expression": {
+              "kind": "read",
+              "path": "$.payload.rows"
+            }
+          }
+        }
+      }
+    }
+  }
+}

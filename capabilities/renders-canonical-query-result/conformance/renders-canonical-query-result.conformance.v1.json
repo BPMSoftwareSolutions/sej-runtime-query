@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "renders-canonical-query-result-declared-flow",
+  "capabilityId": "renders-canonical-query-result",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/renders-canonical-query-result.accepts.input.json",
+  "expectedFixture": "../proof/expectations/renders-canonical-query-result.accepts.expected.json",
+  "expectedDisposition": "QUERY_RESULT_RENDERED",
+  "kernelExecution": "passed"
+}

@@ -1,0 +1,19 @@
+{
+  "projectedResultType": "projected-query-result.v1",
+  "projectionId": "project-workspace-capability-report",
+  "scope": "complete-result",
+  "value": {
+    "reportType": "workspace-capability-report.v1",
+    "capabilityCount": 1,
+    "otherDocumentCount": 1,
+    "capabilities": [
+      {
+        "path": "capabilities/file-system-shaper.json"
+      }
+    ]
+  },
+  "inputRowCount": 2,
+  "projectedRowCount": 1,
+  "rejectedRowCount": 0,
+  "diagnostics": []
+}

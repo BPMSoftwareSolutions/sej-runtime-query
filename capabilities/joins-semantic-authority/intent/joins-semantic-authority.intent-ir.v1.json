@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "joins-semantic-authority",
+  "title": "Join semantic authority",
+  "purpose": "Join authority facts across declared semantic sources.",
+  "actor": "authorized-query-caller",
+  "trigger": "a joins-semantic-authority request is submitted",
+  "desiredOutcome": "Join authority facts across declared semantic sources.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "joins-semantic-authority"
+  ],
+  "ownedDecision": "resolves-join-kind",
+  "declaredDispositions": [
+    "SEMANTIC_AUTHORITY_JOINED",
+    "SEMANTIC_AUTHORITY_UNJOINABLE"
+  ]
+}

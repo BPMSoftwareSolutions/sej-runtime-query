@@ -1,0 +1,21 @@
+{
+  "receiptType": "renders-canonical-query-result-receipt.v1",
+  "runId": "run-renders-canonical-query-result-accepts-001",
+  "capabilityId": "renders-canonical-query-result",
+  "authorityHash": "sha256:5df62432f7381d5831d780d96b9294b58cac7c66f10dc433929ba9caf56d46cb",
+  "inputHash": "sha256:a023550fa87cb9b9144136f1e0189d58b184d695aa070f43032b86c194ad4c73",
+  "resultHash": "sha256:bd813e98dee84c564ddfe8535b60cb0ac15bcf10fddea6e975010520ee16e114",
+  "decisionId": "resolves-render-form",
+  "resolvedRule": "render-canonical-json",
+  "disposition": "QUERY_RESULT_RENDERED",
+  "findings": [],
+  "result": {
+    "resultType": "renders-canonical-query-result-result.v1",
+    "capabilityId": "renders-canonical-query-result",
+    "value": {
+      "renderForm": "render-canonical-json",
+      "rendered": "{\n  \"a\": 1,\n  \"b\": 2\n}",
+      "renderedByteLength": 22
+    }
+  }
+}

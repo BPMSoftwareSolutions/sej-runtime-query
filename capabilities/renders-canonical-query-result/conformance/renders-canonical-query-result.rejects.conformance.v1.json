@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "renders-canonical-query-result-declared-rejection",
+  "capabilityId": "renders-canonical-query-result",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/renders-canonical-query-result.rejects.input.json",
+  "expectedFixture": "../proof/expectations/renders-canonical-query-result.rejects.expected.json",
+  "expectedDisposition": "QUERY_RENDER_FORM_UNSUPPORTED",
+  "kernelExecution": "passed"
+}

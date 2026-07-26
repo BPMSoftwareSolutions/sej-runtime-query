@@ -1,0 +1,45 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-indexes-workspace-authority-result",
+  "accepts": {
+    "contractId": "executed-indexes-workspace-authority.v1"
+  },
+  "produces": {
+    "contractId": "indexes-workspace-authority-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "indexes-workspace-authority-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "indexes-workspace-authority"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "indexScope": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "entries": {
+            "kind": "read",
+            "path": "$.entries",
+            "required": true
+          },
+          "entryCount": {
+            "kind": "count",
+            "expression": {
+              "kind": "read",
+              "path": "$.entries"
+            }
+          }
+        }
+      }
+    }
+  }
+}

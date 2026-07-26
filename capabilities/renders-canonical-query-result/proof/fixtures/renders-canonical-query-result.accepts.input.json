@@ -1,0 +1,11 @@
+{
+  "requestType": "renders-canonical-query-result-request.v1",
+  "requestId": "renders-canonical-query-result-accepts-001",
+  "payload": {
+    "renderForm": "canonical-json",
+    "value": {
+      "b": 2,
+      "a": 1
+    }
+  }
+}

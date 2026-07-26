@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "resolves-query-selected-authority-declared-rejection",
+  "capabilityId": "resolves-query-selected-authority",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/resolves-query-selected-authority.rejects.input.json",
+  "expectedFixture": "../proof/expectations/resolves-query-selected-authority.rejects.expected.json",
+  "expectedDisposition": "SELECTED_AUTHORITY_AMBIGUOUS",
+  "kernelExecution": "passed"
+}

@@ -1,0 +1,57 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-row-filter-mode",
+  "inputs": [
+    "$.payload.predicate",
+    "$.predicateOperatorDeclared"
+  ],
+  "rules": [
+    {
+      "ruleId": "reject-undeclared-predicate-operator",
+      "when": {
+        "operator": "all",
+        "predicates": [
+          {
+            "operator": "exists",
+            "operand": {
+              "kind": "path",
+              "path": "$.payload.predicate"
+            }
+          },
+          {
+            "operator": "falsy",
+            "operand": {
+              "kind": "path",
+              "path": "$.predicateOperatorDeclared"
+            }
+          }
+        ]
+      },
+      "then": "reject-undeclared-predicate-operator"
+    },
+    {
+      "ruleId": "apply-declared-predicate",
+      "when": {
+        "operator": "exists",
+        "operand": {
+          "kind": "path",
+          "path": "$.payload.predicate"
+        }
+      },
+      "then": "apply-declared-predicate"
+    },
+    {
+      "ruleId": "pass-through-unfiltered",
+      "when": {
+        "operator": "falsy",
+        "operand": {
+          "kind": "path",
+          "path": "$.payload.predicate"
+        }
+      },
+      "then": "pass-through-unfiltered"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

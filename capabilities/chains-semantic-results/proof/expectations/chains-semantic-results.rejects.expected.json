@@ -1,0 +1,19 @@
+{
+  "receiptType": "chains-semantic-results-receipt.v1",
+  "runId": "run-chains-semantic-results-rejects-001",
+  "capabilityId": "chains-semantic-results",
+  "authorityHash": "sha256:2dbf7aeea09e822c7fbb523c007290add62803381a060886031ba728a134370a",
+  "inputHash": "sha256:447dc7d316723678bcf77be36070eb26a2721d83457f32a3a853f9109aaa3ffc",
+  "resultHash": "sha256:8e6238503e3737cc4e1f3a2d6a8110f0aa9ae6712d35edf9801427a2efe665e2",
+  "decisionId": "resolves-chain-compatibility",
+  "resolvedRule": "reject-incompatible-chain",
+  "disposition": "SEMANTIC_CHAIN_INCOMPATIBLE",
+  "findings": [
+    {
+      "findingId": "reject-incompatible-chain",
+      "detail": {
+        "contractsEqual": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "requestType": "explains-semantic-execution-request.v1",
+  "requestId": "explains-semantic-execution-accepts-001",
+  "payload": {
+    "depth": "full",
+    "receipt": {
+      "receiptType": "semantic-kernel-execution-receipt.v1",
+      "runId": "run-explain-001",
+      "executionModelId": "executes-demo-subgraph",
+      "disposition": "EXECUTION_COMPLETED",
+      "steps": [
+        {
+          "stepId": "resolves-mode",
+          "operation": "resolve-decision",
+          "disposition": "completed",
+          "startedAt": "1970-01-01T00:00:00.000Z",
+          "completedAt": "1970-01-01T00:00:00.000Z",
+          "output": "execute-declared-model"
+        },
+        {
+          "stepId": "counts-rows",
+          "operation": "apply-projection",
+          "disposition": "completed",
+          "startedAt": "1970-01-01T00:00:00.000Z",
+          "completedAt": "1970-01-01T00:00:00.000Z",
+          "output": {
+            "total": 2
+          }
+        }
+      ]
+    }
+  }
+}

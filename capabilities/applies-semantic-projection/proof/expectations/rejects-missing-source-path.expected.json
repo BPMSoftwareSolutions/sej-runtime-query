@@ -1,0 +1,27 @@
+{
+  "receiptType": "query-result-projection-receipt.v1",
+  "runId": "fixture-run-missing",
+  "capabilityId": "applies-semantic-projection",
+  "authorityHash": "sha256:capability-authority",
+  "inputHash": "sha256:request",
+  "resultHash": "sha256:rejection",
+  "disposition": "QUERY_PROJECTION_REJECTED",
+  "findings": [
+    {
+      "findingId": "required-source-path-missing",
+      "path": "$.relativePath"
+    }
+  ],
+  "queryHash": "sha256:query-missing",
+  "sourceHashes": [
+    "sha256:registry"
+  ],
+  "projectionId": "project-capability-summary",
+  "projectionAuthorityHash": "sha256:projection-authority",
+  "projectionScope": "each-row",
+  "inputRowCount": 1,
+  "projectedRowCount": 0,
+  "rejectedRowCount": 1,
+  "inputContractId": "workspace-registry-document-entry.v1",
+  "outputContractId": "capability-summary.v1"
+}

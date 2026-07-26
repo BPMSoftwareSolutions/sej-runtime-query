@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "renders-canonical-query-result",
+  "title": "Render canonical query result",
+  "purpose": "Render canonical semantic content into a declared physical representation.",
+  "actor": "authorized-query-caller",
+  "trigger": "a renders-canonical-query-result request is submitted",
+  "desiredOutcome": "Render canonical semantic content into a declared physical representation.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "renders-canonical-query-result"
+  ],
+  "ownedDecision": "resolves-render-form",
+  "declaredDispositions": [
+    "QUERY_RESULT_RENDERED",
+    "QUERY_RENDER_FORM_UNSUPPORTED"
+  ]
+}

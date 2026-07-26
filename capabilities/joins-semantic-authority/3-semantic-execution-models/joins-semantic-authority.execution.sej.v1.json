@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-joins-semantic-authority",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-joins-semantic-authority-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-joins-semantic-authority",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-joins-semantic-authority-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

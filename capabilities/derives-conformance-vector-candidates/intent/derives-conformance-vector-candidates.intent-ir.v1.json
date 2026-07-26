@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "derives-conformance-vector-candidates",
+  "title": "Derive conformance vector candidates",
+  "purpose": "Derive candidate conformance vectors from selected semantic authority.",
+  "actor": "authorized-query-caller",
+  "trigger": "a derives-conformance-vector-candidates request is submitted",
+  "desiredOutcome": "Derive candidate conformance vectors from selected semantic authority.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "derives-conformance-vector-candidates"
+  ],
+  "ownedDecision": "resolves-candidate-derivation-scope",
+  "declaredDispositions": [
+    "CONFORMANCE_CANDIDATES_DERIVED",
+    "CONFORMANCE_CANDIDATES_UNDERIVABLE"
+  ]
+}

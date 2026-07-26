@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "verifies-conformance-vector-declared-rejection",
+  "capabilityId": "verifies-conformance-vector",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/verifies-conformance-vector.rejects.input.json",
+  "expectedFixture": "../proof/expectations/verifies-conformance-vector.rejects.expected.json",
+  "expectedDisposition": "CONFORMANCE_VECTOR_FAILED",
+  "kernelExecution": "passed"
+}

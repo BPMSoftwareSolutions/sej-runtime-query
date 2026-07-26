@@ -1,0 +1,25 @@
+{
+  "receiptType": "executes-selected-semantic-subgraph-receipt.v1",
+  "runId": "run-executes-selected-semantic-subgraph-accepts-001",
+  "capabilityId": "executes-selected-semantic-subgraph",
+  "authorityHash": "sha256:1d22cb6d417714c103b6158473ec4df632e7e3083db65bebd6a83e47b245abd6",
+  "inputHash": "sha256:8b7c85d65674cbbfc9b761f97bfcd9a97df8c2e5c8fa7e47654ce6d9bc1af4a1",
+  "resultHash": "sha256:d1fd13bed163a9e4fc117f92057a90bd7343979815f27fa0f6cb8e087116a9ba",
+  "decisionId": "resolves-subgraph-execution-mode",
+  "resolvedRule": "execute-declared-model",
+  "disposition": "SEMANTIC_SUBGRAPH_EXECUTED",
+  "findings": [],
+  "result": {
+    "resultType": "executes-selected-semantic-subgraph-result.v1",
+    "capabilityId": "executes-selected-semantic-subgraph",
+    "value": {
+      "executionMode": "execute-declared-model",
+      "executionModelId": "executes-demo-subgraph",
+      "kernelDisposition": "EXECUTION_COMPLETED",
+      "stepCount": 1,
+      "result": {
+        "total": 2
+      }
+    }
+  }
+}

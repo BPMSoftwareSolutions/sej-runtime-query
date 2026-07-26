@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:projects-complete-query-result:result:v1",
+  "title": "Projects complete query result result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "projects-complete-query-result-result.v1"
+    },
+    "capabilityId": {
+      "const": "projects-complete-query-result"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "disposition",
+        "value",
+        "inputRowCount",
+        "outputCardinality"
+      ],
+      "properties": {
+        "disposition": {},
+        "value": {},
+        "inputRowCount": {},
+        "outputCardinality": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

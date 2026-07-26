@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:resolved-query-projection:v1",
+  "title": "Resolved semantic query projection",
+  "type": "object",
+  "required": [
+    "resolvedProjectionType",
+    "projectionId",
+    "authorityHash",
+    "scope",
+    "inputContractId",
+    "outputContractId",
+    "policies",
+    "projectionDeclaration"
+  ],
+  "properties": {
+    "resolvedProjectionType": {
+      "const": "resolved-query-projection.v1"
+    },
+    "projectionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorityHash": {
+      "type": "string",
+      "pattern": "^sha256:"
+    },
+    "scope": {
+      "enum": [
+        "each-row",
+        "complete-result"
+      ]
+    },
+    "inputContractId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outputContractId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policies": {
+      "type": "object",
+      "required": [
+        "missingValue",
+        "invalidRow",
+        "cardinality",
+        "additionalField",
+        "ordering"
+      ],
+      "properties": {
+        "missingValue": {
+          "enum": [
+            "reject-query",
+            "reject-row",
+            "omit-field",
+            "write-null",
+            "use-declared-default"
+          ]
+        },
+        "invalidRow": {
+          "enum": [
+            "stop-on-first-invalid-row",
+            "collect-invalid-rows",
+            "exclude-invalid-rows",
+            "preserve-with-diagnostic"
+          ]
+        },
+        "cardinality": {
+          "enum": [
+            "one-input-to-one-output",
+            "one-input-to-many-outputs",
+            "many-inputs-to-one-output",
+            "many-inputs-to-many-outputs"
+          ]
+        },
+        "additionalField": {
+          "enum": [
+            "reject",
+            "discard",
+            "preserve"
+          ]
+        },
+        "ordering": {
+          "enum": [
+            "preserve-query-order",
+            "sort-by-declared-field",
+            "group-by-declared-key"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "projectionDeclaration": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

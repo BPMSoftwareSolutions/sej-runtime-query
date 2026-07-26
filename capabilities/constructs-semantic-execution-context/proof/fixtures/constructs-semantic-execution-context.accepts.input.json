@@ -1,0 +1,17 @@
+{
+  "requestType": "constructs-semantic-execution-context-request.v1",
+  "requestId": "constructs-semantic-execution-context-accepts-001",
+  "payload": {
+    "requiredBindings": [
+      "authority",
+      "source"
+    ],
+    "providedBindings": {
+      "authority": "resolved-authority",
+      "source": "workspace-registry"
+    },
+    "limits": {
+      "maxRows": 100
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "composes-semantic-authority-declared-flow",
+  "capabilityId": "composes-semantic-authority",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/composes-semantic-authority.accepts.input.json",
+  "expectedFixture": "../proof/expectations/composes-semantic-authority.accepts.expected.json",
+  "expectedDisposition": "SEMANTIC_AUTHORITY_COMPOSED",
+  "kernelExecution": "passed"
+}

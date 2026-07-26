@@ -1,0 +1,25 @@
+{
+  "requestType": "projects-each-query-row-request.v1",
+  "requestId": "projects-each-query-row-accepts-001",
+  "payload": {
+    "rows": [
+      {
+        "relativePath": "a.json"
+      },
+      {
+        "relativePath": "b.json"
+      }
+    ],
+    "order": "reverse",
+    "rowProjection": {
+      "kind": "object",
+      "fields": {
+        "path": {
+          "kind": "read",
+          "path": "$.row.relativePath",
+          "required": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-projection-execution-scope",
+  "rules": [
+    {
+      "ruleId": "each-row",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.projection.scope"
+        },
+        "right": {
+          "kind": "value",
+          "value": "each-row"
+        }
+      },
+      "then": "execute-row-projection"
+    },
+    {
+      "ruleId": "complete-result",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.projection.scope"
+        },
+        "right": {
+          "kind": "value",
+          "value": "complete-result"
+        }
+      },
+      "then": "execute-result-set-projection"
+    }
+  ],
+  "noMatchDisposition": "reject"
+}

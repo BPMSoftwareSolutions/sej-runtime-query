@@ -1,0 +1,26 @@
+{
+  "requestType": "projects-language-delegation-shell-request.v1",
+  "requestId": "projects-language-delegation-shell-accepts-001",
+  "payload": {
+    "capabilityId": "filters-query-rows",
+    "target": "typescript",
+    "executionModel": {
+      "declarationType": "semantic-execution-model.v1",
+      "executionModelId": "executes-filters-query-rows",
+      "steps": [
+        {
+          "sequence": 1,
+          "invoke": "resolves-filters-query-rows-authority"
+        },
+        {
+          "sequence": 2,
+          "invoke": "executes-resolved-filters-query-rows"
+        },
+        {
+          "sequence": 3,
+          "project": "projects-filters-query-rows-result"
+        }
+      ]
+    }
+  }
+}

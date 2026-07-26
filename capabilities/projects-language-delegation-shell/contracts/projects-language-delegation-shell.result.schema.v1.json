@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:projects-language-delegation-shell:result:v1",
+  "title": "Projects language delegation shell result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "projects-language-delegation-shell-result.v1"
+    },
+    "capabilityId": {
+      "const": "projects-language-delegation-shell"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "target",
+        "shellDisposition",
+        "delegationSteps",
+        "shellLineCount"
+      ],
+      "properties": {
+        "target": {},
+        "shellDisposition": {},
+        "delegationSteps": {},
+        "shellLineCount": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

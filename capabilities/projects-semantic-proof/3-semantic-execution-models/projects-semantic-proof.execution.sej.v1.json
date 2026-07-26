@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-projects-semantic-proof",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-projects-semantic-proof-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-projects-semantic-proof",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-projects-semantic-proof-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

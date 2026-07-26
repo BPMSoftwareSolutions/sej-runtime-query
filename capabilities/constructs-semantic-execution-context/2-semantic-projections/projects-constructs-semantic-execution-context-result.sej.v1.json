@@ -1,0 +1,43 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-constructs-semantic-execution-context-result",
+  "accepts": {
+    "contractId": "executed-constructs-semantic-execution-context.v1"
+  },
+  "produces": {
+    "contractId": "constructs-semantic-execution-context-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "constructs-semantic-execution-context-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "constructs-semantic-execution-context"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "completeness": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "context": {
+            "kind": "read",
+            "path": "$.constructedContext",
+            "required": true
+          },
+          "missingBindings": {
+            "kind": "read",
+            "path": "$.missingBindings",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

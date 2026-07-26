@@ -1,0 +1,12 @@
+{
+  "requestType": "applies-semantic-policy-overlay-request.v1",
+  "requestId": "applies-semantic-policy-overlay-rejects-001",
+  "payload": {
+    "basePolicy": {
+      "validateOutput": true
+    },
+    "overlay": {
+      "validateOutput": false
+    }
+  }
+}

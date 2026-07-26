@@ -1,0 +1,12 @@
+{
+  "requestType": "projects-complete-query-result-request.v1",
+  "requestId": "projects-complete-query-result-rejects-001",
+  "payload": {
+    "rows": [],
+    "requireNonEmpty": true,
+    "resultProjection": {
+      "kind": "constant",
+      "value": null
+    }
+  }
+}

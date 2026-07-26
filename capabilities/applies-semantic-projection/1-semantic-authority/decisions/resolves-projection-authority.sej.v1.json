@@ -1,0 +1,59 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-projection-authority",
+  "inputs": [
+    "request.selector.explicitAuthorityPath",
+    "workspaceProjectionRegistry",
+    "sourceOwnedProjectionAuthority",
+    "request.selector.projectionId"
+  ],
+  "resolutionOrder": [
+    "explicit-authority-file",
+    "workspace-projection-registry",
+    "source-owned-projection-authority"
+  ],
+  "rules": [
+    {
+      "ruleId": "explicit-authority-file",
+      "when": {
+        "operator": "exists",
+        "operand": {
+          "kind": "path",
+          "path": "$.request.selector.explicitAuthorityPath"
+        }
+      },
+      "then": "read-explicit-authority-file"
+    },
+    {
+      "ruleId": "workspace-projection-registry",
+      "when": {
+        "operator": "exists",
+        "operand": {
+          "kind": "path",
+          "path": "$.workspaceProjectionRegistry"
+        }
+      },
+      "then": "read-workspace-registered-authority"
+    },
+    {
+      "ruleId": "source-owned-projection-authority",
+      "when": {
+        "operator": "exists",
+        "operand": {
+          "kind": "path",
+          "path": "$.sourceOwnedProjectionAuthority"
+        }
+      },
+      "then": "read-source-owned-authority"
+    },
+    {
+      "ruleId": "projection-authority-not-found",
+      "when": {
+        "operator": "always"
+      },
+      "then": "reject-projection-authority-not-found"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

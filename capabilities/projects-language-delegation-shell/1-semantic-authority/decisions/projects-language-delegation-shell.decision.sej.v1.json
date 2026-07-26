@@ -1,0 +1,30 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-delegation-shell-target",
+  "inputs": [
+    "$.payload.target",
+    "$.targetSupported"
+  ],
+  "rules": [
+    {
+      "ruleId": "reject-unsupported-target",
+      "when": {
+        "operator": "falsy",
+        "operand": {
+          "kind": "path",
+          "path": "$.targetSupported"
+        }
+      },
+      "then": "reject-unsupported-target"
+    },
+    {
+      "ruleId": "project-declared-target-shell",
+      "when": {
+        "operator": "always"
+      },
+      "then": "project-declared-target-shell"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

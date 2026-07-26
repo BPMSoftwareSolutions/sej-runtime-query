@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "parses-query-command",
+  "title": "Parse a query command",
+  "purpose": "Produce one canonical query command from submitted query text.",
+  "actor": "authorized-query-caller",
+  "trigger": "a parses-query-command request is submitted",
+  "desiredOutcome": "Produce one canonical query command from submitted query text.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "parses-query-command"
+  ],
+  "ownedDecision": "resolves-query-command-family",
+  "declaredDispositions": [
+    "QUERY_COMMAND_PARSED",
+    "QUERY_COMMAND_UNPARSABLE"
+  ]
+}

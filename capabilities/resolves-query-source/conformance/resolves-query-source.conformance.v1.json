@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "resolves-query-source-declared-flow",
+  "capabilityId": "resolves-query-source",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/resolves-query-source.accepts.input.json",
+  "expectedFixture": "../proof/expectations/resolves-query-source.accepts.expected.json",
+  "expectedDisposition": "QUERY_SOURCE_RESOLVED",
+  "kernelExecution": "passed"
+}

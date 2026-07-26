@@ -1,0 +1,22 @@
+{
+  "receiptType": "projects-semantic-proof-receipt.v1",
+  "runId": "run-projects-semantic-proof-rejects-001",
+  "capabilityId": "projects-semantic-proof",
+  "authorityHash": "sha256:65232f52cc8c5025215837a80954258e1195bf0d53f5160ce3dcbd00e3c70f6c",
+  "inputHash": "sha256:431e2e12b1ef30b07baa6350bbe4176394dcf567dfbfd3140b3b52973ccb1d54",
+  "resultHash": "sha256:17c355b6e77d41b5118d8e64891010b711e8a574d95053f4421c3b07d27eba83",
+  "decisionId": "resolves-proof-completeness",
+  "resolvedRule": "reject-incomplete-proof",
+  "disposition": "SEMANTIC_PROOF_INCOMPLETE",
+  "findings": [
+    {
+      "findingId": "reject-incomplete-proof",
+      "detail": {
+        "missingAssertionCount": 1,
+        "missingAssertions": [
+          "authority-hash-recorded"
+        ]
+      }
+    }
+  ]
+}

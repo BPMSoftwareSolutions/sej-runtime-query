@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "joins-semantic-authority-declared-flow",
+  "capabilityId": "joins-semantic-authority",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/joins-semantic-authority.accepts.input.json",
+  "expectedFixture": "../proof/expectations/joins-semantic-authority.accepts.expected.json",
+  "expectedDisposition": "SEMANTIC_AUTHORITY_JOINED",
+  "kernelExecution": "passed"
+}

@@ -1,0 +1,9 @@
+{
+  "canonicalizationType": "semantic-canonicalization.v1",
+  "canonicalizationId": "joins-semantic-authority-canonicalization",
+  "objectKeyOrder": "lexicographic",
+  "arrayOrder": "declared-order-preserved",
+  "hashAlgorithm": "sha256",
+  "hashEncoding": "hex",
+  "hashPrefix": "sha256:"
+}

@@ -1,0 +1,22 @@
+{
+  "receiptType": "renders-canonical-query-result-receipt.v1",
+  "runId": "run-renders-canonical-query-result-rejects-001",
+  "capabilityId": "renders-canonical-query-result",
+  "authorityHash": "sha256:5df62432f7381d5831d780d96b9294b58cac7c66f10dc433929ba9caf56d46cb",
+  "inputHash": "sha256:fe8bdf446742e263029f0928b4306eb8099bad4c4d2bf31360c378ef5dda3e10",
+  "resultHash": "sha256:8005ff22f79e57a4d8be298c1cf70a5b5293165d2493e21708047bfade145755",
+  "decisionId": "resolves-render-form",
+  "resolvedRule": null,
+  "disposition": "QUERY_RENDER_FORM_UNSUPPORTED",
+  "findings": [
+    {
+      "findingId": "no-declared-rule-matched",
+      "detail": {
+        "decisionId": "resolves-render-form",
+        "observation": {
+          "renderForm": "yaml"
+        }
+      }
+    }
+  ]
+}

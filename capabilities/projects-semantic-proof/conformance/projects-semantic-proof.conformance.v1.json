@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "projects-semantic-proof-declared-flow",
+  "capabilityId": "projects-semantic-proof",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/projects-semantic-proof.accepts.input.json",
+  "expectedFixture": "../proof/expectations/projects-semantic-proof.accepts.expected.json",
+  "expectedDisposition": "SEMANTIC_PROOF_PROJECTED",
+  "kernelExecution": "passed"
+}

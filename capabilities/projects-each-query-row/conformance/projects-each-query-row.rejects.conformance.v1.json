@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "projects-each-query-row-declared-rejection",
+  "capabilityId": "projects-each-query-row",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/projects-each-query-row.rejects.input.json",
+  "expectedFixture": "../proof/expectations/projects-each-query-row.rejects.expected.json",
+  "expectedDisposition": "QUERY_ROW_PROJECTION_REJECTED",
+  "kernelExecution": "passed"
+}

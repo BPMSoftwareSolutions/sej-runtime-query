@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "lints-semantic-authority-declared-flow",
+  "capabilityId": "lints-semantic-authority",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/lints-semantic-authority.accepts.input.json",
+  "expectedFixture": "../proof/expectations/lints-semantic-authority.accepts.expected.json",
+  "expectedDisposition": "SEMANTIC_AUTHORITY_LINTED",
+  "kernelExecution": "passed"
+}

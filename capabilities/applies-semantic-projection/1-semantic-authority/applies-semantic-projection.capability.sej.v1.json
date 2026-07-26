@@ -1,0 +1,26 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "applies-semantic-projection",
+  "status": "implemented",
+  "promotionDisposition": "conformance-passed",
+  "purpose": "Apply one resolved semantic projection to a canonical query result.",
+  "owns": [
+    "projection-authority-resolution",
+    "projection-policy-selection",
+    "projection-scope-dispatch",
+    "projection-proof-requirements"
+  ],
+  "mustNotOwn": [
+    "query-fact-selection",
+    "physical-result-rendering",
+    "predicate-implementation",
+    "projection-engine-implementation",
+    "language-specific-dto-stitching"
+  ],
+  "publicOperation": "applies-semantic-projection",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1",
+    "iteration.execute.v1"
+  ]
+}

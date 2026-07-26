@@ -1,0 +1,16 @@
+{
+  "projectedResultType": "projected-query-result.v1",
+  "projectionId": "project-capability-summary",
+  "scope": "each-row",
+  "value": [
+    {
+      "capabilityPath": "capabilities/file-system-shaper.json",
+      "classification": "SEJ",
+      "specificationVersion": "1.0.0"
+    }
+  ],
+  "inputRowCount": 1,
+  "projectedRowCount": 1,
+  "rejectedRowCount": 0,
+  "diagnostics": []
+}

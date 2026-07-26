@@ -1,0 +1,22 @@
+{
+  "receiptType": "constructs-semantic-execution-context-receipt.v1",
+  "runId": "run-constructs-semantic-execution-context-rejects-001",
+  "capabilityId": "constructs-semantic-execution-context",
+  "authorityHash": "sha256:4b2d1e049927cfcdf152cb3ee73b77231dc5e9676977f1c42d22a2131f428f32",
+  "inputHash": "sha256:50f04c2b1583dfe1cd66bc40d18a730ea89dd228c2aba34f19da0dff114de720",
+  "resultHash": "sha256:503503878cf204f37bd95cfa76716c8b3962f39090f952f5f47028eca67b9b0c",
+  "decisionId": "resolves-execution-context-completeness",
+  "resolvedRule": "reject-incomplete-context",
+  "disposition": "EXECUTION_CONTEXT_INCOMPLETE",
+  "findings": [
+    {
+      "findingId": "reject-incomplete-context",
+      "detail": {
+        "missingBindingCount": 1,
+        "missingBindings": [
+          "source"
+        ]
+      }
+    }
+  ]
+}

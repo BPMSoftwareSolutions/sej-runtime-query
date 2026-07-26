@@ -1,0 +1,13 @@
+{
+  "requestType": "projects-language-delegation-shell-request.v1",
+  "requestId": "projects-language-delegation-shell-rejects-001",
+  "payload": {
+    "capabilityId": "filters-query-rows",
+    "target": "cobol",
+    "executionModel": {
+      "declarationType": "semantic-execution-model.v1",
+      "executionModelId": "x",
+      "steps": []
+    }
+  }
+}

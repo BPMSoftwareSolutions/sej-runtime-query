@@ -1,0 +1,19 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "applies-semantic-projection",
+  "title": "Apply semantic projection",
+  "purpose": "Transform a canonical query result through one explicitly resolved semantic projection authority.",
+  "actor": "authorized-query-caller",
+  "trigger": "a canonical query result and projection selector are submitted",
+  "desiredOutcome": "a contract-valid projected result and canonical projection receipt are produced",
+  "constraints": [
+    "SELECT owns retrieval shape and does not own semantic output shape",
+    "projection authority is resolved deterministically with no name-based fallback",
+    "row and complete-result scopes use the external semantic kernel",
+    "missing values, invalid rows, cardinality, ordering, and additional fields follow declared policy",
+    "the capability body contains no decisions, loops, DTO construction, retry, fallback, or failure classification"
+  ],
+  "featureIds": [
+    "applies-semantic-projection"
+  ]
+}

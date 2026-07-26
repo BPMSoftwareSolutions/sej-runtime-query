@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-lints-semantic-authority",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-lints-semantic-authority-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-lints-semantic-authority",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-lints-semantic-authority-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

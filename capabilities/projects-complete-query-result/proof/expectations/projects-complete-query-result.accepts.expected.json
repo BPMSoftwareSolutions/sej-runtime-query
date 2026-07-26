@@ -1,0 +1,24 @@
+{
+  "receiptType": "projects-complete-query-result-receipt.v1",
+  "runId": "run-projects-complete-query-result-accepts-001",
+  "capabilityId": "projects-complete-query-result",
+  "authorityHash": "sha256:8e0b29bdd78d7549ca137d7498e9c63361bf3250a6f1a5cc6c51023d5cf7df15",
+  "inputHash": "sha256:e5059cdc9e04a992d32747f2c272f618aae161e4ebb31acd741540bef593a62b",
+  "resultHash": "sha256:7c751c03f5689a88bbb41d699bb9f5cf07bc2635cd0f2a3a9e70309d14b300d9",
+  "decisionId": "resolves-complete-result-disposition",
+  "resolvedRule": "project-complete-result",
+  "disposition": "QUERY_RESULT_PROJECTED",
+  "findings": [],
+  "result": {
+    "resultType": "projects-complete-query-result-result.v1",
+    "capabilityId": "projects-complete-query-result",
+    "value": {
+      "disposition": "project-complete-result",
+      "value": {
+        "total": 2
+      },
+      "inputRowCount": 2,
+      "outputCardinality": 1
+    }
+  }
+}

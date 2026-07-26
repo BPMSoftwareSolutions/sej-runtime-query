@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "executes-selected-semantic-subgraph",
+  "title": "Execute selected semantic subgraph",
+  "purpose": "Execute only the semantic subgraph authorized by the query.",
+  "actor": "authorized-query-caller",
+  "trigger": "a executes-selected-semantic-subgraph request is submitted",
+  "desiredOutcome": "Execute only the semantic subgraph authorized by the query.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "executes-selected-semantic-subgraph"
+  ],
+  "ownedDecision": "resolves-subgraph-execution-mode",
+  "declaredDispositions": [
+    "SEMANTIC_SUBGRAPH_EXECUTED",
+    "SEMANTIC_SUBGRAPH_FAILED"
+  ]
+}

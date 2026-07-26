@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-executes-selected-semantic-subgraph",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-executes-selected-semantic-subgraph-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-executes-selected-semantic-subgraph",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-executes-selected-semantic-subgraph-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

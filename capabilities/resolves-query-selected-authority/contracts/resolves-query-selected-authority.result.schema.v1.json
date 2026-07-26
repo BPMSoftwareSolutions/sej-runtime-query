@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:resolves-query-selected-authority:result:v1",
+  "title": "Resolves query selected authority result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "resolves-query-selected-authority-result.v1"
+    },
+    "capabilityId": {
+      "const": "resolves-query-selected-authority"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "selectionRule",
+        "selectedEntry"
+      ],
+      "properties": {
+        "selectionRule": {},
+        "selectedEntry": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

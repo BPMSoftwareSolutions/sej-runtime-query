@@ -1,0 +1,57 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-metadata-match-mode",
+  "inputs": [
+    "$.payload.matchMode",
+    "$.matchedCount"
+  ],
+  "rules": [
+    {
+      "ruleId": "reject-no-metadata-match",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.matchedCount"
+        },
+        "right": {
+          "kind": "value",
+          "value": 0
+        }
+      },
+      "then": "reject-no-metadata-match"
+    },
+    {
+      "ruleId": "match-any-declared-metadata",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.matchMode"
+        },
+        "right": {
+          "kind": "value",
+          "value": "any"
+        }
+      },
+      "then": "match-any-declared-metadata"
+    },
+    {
+      "ruleId": "match-all-declared-metadata",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.matchMode"
+        },
+        "right": {
+          "kind": "value",
+          "value": "all"
+        }
+      },
+      "then": "match-all-declared-metadata"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

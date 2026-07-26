@@ -1,0 +1,19 @@
+{
+  "receiptType": "projects-complete-query-result-receipt.v1",
+  "runId": "run-projects-complete-query-result-rejects-001",
+  "capabilityId": "projects-complete-query-result",
+  "authorityHash": "sha256:8e0b29bdd78d7549ca137d7498e9c63361bf3250a6f1a5cc6c51023d5cf7df15",
+  "inputHash": "sha256:033933860899aaa917b7541c59e9ecff995394c03ef04b323891e2f320767f64",
+  "resultHash": "sha256:3520623ab82403b4a71424b379ad132e5039b09041e8b490424f5db0e410bc61",
+  "decisionId": "resolves-complete-result-disposition",
+  "resolvedRule": "reject-empty-required-result",
+  "disposition": "QUERY_RESULT_PROJECTION_REJECTED",
+  "findings": [
+    {
+      "findingId": "reject-empty-required-result",
+      "detail": {
+        "rowCount": 0
+      }
+    }
+  ]
+}

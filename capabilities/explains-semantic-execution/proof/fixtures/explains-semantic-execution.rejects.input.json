@@ -1,0 +1,14 @@
+{
+  "requestType": "explains-semantic-execution-request.v1",
+  "requestId": "explains-semantic-execution-rejects-001",
+  "payload": {
+    "depth": "decisions",
+    "receipt": {
+      "receiptType": "semantic-kernel-execution-receipt.v1",
+      "runId": "run-x",
+      "executionModelId": "m",
+      "disposition": "EXECUTION_COMPLETED",
+      "steps": []
+    }
+  }
+}

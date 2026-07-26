@@ -1,0 +1,16 @@
+{
+  "requestType": "resolves-authority-by-metadata-request.v1",
+  "requestId": "resolves-authority-by-metadata-rejects-001",
+  "payload": {
+    "entries": [
+      {
+        "identity": "a",
+        "classification": "sej"
+      }
+    ],
+    "matchMode": "all",
+    "metadata": {
+      "classification": "absent-value"
+    }
+  }
+}

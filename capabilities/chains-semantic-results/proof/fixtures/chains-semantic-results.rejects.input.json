@@ -1,0 +1,9 @@
+{
+  "requestType": "chains-semantic-results-request.v1",
+  "requestId": "chains-semantic-results-rejects-001",
+  "payload": {
+    "producedContractId": "capability-summary.v1",
+    "acceptedContractId": "workspace-capability-report.v1",
+    "producedValue": {}
+  }
+}

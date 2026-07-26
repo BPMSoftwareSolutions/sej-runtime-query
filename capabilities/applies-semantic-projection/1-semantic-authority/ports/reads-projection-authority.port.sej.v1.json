@@ -1,0 +1,7 @@
+{
+  "declarationType": "semantic-port.v1",
+  "portId": "reads-projection-authority",
+  "effect": "read-authority-file",
+  "inputContract": "read-projection-authority-request.v1",
+  "outputContract": "observed-projection-authority.v1"
+}

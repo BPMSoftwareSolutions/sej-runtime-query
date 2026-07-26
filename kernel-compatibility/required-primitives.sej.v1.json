@@ -1,0 +1,20 @@
+{
+  "kernelContractType": "semantic-kernel-requirements.v1",
+  "requiredKernelSpecification": "^1.0.0",
+  "requiredPrimitives": [
+    "contract.validate.v1",
+    "predicate.evaluate.v1",
+    "decision.resolve.v1",
+    "projection.apply.v1",
+    "iteration.execute.v1",
+    "execution.sequence.v1",
+    "port.invoke.v1",
+    "testimony.record.v1"
+  ],
+  "forbiddenExtensions": [
+    "capability-local-predicate-handler",
+    "runtime-domain-dispatch",
+    "implicit-fallback",
+    "local-projection-engine"
+  ]
+}

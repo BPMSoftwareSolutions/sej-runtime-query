@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:query-result-projection-receipt:v1",
+  "title": "Query result projection receipt",
+  "type": "object",
+  "required": [
+    "receiptType",
+    "runId",
+    "capabilityId",
+    "authorityHash",
+    "inputHash",
+    "resultHash",
+    "disposition",
+    "findings",
+    "queryHash",
+    "sourceHashes",
+    "projectionId",
+    "projectionAuthorityHash",
+    "projectionScope",
+    "inputRowCount",
+    "projectedRowCount",
+    "rejectedRowCount",
+    "inputContractId",
+    "outputContractId"
+  ],
+  "properties": {
+    "receiptType": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capabilityId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorityHash": {
+      "type": "string",
+      "pattern": "^sha256:"
+    },
+    "inputHash": {
+      "type": "string",
+      "pattern": "^sha256:"
+    },
+    "resultHash": {
+      "type": "string",
+      "pattern": "^sha256:"
+    },
+    "disposition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "queryHash": {
+      "type": "string",
+      "pattern": "^sha256:"
+    },
+    "sourceHashes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^sha256:"
+      }
+    },
+    "projectionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "projectionAuthorityHash": {
+      "type": "string",
+      "pattern": "^sha256:"
+    },
+    "projectionScope": {
+      "enum": [
+        "each-row",
+        "complete-result"
+      ]
+    },
+    "inputRowCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "projectedRowCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "rejectedRowCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "inputContractId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outputContractId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "projectedResult": {
+      "oneOf": [
+        {
+          "$ref": "urn:deterministic-solutions:projected-query-result:v1"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

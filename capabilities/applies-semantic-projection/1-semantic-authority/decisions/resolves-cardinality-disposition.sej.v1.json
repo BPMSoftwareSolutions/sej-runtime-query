@@ -1,0 +1,40 @@
+{
+  "declarationType": "semantic-decision.v1",
+  "decisionId": "resolves-cardinality-disposition",
+  "inputs": [
+    "projection.scope",
+    "policy.cardinality"
+  ],
+  "rules": [
+    {
+      "when": {
+        "projection.scope": "each-row",
+        "policy.cardinality": {
+          "in": [
+            "one-input-to-one-output",
+            "one-input-to-many-outputs"
+          ]
+        }
+      },
+      "then": "authorize-row-scope"
+    },
+    {
+      "when": {
+        "projection.scope": "complete-result",
+        "policy.cardinality": {
+          "in": [
+            "many-inputs-to-one-output",
+            "many-inputs-to-many-outputs"
+          ]
+        }
+      },
+      "then": "authorize-result-set-scope"
+    },
+    {
+      "when": {
+        "*": true
+      },
+      "then": "reject-cardinality-scope-mismatch"
+    }
+  ]
+}

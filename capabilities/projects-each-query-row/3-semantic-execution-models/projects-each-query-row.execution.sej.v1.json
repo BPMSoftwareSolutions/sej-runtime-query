@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-projects-each-query-row",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-projects-each-query-row-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-projects-each-query-row",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-projects-each-query-row-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

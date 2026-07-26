@@ -1,0 +1,22 @@
+{
+  "receiptType": "composes-semantic-authority-receipt.v1",
+  "runId": "run-composes-semantic-authority-rejects-001",
+  "capabilityId": "composes-semantic-authority",
+  "authorityHash": "sha256:90a6c1faadcbfba2173e95cec029ad4e9302fb6a16b22592f1fc3ec19f7e3ff9",
+  "inputHash": "sha256:9d220ec203f37c958ed6c0bbec7a6523fd8e34b5aa767e8a911bdcee7c2f31cc",
+  "resultHash": "sha256:d11ff6b0fad555e031da3806bc9a1fa5ae8024ddf2c1127aca202ca0d4804000",
+  "decisionId": "resolves-composition-precedence",
+  "resolvedRule": "reject-conflicting-authority",
+  "disposition": "SEMANTIC_AUTHORITY_CONFLICT",
+  "findings": [
+    {
+      "findingId": "reject-conflicting-authority",
+      "detail": {
+        "conflictCount": 1,
+        "conflictKeys": [
+          "shared"
+        ]
+      }
+    }
+  ]
+}

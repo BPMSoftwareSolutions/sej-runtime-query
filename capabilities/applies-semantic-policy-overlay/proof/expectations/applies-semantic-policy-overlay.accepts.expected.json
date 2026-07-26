@@ -1,0 +1,24 @@
+{
+  "receiptType": "applies-semantic-policy-overlay-receipt.v1",
+  "runId": "run-applies-semantic-policy-overlay-accepts-001",
+  "capabilityId": "applies-semantic-policy-overlay",
+  "authorityHash": "sha256:9028a33e2269e1c93d670b4349f253496b276c85b9b3f0f3a7e9e4226e16347c",
+  "inputHash": "sha256:90975306b82e7328af8dfbcbd8d55d8fe71c957d9ff970df544241b82da6f5e0",
+  "resultHash": "sha256:a61af39dbc9b5506b886775e69edd9d63d38f7d19b6638ce9ddf1eb1f065eecf",
+  "decisionId": "resolves-overlay-disposition",
+  "resolvedRule": "apply-tightening-overlay",
+  "disposition": "SEMANTIC_POLICY_OVERLAY_APPLIED",
+  "findings": [],
+  "result": {
+    "resultType": "applies-semantic-policy-overlay-result.v1",
+    "capabilityId": "applies-semantic-policy-overlay",
+    "value": {
+      "overlayDisposition": "apply-tightening-overlay",
+      "effectivePolicy": {
+        "validateInput": true,
+        "validateOutput": true
+      },
+      "tighteningCount": 1
+    }
+  }
+}

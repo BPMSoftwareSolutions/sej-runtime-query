@@ -1,0 +1,57 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-candidate-derivation-scope",
+  "inputs": [
+    "$.payload.derivationScope",
+    "$.candidateCount"
+  ],
+  "rules": [
+    {
+      "ruleId": "reject-underivable-declaration",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.candidateCount"
+        },
+        "right": {
+          "kind": "value",
+          "value": 0
+        }
+      },
+      "then": "reject-underivable-declaration"
+    },
+    {
+      "ruleId": "derive-per-projection-field",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.derivationScope"
+        },
+        "right": {
+          "kind": "value",
+          "value": "projection-field"
+        }
+      },
+      "then": "derive-per-projection-field"
+    },
+    {
+      "ruleId": "derive-per-decision-rule",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.derivationScope"
+        },
+        "right": {
+          "kind": "value",
+          "value": "decision-rule"
+        }
+      },
+      "then": "derive-per-decision-rule"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

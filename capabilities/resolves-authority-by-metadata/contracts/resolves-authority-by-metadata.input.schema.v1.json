@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:resolves-authority-by-metadata:input:v1",
+  "title": "Resolves authority by metadata input",
+  "type": "object",
+  "required": [
+    "requestType",
+    "requestId",
+    "payload"
+  ],
+  "properties": {
+    "requestType": {
+      "const": "resolves-authority-by-metadata-request.v1"
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "entries",
+        "matchMode",
+        "metadata"
+      ],
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "matchMode": {
+          "enum": [
+            "all",
+            "any"
+          ]
+        },
+        "metadata": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

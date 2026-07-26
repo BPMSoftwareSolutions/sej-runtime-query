@@ -1,0 +1,30 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-subgraph-execution-mode",
+  "inputs": [
+    "$.payload.executionModelId",
+    "$.modelRegistered"
+  ],
+  "rules": [
+    {
+      "ruleId": "reject-unregistered-model",
+      "when": {
+        "operator": "falsy",
+        "operand": {
+          "kind": "path",
+          "path": "$.modelRegistered"
+        }
+      },
+      "then": "reject-unregistered-model"
+    },
+    {
+      "ruleId": "execute-declared-model",
+      "when": {
+        "operator": "always"
+      },
+      "then": "execute-declared-model"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

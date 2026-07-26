@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "projects-language-delegation-shell",
+  "title": "Project language delegation shell",
+  "purpose": "Project a language-specific delegation shell below the projection boundary.",
+  "actor": "authorized-query-caller",
+  "trigger": "a projects-language-delegation-shell request is submitted",
+  "desiredOutcome": "Project a language-specific delegation shell below the projection boundary.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "projects-language-delegation-shell"
+  ],
+  "ownedDecision": "resolves-delegation-shell-target",
+  "declaredDispositions": [
+    "DELEGATION_SHELL_PROJECTED",
+    "DELEGATION_SHELL_TARGET_UNSUPPORTED"
+  ]
+}

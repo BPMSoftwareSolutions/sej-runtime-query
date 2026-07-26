@@ -1,0 +1,22 @@
+{
+  "receiptType": "resolves-query-source-receipt.v1",
+  "runId": "run-resolves-query-source-rejects-001",
+  "capabilityId": "resolves-query-source",
+  "authorityHash": "sha256:f550c37f688ce255ae2d7dfc475d6984bc85ed991780116e0a9ed1bc7254aec5",
+  "inputHash": "sha256:58bf285dbf647b0f077769f89b65115a9b74b579bf4073400a4d4b7625093395",
+  "resultHash": "sha256:592b1cbee51f820a48ef3e1170ad36fe4fc2531ae15bead07e57d1c9049c758c",
+  "decisionId": "resolves-query-source-selection",
+  "resolvedRule": null,
+  "disposition": "QUERY_SOURCE_UNRESOLVED",
+  "findings": [
+    {
+      "findingId": "no-declared-rule-matched",
+      "detail": {
+        "decisionId": "resolves-query-source-selection",
+        "observation": {
+          "hasExplicitSource": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "requestType": "projects-complete-query-result-request.v1",
+  "requestId": "projects-complete-query-result-accepts-001",
+  "payload": {
+    "rows": [
+      {
+        "sejClassification": "sej"
+      },
+      {
+        "sejClassification": "non-sej"
+      }
+    ],
+    "resultProjection": {
+      "kind": "object",
+      "fields": {
+        "total": {
+          "kind": "count",
+          "expression": {
+            "kind": "read",
+            "path": "$.rows"
+          }
+        }
+      }
+    }
+  }
+}

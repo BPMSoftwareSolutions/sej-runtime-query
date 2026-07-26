@@ -1,0 +1,7 @@
+{
+  "requestType": "parses-query-command-request.v1",
+  "requestId": "parses-query-command-rejects-001",
+  "payload": {
+    "normalizedText": "MUTATE registry SET x = 1"
+  }
+}

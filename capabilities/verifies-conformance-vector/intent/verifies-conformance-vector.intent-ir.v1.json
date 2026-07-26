@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "verifies-conformance-vector",
+  "title": "Verify conformance vector",
+  "purpose": "Verify one conformance vector against selected semantic authority and observed result.",
+  "actor": "authorized-query-caller",
+  "trigger": "a verifies-conformance-vector request is submitted",
+  "desiredOutcome": "Verify one conformance vector against selected semantic authority and observed result.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "verifies-conformance-vector"
+  ],
+  "ownedDecision": "resolves-vector-verification-outcome",
+  "declaredDispositions": [
+    "CONFORMANCE_VECTOR_VERIFIED",
+    "CONFORMANCE_VECTOR_FAILED"
+  ]
+}

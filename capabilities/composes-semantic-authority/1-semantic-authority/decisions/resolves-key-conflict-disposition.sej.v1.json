@@ -1,0 +1,41 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-key-conflict-disposition",
+  "inputs": [
+    "$.observed.keyPreviouslyDeclared",
+    "$.observed.valueHashesEqual"
+  ],
+  "rules": [
+    {
+      "ruleId": "first-declaration-of-key",
+      "when": {
+        "operator": "falsy",
+        "operand": {
+          "kind": "path",
+          "path": "$.observed.keyPreviouslyDeclared"
+        }
+      },
+      "then": "record-first-declaration"
+    },
+    {
+      "ruleId": "redeclared-with-equal-value",
+      "when": {
+        "operator": "truthy",
+        "operand": {
+          "kind": "path",
+          "path": "$.observed.valueHashesEqual"
+        }
+      },
+      "then": "accept-identical-redeclaration"
+    },
+    {
+      "ruleId": "redeclared-with-differing-value",
+      "when": {
+        "operator": "always"
+      },
+      "then": "record-conflicting-declaration"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

@@ -1,0 +1,54 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-executes-selected-semantic-subgraph-result",
+  "accepts": {
+    "contractId": "executed-executes-selected-semantic-subgraph.v1"
+  },
+  "produces": {
+    "contractId": "executes-selected-semantic-subgraph-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "executes-selected-semantic-subgraph-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "executes-selected-semantic-subgraph"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "executionMode": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "executionModelId": {
+            "kind": "read",
+            "path": "$.payload.executionModelId",
+            "required": true
+          },
+          "kernelDisposition": {
+            "kind": "read",
+            "path": "$.kernelReceipt.disposition",
+            "required": true
+          },
+          "stepCount": {
+            "kind": "count",
+            "expression": {
+              "kind": "read",
+              "path": "$.kernelReceipt.steps"
+            }
+          },
+          "result": {
+            "kind": "read",
+            "path": "$.kernelReceipt.result"
+          }
+        }
+      }
+    }
+  }
+}

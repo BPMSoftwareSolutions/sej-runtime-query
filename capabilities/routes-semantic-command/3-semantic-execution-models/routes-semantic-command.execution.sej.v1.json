@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-routes-semantic-command",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-routes-semantic-command-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-routes-semantic-command",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-routes-semantic-command-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

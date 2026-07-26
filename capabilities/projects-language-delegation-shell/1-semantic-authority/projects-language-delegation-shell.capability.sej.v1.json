@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "projects-language-delegation-shell",
+  "status": "implemented",
+  "purpose": "Project a language-specific delegation shell below the projection boundary.",
+  "owns": [
+    "semantic-authority",
+    "language-delegation-shell"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "projects-language-delegation-shell",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-delegation-shell-target",
+  "declaredResultProjection": "projects-projects-language-delegation-shell-result",
+  "declaredDispositions": [
+    "DELEGATION_SHELL_PROJECTED",
+    "DELEGATION_SHELL_TARGET_UNSUPPORTED"
+  ]
+}

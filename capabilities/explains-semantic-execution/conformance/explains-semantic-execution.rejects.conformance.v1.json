@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "explains-semantic-execution-declared-rejection",
+  "capabilityId": "explains-semantic-execution",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/explains-semantic-execution.rejects.input.json",
+  "expectedFixture": "../proof/expectations/explains-semantic-execution.rejects.expected.json",
+  "expectedDisposition": "SEMANTIC_EXECUTION_UNEXPLAINABLE",
+  "kernelExecution": "passed"
+}

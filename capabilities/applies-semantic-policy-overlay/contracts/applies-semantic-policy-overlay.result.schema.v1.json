@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:applies-semantic-policy-overlay:result:v1",
+  "title": "Applies semantic policy overlay result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "applies-semantic-policy-overlay-result.v1"
+    },
+    "capabilityId": {
+      "const": "applies-semantic-policy-overlay"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "overlayDisposition",
+        "effectivePolicy",
+        "tighteningCount"
+      ],
+      "properties": {
+        "overlayDisposition": {},
+        "effectivePolicy": {},
+        "tighteningCount": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

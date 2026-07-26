@@ -1,0 +1,33 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-proof-completeness",
+  "inputs": [
+    "$.missingAssertionCount"
+  ],
+  "rules": [
+    {
+      "ruleId": "reject-incomplete-proof",
+      "when": {
+        "operator": "greater-than",
+        "left": {
+          "kind": "path",
+          "path": "$.missingAssertionCount"
+        },
+        "right": {
+          "kind": "value",
+          "value": 0
+        }
+      },
+      "then": "reject-incomplete-proof"
+    },
+    {
+      "ruleId": "proof-complete",
+      "when": {
+        "operator": "always"
+      },
+      "then": "proof-complete"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

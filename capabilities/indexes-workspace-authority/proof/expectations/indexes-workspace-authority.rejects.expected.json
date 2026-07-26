@@ -1,0 +1,23 @@
+{
+  "receiptType": "indexes-workspace-authority-receipt.v1",
+  "runId": "run-indexes-workspace-authority-rejects-001",
+  "capabilityId": "indexes-workspace-authority",
+  "authorityHash": "sha256:1ac20d0d952882ef967b4fa04c3f11cdf9a9b85dd3fa99b7ad5833d8fc5a440a",
+  "inputHash": "sha256:82a6069f043ced12c1c6f9043539b2ea846e5d6d419fabe20b64ca93f41bb3f3",
+  "resultHash": "sha256:94d1cf477f2eaaa627dd51e91a06cace977e68470f0ed26247a1de24aacbe006",
+  "decisionId": "resolves-authority-index-scope",
+  "resolvedRule": null,
+  "disposition": "WORKSPACE_AUTHORITY_UNREADABLE",
+  "findings": [
+    {
+      "findingId": "no-declared-rule-matched",
+      "detail": {
+        "decisionId": "resolves-authority-index-scope",
+        "observation": {
+          "explicitPathCount": 0,
+          "declaredRootCount": 0
+        }
+      }
+    }
+  ]
+}

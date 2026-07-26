@@ -1,0 +1,45 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-joins-semantic-authority-result",
+  "accepts": {
+    "contractId": "executed-joins-semantic-authority.v1"
+  },
+  "produces": {
+    "contractId": "joins-semantic-authority-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "joins-semantic-authority-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "joins-semantic-authority"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "joinKind": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "joinedRows": {
+            "kind": "read",
+            "path": "$.joinedRows",
+            "required": true
+          },
+          "joinedRowCount": {
+            "kind": "count",
+            "expression": {
+              "kind": "read",
+              "path": "$.joinedRows"
+            }
+          }
+        }
+      }
+    }
+  }
+}

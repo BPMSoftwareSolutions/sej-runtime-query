@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-verifies-conformance-vector",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-verifies-conformance-vector-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-verifies-conformance-vector",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-verifies-conformance-vector-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

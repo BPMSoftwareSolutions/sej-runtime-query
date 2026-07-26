@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "verifies-conformance-vector",
+  "status": "implemented",
+  "purpose": "Verify one conformance vector against selected semantic authority and observed result.",
+  "owns": [
+    "conformance-vector",
+    "conformance-finding"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "verifies-conformance-vector",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-vector-verification-outcome",
+  "declaredResultProjection": "projects-verifies-conformance-vector-result",
+  "declaredDispositions": [
+    "CONFORMANCE_VECTOR_VERIFIED",
+    "CONFORMANCE_VECTOR_FAILED"
+  ]
+}

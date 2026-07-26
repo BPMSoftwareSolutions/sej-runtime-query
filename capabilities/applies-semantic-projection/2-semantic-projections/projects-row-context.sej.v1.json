@@ -1,0 +1,28 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-row-context",
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "rowIndex": {
+        "kind": "read",
+        "path": "$.iteration.index",
+        "required": true
+      },
+      "row": {
+        "kind": "read",
+        "path": "$.row",
+        "required": true
+      },
+      "queryContext": {
+        "kind": "read",
+        "path": "$.request.queryResult.query",
+        "required": true
+      },
+      "projectionContext": {
+        "kind": "read",
+        "path": "$.request.projectionContext"
+      }
+    }
+  }
+}

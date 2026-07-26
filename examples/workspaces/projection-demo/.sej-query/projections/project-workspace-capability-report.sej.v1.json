@@ -1,0 +1,110 @@
+{
+  "declarationType": "projection.v1",
+  "projectionAuthorityType": "query-result-projection.v1",
+  "projectionId": "project-workspace-capability-report",
+  "scope": "complete-result",
+  "accepts": {
+    "contractId": "sej-query-result.v1"
+  },
+  "produces": {
+    "contractId": "workspace-capability-report.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "reportType": {
+        "kind": "constant",
+        "value": "workspace-capability-report.v1"
+      },
+      "capabilityCount": {
+        "kind": "count",
+        "expression": {
+          "kind": "filter",
+          "collection": {
+            "kind": "read",
+            "path": "$.rows",
+            "required": true
+          },
+          "itemPath": "$.row",
+          "when": {
+            "operator": "equals",
+            "left": {
+              "kind": "path",
+              "path": "$.row.sejClassification"
+            },
+            "right": {
+              "kind": "value",
+              "value": "sej"
+            }
+          }
+        }
+      },
+      "otherDocumentCount": {
+        "kind": "count",
+        "expression": {
+          "kind": "filter",
+          "collection": {
+            "kind": "read",
+            "path": "$.rows",
+            "required": true
+          },
+          "itemPath": "$.row",
+          "when": {
+            "operator": "not-equals",
+            "left": {
+              "kind": "path",
+              "path": "$.row.sejClassification"
+            },
+            "right": {
+              "kind": "value",
+              "value": "sej"
+            }
+          }
+        }
+      },
+      "capabilities": {
+        "kind": "map",
+        "collection": {
+          "kind": "filter",
+          "collection": {
+            "kind": "read",
+            "path": "$.rows",
+            "required": true
+          },
+          "itemPath": "$.row",
+          "when": {
+            "operator": "equals",
+            "left": {
+              "kind": "path",
+              "path": "$.row.sejClassification"
+            },
+            "right": {
+              "kind": "value",
+              "value": "sej"
+            }
+          }
+        },
+        "itemPath": "$.row",
+        "expression": {
+          "kind": "object",
+          "fields": {
+            "path": {
+              "kind": "read",
+              "path": "$.row.relativePath",
+              "required": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "missingValuePolicy": "reject-query",
+  "invalidRowPolicy": "stop-on-first-invalid-row",
+  "cardinalityPolicy": "many-inputs-to-one-output",
+  "additionalFieldPolicy": "discard",
+  "orderingPolicy": "preserve-query-order",
+  "validationPolicy": {
+    "validateInput": true,
+    "validateOutput": true
+  }
+}

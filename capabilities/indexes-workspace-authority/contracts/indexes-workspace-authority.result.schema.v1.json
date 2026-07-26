@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:indexes-workspace-authority:result:v1",
+  "title": "Indexes workspace authority result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "indexes-workspace-authority-result.v1"
+    },
+    "capabilityId": {
+      "const": "indexes-workspace-authority"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "indexScope",
+        "entries",
+        "entryCount"
+      ],
+      "properties": {
+        "indexScope": {},
+        "entries": {},
+        "entryCount": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:constructs-semantic-execution-context:result:v1",
+  "title": "Constructs semantic execution context result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "constructs-semantic-execution-context-result.v1"
+    },
+    "capabilityId": {
+      "const": "constructs-semantic-execution-context"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "completeness",
+        "context",
+        "missingBindings"
+      ],
+      "properties": {
+        "completeness": {},
+        "context": {},
+        "missingBindings": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

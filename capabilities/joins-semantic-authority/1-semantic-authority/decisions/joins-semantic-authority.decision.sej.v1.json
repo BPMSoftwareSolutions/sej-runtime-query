@@ -1,0 +1,53 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-join-kind",
+  "inputs": [
+    "$.payload.joinKind",
+    "$.payload.joinKey"
+  ],
+  "rules": [
+    {
+      "ruleId": "reject-unjoinable-sources",
+      "when": {
+        "operator": "absent",
+        "operand": {
+          "kind": "path",
+          "path": "$.payload.joinKey"
+        }
+      },
+      "then": "reject-unjoinable-sources"
+    },
+    {
+      "ruleId": "left-outer-join",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.joinKind"
+        },
+        "right": {
+          "kind": "value",
+          "value": "left-outer"
+        }
+      },
+      "then": "left-outer-join"
+    },
+    {
+      "ruleId": "inner-join",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.joinKind"
+        },
+        "right": {
+          "kind": "value",
+          "value": "inner"
+        }
+      },
+      "then": "inner-join"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

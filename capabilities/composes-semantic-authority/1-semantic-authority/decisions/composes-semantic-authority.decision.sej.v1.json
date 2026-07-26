@@ -1,0 +1,73 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-composition-precedence",
+  "inputs": [
+    "$.payload.precedence",
+    "$.conflictCount"
+  ],
+  "rules": [
+    {
+      "ruleId": "reject-conflicting-authority",
+      "when": {
+        "operator": "all",
+        "predicates": [
+          {
+            "operator": "greater-than",
+            "left": {
+              "kind": "path",
+              "path": "$.conflictCount"
+            },
+            "right": {
+              "kind": "value",
+              "value": 0
+            }
+          },
+          {
+            "operator": "equals",
+            "left": {
+              "kind": "path",
+              "path": "$.payload.precedence"
+            },
+            "right": {
+              "kind": "value",
+              "value": "reject-conflict"
+            }
+          }
+        ]
+      },
+      "then": "reject-conflicting-authority"
+    },
+    {
+      "ruleId": "earlier-declaration-wins",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.precedence"
+        },
+        "right": {
+          "kind": "value",
+          "value": "earlier-wins"
+        }
+      },
+      "then": "earlier-declaration-wins"
+    },
+    {
+      "ruleId": "later-declaration-wins",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.precedence"
+        },
+        "right": {
+          "kind": "value",
+          "value": "later-wins"
+        }
+      },
+      "then": "later-declaration-wins"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

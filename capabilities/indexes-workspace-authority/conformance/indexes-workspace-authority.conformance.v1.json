@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "indexes-workspace-authority-declared-flow",
+  "capabilityId": "indexes-workspace-authority",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/indexes-workspace-authority.accepts.input.json",
+  "expectedFixture": "../proof/expectations/indexes-workspace-authority.accepts.expected.json",
+  "expectedDisposition": "WORKSPACE_AUTHORITY_INDEXED",
+  "kernelExecution": "passed"
+}

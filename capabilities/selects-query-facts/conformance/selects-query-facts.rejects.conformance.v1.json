@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "selects-query-facts-declared-rejection",
+  "capabilityId": "selects-query-facts",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/selects-query-facts.rejects.input.json",
+  "expectedFixture": "../proof/expectations/selects-query-facts.rejects.expected.json",
+  "expectedDisposition": "QUERY_FACT_UNKNOWN_COLUMN",
+  "kernelExecution": "passed"
+}

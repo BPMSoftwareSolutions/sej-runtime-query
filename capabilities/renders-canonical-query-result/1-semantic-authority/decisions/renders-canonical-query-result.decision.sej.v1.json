@@ -1,0 +1,56 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-render-form",
+  "inputs": [
+    "$.payload.renderForm"
+  ],
+  "rules": [
+    {
+      "ruleId": "render-canonical-json",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.renderForm"
+        },
+        "right": {
+          "kind": "value",
+          "value": "canonical-json"
+        }
+      },
+      "then": "render-canonical-json"
+    },
+    {
+      "ruleId": "render-row-table",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.renderForm"
+        },
+        "right": {
+          "kind": "value",
+          "value": "row-table"
+        }
+      },
+      "then": "render-row-table"
+    },
+    {
+      "ruleId": "render-single-value",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.renderForm"
+        },
+        "right": {
+          "kind": "value",
+          "value": "single-value"
+        }
+      },
+      "then": "render-single-value"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

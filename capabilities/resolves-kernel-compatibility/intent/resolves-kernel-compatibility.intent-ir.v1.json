@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "resolves-kernel-compatibility",
+  "title": "Resolve kernel compatibility",
+  "purpose": "Determine whether selected authority is executable by the seated semantic kernel.",
+  "actor": "authorized-query-caller",
+  "trigger": "a resolves-kernel-compatibility request is submitted",
+  "desiredOutcome": "Determine whether selected authority is executable by the seated semantic kernel.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "resolves-kernel-compatibility"
+  ],
+  "ownedDecision": "resolves-kernel-compatibility-disposition",
+  "declaredDispositions": [
+    "KERNEL_COMPATIBILITY_RESOLVED",
+    "KERNEL_INCOMPATIBLE"
+  ]
+}

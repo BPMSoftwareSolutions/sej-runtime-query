@@ -1,0 +1,17 @@
+{
+  "declarationType": "semantic-proof-requirement.v1",
+  "proofRequirementId": "projection-proof",
+  "requiredAssertions": [
+    "run-identity-recorded",
+    "query-hash-recorded",
+    "source-hashes-recorded",
+    "projection-identity-recorded",
+    "projection-authority-hash-recorded",
+    "projection-scope-recorded",
+    "input-and-output-contracts-recorded",
+    "row-counts-recorded",
+    "result-hash-recorded",
+    "findings-recorded",
+    "final-disposition-recorded"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:projected-query-result:v1",
+  "title": "Projected query result",
+  "type": "object",
+  "required": [
+    "projectedResultType",
+    "projectionId",
+    "scope",
+    "value",
+    "inputRowCount",
+    "projectedRowCount",
+    "rejectedRowCount"
+  ],
+  "properties": {
+    "projectedResultType": {
+      "const": "projected-query-result.v1"
+    },
+    "projectionId": {
+      "type": "string"
+    },
+    "scope": {
+      "enum": [
+        "each-row",
+        "complete-result"
+      ]
+    },
+    "value": {},
+    "inputRowCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "projectedRowCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "rejectedRowCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": false
+}

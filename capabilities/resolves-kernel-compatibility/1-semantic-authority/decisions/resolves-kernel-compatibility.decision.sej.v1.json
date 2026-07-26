@@ -1,0 +1,45 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-kernel-compatibility-disposition",
+  "inputs": [
+    "$.missingPrimitiveCount",
+    "$.specificationSupported"
+  ],
+  "rules": [
+    {
+      "ruleId": "kernel-incompatible-primitives",
+      "when": {
+        "operator": "greater-than",
+        "left": {
+          "kind": "path",
+          "path": "$.missingPrimitiveCount"
+        },
+        "right": {
+          "kind": "value",
+          "value": 0
+        }
+      },
+      "then": "kernel-incompatible-primitives"
+    },
+    {
+      "ruleId": "kernel-incompatible-specification",
+      "when": {
+        "operator": "falsy",
+        "operand": {
+          "kind": "path",
+          "path": "$.specificationSupported"
+        }
+      },
+      "then": "kernel-incompatible-specification"
+    },
+    {
+      "ruleId": "kernel-compatible",
+      "when": {
+        "operator": "always"
+      },
+      "then": "kernel-compatible"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "resolves-kernel-compatibility-declared-rejection",
+  "capabilityId": "resolves-kernel-compatibility",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/resolves-kernel-compatibility.rejects.input.json",
+  "expectedFixture": "../proof/expectations/resolves-kernel-compatibility.rejects.expected.json",
+  "expectedDisposition": "KERNEL_INCOMPATIBLE",
+  "kernelExecution": "passed"
+}

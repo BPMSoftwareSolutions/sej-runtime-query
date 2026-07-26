@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "composes-semantic-authority",
+  "title": "Compose semantic authority",
+  "purpose": "Compose compatible semantic authorities under declared composition policy.",
+  "actor": "authorized-query-caller",
+  "trigger": "a composes-semantic-authority request is submitted",
+  "desiredOutcome": "Compose compatible semantic authorities under declared composition policy.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "composes-semantic-authority"
+  ],
+  "ownedDecision": "resolves-composition-precedence",
+  "declaredDispositions": [
+    "SEMANTIC_AUTHORITY_COMPOSED",
+    "SEMANTIC_AUTHORITY_CONFLICT"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "requestType": "selects-query-facts-request.v1",
+  "requestId": "selects-query-facts-accepts-001",
+  "payload": {
+    "columns": [
+      {
+        "name": "relativePath",
+        "sourcePath": "$.relativePath"
+      },
+      {
+        "name": "sejClassification",
+        "sourcePath": "$.sejClassification"
+      }
+    ],
+    "rows": [
+      {
+        "relativePath": "capabilities/file-system-shaper.json",
+        "sejClassification": "sej"
+      }
+    ]
+  }
+}

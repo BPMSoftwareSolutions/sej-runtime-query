@@ -1,0 +1,10 @@
+{
+  "canonicalizationType": "proof-canonicalization.v1",
+  "canonicalizationId": "query-result-projection-canonicalization",
+  "excludePaths": [
+    "$.observedAt",
+    "$.runtime.processId"
+  ],
+  "sortObjectKeys": true,
+  "preserveArrayOrder": true
+}

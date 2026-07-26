@@ -1,0 +1,47 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-query-command-family",
+  "inputs": [
+    "$.payload.commandText"
+  ],
+  "rules": [
+    {
+      "ruleId": "select-command",
+      "when": {
+        "operator": "matches-pattern",
+        "operand": {
+          "kind": "path",
+          "path": "$.payload.normalizedText"
+        },
+        "pattern": "^SELECT\\b"
+      },
+      "then": "select-command"
+    },
+    {
+      "ruleId": "describe-command",
+      "when": {
+        "operator": "matches-pattern",
+        "operand": {
+          "kind": "path",
+          "path": "$.payload.normalizedText"
+        },
+        "pattern": "^DESCRIBE\\b"
+      },
+      "then": "describe-command"
+    },
+    {
+      "ruleId": "explain-command",
+      "when": {
+        "operator": "matches-pattern",
+        "operand": {
+          "kind": "path",
+          "path": "$.payload.normalizedText"
+        },
+        "pattern": "^EXPLAIN\\b"
+      },
+      "then": "explain-command"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

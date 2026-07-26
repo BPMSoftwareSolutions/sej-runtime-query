@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "filters-query-rows",
+  "title": "Filter query rows",
+  "purpose": "Apply declared predicates to resolved source rows.",
+  "actor": "authorized-query-caller",
+  "trigger": "a filters-query-rows request is submitted",
+  "desiredOutcome": "Apply declared predicates to resolved source rows.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "filters-query-rows"
+  ],
+  "ownedDecision": "resolves-row-filter-mode",
+  "declaredDispositions": [
+    "QUERY_ROWS_FILTERED",
+    "QUERY_FILTER_PREDICATE_INVALID"
+  ]
+}

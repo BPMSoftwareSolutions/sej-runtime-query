@@ -1,0 +1,176 @@
+{
+  "contractType": "file-system-body-contract.v1",
+  "systemId": "sej-runtime-query",
+  "status": "implemented",
+  "projectionBoundary": {
+    "languageNeutralRoots": [
+      "intent",
+      "features",
+      "contracts",
+      "1-semantic-authority",
+      "2-semantic-projections",
+      "3-semantic-execution-models"
+    ],
+    "languageSpecificRoots": [
+      "projectors",
+      "runtime",
+      "4-adapters",
+      "composition-root",
+      "doorways"
+    ]
+  },
+  "capabilityBody": {
+    "requiredArtifacts": [
+      "intent/<capability>.intent-ir.v1.json",
+      "features/<capability>.feature",
+      "contracts/<capability>.input.schema.v1.json",
+      "contracts/<capability>.result.schema.v1.json",
+      "contracts/<capability>.receipt.schema.v1.json",
+      "1-semantic-authority/<capability>.capability.sej.v1.json",
+      "1-semantic-authority/decisions/<capability>.decision.sej.v1.json",
+      "1-semantic-authority/policies/<capability>.policy.sej.v1.json",
+      "1-semantic-authority/ports/<capability>.port.sej.v1.json",
+      "1-semantic-authority/proof-requirements/<capability>.proof.requirement.sej.v1.json",
+      "2-semantic-projections/projects-<capability>-result.sej.v1.json",
+      "3-semantic-execution-models/<capability>.execution.sej.v1.json",
+      "runtime/typescript/bodies/<capability>.ts",
+      "runtime/typescript/registration/registers-<capability>-authority.ts",
+      "conformance/<capability>.conformance.v1.json",
+      "docs/<capability>.md"
+    ],
+    "oneScenarioOutlinePerCapability": true,
+    "oneRuntimeBodyPerCapability": true
+  },
+  "capabilities": [
+    {
+      "capabilityId": "parses-query-command",
+      "path": "capabilities/parses-query-command",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "resolves-query-source",
+      "path": "capabilities/resolves-query-source",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "selects-query-facts",
+      "path": "capabilities/selects-query-facts",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "filters-query-rows",
+      "path": "capabilities/filters-query-rows",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "indexes-workspace-authority",
+      "path": "capabilities/indexes-workspace-authority",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "resolves-query-selected-authority",
+      "path": "capabilities/resolves-query-selected-authority",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "applies-semantic-projection",
+      "path": "capabilities/applies-semantic-projection",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "constructs-semantic-execution-context",
+      "path": "capabilities/constructs-semantic-execution-context",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "resolves-authority-by-metadata",
+      "path": "capabilities/resolves-authority-by-metadata",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "executes-selected-semantic-subgraph",
+      "path": "capabilities/executes-selected-semantic-subgraph",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "explains-semantic-execution",
+      "path": "capabilities/explains-semantic-execution",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "composes-semantic-authority",
+      "path": "capabilities/composes-semantic-authority",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "applies-semantic-policy-overlay",
+      "path": "capabilities/applies-semantic-policy-overlay",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "joins-semantic-authority",
+      "path": "capabilities/joins-semantic-authority",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "resolves-kernel-compatibility",
+      "path": "capabilities/resolves-kernel-compatibility",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "chains-semantic-results",
+      "path": "capabilities/chains-semantic-results",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "derives-conformance-vector-candidates",
+      "path": "capabilities/derives-conformance-vector-candidates",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "lints-semantic-authority",
+      "path": "capabilities/lints-semantic-authority",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "projects-semantic-proof",
+      "path": "capabilities/projects-semantic-proof",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "routes-semantic-command",
+      "path": "capabilities/routes-semantic-command",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "projects-each-query-row",
+      "path": "capabilities/projects-each-query-row",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "projects-complete-query-result",
+      "path": "capabilities/projects-complete-query-result",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "renders-canonical-query-result",
+      "path": "capabilities/renders-canonical-query-result",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "verifies-conformance-vector",
+      "path": "capabilities/verifies-conformance-vector",
+      "status": "implemented"
+    },
+    {
+      "capabilityId": "projects-language-delegation-shell",
+      "path": "capabilities/projects-language-delegation-shell",
+      "status": "implemented"
+    }
+  ],
+  "generatedNotAuthority": [
+    "evidence",
+    "reports"
+  ],
+  "migrationEvidenceRoot": "migration/legacy-runtime-resolver"
+}

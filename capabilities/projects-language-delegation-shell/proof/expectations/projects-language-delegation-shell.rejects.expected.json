@@ -1,0 +1,19 @@
+{
+  "receiptType": "projects-language-delegation-shell-receipt.v1",
+  "runId": "run-projects-language-delegation-shell-rejects-001",
+  "capabilityId": "projects-language-delegation-shell",
+  "authorityHash": "sha256:c1fd8dccad03a0784b2c44a4336243add60e83ed7cedd8cccb288a63f6de4c5f",
+  "inputHash": "sha256:7d82d50e44dab8d9b8aa26b0de603e0fcef343b89a6768dd6374c82836aa02c3",
+  "resultHash": "sha256:91157d11539bb7f9e7cdbb3bad4be840433963d332bcdf5fbb0d0d965a7e9cc6",
+  "decisionId": "resolves-delegation-shell-target",
+  "resolvedRule": "reject-unsupported-target",
+  "disposition": "DELEGATION_SHELL_TARGET_UNSUPPORTED",
+  "findings": [
+    {
+      "findingId": "reject-unsupported-target",
+      "detail": {
+        "targetSupported": false
+      }
+    }
+  ]
+}

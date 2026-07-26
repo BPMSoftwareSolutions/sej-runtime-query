@@ -1,0 +1,22 @@
+{
+  "receiptType": "parses-query-command-receipt.v1",
+  "runId": "run-parses-query-command-rejects-001",
+  "capabilityId": "parses-query-command",
+  "authorityHash": "sha256:57e502b7404fa3fe0f806e9d62c4cd0a7f4c114c8bd951bd34563849d64f6872",
+  "inputHash": "sha256:fd47a1e1ea7bd231dd66812e5c74762716fea6172f5840398eebda826958e1bb",
+  "resultHash": "sha256:d2d867b365487dde3b62d33da9f2bba1be2177b6815cbfb5bc97be9ebd1fe124",
+  "decisionId": "resolves-query-command-family",
+  "resolvedRule": null,
+  "disposition": "QUERY_COMMAND_UNPARSABLE",
+  "findings": [
+    {
+      "findingId": "no-declared-rule-matched",
+      "detail": {
+        "decisionId": "resolves-query-command-family",
+        "observation": {
+          "textLength": 25
+        }
+      }
+    }
+  ]
+}

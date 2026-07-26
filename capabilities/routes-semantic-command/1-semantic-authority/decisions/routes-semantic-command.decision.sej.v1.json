@@ -1,0 +1,56 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-command-route",
+  "inputs": [
+    "$.payload.commandFamily"
+  ],
+  "rules": [
+    {
+      "ruleId": "route-select-command",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.commandFamily"
+        },
+        "right": {
+          "kind": "value",
+          "value": "select-command"
+        }
+      },
+      "then": "selects-query-facts"
+    },
+    {
+      "ruleId": "route-describe-command",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.commandFamily"
+        },
+        "right": {
+          "kind": "value",
+          "value": "describe-command"
+        }
+      },
+      "then": "indexes-workspace-authority"
+    },
+    {
+      "ruleId": "route-explain-command",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.commandFamily"
+        },
+        "right": {
+          "kind": "value",
+          "value": "explain-command"
+        }
+      },
+      "then": "explains-semantic-execution"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

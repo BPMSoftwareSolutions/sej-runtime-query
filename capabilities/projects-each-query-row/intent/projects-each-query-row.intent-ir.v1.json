@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "projects-each-query-row",
+  "title": "Project each query row",
+  "purpose": "Project each selected row independently under declared row scope.",
+  "actor": "authorized-query-caller",
+  "trigger": "a projects-each-query-row request is submitted",
+  "desiredOutcome": "Project each selected row independently under declared row scope.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "projects-each-query-row"
+  ],
+  "ownedDecision": "resolves-row-projection-order",
+  "declaredDispositions": [
+    "QUERY_ROWS_PROJECTED",
+    "QUERY_ROW_PROJECTION_REJECTED"
+  ]
+}

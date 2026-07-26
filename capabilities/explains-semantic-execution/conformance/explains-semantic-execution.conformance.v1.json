@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "explains-semantic-execution-declared-flow",
+  "capabilityId": "explains-semantic-execution",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/explains-semantic-execution.accepts.input.json",
+  "expectedFixture": "../proof/expectations/explains-semantic-execution.accepts.expected.json",
+  "expectedDisposition": "SEMANTIC_EXECUTION_EXPLAINED",
+  "kernelExecution": "passed"
+}

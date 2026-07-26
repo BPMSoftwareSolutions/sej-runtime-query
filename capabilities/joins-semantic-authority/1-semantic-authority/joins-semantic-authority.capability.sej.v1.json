@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "joins-semantic-authority",
+  "status": "implemented",
+  "purpose": "Join authority facts across declared semantic sources.",
+  "owns": [
+    "semantic-source",
+    "joined-authority"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "joins-semantic-authority",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-join-kind",
+  "declaredResultProjection": "projects-joins-semantic-authority-result",
+  "declaredDispositions": [
+    "SEMANTIC_AUTHORITY_JOINED",
+    "SEMANTIC_AUTHORITY_UNJOINABLE"
+  ]
+}

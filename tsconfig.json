@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "strict": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "capabilities/**/*.ts",
+    "composition-root/**/*.ts",
+    "doorways/**/*.ts",
+    "types/**/*.d.ts"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "scripts",
+    "conformance",
+    "test"
+  ]
+}

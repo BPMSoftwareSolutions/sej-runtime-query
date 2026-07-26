@@ -1,0 +1,15 @@
+{
+  "declarationType": "semantic-proof-requirement.v1",
+  "proofRequirementId": "executes-selected-semantic-subgraph-proof",
+  "requiredAssertions": [
+    "capability-identity-recorded",
+    "authority-hash-recorded",
+    "input-hash-recorded",
+    "result-hash-recorded",
+    "final-disposition-recorded"
+  ],
+  "declaredDispositions": [
+    "SEMANTIC_SUBGRAPH_EXECUTED",
+    "SEMANTIC_SUBGRAPH_FAILED"
+  ]
+}

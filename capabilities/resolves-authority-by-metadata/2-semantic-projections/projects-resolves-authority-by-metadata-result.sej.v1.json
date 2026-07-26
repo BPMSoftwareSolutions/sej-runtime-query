@@ -1,0 +1,45 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-resolves-authority-by-metadata-result",
+  "accepts": {
+    "contractId": "executed-resolves-authority-by-metadata.v1"
+  },
+  "produces": {
+    "contractId": "resolves-authority-by-metadata-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "resolves-authority-by-metadata-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "resolves-authority-by-metadata"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "matchMode": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "matchedEntries": {
+            "kind": "read",
+            "path": "$.matchedEntries",
+            "required": true
+          },
+          "matchedCount": {
+            "kind": "count",
+            "expression": {
+              "kind": "read",
+              "path": "$.matchedEntries"
+            }
+          }
+        }
+      }
+    }
+  }
+}

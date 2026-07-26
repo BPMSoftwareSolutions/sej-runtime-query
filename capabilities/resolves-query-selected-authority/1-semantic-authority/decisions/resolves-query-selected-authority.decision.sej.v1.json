@@ -1,0 +1,54 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-selected-authority-source",
+  "inputs": [
+    "$.payload.identity",
+    "$.payload.selector",
+    "$.matchCount"
+  ],
+  "rules": [
+    {
+      "ruleId": "select-by-identity",
+      "when": {
+        "operator": "exists",
+        "operand": {
+          "kind": "path",
+          "path": "$.payload.identity"
+        }
+      },
+      "then": "select-by-identity"
+    },
+    {
+      "ruleId": "reject-ambiguous-selection",
+      "when": {
+        "operator": "greater-than",
+        "left": {
+          "kind": "path",
+          "path": "$.matchCount"
+        },
+        "right": {
+          "kind": "value",
+          "value": 1
+        }
+      },
+      "then": "reject-ambiguous-selection"
+    },
+    {
+      "ruleId": "select-by-declared-selector",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.matchCount"
+        },
+        "right": {
+          "kind": "value",
+          "value": 1
+        }
+      },
+      "then": "select-by-declared-selector"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

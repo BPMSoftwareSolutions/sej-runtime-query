@@ -1,0 +1,24 @@
+{
+  "receiptType": "parses-query-command-receipt.v1",
+  "runId": "run-parses-query-command-accepts-001",
+  "capabilityId": "parses-query-command",
+  "authorityHash": "sha256:57e502b7404fa3fe0f806e9d62c4cd0a7f4c114c8bd951bd34563849d64f6872",
+  "inputHash": "sha256:b3918ec26d491352dae819128cca7017e26c35d37dcb2441f1fbb1e8e5ce8c57",
+  "resultHash": "sha256:f94c6e21b0d5778280df1e6b55f61f4e23fbf22d851217c7b339d347baf438a5",
+  "decisionId": "resolves-query-command-family",
+  "resolvedRule": "select-command",
+  "disposition": "QUERY_COMMAND_PARSED",
+  "findings": [],
+  "result": {
+    "resultType": "parses-query-command-result.v1",
+    "capabilityId": "parses-query-command",
+    "value": {
+      "commandFamily": "select-command",
+      "normalizedText": "SELECT * FROM registry APPLY PROJECTION project-capability-summary",
+      "sourceRef": "registry",
+      "projectionRef": "project-capability-summary",
+      "hasWhere": false,
+      "hasLimit": false
+    }
+  }
+}

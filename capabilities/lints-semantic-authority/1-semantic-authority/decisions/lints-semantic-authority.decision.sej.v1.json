@@ -1,0 +1,49 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-lint-severity",
+  "inputs": [
+    "$.blockingCount",
+    "$.advisoryCount"
+  ],
+  "rules": [
+    {
+      "ruleId": "blocking-defect",
+      "when": {
+        "operator": "greater-than",
+        "left": {
+          "kind": "path",
+          "path": "$.blockingCount"
+        },
+        "right": {
+          "kind": "value",
+          "value": 0
+        }
+      },
+      "then": "blocking-defect"
+    },
+    {
+      "ruleId": "advisory-defect",
+      "when": {
+        "operator": "greater-than",
+        "left": {
+          "kind": "path",
+          "path": "$.advisoryCount"
+        },
+        "right": {
+          "kind": "value",
+          "value": 0
+        }
+      },
+      "then": "advisory-defect"
+    },
+    {
+      "ruleId": "no-defect",
+      "when": {
+        "operator": "always"
+      },
+      "then": "no-defect"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

@@ -1,0 +1,8 @@
+{
+  "requestType": "renders-canonical-query-result-request.v1",
+  "requestId": "renders-canonical-query-result-rejects-001",
+  "payload": {
+    "renderForm": "yaml",
+    "value": {}
+  }
+}

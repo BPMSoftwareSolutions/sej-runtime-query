@@ -1,0 +1,14 @@
+{
+  "requestType": "filters-query-rows-request.v1",
+  "requestId": "filters-query-rows-rejects-001",
+  "payload": {
+    "rows": [
+      {
+        "a": 1
+      }
+    ],
+    "predicate": {
+      "operator": "not-a-real-operator"
+    }
+  }
+}

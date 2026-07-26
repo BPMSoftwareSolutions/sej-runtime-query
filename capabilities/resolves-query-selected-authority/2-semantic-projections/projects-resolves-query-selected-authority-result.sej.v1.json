@@ -1,0 +1,38 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-resolves-query-selected-authority-result",
+  "accepts": {
+    "contractId": "executed-resolves-query-selected-authority.v1"
+  },
+  "produces": {
+    "contractId": "resolves-query-selected-authority-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "resolves-query-selected-authority-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "resolves-query-selected-authority"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "selectionRule": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "selectedEntry": {
+            "kind": "read",
+            "path": "$.selectedEntry",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

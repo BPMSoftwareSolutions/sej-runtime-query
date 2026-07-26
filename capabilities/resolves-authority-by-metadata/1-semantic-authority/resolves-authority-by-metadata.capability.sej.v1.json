@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "resolves-authority-by-metadata",
+  "status": "implemented",
+  "purpose": "Resolve semantic authority using declared metadata selectors.",
+  "owns": [
+    "authority-metadata",
+    "resolved-authority"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "resolves-authority-by-metadata",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-metadata-match-mode",
+  "declaredResultProjection": "projects-resolves-authority-by-metadata-result",
+  "declaredDispositions": [
+    "AUTHORITY_RESOLVED_BY_METADATA",
+    "AUTHORITY_METADATA_NO_MATCH"
+  ]
+}

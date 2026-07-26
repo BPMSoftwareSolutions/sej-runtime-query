@@ -1,0 +1,13 @@
+{
+  "requestType": "verifies-conformance-vector-request.v1",
+  "requestId": "verifies-conformance-vector-rejects-001",
+  "payload": {
+    "vectorId": "applies-row-projection",
+    "observed": {
+      "total": 3
+    },
+    "expected": {
+      "total": 2
+    }
+  }
+}

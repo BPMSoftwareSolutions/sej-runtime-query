@@ -1,0 +1,12 @@
+{
+  "declarationType": "semantic-policy.v1",
+  "policyId": "projection-selection-policy",
+  "resolutionOrder": [
+    "explicit-authority-file",
+    "workspace-projection-registry",
+    "source-owned-projection-authority"
+  ],
+  "ambiguousMatch": "reject",
+  "nameSimilarityFallback": "forbidden",
+  "missingAuthority": "reject"
+}

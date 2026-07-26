@@ -1,0 +1,43 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-projects-semantic-proof-result",
+  "accepts": {
+    "contractId": "executed-projects-semantic-proof.v1"
+  },
+  "produces": {
+    "contractId": "projects-semantic-proof-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "projects-semantic-proof-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "projects-semantic-proof"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "completeness": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "proof": {
+            "kind": "read",
+            "path": "$.proof",
+            "required": true
+          },
+          "missingAssertions": {
+            "kind": "read",
+            "path": "$.missingAssertions",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "chains-semantic-results",
+  "status": "implemented",
+  "purpose": "Pass canonical semantic results through an authorized dataflow.",
+  "owns": [
+    "semantic-result",
+    "semantic-dataflow"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "chains-semantic-results",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-chain-compatibility",
+  "declaredResultProjection": "projects-chains-semantic-results-result",
+  "declaredDispositions": [
+    "SEMANTIC_RESULTS_CHAINED",
+    "SEMANTIC_CHAIN_INCOMPATIBLE"
+  ]
+}

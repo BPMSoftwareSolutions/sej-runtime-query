@@ -1,0 +1,23 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-result-set-context",
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "queryResult": {
+        "kind": "read",
+        "path": "$.request.queryResult",
+        "required": true
+      },
+      "projectionContext": {
+        "kind": "read",
+        "path": "$.request.projectionContext"
+      },
+      "resolvedProjection": {
+        "kind": "read",
+        "path": "$.resolvedProjection",
+        "required": true
+      }
+    }
+  }
+}

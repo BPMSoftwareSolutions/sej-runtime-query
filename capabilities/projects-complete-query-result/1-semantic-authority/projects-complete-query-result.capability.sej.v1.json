@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "projects-complete-query-result",
+  "status": "implemented",
+  "purpose": "Project a complete canonical query result as one semantic object.",
+  "owns": [
+    "query-result-envelope",
+    "projected-result-set"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "projects-complete-query-result",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-complete-result-disposition",
+  "declaredResultProjection": "projects-projects-complete-query-result-result",
+  "declaredDispositions": [
+    "QUERY_RESULT_PROJECTED",
+    "QUERY_RESULT_PROJECTION_REJECTED"
+  ]
+}

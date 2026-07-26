@@ -1,0 +1,25 @@
+{
+  "receiptType": "selects-query-facts-receipt.v1",
+  "runId": "run-selects-query-facts-rejects-001",
+  "capabilityId": "selects-query-facts",
+  "authorityHash": "sha256:f8a7263ab8bcdfadf132ff3ed2f5218f3ae9fd4f9901a5cbfa6e662e663c0558",
+  "inputHash": "sha256:172c35bebd7751f331f1db30cce84cfaaa4add38b19b5ab54d977dc172dac565",
+  "resultHash": "sha256:75fb9730d81958be1dacb7f33decc12dd2c034e0a0a8c9d258c9671beeee0417",
+  "decisionId": "resolves-fact-selection-mode",
+  "resolvedRule": null,
+  "disposition": "QUERY_FACT_UNKNOWN_COLUMN",
+  "findings": [
+    {
+      "findingId": "no-declared-rule-matched",
+      "detail": {
+        "decisionId": "resolves-fact-selection-mode",
+        "observation": {
+          "rowCount": 1,
+          "declaredColumnCount": 0,
+          "unknownColumns": [],
+          "unknownColumnCount": 0
+        }
+      }
+    }
+  ]
+}

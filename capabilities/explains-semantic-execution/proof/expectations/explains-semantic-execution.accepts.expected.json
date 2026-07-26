@@ -1,0 +1,36 @@
+{
+  "receiptType": "explains-semantic-execution-receipt.v1",
+  "runId": "run-explains-semantic-execution-accepts-001",
+  "capabilityId": "explains-semantic-execution",
+  "authorityHash": "sha256:b344abc79d17fad9eba0ea48ecd4f55486b66050595bf1d43754ba298283799c",
+  "inputHash": "sha256:32b8c3cccf7658e9020aa1d9da8d2ec3fbf4ac3967a3149223097a2e1f50e771",
+  "resultHash": "sha256:7f2b04ad2cf0600418612c172bc59483a0fc5c420b8d1b58839fbb3cb6923057",
+  "decisionId": "resolves-explanation-depth",
+  "resolvedRule": "explain-full-step-testimony",
+  "disposition": "SEMANTIC_EXECUTION_EXPLAINED",
+  "findings": [],
+  "result": {
+    "resultType": "explains-semantic-execution-result.v1",
+    "capabilityId": "explains-semantic-execution",
+    "value": {
+      "depth": "explain-full-step-testimony",
+      "explanation": [
+        {
+          "stepId": "resolves-mode",
+          "operation": "resolve-decision",
+          "disposition": "completed",
+          "governedBy": "execute-declared-model"
+        },
+        {
+          "stepId": "counts-rows",
+          "operation": "apply-projection",
+          "disposition": "completed",
+          "governedBy": {
+            "total": 2
+          }
+        }
+      ],
+      "explainedStepCount": 2
+    }
+  }
+}

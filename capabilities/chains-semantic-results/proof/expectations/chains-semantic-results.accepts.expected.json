@@ -1,0 +1,26 @@
+{
+  "receiptType": "chains-semantic-results-receipt.v1",
+  "runId": "run-chains-semantic-results-accepts-001",
+  "capabilityId": "chains-semantic-results",
+  "authorityHash": "sha256:2dbf7aeea09e822c7fbb523c007290add62803381a060886031ba728a134370a",
+  "inputHash": "sha256:07103e2201a8ccc520526505554d2998df76fca683b6ef95da90feb5c784d958",
+  "resultHash": "sha256:5347020660b784ee609634bf1c9f1e5254e7b74ed9832176d06f89bad497d574",
+  "decisionId": "resolves-chain-compatibility",
+  "resolvedRule": "chain-compatible-contracts",
+  "disposition": "SEMANTIC_RESULTS_CHAINED",
+  "findings": [],
+  "result": {
+    "resultType": "chains-semantic-results-result.v1",
+    "capabilityId": "chains-semantic-results",
+    "value": {
+      "compatibility": "chain-compatible-contracts",
+      "chainedInput": {
+        "requestType": "capability-summary.v1-chained-input",
+        "payload": {
+          "capabilityPath": "a.json"
+        }
+      },
+      "contractId": "capability-summary.v1"
+    }
+  }
+}

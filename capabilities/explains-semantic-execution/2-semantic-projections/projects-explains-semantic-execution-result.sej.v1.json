@@ -1,0 +1,45 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-explains-semantic-execution-result",
+  "accepts": {
+    "contractId": "executed-explains-semantic-execution.v1"
+  },
+  "produces": {
+    "contractId": "explains-semantic-execution-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "explains-semantic-execution-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "explains-semantic-execution"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "depth": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "explanation": {
+            "kind": "read",
+            "path": "$.explanation",
+            "required": true
+          },
+          "explainedStepCount": {
+            "kind": "count",
+            "expression": {
+              "kind": "read",
+              "path": "$.explanation"
+            }
+          }
+        }
+      }
+    }
+  }
+}

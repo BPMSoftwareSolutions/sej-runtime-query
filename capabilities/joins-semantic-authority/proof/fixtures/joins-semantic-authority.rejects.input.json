@@ -1,0 +1,17 @@
+{
+  "requestType": "joins-semantic-authority-request.v1",
+  "requestId": "joins-semantic-authority-rejects-001",
+  "payload": {
+    "left": [
+      {
+        "identity": "a"
+      }
+    ],
+    "right": [
+      {
+        "identity": "a"
+      }
+    ],
+    "joinKind": "inner"
+  }
+}

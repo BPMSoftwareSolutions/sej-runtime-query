@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "applies-semantic-policy-overlay",
+  "status": "implemented",
+  "purpose": "Apply an explicit policy overlay without mutating source authority.",
+  "owns": [
+    "policy-overlay",
+    "overlaid-authority"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "applies-semantic-policy-overlay",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-overlay-disposition",
+  "declaredResultProjection": "projects-applies-semantic-policy-overlay-result",
+  "declaredDispositions": [
+    "SEMANTIC_POLICY_OVERLAY_APPLIED",
+    "SEMANTIC_POLICY_OVERLAY_REJECTED"
+  ]
+}

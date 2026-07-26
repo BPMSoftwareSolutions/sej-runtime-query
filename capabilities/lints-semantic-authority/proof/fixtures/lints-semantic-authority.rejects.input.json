@@ -1,0 +1,10 @@
+{
+  "requestType": "lints-semantic-authority-request.v1",
+  "requestId": "lints-semantic-authority-rejects-001",
+  "payload": {
+    "declaration": {
+      "declarationType": "decision.v1",
+      "rules": []
+    }
+  }
+}

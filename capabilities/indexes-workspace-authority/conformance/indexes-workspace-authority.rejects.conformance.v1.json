@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "indexes-workspace-authority-declared-rejection",
+  "capabilityId": "indexes-workspace-authority",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/indexes-workspace-authority.rejects.input.json",
+  "expectedFixture": "../proof/expectations/indexes-workspace-authority.rejects.expected.json",
+  "expectedDisposition": "WORKSPACE_AUTHORITY_UNREADABLE",
+  "kernelExecution": "passed"
+}

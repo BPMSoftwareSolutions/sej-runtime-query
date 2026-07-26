@@ -1,0 +1,12 @@
+{
+  "declarationType": "semantic-port-catalog.v1",
+  "portCatalogId": "joins-semantic-authority-ports",
+  "ports": [
+    {
+      "portId": "observes-joins-semantic-authority-facts",
+      "effect": "observe",
+      "inputContract": "joins-semantic-authority.input.v1",
+      "outputContract": "observed-joins-semantic-authority-facts.v1"
+    }
+  ]
+}

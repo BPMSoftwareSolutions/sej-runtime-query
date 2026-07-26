@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "resolves-query-source",
+  "status": "implemented",
+  "purpose": "Resolve one authorized source for a canonical query command.",
+  "owns": [
+    "query-source-reference",
+    "resolved-query-source"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "resolves-query-source",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-query-source-selection",
+  "declaredResultProjection": "projects-resolves-query-source-result",
+  "declaredDispositions": [
+    "QUERY_SOURCE_RESOLVED",
+    "QUERY_SOURCE_UNRESOLVED"
+  ]
+}

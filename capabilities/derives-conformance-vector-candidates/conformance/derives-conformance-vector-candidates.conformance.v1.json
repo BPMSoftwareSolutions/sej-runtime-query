@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "derives-conformance-vector-candidates-declared-flow",
+  "capabilityId": "derives-conformance-vector-candidates",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/derives-conformance-vector-candidates.accepts.input.json",
+  "expectedFixture": "../proof/expectations/derives-conformance-vector-candidates.accepts.expected.json",
+  "expectedDisposition": "CONFORMANCE_CANDIDATES_DERIVED",
+  "kernelExecution": "passed"
+}

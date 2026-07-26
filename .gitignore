@@ -1,0 +1,8 @@
+node_modules/
+dist/
+coverage/
+evidence/*
+!evidence/.gitkeep
+reports/*
+!reports/.gitkeep
+*.log

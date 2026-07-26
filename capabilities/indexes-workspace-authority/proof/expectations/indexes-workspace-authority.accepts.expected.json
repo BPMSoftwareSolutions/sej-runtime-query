@@ -1,0 +1,27 @@
+{
+  "receiptType": "indexes-workspace-authority-receipt.v1",
+  "runId": "run-indexes-workspace-authority-accepts-001",
+  "capabilityId": "indexes-workspace-authority",
+  "authorityHash": "sha256:1ac20d0d952882ef967b4fa04c3f11cdf9a9b85dd3fa99b7ad5833d8fc5a440a",
+  "inputHash": "sha256:50c11b69c4a90aab2fe9d619f8d4fd0936aca756489e86ff9cfd227049877907",
+  "resultHash": "sha256:45bcfecc4cd8fc895b6ffe867ebbca30957442a59476508890dbc9f02fbcc7bd",
+  "decisionId": "resolves-authority-index-scope",
+  "resolvedRule": "index-explicit-paths",
+  "disposition": "WORKSPACE_AUTHORITY_INDEXED",
+  "findings": [],
+  "result": {
+    "resultType": "indexes-workspace-authority-result.v1",
+    "capabilityId": "indexes-workspace-authority",
+    "value": {
+      "indexScope": "index-explicit-paths",
+      "entries": [
+        {
+          "relativePath": "examples/workspaces/projection-demo/.sej-query/registry.v1.json",
+          "indexScope": "index-explicit-paths",
+          "pathHash": "sha256:0b03d42901a26ccd2128cad57ecfa5804a700b1aea25f439ce8ccf1ed69e6b96"
+        }
+      ],
+      "entryCount": 1
+    }
+  }
+}

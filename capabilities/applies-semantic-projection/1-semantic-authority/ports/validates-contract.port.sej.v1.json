@@ -1,0 +1,7 @@
+{
+  "declarationType": "semantic-port.v1",
+  "portId": "validates-contract",
+  "effect": "validate-json-schema",
+  "inputContract": "validate-contract-request.v1",
+  "outputContract": "contract-validation-result.v1"
+}

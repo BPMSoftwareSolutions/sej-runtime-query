@@ -1,0 +1,59 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-delegation-step",
+  "accepts": {
+    "contractId": "semantic-execution-model-step.v1"
+  },
+  "produces": {
+    "contractId": "delegation-shell-step.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "sequence": {
+        "kind": "coalesce",
+        "expressions": [
+          {
+            "kind": "read",
+            "path": "$.step.sequence"
+          },
+          {
+            "kind": "constant",
+            "value": null
+          }
+        ]
+      },
+      "edge": {
+        "kind": "conditional",
+        "when": {
+          "operator": "exists",
+          "operand": {
+            "kind": "path",
+            "path": "$.step.project"
+          }
+        },
+        "then": {
+          "kind": "constant",
+          "value": "projects"
+        },
+        "otherwise": {
+          "kind": "constant",
+          "value": "invokes"
+        }
+      },
+      "semanticIdentity": {
+        "kind": "coalesce",
+        "expressions": [
+          {
+            "kind": "read",
+            "path": "$.step.project"
+          },
+          {
+            "kind": "read",
+            "path": "$.step.invoke"
+          }
+        ]
+      }
+    }
+  }
+}

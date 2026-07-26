@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:filters-query-rows:result:v1",
+  "title": "Filters query rows result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "filters-query-rows-result.v1"
+    },
+    "capabilityId": {
+      "const": "filters-query-rows"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "filterMode",
+        "rows",
+        "inputRowCount",
+        "retainedRowCount"
+      ],
+      "properties": {
+        "filterMode": {},
+        "rows": {},
+        "inputRowCount": {},
+        "retainedRowCount": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

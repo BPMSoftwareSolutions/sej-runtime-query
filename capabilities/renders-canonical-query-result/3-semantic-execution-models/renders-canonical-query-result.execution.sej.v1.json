@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-renders-canonical-query-result",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-renders-canonical-query-result-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-renders-canonical-query-result",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-renders-canonical-query-result-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

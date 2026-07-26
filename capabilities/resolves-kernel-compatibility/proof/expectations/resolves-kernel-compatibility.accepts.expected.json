@@ -1,0 +1,21 @@
+{
+  "receiptType": "resolves-kernel-compatibility-receipt.v1",
+  "runId": "run-resolves-kernel-compatibility-accepts-001",
+  "capabilityId": "resolves-kernel-compatibility",
+  "authorityHash": "sha256:e9b6876b20e7c0ca788a8f79119e52fe788feded3483af63dc330da8cfeeffb5",
+  "inputHash": "sha256:9a0b73c349f477d3b50be0cd8d013116f959f7a9197bccc75a56e5737805778f",
+  "resultHash": "sha256:0dbd0dde30ba65c973bc35f60b19ed3d4d601648f502ce283056c96696b6bfab",
+  "decisionId": "resolves-kernel-compatibility-disposition",
+  "resolvedRule": "kernel-compatible",
+  "disposition": "KERNEL_COMPATIBILITY_RESOLVED",
+  "findings": [],
+  "result": {
+    "resultType": "resolves-kernel-compatibility-result.v1",
+    "capabilityId": "resolves-kernel-compatibility",
+    "value": {
+      "compatibility": "kernel-compatible",
+      "missingPrimitives": [],
+      "specificationVersion": "1.0.0"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "parses-query-command-declared-rejection",
+  "capabilityId": "parses-query-command",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/parses-query-command.rejects.input.json",
+  "expectedFixture": "../proof/expectations/parses-query-command.rejects.expected.json",
+  "expectedDisposition": "QUERY_COMMAND_UNPARSABLE",
+  "kernelExecution": "passed"
+}

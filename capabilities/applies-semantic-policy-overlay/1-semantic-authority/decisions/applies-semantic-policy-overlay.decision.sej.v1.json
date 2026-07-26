@@ -1,0 +1,49 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-overlay-disposition",
+  "inputs": [
+    "$.looseningCount",
+    "$.tighteningCount"
+  ],
+  "rules": [
+    {
+      "ruleId": "reject-loosening-overlay",
+      "when": {
+        "operator": "greater-than",
+        "left": {
+          "kind": "path",
+          "path": "$.looseningCount"
+        },
+        "right": {
+          "kind": "value",
+          "value": 0
+        }
+      },
+      "then": "reject-loosening-overlay"
+    },
+    {
+      "ruleId": "apply-tightening-overlay",
+      "when": {
+        "operator": "greater-than",
+        "left": {
+          "kind": "path",
+          "path": "$.tighteningCount"
+        },
+        "right": {
+          "kind": "value",
+          "value": 0
+        }
+      },
+      "then": "apply-tightening-overlay"
+    },
+    {
+      "ruleId": "ignore-redundant-overlay",
+      "when": {
+        "operator": "always"
+      },
+      "then": "ignore-redundant-overlay"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

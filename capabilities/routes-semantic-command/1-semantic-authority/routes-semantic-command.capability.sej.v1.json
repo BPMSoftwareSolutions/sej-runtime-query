@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "routes-semantic-command",
+  "status": "implemented",
+  "purpose": "Route a canonical command to one declared command-family capability.",
+  "owns": [
+    "semantic-command",
+    "command-route"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "routes-semantic-command",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-command-route",
+  "declaredResultProjection": "projects-routes-semantic-command-result",
+  "declaredDispositions": [
+    "SEMANTIC_COMMAND_ROUTED",
+    "SEMANTIC_COMMAND_UNROUTABLE"
+  ]
+}

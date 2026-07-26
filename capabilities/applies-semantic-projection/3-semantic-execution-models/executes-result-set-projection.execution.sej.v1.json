@@ -1,0 +1,29 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-result-set-projection",
+  "steps": [
+    {
+      "sequence": 1,
+      "project": "projects-result-set-context"
+    },
+    {
+      "sequence": 2,
+      "applyProjection": "$.resolvedProjection.projectionDeclaration"
+    },
+    {
+      "sequence": 3,
+      "invokePort": "validates-contract"
+    },
+    {
+      "sequence": 4,
+      "project": "projects-projected-result"
+    },
+    {
+      "sequence": 5,
+      "project": "projects-projection-receipt"
+    }
+  ],
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

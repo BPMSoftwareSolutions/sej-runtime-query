@@ -1,0 +1,44 @@
+{
+  "declarationType": "semantic-decision.v1",
+  "decisionId": "resolves-invalid-row-disposition",
+  "inputs": [
+    "policy.invalidRow",
+    "observed.rowValid"
+  ],
+  "rules": [
+    {
+      "when": {
+        "observed.rowValid": true
+      },
+      "then": "accept-row"
+    },
+    {
+      "when": {
+        "observed.rowValid": false,
+        "policy.invalidRow": "stop-on-first-invalid-row"
+      },
+      "then": "stop-query"
+    },
+    {
+      "when": {
+        "observed.rowValid": false,
+        "policy.invalidRow": "collect-invalid-rows"
+      },
+      "then": "collect-invalid-row"
+    },
+    {
+      "when": {
+        "observed.rowValid": false,
+        "policy.invalidRow": "exclude-invalid-rows"
+      },
+      "then": "exclude-invalid-row"
+    },
+    {
+      "when": {
+        "observed.rowValid": false,
+        "policy.invalidRow": "preserve-with-diagnostic"
+      },
+      "then": "preserve-row-with-diagnostic"
+    }
+  ]
+}

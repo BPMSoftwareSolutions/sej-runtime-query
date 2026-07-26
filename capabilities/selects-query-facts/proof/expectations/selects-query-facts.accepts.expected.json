@@ -1,0 +1,36 @@
+{
+  "receiptType": "selects-query-facts-receipt.v1",
+  "runId": "run-selects-query-facts-accepts-001",
+  "capabilityId": "selects-query-facts",
+  "authorityHash": "sha256:f8a7263ab8bcdfadf132ff3ed2f5218f3ae9fd4f9901a5cbfa6e662e663c0558",
+  "inputHash": "sha256:c698da05ca9d7bb7a16583ed8828290bd38fa1dacc082f0e3b98003fc75fa4b1",
+  "resultHash": "sha256:6d123a0be4abcd0a717c30b0e7f802c1e25d6f0f9b81ef0b47d0d0c8bdd290c2",
+  "decisionId": "resolves-fact-selection-mode",
+  "resolvedRule": "select-named-facts",
+  "disposition": "QUERY_FACTS_SELECTED",
+  "findings": [],
+  "result": {
+    "resultType": "selects-query-facts-result.v1",
+    "capabilityId": "selects-query-facts",
+    "value": {
+      "selectionMode": "select-named-facts",
+      "columns": [
+        {
+          "name": "relativePath",
+          "sourcePath": "$.relativePath"
+        },
+        {
+          "name": "sejClassification",
+          "sourcePath": "$.sejClassification"
+        }
+      ],
+      "rows": [
+        {
+          "relativePath": "capabilities/file-system-shaper.json",
+          "sejClassification": "sej"
+        }
+      ],
+      "selectedRowCount": 1
+    }
+  }
+}

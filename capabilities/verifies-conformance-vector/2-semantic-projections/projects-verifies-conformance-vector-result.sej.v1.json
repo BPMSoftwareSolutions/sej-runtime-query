@@ -1,0 +1,43 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-verifies-conformance-vector-result",
+  "accepts": {
+    "contractId": "executed-verifies-conformance-vector.v1"
+  },
+  "produces": {
+    "contractId": "verifies-conformance-vector-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "verifies-conformance-vector-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "verifies-conformance-vector"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "outcome": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "observedHash": {
+            "kind": "read",
+            "path": "$.observedHash",
+            "required": true
+          },
+          "expectedHash": {
+            "kind": "read",
+            "path": "$.expectedHash",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

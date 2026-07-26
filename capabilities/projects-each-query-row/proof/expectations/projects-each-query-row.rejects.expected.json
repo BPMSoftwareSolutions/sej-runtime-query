@@ -1,0 +1,17 @@
+{
+  "receiptType": "projects-each-query-row-receipt.v1",
+  "runId": "run-projects-each-query-row-rejects-001",
+  "capabilityId": "projects-each-query-row",
+  "authorityHash": "sha256:efefbbf05e0dd372e347aa0bf58ea1b65b9a40e7781b1b9965801e2c10e39abf",
+  "inputHash": "sha256:90d6dcf23051e3ef96ba3b5aec5e1b7593ff3f70ea3628717dd76225395b660b",
+  "resultHash": "sha256:5320719fb72cd972f7606dc6ba3d09b3990cc8e39b6dcf19326ae963b08a3d33",
+  "decisionId": "resolves-row-projection-order",
+  "resolvedRule": "source-order",
+  "disposition": "QUERY_ROW_PROJECTION_REJECTED",
+  "findings": [
+    {
+      "findingId": "PROJECTION_REQUIRED_PATH_MISSING",
+      "detail": "Required projection path is missing: $.row.missing"
+    }
+  ]
+}

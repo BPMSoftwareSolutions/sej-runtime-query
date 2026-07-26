@@ -1,0 +1,34 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-query-source-selection",
+  "inputs": [
+    "$.payload.explicitSourceId",
+    "$.payload.workspaceDefaultSourceId"
+  ],
+  "rules": [
+    {
+      "ruleId": "use-explicit-source",
+      "when": {
+        "operator": "exists",
+        "operand": {
+          "kind": "path",
+          "path": "$.payload.explicitSourceId"
+        }
+      },
+      "then": "use-explicit-source"
+    },
+    {
+      "ruleId": "use-workspace-default-source",
+      "when": {
+        "operator": "exists",
+        "operand": {
+          "kind": "path",
+          "path": "$.payload.workspaceDefaultSourceId"
+        }
+      },
+      "then": "use-workspace-default-source"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

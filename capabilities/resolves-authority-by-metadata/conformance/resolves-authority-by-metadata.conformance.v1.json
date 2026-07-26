@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "resolves-authority-by-metadata-declared-flow",
+  "capabilityId": "resolves-authority-by-metadata",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/resolves-authority-by-metadata.accepts.input.json",
+  "expectedFixture": "../proof/expectations/resolves-authority-by-metadata.accepts.expected.json",
+  "expectedDisposition": "AUTHORITY_RESOLVED_BY_METADATA",
+  "kernelExecution": "passed"
+}

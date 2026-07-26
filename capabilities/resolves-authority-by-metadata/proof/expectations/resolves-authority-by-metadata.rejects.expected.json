@@ -1,0 +1,19 @@
+{
+  "receiptType": "resolves-authority-by-metadata-receipt.v1",
+  "runId": "run-resolves-authority-by-metadata-rejects-001",
+  "capabilityId": "resolves-authority-by-metadata",
+  "authorityHash": "sha256:ed4aaed9be2a52b39ddc51dbdfd0e7a4c12e36b5202c0a92492406298fe9c19f",
+  "inputHash": "sha256:0c0a2e8d3cc29edcd03ced605b9e13bad57a314da8461acc24f35f6e44130a0b",
+  "resultHash": "sha256:c2e8a9b809611e9cdabd4c65988ad1d8d694b8b61e754b2ce43abb31d1da3abb",
+  "decisionId": "resolves-metadata-match-mode",
+  "resolvedRule": "reject-no-metadata-match",
+  "disposition": "AUTHORITY_METADATA_NO_MATCH",
+  "findings": [
+    {
+      "findingId": "reject-no-metadata-match",
+      "detail": {
+        "matchedCount": 0
+      }
+    }
+  ]
+}

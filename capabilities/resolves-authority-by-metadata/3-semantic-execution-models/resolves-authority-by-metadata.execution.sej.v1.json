@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-resolves-authority-by-metadata",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-resolves-authority-by-metadata-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-resolves-authority-by-metadata",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-resolves-authority-by-metadata-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

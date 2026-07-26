@@ -1,0 +1,12 @@
+{
+  "declarationType": "semantic-port-catalog.v1",
+  "portCatalogId": "renders-canonical-query-result-ports",
+  "ports": [
+    {
+      "portId": "observes-renders-canonical-query-result-facts",
+      "effect": "observe",
+      "inputContract": "renders-canonical-query-result.input.v1",
+      "outputContract": "observed-renders-canonical-query-result-facts.v1"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "executes-selected-semantic-subgraph-declared-rejection",
+  "capabilityId": "executes-selected-semantic-subgraph",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/executes-selected-semantic-subgraph.rejects.input.json",
+  "expectedFixture": "../proof/expectations/executes-selected-semantic-subgraph.rejects.expected.json",
+  "expectedDisposition": "SEMANTIC_SUBGRAPH_FAILED",
+  "kernelExecution": "passed"
+}

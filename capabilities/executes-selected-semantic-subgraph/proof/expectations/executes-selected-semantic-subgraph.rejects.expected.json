@@ -1,0 +1,19 @@
+{
+  "receiptType": "executes-selected-semantic-subgraph-receipt.v1",
+  "runId": "run-executes-selected-semantic-subgraph-rejects-001",
+  "capabilityId": "executes-selected-semantic-subgraph",
+  "authorityHash": "sha256:1d22cb6d417714c103b6158473ec4df632e7e3083db65bebd6a83e47b245abd6",
+  "inputHash": "sha256:ca0f39013daaafe380a639e64e3c69e5a3848efa5de9ae5d5347bcce4b2ff435",
+  "resultHash": "sha256:95b367d2fda36e58b33183f1be76863e2f0492fc94c085c91afa1f9e00e3fb70",
+  "decisionId": "resolves-subgraph-execution-mode",
+  "resolvedRule": "reject-unregistered-model",
+  "disposition": "SEMANTIC_SUBGRAPH_FAILED",
+  "findings": [
+    {
+      "findingId": "reject-unregistered-model",
+      "detail": {
+        "modelRegistered": false
+      }
+    }
+  ]
+}

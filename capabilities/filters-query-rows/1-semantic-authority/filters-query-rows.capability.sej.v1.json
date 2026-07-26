@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "filters-query-rows",
+  "status": "implemented",
+  "purpose": "Apply declared predicates to resolved source rows.",
+  "owns": [
+    "query-predicate",
+    "filtered-query-rows"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "filters-query-rows",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-row-filter-mode",
+  "declaredResultProjection": "projects-filters-query-rows-result",
+  "declaredDispositions": [
+    "QUERY_ROWS_FILTERED",
+    "QUERY_FILTER_PREDICATE_INVALID"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-composes-semantic-authority-result",
+  "accepts": {
+    "contractId": "executed-composes-semantic-authority.v1"
+  },
+  "produces": {
+    "contractId": "composes-semantic-authority-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "composes-semantic-authority-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "composes-semantic-authority"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "precedenceRule": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "composed": {
+            "kind": "read",
+            "path": "$.composed",
+            "required": true
+          },
+          "conflictCount": {
+            "kind": "read",
+            "path": "$.conflictCount",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

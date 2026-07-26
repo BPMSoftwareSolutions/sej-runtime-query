@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "applies-semantic-policy-overlay-declared-rejection",
+  "capabilityId": "applies-semantic-policy-overlay",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/applies-semantic-policy-overlay.rejects.input.json",
+  "expectedFixture": "../proof/expectations/applies-semantic-policy-overlay.rejects.expected.json",
+  "expectedDisposition": "SEMANTIC_POLICY_OVERLAY_REJECTED",
+  "kernelExecution": "passed"
+}

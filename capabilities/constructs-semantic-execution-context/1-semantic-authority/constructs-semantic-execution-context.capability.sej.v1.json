@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "constructs-semantic-execution-context",
+  "status": "implemented",
+  "purpose": "Construct one immutable context from query-selected facts and authority.",
+  "owns": [
+    "selected-facts",
+    "semantic-execution-context"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "constructs-semantic-execution-context",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-execution-context-completeness",
+  "declaredResultProjection": "projects-constructs-semantic-execution-context-result",
+  "declaredDispositions": [
+    "EXECUTION_CONTEXT_CONSTRUCTED",
+    "EXECUTION_CONTEXT_INCOMPLETE"
+  ]
+}

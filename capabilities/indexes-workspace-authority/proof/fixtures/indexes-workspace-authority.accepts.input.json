@@ -1,0 +1,9 @@
+{
+  "requestType": "indexes-workspace-authority-request.v1",
+  "requestId": "indexes-workspace-authority-accepts-001",
+  "payload": {
+    "explicitPaths": [
+      "examples/workspaces/projection-demo/.sej-query/registry.v1.json"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "chains-semantic-results",
+  "title": "Chain semantic results",
+  "purpose": "Pass canonical semantic results through an authorized dataflow.",
+  "actor": "authorized-query-caller",
+  "trigger": "a chains-semantic-results request is submitted",
+  "desiredOutcome": "Pass canonical semantic results through an authorized dataflow.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "chains-semantic-results"
+  ],
+  "ownedDecision": "resolves-chain-compatibility",
+  "declaredDispositions": [
+    "SEMANTIC_RESULTS_CHAINED",
+    "SEMANTIC_CHAIN_INCOMPATIBLE"
+  ]
+}

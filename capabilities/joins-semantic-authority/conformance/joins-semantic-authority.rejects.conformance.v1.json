@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "joins-semantic-authority-declared-rejection",
+  "capabilityId": "joins-semantic-authority",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/joins-semantic-authority.rejects.input.json",
+  "expectedFixture": "../proof/expectations/joins-semantic-authority.rejects.expected.json",
+  "expectedDisposition": "SEMANTIC_AUTHORITY_UNJOINABLE",
+  "kernelExecution": "passed"
+}

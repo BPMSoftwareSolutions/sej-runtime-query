@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "executes-selected-semantic-subgraph-declared-flow",
+  "capabilityId": "executes-selected-semantic-subgraph",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/executes-selected-semantic-subgraph.accepts.input.json",
+  "expectedFixture": "../proof/expectations/executes-selected-semantic-subgraph.accepts.expected.json",
+  "expectedDisposition": "SEMANTIC_SUBGRAPH_EXECUTED",
+  "kernelExecution": "passed"
+}

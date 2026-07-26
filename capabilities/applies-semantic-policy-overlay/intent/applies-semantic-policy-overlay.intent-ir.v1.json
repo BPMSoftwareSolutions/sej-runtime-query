@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "applies-semantic-policy-overlay",
+  "title": "Apply semantic policy overlay",
+  "purpose": "Apply an explicit policy overlay without mutating source authority.",
+  "actor": "authorized-query-caller",
+  "trigger": "a applies-semantic-policy-overlay request is submitted",
+  "desiredOutcome": "Apply an explicit policy overlay without mutating source authority.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "applies-semantic-policy-overlay"
+  ],
+  "ownedDecision": "resolves-overlay-disposition",
+  "declaredDispositions": [
+    "SEMANTIC_POLICY_OVERLAY_APPLIED",
+    "SEMANTIC_POLICY_OVERLAY_REJECTED"
+  ]
+}

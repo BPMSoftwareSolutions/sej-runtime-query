@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-resolves-kernel-compatibility",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-resolves-kernel-compatibility-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-resolves-kernel-compatibility",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-resolves-kernel-compatibility-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

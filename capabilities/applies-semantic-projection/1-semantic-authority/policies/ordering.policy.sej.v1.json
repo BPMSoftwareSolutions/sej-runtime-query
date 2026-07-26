@@ -1,0 +1,10 @@
+{
+  "declarationType": "semantic-policy.v1",
+  "policyId": "ordering-policy",
+  "allowedDispositions": [
+    "preserve-query-order",
+    "sort-by-declared-field",
+    "group-by-declared-key"
+  ],
+  "defaultDisposition": "preserve-query-order"
+}

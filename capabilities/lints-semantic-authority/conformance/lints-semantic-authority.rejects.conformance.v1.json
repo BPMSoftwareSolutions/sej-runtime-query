@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "lints-semantic-authority-declared-rejection",
+  "capabilityId": "lints-semantic-authority",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/lints-semantic-authority.rejects.input.json",
+  "expectedFixture": "../proof/expectations/lints-semantic-authority.rejects.expected.json",
+  "expectedDisposition": "SEMANTIC_AUTHORITY_DEFECTIVE",
+  "kernelExecution": "passed"
+}

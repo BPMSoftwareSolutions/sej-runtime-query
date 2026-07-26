@@ -1,0 +1,19 @@
+{
+  "receiptType": "joins-semantic-authority-receipt.v1",
+  "runId": "run-joins-semantic-authority-rejects-001",
+  "capabilityId": "joins-semantic-authority",
+  "authorityHash": "sha256:8ac31f41f66a697e36047f7c80de904472e963e66933b5c997b36efee8e1be9d",
+  "inputHash": "sha256:7d6bf2542cf1c3351ecd9e1a7f9fa35ab1b945d01bbc2dfe91b71803891fb0ad",
+  "resultHash": "sha256:d0235d2566a10add4190b3c8281842438bc6efb97a217224d43e8fcf6832e2a4",
+  "decisionId": "resolves-join-kind",
+  "resolvedRule": "reject-unjoinable-sources",
+  "disposition": "SEMANTIC_AUTHORITY_UNJOINABLE",
+  "findings": [
+    {
+      "findingId": "reject-unjoinable-sources",
+      "detail": {
+        "hasJoinKey": false
+      }
+    }
+  ]
+}

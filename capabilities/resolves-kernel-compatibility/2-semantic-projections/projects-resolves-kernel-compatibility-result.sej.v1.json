@@ -1,0 +1,43 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-resolves-kernel-compatibility-result",
+  "accepts": {
+    "contractId": "executed-resolves-kernel-compatibility.v1"
+  },
+  "produces": {
+    "contractId": "resolves-kernel-compatibility-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "resolves-kernel-compatibility-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "resolves-kernel-compatibility"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "compatibility": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "missingPrimitives": {
+            "kind": "read",
+            "path": "$.missingPrimitives",
+            "required": true
+          },
+          "specificationVersion": {
+            "kind": "read",
+            "path": "$.payload.specificationVersion",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

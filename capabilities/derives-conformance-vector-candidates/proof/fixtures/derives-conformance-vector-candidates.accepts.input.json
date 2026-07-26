@@ -1,0 +1,28 @@
+{
+  "requestType": "derives-conformance-vector-candidates-request.v1",
+  "requestId": "derives-conformance-vector-candidates-accepts-001",
+  "payload": {
+    "derivationScope": "decision-rule",
+    "declaration": {
+      "declarationType": "decision.v1",
+      "decisionId": "resolves-row-filter-mode",
+      "rules": [
+        {
+          "ruleId": "apply-declared-predicate",
+          "when": {
+            "operator": "always"
+          },
+          "then": "apply-declared-predicate"
+        },
+        {
+          "ruleId": "pass-through-unfiltered",
+          "when": {
+            "operator": "always"
+          },
+          "then": "pass-through-unfiltered"
+        }
+      ],
+      "noMatchDisposition": "reject"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "resolves-authority-by-metadata-declared-rejection",
+  "capabilityId": "resolves-authority-by-metadata",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/resolves-authority-by-metadata.rejects.input.json",
+  "expectedFixture": "../proof/expectations/resolves-authority-by-metadata.rejects.expected.json",
+  "expectedDisposition": "AUTHORITY_METADATA_NO_MATCH",
+  "kernelExecution": "passed"
+}

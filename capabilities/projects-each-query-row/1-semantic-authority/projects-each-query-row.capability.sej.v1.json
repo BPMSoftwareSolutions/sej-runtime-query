@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "projects-each-query-row",
+  "status": "implemented",
+  "purpose": "Project each selected row independently under declared row scope.",
+  "owns": [
+    "query-row",
+    "projected-row"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "projects-each-query-row",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-row-projection-order",
+  "declaredResultProjection": "projects-projects-each-query-row-result",
+  "declaredDispositions": [
+    "QUERY_ROWS_PROJECTED",
+    "QUERY_ROW_PROJECTION_REJECTED"
+  ]
+}

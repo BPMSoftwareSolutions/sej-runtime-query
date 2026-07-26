@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "explains-semantic-execution",
+  "status": "implemented",
+  "purpose": "Project an explainable plan for selected semantic execution.",
+  "owns": [
+    "semantic-execution",
+    "explain-plan"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "explains-semantic-execution",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-explanation-depth",
+  "declaredResultProjection": "projects-explains-semantic-execution-result",
+  "declaredDispositions": [
+    "SEMANTIC_EXECUTION_EXPLAINED",
+    "SEMANTIC_EXECUTION_UNEXPLAINABLE"
+  ]
+}

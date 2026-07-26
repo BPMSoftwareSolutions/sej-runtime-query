@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "verifies-conformance-vector-declared-flow",
+  "capabilityId": "verifies-conformance-vector",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/verifies-conformance-vector.accepts.input.json",
+  "expectedFixture": "../proof/expectations/verifies-conformance-vector.accepts.expected.json",
+  "expectedDisposition": "CONFORMANCE_VECTOR_VERIFIED",
+  "kernelExecution": "passed"
+}

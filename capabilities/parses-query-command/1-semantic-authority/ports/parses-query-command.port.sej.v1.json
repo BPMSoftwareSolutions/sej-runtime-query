@@ -1,0 +1,12 @@
+{
+  "declarationType": "semantic-port-catalog.v1",
+  "portCatalogId": "parses-query-command-ports",
+  "ports": [
+    {
+      "portId": "observes-parses-query-command-facts",
+      "effect": "observe",
+      "inputContract": "parses-query-command.input.v1",
+      "outputContract": "observed-parses-query-command-facts.v1"
+    }
+  ]
+}

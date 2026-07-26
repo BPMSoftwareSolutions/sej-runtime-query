@@ -1,0 +1,46 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-vector-verification-outcome",
+  "inputs": [
+    "$.executable",
+    "$.observedHash",
+    "$.expectedHash"
+  ],
+  "rules": [
+    {
+      "ruleId": "vector-not-executable",
+      "when": {
+        "operator": "falsy",
+        "operand": {
+          "kind": "path",
+          "path": "$.executable"
+        }
+      },
+      "then": "vector-not-executable"
+    },
+    {
+      "ruleId": "vector-passed",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.observedHash"
+        },
+        "right": {
+          "kind": "path",
+          "path": "$.expectedHash"
+        }
+      },
+      "then": "vector-passed"
+    },
+    {
+      "ruleId": "vector-failed",
+      "when": {
+        "operator": "always"
+      },
+      "then": "vector-failed"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

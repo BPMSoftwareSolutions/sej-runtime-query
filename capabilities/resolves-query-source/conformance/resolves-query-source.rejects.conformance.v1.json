@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "resolves-query-source-declared-rejection",
+  "capabilityId": "resolves-query-source",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/resolves-query-source.rejects.input.json",
+  "expectedFixture": "../proof/expectations/resolves-query-source.rejects.expected.json",
+  "expectedDisposition": "QUERY_SOURCE_UNRESOLVED",
+  "kernelExecution": "passed"
+}

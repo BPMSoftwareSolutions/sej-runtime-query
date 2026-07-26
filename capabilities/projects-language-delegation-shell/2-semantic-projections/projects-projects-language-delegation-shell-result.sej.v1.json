@@ -1,0 +1,48 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-projects-language-delegation-shell-result",
+  "accepts": {
+    "contractId": "executed-projects-language-delegation-shell.v1"
+  },
+  "produces": {
+    "contractId": "projects-language-delegation-shell-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "projects-language-delegation-shell-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "projects-language-delegation-shell"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "target": {
+            "kind": "read",
+            "path": "$.payload.target",
+            "required": true
+          },
+          "shellDisposition": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "delegationSteps": {
+            "kind": "read",
+            "path": "$.delegationSteps",
+            "required": true
+          },
+          "shellLineCount": {
+            "kind": "read",
+            "path": "$.shellLineCount",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

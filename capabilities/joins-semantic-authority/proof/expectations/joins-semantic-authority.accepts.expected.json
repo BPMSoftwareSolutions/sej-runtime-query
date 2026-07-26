@@ -1,0 +1,27 @@
+{
+  "receiptType": "joins-semantic-authority-receipt.v1",
+  "runId": "run-joins-semantic-authority-accepts-001",
+  "capabilityId": "joins-semantic-authority",
+  "authorityHash": "sha256:8ac31f41f66a697e36047f7c80de904472e963e66933b5c997b36efee8e1be9d",
+  "inputHash": "sha256:675e3c98261bb22707a7f01cc2debd5e9ea36c324ad77a3a37899b58c7a724a3",
+  "resultHash": "sha256:c908b4fb6b7955e2f9b193f6d48c6203d9362d73995568f4c686a710aa784ee5",
+  "decisionId": "resolves-join-kind",
+  "resolvedRule": "inner-join",
+  "disposition": "SEMANTIC_AUTHORITY_JOINED",
+  "findings": [],
+  "result": {
+    "resultType": "joins-semantic-authority-result.v1",
+    "capabilityId": "joins-semantic-authority",
+    "value": {
+      "joinKind": "inner-join",
+      "joinedRows": [
+        {
+          "identity": "a",
+          "classification": "sej",
+          "specificationVersion": "1.0.0"
+        }
+      ],
+      "joinedRowCount": 1
+    }
+  }
+}

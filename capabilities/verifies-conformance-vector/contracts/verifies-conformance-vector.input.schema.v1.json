@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:verifies-conformance-vector:input:v1",
+  "title": "Verifies conformance vector input",
+  "type": "object",
+  "required": [
+    "requestType",
+    "requestId",
+    "payload"
+  ],
+  "properties": {
+    "requestType": {
+      "const": "verifies-conformance-vector-request.v1"
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "vectorId",
+        "observed",
+        "expected"
+      ],
+      "properties": {
+        "vectorId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed": {},
+        "expected": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

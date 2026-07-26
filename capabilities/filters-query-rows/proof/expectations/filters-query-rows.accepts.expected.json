@@ -1,0 +1,27 @@
+{
+  "receiptType": "filters-query-rows-receipt.v1",
+  "runId": "run-filters-query-rows-accepts-001",
+  "capabilityId": "filters-query-rows",
+  "authorityHash": "sha256:919fb4f50a7bca51ca80cd4af55ce75e9d72d6dfa4a08ce01d143780dcca812a",
+  "inputHash": "sha256:d31ccb5a20c0b041d5c4ca4e2d7460d626131befb59d2fe281586772e12d627f",
+  "resultHash": "sha256:69443bf280a89b1e177f5d94aaa2691d148e9acd26ca598f377a5f114c89d110",
+  "decisionId": "resolves-row-filter-mode",
+  "resolvedRule": "apply-declared-predicate",
+  "disposition": "QUERY_ROWS_FILTERED",
+  "findings": [],
+  "result": {
+    "resultType": "filters-query-rows-result.v1",
+    "capabilityId": "filters-query-rows",
+    "value": {
+      "filterMode": "apply-declared-predicate",
+      "rows": [
+        {
+          "relativePath": "a.json",
+          "sejClassification": "sej"
+        }
+      ],
+      "inputRowCount": 2,
+      "retainedRowCount": 1
+    }
+  }
+}

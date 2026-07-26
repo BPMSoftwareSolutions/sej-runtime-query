@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "composes-semantic-authority-declared-rejection",
+  "capabilityId": "composes-semantic-authority",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/composes-semantic-authority.rejects.input.json",
+  "expectedFixture": "../proof/expectations/composes-semantic-authority.rejects.expected.json",
+  "expectedDisposition": "SEMANTIC_AUTHORITY_CONFLICT",
+  "kernelExecution": "passed"
+}

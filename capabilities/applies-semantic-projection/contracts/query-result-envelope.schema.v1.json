@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:sej-query-result:v1",
+  "title": "Canonical query result envelope",
+  "type": "object",
+  "required": [
+    "queryResultType",
+    "query",
+    "source",
+    "selection",
+    "rows",
+    "rowCount",
+    "execution"
+  ],
+  "properties": {
+    "queryResultType": {
+      "const": "sej-query-result.v1"
+    },
+    "query": {
+      "type": "object",
+      "required": [
+        "normalizedText",
+        "queryHash"
+      ],
+      "properties": {
+        "normalizedText": {
+          "type": "string"
+        },
+        "queryHash": {
+          "type": "string",
+          "pattern": "^sha256:"
+        }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "sourceId",
+        "sourceHash"
+      ],
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceHash": {
+          "type": "string",
+          "pattern": "^sha256:"
+        }
+      },
+      "additionalProperties": false
+    },
+    "selection": {
+      "type": "object",
+      "required": [
+        "columns"
+      ],
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "sourcePath"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "sourcePath": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "rowCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "execution": {
+      "type": "object",
+      "required": [
+        "whereApplied",
+        "limitApplied"
+      ],
+      "properties": {
+        "whereApplied": {
+          "type": "boolean"
+        },
+        "limitApplied": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

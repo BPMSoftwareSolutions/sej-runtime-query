@@ -1,0 +1,17 @@
+{
+  "requestType": "resolves-query-selected-authority-request.v1",
+  "requestId": "resolves-query-selected-authority-accepts-001",
+  "payload": {
+    "entries": [
+      {
+        "identity": "a",
+        "classification": "sej"
+      },
+      {
+        "identity": "b",
+        "classification": "non-sej"
+      }
+    ],
+    "identity": "a"
+  }
+}

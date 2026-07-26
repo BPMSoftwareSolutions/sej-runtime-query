@@ -1,0 +1,33 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-row-projection-order",
+  "inputs": [
+    "$.payload.order"
+  ],
+  "rules": [
+    {
+      "ruleId": "reverse-order",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.order"
+        },
+        "right": {
+          "kind": "value",
+          "value": "reverse"
+        }
+      },
+      "then": "reverse"
+    },
+    {
+      "ruleId": "source-order",
+      "when": {
+        "operator": "always"
+      },
+      "then": "source"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

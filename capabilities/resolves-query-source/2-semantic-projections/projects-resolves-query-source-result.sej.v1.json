@@ -1,0 +1,56 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-resolves-query-source-result",
+  "accepts": {
+    "contractId": "executed-resolves-query-source.v1"
+  },
+  "produces": {
+    "contractId": "resolves-query-source-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "resolves-query-source-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "resolves-query-source"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "resolutionRule": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "sourceId": {
+            "kind": "coalesce",
+            "expressions": [
+              {
+                "kind": "read",
+                "path": "$.payload.explicitSourceId"
+              },
+              {
+                "kind": "read",
+                "path": "$.payload.workspaceDefaultSourceId"
+              }
+            ]
+          },
+          "sourceKind": {
+            "kind": "read",
+            "path": "$.payload.sourceKind",
+            "required": true
+          },
+          "sourceHash": {
+            "kind": "read",
+            "path": "$.payload.sourceHash",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

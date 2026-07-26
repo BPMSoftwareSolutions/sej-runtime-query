@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "composes-semantic-authority",
+  "status": "implemented",
+  "purpose": "Compose compatible semantic authorities under declared composition policy.",
+  "owns": [
+    "semantic-authority",
+    "composed-authority"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "composes-semantic-authority",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-composition-precedence",
+  "declaredResultProjection": "projects-composes-semantic-authority-result",
+  "declaredDispositions": [
+    "SEMANTIC_AUTHORITY_COMPOSED",
+    "SEMANTIC_AUTHORITY_CONFLICT"
+  ]
+}

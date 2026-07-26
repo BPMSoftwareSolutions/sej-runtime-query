@@ -1,0 +1,27 @@
+{
+  "receiptType": "resolves-authority-by-metadata-receipt.v1",
+  "runId": "run-resolves-authority-by-metadata-accepts-001",
+  "capabilityId": "resolves-authority-by-metadata",
+  "authorityHash": "sha256:ed4aaed9be2a52b39ddc51dbdfd0e7a4c12e36b5202c0a92492406298fe9c19f",
+  "inputHash": "sha256:22b00c65f6ab94a5912cf9a55f50df5dbb19b70f66975ac2c52bb096bc7d18de",
+  "resultHash": "sha256:aeedcbe9f5563ad6685c0195efe9b752e9f8c2a0fb78a62cb99d2545053364e1",
+  "decisionId": "resolves-metadata-match-mode",
+  "resolvedRule": "match-all-declared-metadata",
+  "disposition": "AUTHORITY_RESOLVED_BY_METADATA",
+  "findings": [],
+  "result": {
+    "resultType": "resolves-authority-by-metadata-result.v1",
+    "capabilityId": "resolves-authority-by-metadata",
+    "value": {
+      "matchMode": "match-all-declared-metadata",
+      "matchedEntries": [
+        {
+          "identity": "a",
+          "classification": "sej",
+          "specificationVersion": "1.0.0"
+        }
+      ],
+      "matchedCount": 1
+    }
+  }
+}

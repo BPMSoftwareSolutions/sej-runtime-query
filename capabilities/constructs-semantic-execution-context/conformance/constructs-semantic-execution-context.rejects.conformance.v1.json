@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "constructs-semantic-execution-context-declared-rejection",
+  "capabilityId": "constructs-semantic-execution-context",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/constructs-semantic-execution-context.rejects.input.json",
+  "expectedFixture": "../proof/expectations/constructs-semantic-execution-context.rejects.expected.json",
+  "expectedDisposition": "EXECUTION_CONTEXT_INCOMPLETE",
+  "kernelExecution": "passed"
+}

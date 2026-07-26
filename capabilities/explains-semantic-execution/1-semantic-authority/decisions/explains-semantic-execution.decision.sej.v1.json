@@ -1,0 +1,57 @@
+{
+  "declarationType": "decision.v1",
+  "decisionId": "resolves-explanation-depth",
+  "inputs": [
+    "$.payload.depth",
+    "$.stepCount"
+  ],
+  "rules": [
+    {
+      "ruleId": "reject-absent-testimony",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.stepCount"
+        },
+        "right": {
+          "kind": "value",
+          "value": 0
+        }
+      },
+      "then": "reject-absent-testimony"
+    },
+    {
+      "ruleId": "explain-full-step-testimony",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.depth"
+        },
+        "right": {
+          "kind": "value",
+          "value": "full"
+        }
+      },
+      "then": "explain-full-step-testimony"
+    },
+    {
+      "ruleId": "explain-decisions-only",
+      "when": {
+        "operator": "equals",
+        "left": {
+          "kind": "path",
+          "path": "$.payload.depth"
+        },
+        "right": {
+          "kind": "value",
+          "value": "decisions"
+        }
+      },
+      "then": "explain-decisions-only"
+    }
+  ],
+  "noMatchDisposition": "reject",
+  "implicitFallback": "forbidden"
+}

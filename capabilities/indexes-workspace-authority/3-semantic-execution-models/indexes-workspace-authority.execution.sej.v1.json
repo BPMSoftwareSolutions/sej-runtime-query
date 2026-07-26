@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-indexes-workspace-authority",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-indexes-workspace-authority-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-indexes-workspace-authority",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-indexes-workspace-authority-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

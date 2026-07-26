@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "routes-semantic-command-declared-flow",
+  "capabilityId": "routes-semantic-command",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/routes-semantic-command.accepts.input.json",
+  "expectedFixture": "../proof/expectations/routes-semantic-command.accepts.expected.json",
+  "expectedDisposition": "SEMANTIC_COMMAND_ROUTED",
+  "kernelExecution": "passed"
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:composes-semantic-authority:input:v1",
+  "title": "Composes semantic authority input",
+  "type": "object",
+  "required": [
+    "requestType",
+    "requestId",
+    "payload"
+  ],
+  "properties": {
+    "requestType": {
+      "const": "composes-semantic-authority-request.v1"
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "declarations",
+        "precedence"
+      ],
+      "properties": {
+        "declarations": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "precedence": {
+          "enum": [
+            "later-wins",
+            "earlier-wins",
+            "reject-conflict"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

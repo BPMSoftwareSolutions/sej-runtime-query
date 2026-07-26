@@ -1,0 +1,45 @@
+{
+  "declarationType": "projection.v1",
+  "projectionId": "projects-lints-semantic-authority-result",
+  "accepts": {
+    "contractId": "executed-lints-semantic-authority.v1"
+  },
+  "produces": {
+    "contractId": "lints-semantic-authority-result.v1"
+  },
+  "expression": {
+    "kind": "object",
+    "fields": {
+      "resultType": {
+        "kind": "constant",
+        "value": "lints-semantic-authority-result.v1"
+      },
+      "capabilityId": {
+        "kind": "constant",
+        "value": "lints-semantic-authority"
+      },
+      "value": {
+        "kind": "object",
+        "fields": {
+          "severity": {
+            "kind": "read",
+            "path": "$.decision",
+            "required": true
+          },
+          "defects": {
+            "kind": "read",
+            "path": "$.defects",
+            "required": true
+          },
+          "defectCount": {
+            "kind": "count",
+            "expression": {
+              "kind": "read",
+              "path": "$.defects"
+            }
+          }
+        }
+      }
+    }
+  }
+}

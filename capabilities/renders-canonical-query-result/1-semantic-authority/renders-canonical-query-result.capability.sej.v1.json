@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "renders-canonical-query-result",
+  "status": "implemented",
+  "purpose": "Render canonical semantic content into a declared physical representation.",
+  "owns": [
+    "canonical-query-result",
+    "rendered-query-result"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "renders-canonical-query-result",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-render-form",
+  "declaredResultProjection": "projects-renders-canonical-query-result-result",
+  "declaredDispositions": [
+    "QUERY_RESULT_RENDERED",
+    "QUERY_RENDER_FORM_UNSUPPORTED"
+  ]
+}

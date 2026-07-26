@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-projects-language-delegation-shell",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-projects-language-delegation-shell-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-projects-language-delegation-shell",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-projects-language-delegation-shell-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

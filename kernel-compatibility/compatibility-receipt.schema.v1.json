@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:kernel-compatibility-receipt:v1",
+  "type": "object",
+  "required": [
+    "receiptType",
+    "runId",
+    "capabilityId",
+    "authorityHash",
+    "inputHash",
+    "resultHash",
+    "disposition",
+    "findings",
+    "kernelSpecification",
+    "requiredPrimitives",
+    "supportedPrimitives"
+  ],
+  "properties": {
+    "receiptType": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capabilityId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorityHash": {
+      "type": "string",
+      "pattern": "^sha256:"
+    },
+    "inputHash": {
+      "type": "string",
+      "pattern": "^sha256:"
+    },
+    "resultHash": {
+      "type": "string",
+      "pattern": "^sha256:"
+    },
+    "disposition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "kernelSpecification": {
+      "type": "string"
+    },
+    "requiredPrimitives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supportedPrimitives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

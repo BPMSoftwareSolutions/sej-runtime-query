@@ -1,0 +1,48 @@
+{
+  "name": "@deterministic-solutions/sej-runtime-query",
+  "version": "0.1.0",
+  "description": "Capability-first semantic executable JSON runtime query engine.",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/composition-root/exports-query-library.d.ts",
+      "import": "./dist/composition-root/exports-query-library.js"
+    },
+    "./library": {
+      "types": "./dist/doorways/library/invokes-query.d.ts",
+      "import": "./dist/doorways/library/invokes-query.js"
+    }
+  },
+  "files": [
+    "dist",
+    "capabilities",
+    "kernel-compatibility",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "check": "node conformance/run-all.mjs",
+    "test": "npm run build && node test/run-tests.mjs",
+    "verify": "npm run check && npm test && npm run typecheck",
+    "prove:package": "node scripts/prove-packed-consumer.mjs",
+    "prove": "npm run verify && npm run prove:package"
+  },
+  "peerDependencies": {
+    "@deterministic-solutions/semantic-kernel": ">=0.1.0 <2.0.0"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1"
+  },
+  "devDependencies": {
+    "@deterministic-solutions/semantic-kernel": "file:../semantic-kernel",
+    "@types/node": "^20.19.0",
+    "typescript": "^5.8.3"
+  }
+}

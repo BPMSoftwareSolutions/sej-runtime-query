@@ -1,0 +1,10 @@
+{
+  "vectorType": "capability-conformance-vector.v1",
+  "vectorId": "chains-semantic-results-declared-rejection",
+  "capabilityId": "chains-semantic-results",
+  "status": "accepted",
+  "inputFixture": "../proof/fixtures/chains-semantic-results.rejects.input.json",
+  "expectedFixture": "../proof/expectations/chains-semantic-results.rejects.expected.json",
+  "expectedDisposition": "SEMANTIC_CHAIN_INCOMPATIBLE",
+  "kernelExecution": "passed"
+}

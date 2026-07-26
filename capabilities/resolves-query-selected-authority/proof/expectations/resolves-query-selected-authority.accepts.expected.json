@@ -1,0 +1,23 @@
+{
+  "receiptType": "resolves-query-selected-authority-receipt.v1",
+  "runId": "run-resolves-query-selected-authority-accepts-001",
+  "capabilityId": "resolves-query-selected-authority",
+  "authorityHash": "sha256:b12ba0459b61de76f933e8973d28f4314f3fc0ad37f74d89a42f89ee71f18a56",
+  "inputHash": "sha256:ef3350f3e38ed516db80c5b3a3ab6ce61bbb71c2eaf9d06d4dcacee7b52f983c",
+  "resultHash": "sha256:8edaf42e87348411478f6c42dc25eea3a2651e72e406f8cb15cf2c416b2f5935",
+  "decisionId": "resolves-selected-authority-source",
+  "resolvedRule": "select-by-identity",
+  "disposition": "SELECTED_AUTHORITY_RESOLVED",
+  "findings": [],
+  "result": {
+    "resultType": "resolves-query-selected-authority-result.v1",
+    "capabilityId": "resolves-query-selected-authority",
+    "value": {
+      "selectionRule": "select-by-identity",
+      "selectedEntry": {
+        "identity": "a",
+        "classification": "sej"
+      }
+    }
+  }
+}

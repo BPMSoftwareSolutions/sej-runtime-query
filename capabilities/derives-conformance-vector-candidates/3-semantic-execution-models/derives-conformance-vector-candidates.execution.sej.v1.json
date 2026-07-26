@@ -1,0 +1,25 @@
+{
+  "declarationType": "semantic-execution-model.v1",
+  "executionModelId": "executes-derives-conformance-vector-candidates",
+  "steps": [
+    {
+      "sequence": 1,
+      "invoke": "resolves-derives-conformance-vector-candidates-authority",
+      "records": "resolved-authority"
+    },
+    {
+      "sequence": 2,
+      "invoke": "executes-resolved-derives-conformance-vector-candidates",
+      "records": "execution-observation"
+    },
+    {
+      "sequence": 3,
+      "project": "projects-derives-conformance-vector-candidates-result",
+      "records": "projected-result"
+    }
+  ],
+  "resultPath": "$.projectedResult",
+  "stopWhen": [
+    "blocking-finding-observed"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:deterministic-solutions:selects-query-facts:result:v1",
+  "title": "Selects query facts result",
+  "type": "object",
+  "required": [
+    "resultType",
+    "capabilityId",
+    "value"
+  ],
+  "properties": {
+    "resultType": {
+      "const": "selects-query-facts-result.v1"
+    },
+    "capabilityId": {
+      "const": "selects-query-facts"
+    },
+    "value": {
+      "type": "object",
+      "required": [
+        "selectionMode",
+        "rows",
+        "selectedRowCount"
+      ],
+      "properties": {
+        "selectionMode": {},
+        "columns": {},
+        "rows": {},
+        "selectedRowCount": {}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,28 @@
+{
+  "declarationType": "semantic-capability.v1",
+  "capabilityId": "executes-selected-semantic-subgraph",
+  "status": "implemented",
+  "purpose": "Execute only the semantic subgraph authorized by the query.",
+  "owns": [
+    "semantic-subgraph",
+    "subgraph-execution"
+  ],
+  "mustNotOwn": [
+    "runtime-language-policy",
+    "authored-dto-stitching",
+    "hidden-control-flow",
+    "mechanical-adapter-policy"
+  ],
+  "publicOperation": "executes-selected-semantic-subgraph",
+  "requiredKernelPrimitives": [
+    "decision.resolve.v1",
+    "projection.apply.v1"
+  ],
+  "promotionDisposition": "conformance-passed",
+  "declaredDecision": "resolves-subgraph-execution-mode",
+  "declaredResultProjection": "projects-executes-selected-semantic-subgraph-result",
+  "declaredDispositions": [
+    "SEMANTIC_SUBGRAPH_EXECUTED",
+    "SEMANTIC_SUBGRAPH_FAILED"
+  ]
+}

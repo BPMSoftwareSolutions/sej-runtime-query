@@ -1,0 +1,24 @@
+{
+  "intentType": "deterministic-capability-intent.v1",
+  "capabilityId": "resolves-query-selected-authority",
+  "title": "Resolve query-selected authority",
+  "purpose": "Resolve executable semantic authority selected by a query.",
+  "actor": "authorized-query-caller",
+  "trigger": "a resolves-query-selected-authority request is submitted",
+  "desiredOutcome": "Resolve executable semantic authority selected by a query.",
+  "constraints": [
+    "canonical meaning remains language-neutral",
+    "capability-specific decisions remain in semantic authority",
+    "the runtime body contains linear semantic delegation only",
+    "proof testimony is projected into a canonical receipt",
+    "an input matching no declared rule is rejected rather than defaulted"
+  ],
+  "featureIds": [
+    "resolves-query-selected-authority"
+  ],
+  "ownedDecision": "resolves-selected-authority-source",
+  "declaredDispositions": [
+    "SELECTED_AUTHORITY_RESOLVED",
+    "SELECTED_AUTHORITY_AMBIGUOUS"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "declarationType": "semantic-port-catalog.v1",
+  "portCatalogId": "projects-complete-query-result-ports",
+  "ports": [
+    {
+      "portId": "observes-projects-complete-query-result-facts",
+      "effect": "observe",
+      "inputContract": "projects-complete-query-result.input.v1",
+      "outputContract": "observed-projects-complete-query-result-facts.v1"
+    }
+  ]
+}

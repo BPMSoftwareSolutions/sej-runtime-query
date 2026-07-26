@@ -1,0 +1,21 @@
+{
+  "receiptType": "filters-query-rows-receipt.v1",
+  "runId": "run-filters-query-rows-rejects-001",
+  "capabilityId": "filters-query-rows",
+  "authorityHash": "sha256:919fb4f50a7bca51ca80cd4af55ce75e9d72d6dfa4a08ce01d143780dcca812a",
+  "inputHash": "sha256:1b5ac57d9f0323c672c7cf14950413e3093cc0719809f00ede5bae1bf55fc6c8",
+  "resultHash": "sha256:91b6f86772aa1aed34ef0f370ffabba10f2dc0f1067d34c0dec3f950ab08287e",
+  "decisionId": "resolves-row-filter-mode",
+  "resolvedRule": "reject-undeclared-predicate-operator",
+  "disposition": "QUERY_FILTER_PREDICATE_INVALID",
+  "findings": [
+    {
+      "findingId": "reject-undeclared-predicate-operator",
+      "detail": {
+        "rowCount": 1,
+        "hasPredicate": true,
+        "predicateOperatorDeclared": false
+      }
+    }
+  ]
+}

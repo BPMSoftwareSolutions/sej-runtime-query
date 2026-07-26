@@ -1,0 +1,12 @@
+{
+  "declarationType": "semantic-port-catalog.v1",
+  "portCatalogId": "applies-semantic-policy-overlay-ports",
+  "ports": [
+    {
+      "portId": "observes-applies-semantic-policy-overlay-facts",
+      "effect": "observe",
+      "inputContract": "applies-semantic-policy-overlay.input.v1",
+      "outputContract": "observed-applies-semantic-policy-overlay-facts.v1"
+    }
+  ]
+}
