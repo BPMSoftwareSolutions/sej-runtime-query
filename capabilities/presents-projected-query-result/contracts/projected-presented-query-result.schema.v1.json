@@ -28,6 +28,7 @@
       "properties": {
         "disposition": { "const": "QUERY_RESULT_PRESENTED" },
         "presentationReceipt": {
+          "type": "object",
           "properties": {
             "disposition": { "const": "QUERY_RESULT_PRESENTED" }
           }
@@ -38,6 +39,7 @@
       "properties": {
         "disposition": { "const": "CANONICAL_JSON_RETURNED" },
         "presentationReceipt": {
+          "type": "object",
           "properties": {
             "disposition": { "const": "CANONICAL_JSON_RETURNED" }
           }

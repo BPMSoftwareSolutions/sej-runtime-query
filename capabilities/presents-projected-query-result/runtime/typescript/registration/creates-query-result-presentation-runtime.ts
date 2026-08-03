@@ -80,6 +80,8 @@ export function createsQueryResultPresentationRuntime(): QueryResultPresentation
       }
       return receipt as TResult;
     },
+    projectsCode: (projectorIdentity: string, authority: unknown, codeOptions?: unknown) =>
+      kernel.edges.projectsCode(projectorIdentity, authority, codeOptions),
   });
   return Object.freeze({
     edges,

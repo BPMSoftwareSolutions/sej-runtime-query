@@ -108,6 +108,8 @@ export function registersSemanticProjectionAuthority(
     },
     projects: <TResult = unknown>(projectionIdentity: string, context: unknown): TResult =>
       kernel.edges.projects<TResult>(projectionIdentity, context),
+    projectsCode: (projectorIdentity: string, authority: unknown, codeOptions?: unknown) =>
+      kernel.edges.projectsCode(projectorIdentity, authority, codeOptions),
   });
 }
 

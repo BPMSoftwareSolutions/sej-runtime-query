@@ -98,6 +98,8 @@ export function createsCapabilityRuntime(
     },
     projects: <TResult = unknown>(projectionIdentity: string, context: unknown): TResult =>
       kernel.project(projectionIdentity, requiresJsonValue(context, "Projection context must be JSON.")) as TResult,
+    projectsCode: (projectorIdentity: string, authority: unknown, options?: unknown) =>
+      kernel.edges.projectsCode(projectorIdentity, authority, options),
   });
 
   function resolvesEdge(semanticIdentity: string, context: unknown): JsonObject | Promise<JsonObject> {
@@ -246,6 +248,7 @@ export function createsCapabilityRuntime(
           : kernel.project(projectionIdentity, requiresJsonValue(context, "Projection context must be JSON."));
         return projected as TResult;
       },
+      projectsCode: edges.projectsCode,
     }),
     invoke: async (request: unknown): Promise<JsonObject> => {
       const resolved = resolvesAuthority({ request });

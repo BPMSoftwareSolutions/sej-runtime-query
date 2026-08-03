@@ -10,7 +10,9 @@ import routeDecision from "./semantic-authority/routes-query-execution.sej.v1.js
 import { createsProjectedPresentedQueryExecution } from "./presentation/executes-projected-presented-query.js";
 
 export function startsQueryEngine(context: QueryEngineStartContext): QueryEngineStartResult {
-  const kernel = createsQuerySemanticKernel({ kernelOptions: context.kernelOptions });
+  const kernel = createsQuerySemanticKernel(
+    context.kernelOptions === undefined ? {} : { kernelOptions: context.kernelOptions },
+  );
   const registered = registersCapabilityPacks({ kernel, capabilityPacks: context.capabilityPacks });
   const seated = seatsPortAdapters({ kernel: registered.kernel, portAdapters: context.portAdapters });
   seated.kernel.catalog.registerDecision(routeDecision as DecisionDeclaration);
