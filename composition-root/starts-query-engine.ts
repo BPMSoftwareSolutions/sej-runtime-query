@@ -9,7 +9,26 @@ import { SemanticKernelError, type DecisionDeclaration, type JsonValue } from "@
 import routeDecision from "./semantic-authority/routes-query-execution.sej.v1.json" with { type: "json" };
 import { createsProjectedPresentedQueryExecution } from "./presentation/executes-projected-presented-query.js";
 
+let cachedDefaultQueryEngineStartResult: QueryEngineStartResult | undefined;
+
+function isDefaultQueryEngineStartContext(context: QueryEngineStartContext): boolean {
+  return context.kernelOptions === undefined
+    && context.capabilityPacks.length === 0
+    && Object.keys(context.portAdapters).length === 0;
+}
+
 export function startsQueryEngine(context: QueryEngineStartContext): QueryEngineStartResult {
+  if (isDefaultQueryEngineStartContext(context)) {
+    if (cachedDefaultQueryEngineStartResult === undefined) {
+      cachedDefaultQueryEngineStartResult = createsQueryEngine(context);
+    }
+    return cachedDefaultQueryEngineStartResult;
+  }
+
+  return createsQueryEngine(context);
+}
+
+function createsQueryEngine(context: QueryEngineStartContext): QueryEngineStartResult {
   const kernel = createsQuerySemanticKernel(
     context.kernelOptions === undefined ? {} : { kernelOptions: context.kernelOptions },
   );
